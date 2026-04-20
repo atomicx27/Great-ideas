@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pomodoro Tracker</h1>
+            <p>Focus on your tasks using the Pomodoro technique.</p>
+        </header>
+
+        <div class="timer-section">
+            <div class="timer-display" id="time-display">25:00</div>
+            <div class="timer-controls">
+                <button id="start-btn">Start</button>
+                <button id="pause-btn" disabled>Pause</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+            <div class="mode-selector">
+                <button id="mode-pomodoro" class="active">Pomodoro</button>
+                <button id="mode-short-break">Short Break</button>
+                <button id="mode-long-break">Long Break</button>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2>Tasks</h2>
+            <div class="task-input">
+                <input type="text" id="new-task-text" placeholder="What are you working on?">
+                <button id="add-task-btn">Add Task</button>
+            </div>
+            <ul id="task-list" class="task-list">
+                <!-- Tasks will be added here -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
