@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Research Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar / Settings Panel -->
+        <aside class="settings-panel">
+            <h2><i class="fa-solid fa-brain"></i> Agent Config</h2>
+
+            <div class="form-group">
+                <label for="llm-provider">LLM Engine</label>
+                <select id="llm-provider">
+                    <option value="openai">OpenAI (Fastest Tool Calling)</option>
+                    <option value="anthropic">Anthropic (Deep Synthesis)</option>
+                    <option value="ollama">Ollama (Private - requires capable model)</option>
+                </select>
+            </div>
+
+            <div id="api-key-container" class="form-group">
+                <label for="api-key">API Key</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div id="model-container" class="form-group">
+                <label for="model-name">Model Version</label>
+                <input type="text" id="model-name" value="gpt-4o-mini">
+            </div>
+
+            <div id="ollama-url-container" class="form-group hidden">
+                <label for="ollama-url">Ollama Host URL</label>
+                <input type="text" id="ollama-url" value="http://localhost:11434">
+            </div>
+
+            <div class="settings-footer">
+                <p><i class="fa-solid fa-server"></i> Live External Tool: <strong>Wikipedia API</strong></p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <header>
+                <h1>Autonomous Research Agent</h1>
+                <p>Enter a topic. The agent will formulate a search query, fetch live Wikipedia data, and synthesize a factual report.</p>
+            </header>
+
+            <div class="content-area">
+                <!-- Input Section -->
+                <div class="input-section">
+                    <div class="search-bar">
+                        <input type="text" id="research-topic" placeholder="What would you like me to research? e.g., 'What are the main applications of aerogels?'">
+                        <button class="btn btn-primary" id="research-btn"><i class="fa-solid fa-magnifying-glass"></i> Start Agent</button>
+                    </div>
+                </div>
+
+                <!-- Agent Thought Process UI -->
+                <div id="agent-process" class="agent-process hidden">
+                    <h3><i class="fa-solid fa-microchip"></i> Agent Workflow</h3>
+                    <ul class="process-steps" id="process-steps">
+                        <!-- Steps injected dynamically -->
+                    </ul>
+                </div>
+
+                <!-- Final Output UI -->
+                <div id="final-output-container" class="final-output hidden">
+                    <div class="output-header">
+                        <h3><i class="fa-solid fa-file-contract"></i> Synthesized Report</h3>
+                        <button class="btn btn-success btn-sm" id="copy-btn"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+                    <div id="output-content" class="markdown-body">
+                        <!-- Markdown Output here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Include Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
