@@ -14,3 +14,6 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 4. **Time-Zone-Meeting-Scheduler**
    A smart visualization tool for global, distributed teams. It automates the painful process of finding overlapping working hours across multiple time zones. By inputting the locations of team members, it visually highlights the optimal "golden hours" for meetings, eliminating the complex mental math and frustrating back-and-forth communication typically required for international scheduling.
+
+5. **AI-Email-Copilot**
+   A powerful communication automation tool designed to solve the daily grind of drafting, replying, and summarizing professional emails. Rather than being locked into a single ecosystem, this copilot allows you to bring your own API keys for OpenAI or Anthropic, or even connect securely to a local, private LLM using Ollama. This empowers employees to drastically cut down email processing time while maintaining absolute data privacy and vendor flexibility.
