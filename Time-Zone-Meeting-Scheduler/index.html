@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Zone Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Global Team Scheduler</h1>
+            <p>Find the overlapping "golden hours" for your remote team.</p>
+        </header>
+
+        <div class="controls-section">
+            <div class="input-group">
+                <input type="text" id="member-name" placeholder="Team Member Name (e.g., Alice)">
+                <select id="member-timezone">
+                    <option value="-8">Pacific Time (PT) UTC-8</option>
+                    <option value="-5">Eastern Time (ET) UTC-5</option>
+                    <option value="0" selected>Coordinated Universal Time (UTC)</option>
+                    <option value="1">Central European Time (CET) UTC+1</option>
+                    <option value="5.5">India Standard Time (IST) UTC+5:30</option>
+                    <option value="9">Japan Standard Time (JST) UTC+9</option>
+                    <option value="11">Australian Eastern Time (AET) UTC+11</option>
+                </select>
+                <button id="add-member-btn">Add Member</button>
+            </div>
+
+            <div class="settings">
+                <label>Working Hours (Local Time):</label>
+                <select id="work-start">
+                    <option value="8" selected>08:00</option>
+                    <option value="9">09:00</option>
+                    <option value="10">10:00</option>
+                </select>
+                <span>to</span>
+                <select id="work-end">
+                    <option value="16">16:00</option>
+                    <option value="17" selected>17:00</option>
+                    <option value="18">18:00</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="visualization-section">
+            <div class="timeline-header" id="timeline-header">
+                <!-- Hours 0-23 injected here -->
+            </div>
+            <div id="members-list">
+                <!-- Member rows injected here -->
+            </div>
+            <div class="legend">
+                <span class="legend-item"><span class="box working-hours"></span> Working Hours</span>
+                <span class="legend-item"><span class="box outside-hours"></span> Outside Hours</span>
+                <span class="legend-item"><span class="box overlap"></span> Optimal Meeting Time (Overlap)</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

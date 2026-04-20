@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Switcher Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Workspaces</h2>
+        <ul id="workspace-list">
+            <!-- Workspaces injected here -->
+        </ul>
+        <div class="add-workspace">
+            <input type="text" id="new-workspace-name" placeholder="New Workspace...">
+            <button id="add-workspace-btn">+</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1 id="current-workspace-title">Select a Workspace</h1>
+            <p>Automate your context switching.</p>
+        </header>
+
+        <div id="dashboard-content" class="hidden">
+            <div class="grid-container">
+
+                <div class="card">
+                    <h3>Quick Links</h3>
+                    <div class="input-group">
+                        <input type="text" id="new-link-name" placeholder="Name">
+                        <input type="url" id="new-link-url" placeholder="https://...">
+                        <button id="add-link-btn">Add</button>
+                    </div>
+                    <ul id="links-list" class="item-list"></ul>
+                </div>
+
+                <div class="card">
+                    <h3>Tasks</h3>
+                    <div class="input-group">
+                        <input type="text" id="new-task-text" placeholder="Add a task...">
+                        <button id="add-task-btn">Add</button>
+                    </div>
+                    <ul id="tasks-list" class="item-list"></ul>
+                </div>
+
+                <div class="card full-width">
+                    <h3>Scratchpad</h3>
+                    <textarea id="scratchpad" placeholder="Jot down quick notes for this specific context..."></textarea>
+                </div>
+
+            </div>
+        </div>
+        <div id="empty-state">
+            <p>Please create or select a workspace from the sidebar to begin.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
