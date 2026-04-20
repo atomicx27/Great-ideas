@@ -23,3 +23,6 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 7. **Agentic-Research-Assistant**
    A step beyond simple chatbots, this tool implements true "Agentic AI" workflows. Instead of just returning a pre-trained answer, this assistant acts autonomously: it breaks down your prompt into a research plan, uses live external tools (like Wikipedia's API) to gather real-time factual information, synthesizes the findings, and presents a comprehensive report. It makes the research workflow effortless while showing its entire "thought process" transparently. Like previous tools, it supports BYOK for OpenAI, Anthropic, and local Ollama integrations.
+
+8. **AGI-Task-Swarm-Orchestrator**
+   A glimpse into the future of Artificial General Intelligence (AGI) applied to office work. This tool doesn't just answer questions; it achieves *ambiguous goals* by orchestrating a "swarm" of specialized AI sub-agents. You provide a complex, high-level goal (e.g., "Analyze the market for EVs in Europe and write a pitch deck outline"). The Master Orchestrator autonomously breaks this down into parallel tasks, spawns distinct sub-agents to execute them simultaneously, and synthesizes the final output. It visualizes this complex, multi-agent parallel processing in real-time. Supports BYOK (Bring Your Own Key) for OpenAI, Anthropic, and local Ollama.

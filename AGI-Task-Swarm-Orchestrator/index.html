@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Task Swarm Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar / Settings Panel -->
+        <aside class="settings-panel">
+            <h2><i class="fa-solid fa-network-wired"></i> Swarm Config</h2>
+
+            <div class="form-group">
+                <label for="llm-provider">Core Intelligence Engine</label>
+                <select id="llm-provider">
+                    <option value="openai">OpenAI (Recommended for complex JSON structure)</option>
+                    <option value="anthropic">Anthropic (High accuracy)</option>
+                    <option value="ollama">Ollama (Private, Requires highly capable model like Llama3/Mistral)</option>
+                </select>
+            </div>
+
+            <div id="api-key-container" class="form-group">
+                <label for="api-key">API Key</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div id="model-container" class="form-group">
+                <label for="model-name">Model Version</label>
+                <input type="text" id="model-name" value="gpt-4o">
+            </div>
+
+            <div id="ollama-url-container" class="form-group hidden">
+                <label for="ollama-url">Ollama Host URL</label>
+                <input type="text" id="ollama-url" value="http://localhost:11434">
+            </div>
+
+            <div class="settings-footer">
+                <p><i class="fa-solid fa-shield-halved"></i> All processing handled locally via client-side API requests.</p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <header>
+                <h1><i class="fa-solid fa-robot"></i> Multi-Agent Task Orchestrator</h1>
+                <p>Provide a high-level, complex goal. The Master Orchestrator will decompose it, spawn a swarm of sub-agents to solve it in parallel, and synthesize the final result.</p>
+            </header>
+
+            <div class="content-area">
+
+                <!-- Input Goal -->
+                <div class="card input-card">
+                    <div class="input-group">
+                        <textarea id="goal-input" placeholder="Enter an ambiguous or complex goal... e.g., 'Analyze the impact of remote work on commercial real estate and write a 3-part comprehensive report.'"></textarea>
+                        <button class="btn btn-primary" id="start-swarm-btn">Initialize Swarm <i class="fa-solid fa-bolt"></i></button>
+                    </div>
+                </div>
+
+                <!-- Swarm Visualization UI -->
+                <div id="swarm-ui" class="swarm-ui hidden">
+
+                    <div class="orchestrator-node">
+                        <div class="node-icon"><i class="fa-solid fa-crown"></i></div>
+                        <div class="node-info">
+                            <h4>Master Orchestrator</h4>
+                            <p id="orchestrator-status">Awaiting task...</p>
+                        </div>
+                    </div>
+
+                    <!-- Visual connection lines -->
+                    <div class="connections" id="connections"></div>
+
+                    <div class="sub-agents-grid" id="sub-agents-container">
+                        <!-- Sub agents injected dynamically -->
+                    </div>
+
+                </div>
+
+                <!-- Final Output UI -->
+                <div id="final-output-container" class="card final-output hidden">
+                    <div class="output-header">
+                        <h3><i class="fa-solid fa-layer-group"></i> Synthesized Master Output</h3>
+                        <button class="btn btn-success btn-sm" id="copy-btn"><i class="fa-regular fa-copy"></i> Copy Output</button>
+                    </div>
+                    <div id="output-content" class="markdown-body">
+                        <!-- Markdown Output here -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Include Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
