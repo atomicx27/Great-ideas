@@ -17,3 +17,6 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 5. **AI-Email-Copilot**
    A powerful communication automation tool designed to solve the daily grind of drafting, replying, and summarizing professional emails. Rather than being locked into a single ecosystem, this copilot allows you to bring your own API keys for OpenAI or Anthropic, or even connect securely to a local, private LLM using Ollama. This empowers employees to drastically cut down email processing time while maintaining absolute data privacy and vendor flexibility.
+
+6. **AI-Meeting-Summarizer**
+   A smart utility designed to process raw, messy meeting transcripts (from Teams, Zoom, or Google Meet) and automatically distill them into concise, actionable formats. It extracts key decisions, generates bulleted summaries, and automatically formats action items with assigned owners. Like the email copilot, it features flexible LLM integration allowing users to connect to OpenAI, Anthropic, or securely to a local Ollama instance to protect sensitive internal discussions.
