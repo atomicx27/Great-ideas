@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Copilot</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar / Settings Panel -->
+        <aside class="settings-panel">
+            <h2><i class="fa-solid fa-robot"></i> Copilot Settings</h2>
+
+            <div class="form-group">
+                <label for="llm-provider">LLM Provider</label>
+                <select id="llm-provider">
+                    <option value="openai">OpenAI (Cloud)</option>
+                    <option value="anthropic">Anthropic (Cloud)</option>
+                    <option value="ollama">Ollama (Local - Private)</option>
+                </select>
+            </div>
+
+            <div id="api-key-container" class="form-group">
+                <label for="api-key">API Key</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+                <small class="help-text">Keys are stored locally in your browser.</small>
+            </div>
+
+            <div id="model-container" class="form-group">
+                <label for="model-name">Model Name</label>
+                <input type="text" id="model-name" value="gpt-4o-mini">
+                <small id="model-help" class="help-text">e.g., gpt-4o-mini, claude-3-haiku, llama3</small>
+            </div>
+
+            <div id="ollama-url-container" class="form-group hidden">
+                <label for="ollama-url">Ollama Host URL</label>
+                <input type="text" id="ollama-url" value="http://localhost:11434">
+            </div>
+
+            <div class="settings-footer">
+                <p><i class="fa-solid fa-shield-halved"></i> Privacy First</p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <header>
+                <h1>New Message</h1>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="clear-btn"><i class="fa-solid fa-trash"></i> Clear</button>
+                    <button class="btn btn-primary" id="generate-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate Draft</button>
+                </div>
+            </header>
+
+            <div class="editor-area">
+                <div class="input-section">
+                    <label for="email-context">What do you want to say?</label>
+                    <textarea id="email-context" placeholder="e.g., Tell the marketing team the Q3 report is delayed until Friday because we are waiting on sales data. Make it sound polite but firm."></textarea>
+
+                    <div class="tone-selector">
+                        <label>Tone:</label>
+                        <select id="email-tone">
+                            <option value="professional">Professional</option>
+                            <option value="friendly">Friendly</option>
+                            <option value="direct">Direct</option>
+                            <option value="persuasive">Persuasive</option>
+                        </select>
+                        <label>Length:</label>
+                        <select id="email-length">
+                            <option value="concise">Concise</option>
+                            <option value="detailed">Detailed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <label for="email-draft">Generated Draft</label>
+                    <div class="draft-container">
+                        <textarea id="email-draft" placeholder="Your generated email will appear here..."></textarea>
+                        <div id="loading-overlay" class="hidden">
+                            <div class="spinner"></div>
+                            <p>Drafting...</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-copy" id="copy-btn"><i class="fa-regular fa-copy"></i> Copy to Clipboard</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
