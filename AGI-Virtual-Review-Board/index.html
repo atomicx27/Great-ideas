@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Virtual Review Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="app-header">
+        <div class="logo">
+            <i class="fa-solid fa-people-group"></i>
+            <h1>Virtual Review Board <span class="badge">AGI</span></h1>
+        </div>
+        <div class="header-actions">
+            <button id="settings-btn" class="btn btn-outline"><i class="fa-solid fa-gear"></i> API Config</button>
+        </div>
+    </header>
+
+    <!-- Hidden Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>LLM Configuration</h2>
+                <button id="close-settings" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Engine</label>
+                    <select id="llm-provider">
+                        <option value="anthropic">Anthropic (Best for large documents)</option>
+                        <option value="openai">OpenAI (Fast & Reliable)</option>
+                        <option value="ollama">Ollama (Local Privacy)</option>
+                    </select>
+                </div>
+                <div id="api-key-container" class="form-group">
+                    <label>API Key</label>
+                    <input type="password" id="api-key" placeholder="sk-...">
+                </div>
+                <div class="form-group">
+                    <label>Model Version</label>
+                    <input type="text" id="model-name" value="claude-3-haiku-20240307">
+                </div>
+                <div id="ollama-url-container" class="form-group hidden">
+                    <label>Ollama Host URL</label>
+                    <input type="text" id="ollama-url" value="http://localhost:11434">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+
+        <!-- Left Panel: Input & Setup -->
+        <aside class="setup-panel">
+            <div class="panel-section">
+                <h3>1. Select Expert Personas</h3>
+                <p class="subtitle">Choose the virtual agents to review your document.</p>
+                <div class="persona-grid">
+                    <label class="persona-card">
+                        <input type="checkbox" value="legal" class="persona-checkbox" checked>
+                        <div class="persona-content">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            <span>Strict Legal Counsel</span>
+                        </div>
+                    </label>
+                    <label class="persona-card">
+                        <input type="checkbox" value="finance" class="persona-checkbox" checked>
+                        <div class="persona-content">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Frugal CFO</span>
+                        </div>
+                    </label>
+                    <label class="persona-card">
+                        <input type="checkbox" value="marketing" class="persona-checkbox" checked>
+                        <div class="persona-content">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <span>Creative CMO</span>
+                        </div>
+                    </label>
+                    <label class="persona-card">
+                        <input type="checkbox" value="engineering" class="persona-checkbox">
+                        <div class="persona-content">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Pragmatic CTO</span>
+                        </div>
+                    </label>
+                    <label class="persona-card">
+                        <input type="checkbox" value="hr" class="persona-checkbox">
+                        <div class="persona-content">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <span>Empathetic CHRO</span>
+                        </div>
+                    </label>
+                    <label class="persona-card">
+                        <input type="checkbox" value="security" class="persona-checkbox">
+                        <div class="persona-content">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Paranoid CISO</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="panel-section flex-grow">
+                <h3>2. Paste Document</h3>
+                <textarea id="document-input" placeholder="Paste your proposal, strategy, or contract here..."></textarea>
+            </div>
+
+            <div class="panel-section">
+                <button id="run-board-btn" class="btn btn-primary btn-block">
+                    <i class="fa-solid fa-play"></i> Initialize Review Board
+                </button>
+            </div>
+        </aside>
+
+        <!-- Right Panel: Dashboard Output -->
+        <main class="dashboard-panel">
+
+            <!-- Idle State -->
+            <div id="dashboard-idle" class="dashboard-state">
+                <i class="fa-solid fa-clipboard-list fa-4x text-muted"></i>
+                <h2>Awaiting Document</h2>
+                <p>Select your personas and paste a document to begin the multi-agent review process.</p>
+            </div>
+
+            <!-- Processing State -->
+            <div id="dashboard-processing" class="dashboard-state hidden">
+                <div class="loader-ring"></div>
+                <h2>Review Board in Session</h2>
+                <p>Agents are reading the document concurrently...</p>
+                <div id="agent-status-list" class="status-list">
+                    <!-- Status rows injected here -->
+                </div>
+            </div>
+
+            <!-- Results State -->
+            <div id="dashboard-results" class="dashboard-results hidden">
+                <div class="results-header">
+                    <h2><i class="fa-solid fa-crown text-primary"></i> Master Synthesis Report</h2>
+                    <button id="copy-report-btn" class="btn btn-outline btn-sm"><i class="fa-regular fa-copy"></i> Copy</button>
+                </div>
+
+                <div class="synthesis-content markdown-body" id="synthesis-output">
+                    <!-- Master agent output here -->
+                </div>
+
+                <div class="individual-critiques">
+                    <h3><i class="fa-solid fa-comments"></i> Individual Agent Critiques</h3>
+                    <div class="critique-accordion" id="critique-container">
+                        <!-- Individual outputs injected here -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Include Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
