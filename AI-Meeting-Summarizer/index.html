@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Summarizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar / Settings Panel -->
+        <aside class="settings-panel">
+            <h2><i class="fa-solid fa-users-viewfinder"></i> Summarizer Config</h2>
+
+            <div class="form-group">
+                <label for="llm-provider">LLM Engine</label>
+                <select id="llm-provider">
+                    <option value="anthropic">Anthropic (Best for long transcripts)</option>
+                    <option value="openai">OpenAI (Fast & Reliable)</option>
+                    <option value="ollama">Ollama (100% Private & Local)</option>
+                </select>
+            </div>
+
+            <div id="api-key-container" class="form-group">
+                <label for="api-key">API Key</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div id="model-container" class="form-group">
+                <label for="model-name">Model Version</label>
+                <input type="text" id="model-name" value="claude-3-haiku-20240307">
+            </div>
+
+            <div id="ollama-url-container" class="form-group hidden">
+                <label for="ollama-url">Ollama Host URL</label>
+                <input type="text" id="ollama-url" value="http://localhost:11434">
+            </div>
+
+            <div class="form-group toggle-group">
+                <label class="switch">
+                  <input type="checkbox" id="extract-actions" checked>
+                  <span class="slider round"></span>
+                </label>
+                <span>Extract Action Items</span>
+            </div>
+
+            <div class="settings-footer">
+                <p><i class="fa-solid fa-lock"></i> Client-side processing only</p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="workspace">
+            <header>
+                <h1>Meeting Intelligence</h1>
+                <p>Paste your raw transcript below to generate a structured summary.</p>
+            </header>
+
+            <div class="split-view">
+                <!-- Input Panel -->
+                <div class="panel input-panel">
+                    <div class="panel-header">
+                        <h3>Raw Transcript</h3>
+                        <button class="btn btn-secondary btn-sm" id="clear-btn"><i class="fa-solid fa-eraser"></i> Clear</button>
+                    </div>
+                    <textarea id="transcript-input" placeholder="Paste your Zoom, Teams, or Google Meet transcript here...
+e.g.
+Alice: So we need to push the deployment to Thursday.
+Bob: Agreed. I will handle the database migration.
+Charlie: What about the frontend updates?
+Alice: Let's hold off on frontend until next week."></textarea>
+                    <div class="action-bar">
+                        <button class="btn btn-primary btn-large" id="summarize-btn">
+                            <i class="fa-solid fa-bolt"></i> Generate Summary
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Output Panel -->
+                <div class="panel output-panel">
+                    <div class="panel-header">
+                        <h3>Structured Output</h3>
+                        <button class="btn btn-success btn-sm" id="copy-btn"><i class="fa-regular fa-copy"></i> Copy Output</button>
+                    </div>
+                    <div class="output-container">
+                        <div id="loading-overlay" class="hidden">
+                            <div class="spinner"></div>
+                            <p>Analyzing transcript...</p>
+                        </div>
+                        <div id="output-content" class="markdown-body">
+                            <div class="empty-state">
+                                <i class="fa-regular fa-file-lines fa-3x"></i>
+                                <p>Your generated summary, decisions, and action items will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Include Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
