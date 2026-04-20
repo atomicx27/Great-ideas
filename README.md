@@ -20,3 +20,6 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 6. **AI-Meeting-Summarizer**
    A smart utility designed to process raw, messy meeting transcripts (from Teams, Zoom, or Google Meet) and automatically distill them into concise, actionable formats. It extracts key decisions, generates bulleted summaries, and automatically formats action items with assigned owners. Like the email copilot, it features flexible LLM integration allowing users to connect to OpenAI, Anthropic, or securely to a local Ollama instance to protect sensitive internal discussions.
+
+7. **Agentic-Research-Assistant**
+   A step beyond simple chatbots, this tool implements true "Agentic AI" workflows. Instead of just returning a pre-trained answer, this assistant acts autonomously: it breaks down your prompt into a research plan, uses live external tools (like Wikipedia's API) to gather real-time factual information, synthesizes the findings, and presents a comprehensive report. It makes the research workflow effortless while showing its entire "thought process" transparently. Like previous tools, it supports BYOK for OpenAI, Anthropic, and local Ollama integrations.
