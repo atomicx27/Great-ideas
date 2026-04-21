@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telecom Plan Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Telecom Plan Optimizer</h1>
+            <p>Find the most cost-effective mobile plan based on your actual usage.</p>
+        </header>
+
+        <main class="content">
+            <section class="input-section">
+                <h2>Your Monthly Usage</h2>
+                <form id="usage-form">
+                    <div class="form-group">
+                        <label for="data-usage">Data Usage (GB)</label>
+                        <input type="number" id="data-usage" min="0" step="0.5" placeholder="e.g. 12.5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="call-minutes">Voice Calls (Minutes)</label>
+                        <input type="number" id="call-minutes" min="0" placeholder="e.g. 300" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="intl-calling">Do you make international calls regularly?</label>
+                        <select id="intl-calling">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn primary">Optimize My Plan</button>
+                </form>
+            </section>
+
+            <section id="results-section" class="results-section hidden">
+                <h2>Recommended Plan</h2>
+                <div id="best-plan-card" class="plan-card best">
+                    <!-- JS Fills -->
+                </div>
+
+                <h3>Other Options</h3>
+                <div id="other-plans-list" class="other-plans">
+                    <!-- JS Fills -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
