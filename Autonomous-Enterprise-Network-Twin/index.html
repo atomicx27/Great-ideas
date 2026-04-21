@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Enterprise Network Twin (AENT)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Autonomous Enterprise Network Twin (AENT)</h1>
+            <p>Live Digital Clone | Predictive Simulation | Autonomous Execution</p>
+        </div>
+        <div class="header-actions">
+            <button id="scenario-congestion" class="btn warning">Simulate Congestion</button>
+            <button id="scenario-attack" class="btn danger">Simulate Cyber Attack</button>
+            <button id="scenario-reset" class="btn secondary">Reset State</button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+
+        <!-- Column 1: Live State Ingestion -->
+        <section class="panel ingestion-panel">
+            <h2>📡 Live State Ingestion</h2>
+
+            <div class="metrics-card">
+                <h3>Telecom Data</h3>
+                <div class="metric"><span>Traffic Vol:</span> <span id="metric-traffic" class="val ok">Normal</span></div>
+                <div class="metric"><span>Latency:</span> <span id="metric-latency" class="val ok">15ms</span></div>
+            </div>
+
+            <div class="metrics-card">
+                <h3>Cloud Infra</h3>
+                <div class="metric"><span>CPU Load:</span> <span id="metric-cpu" class="val ok">32%</span></div>
+                <div class="metric"><span>Active Nodes:</span> <span id="metric-nodes" class="val">8</span></div>
+            </div>
+
+            <div class="metrics-card">
+                <h3>Cybersecurity</h3>
+                <div class="metric"><span>Anomalies:</span> <span id="metric-anomalies" class="val ok">None</span></div>
+                <div class="metric"><span>Auth Fails:</span> <span id="metric-auth" class="val ok">Low</span></div>
+            </div>
+        </section>
+
+        <!-- Column 2: Digital Twin Visualization -->
+        <section class="panel twin-panel">
+            <h2>☁️ Digital Twin Engine (Live Replica)</h2>
+            <div class="network-map" id="network-map">
+                <!-- Nodes injected by JS -->
+                <div class="hub-node">Core Router</div>
+                <div class="path path-1"></div>
+                <div class="path path-2"></div>
+                <div class="path path-3"></div>
+                <div class="app-node node-1">App Cluster Alpha</div>
+                <div class="app-node node-2">DB Cluster Beta</div>
+                <div class="app-node node-3">Edge Gateway</div>
+            </div>
+
+            <div class="simulation-sandbox hidden" id="sandbox-overlay">
+                <h3>🧪 Running Sandbox Simulations...</h3>
+                <div class="sim-option" id="sim-opt-1">Scenario A: Reroute Traffic -> Impact: Medium</div>
+                <div class="sim-option" id="sim-opt-2">Scenario B: Scale Infra -> Impact: Low Cost</div>
+                <div class="sim-option" id="sim-opt-3">Scenario C: Block IPs -> Impact: High Sec</div>
+            </div>
+        </section>
+
+        <!-- Column 3: AGI Brain & Execution -->
+        <section class="panel agi-panel">
+            <h2>🧠 AGI Decision Layer</h2>
+            <div class="brain-status">
+                <span id="brain-state" class="state-idle">STATUS: OBSERVING</span>
+            </div>
+
+            <div class="execution-log" id="execution-log">
+                <div class="log-entry system">System Online. AENT unified model synchronized.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
