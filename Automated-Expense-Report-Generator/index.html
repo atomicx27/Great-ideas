@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Expense Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <i class="fa-solid fa-receipt"></i>
+            <h1>Expense Generator <span class="badge">Automation</span></h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="upload-section">
+            <h2>Upload Receipts</h2>
+            <div class="drop-zone" id="drop-zone">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <p>Drag & drop receipt images or click to upload</p>
+                <input type="file" id="file-input" multiple hidden>
+                <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">Browse Files</button>
+            </div>
+            <button id="process-btn" class="btn btn-success hidden">Process Receipts</button>
+        </section>
+
+        <section class="results-section hidden" id="results-section">
+            <h2>Generated Expense Report</h2>
+            <div class="summary-cards">
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p class="amount" id="total-amount">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Items Processed</h3>
+                    <p class="count" id="total-items">0</p>
+                </div>
+            </div>
+
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Vendor</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list">
+                    <!-- Dynamic rows go here -->
+                </tbody>
+            </table>
+            <button id="export-btn" class="btn btn-primary mt-4">Export to CSV</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

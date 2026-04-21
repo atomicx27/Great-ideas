@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Product Swarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <i class="fa-solid fa-network-wired"></i>
+            <h1>Product Swarm <span class="badge">AGI</span></h1>
+        </div>
+        <button id="settings-btn" class="btn btn-outline"><i class="fa-solid fa-gear"></i> AGI Engine Config</button>
+    </header>
+
+    <div id="settings-panel" class="settings-panel hidden">
+        <div class="panel-header">
+            <h2>AGI Configuration (BYOK)</h2>
+            <button id="close-settings" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="form-group">
+            <label>Master Orchestrator Engine</label>
+            <select id="llm-provider">
+                <option value="openai">OpenAI (GPT-4o)</option>
+                <option value="anthropic">Anthropic (Claude 3 Opus)</option>
+                <option value="ollama">Ollama (Llama 3)</option>
+            </select>
+        </div>
+        <div id="api-key-container" class="form-group">
+            <label>API Key</label>
+            <input type="password" id="api-key" placeholder="sk-...">
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="goal-input-section">
+            <h2>Enter High-Level Goal</h2>
+            <div class="input-group">
+                <input type="text" id="goal-input" placeholder="e.g., Build a complete habit-tracking web app">
+                <button id="launch-btn" class="btn btn-primary">Initialize Swarm</button>
+            </div>
+        </section>
+
+        <div id="swarm-dashboard" class="swarm-dashboard hidden">
+            <div class="orchestrator-status">
+                <h3><i class="fa-solid fa-chess-king"></i> Master Orchestrator</h3>
+                <p id="orchestrator-text">Awaiting orders...</p>
+            </div>
+
+            <div class="agents-grid">
+                <!-- Research Agent -->
+                <div class="agent-card" id="agent-research">
+                    <div class="agent-header">
+                        <h4><i class="fa-solid fa-magnifying-glass"></i> Researcher</h4>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="agent-log" id="log-research">Idle.</div>
+                </div>
+
+                <!-- Design Agent -->
+                <div class="agent-card" id="agent-design">
+                    <div class="agent-header">
+                        <h4><i class="fa-solid fa-palette"></i> UX Designer</h4>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="agent-log" id="log-design">Idle.</div>
+                </div>
+
+                <!-- Engineering Agent -->
+                <div class="agent-card" id="agent-engineering">
+                    <div class="agent-header">
+                        <h4><i class="fa-solid fa-code"></i> Engineer</h4>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="agent-log" id="log-engineering">Idle.</div>
+                </div>
+            </div>
+
+            <div class="final-output-section hidden" id="final-output-section">
+                <h3><i class="fa-solid fa-box-open"></i> Synthesized Output</h3>
+                <div class="output-box" id="final-output"></div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

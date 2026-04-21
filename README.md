@@ -29,3 +29,12 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 9. **AGI-Virtual-Review-Board**
    An advanced AGI application designed to simulate a multi-departmental executive review of any document, proposal, or code architecture. Office workers often need feedback from different perspectives (Legal, Finance, Marketing, Engineering) but scheduling those meetings takes weeks. This tool allows a user to paste a document, select virtual "Expert Personas," and hit run. A swarm of specialized AI agents reads the document simultaneously from their unique perspectives, providing targeted critiques. A "Master Agent" then synthesizes their feedback into a cohesive Executive Summary, highlighting conflicting opinions and key risks. Supports BYOK for OpenAI, Anthropic, and local Ollama.
+
+10. **Automated-Expense-Report-Generator**
+    A classic **Automation** tool designed to take the manual data entry out of processing receipts and creating expense reports. It does not use AI or LLMs; instead, it relies on deterministic rules, Optical Character Recognition (OCR) integration, and predefined categorization logic. This saves time, reduces human error, and streamlines the approval process.
+
+11. **Agentic-Customer-Support-Specialist**
+    A step up into **Agentic AI**. Unlike traditional chatbots that just read a script, this agent has a goal and access to "tools" (simulated APIs like `checkOrderStatus`, `issueRefund`). The agent autonomously decides which tools to call, inspects the results, and communicates back to the user until the issue is resolved. Features the BYOK architecture for major cloud providers or local execution via Ollama.
+
+12. **AGI-Product-Development-Swarm**
+    A hypothetical leap into **Artificial General Intelligence (AGI)** via multi-agent orchestration. Instead of a single task, the AGI is given an ambiguous, high-level business goal. A Master Orchestrator breaks the goal down into distinct phases (Market Research, UX Design, Code Generation) and spawns specialized sub-agents to handle them in parallel. Features the BYOK architecture.
