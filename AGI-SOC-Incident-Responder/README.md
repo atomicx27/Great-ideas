@@ -1,0 +1,3 @@
+# AGI SOC Incident Responder
+
+An advanced, production-ready cyber security and telecom operations tool leveraging Artificial General Intelligence (AGI) concepts. When a complex alert is generated (e.g., a multi-vector attack on cloud infrastructure), investigating it manually takes hours. This tool introduces a Master Orchestrator that breaks the incident down and spawns parallel specialized AI sub-agents (Threat Intel, Forensics, Containment). They analyze logs simultaneously and synthesize a cohesive, actionable Executive Report and playbook. It supports "Bring Your Own Key" (BYOK) for OpenAI, Anthropic, or private local LLMs via Ollama to ensure sensitive security data never leaves the network.
