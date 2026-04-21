@@ -6,9 +6,7 @@ const metricNodes = document.getElementById('metric-nodes');
 const metricAnomalies = document.getElementById('metric-anomalies');
 const metricAuth = document.getElementById('metric-auth');
 
-const hubNode = document.querySelector('.hub-node');
-const paths = document.querySelectorAll('.path');
-const node1 = document.querySelector('.node-1');
+const dynamicNodesContainer = document.getElementById('dynamic-nodes-container');
 
 const sandboxOverlay = document.getElementById('sandbox-overlay');
 const simOpt1 = document.getElementById('sim-opt-1');
@@ -18,17 +16,41 @@ const simOpt3 = document.getElementById('sim-opt-3');
 const brainState = document.getElementById('brain-state');
 const executionLog = document.getElementById('execution-log');
 
+const byodModal = document.getElementById('byod-modal');
+const jsonInput = document.getElementById('json-input');
+const jsonError = document.getElementById('json-error');
+
 // --- State ---
 let isSimulating = false;
+let currentState = null;
 
-// --- Init & Base Loop ---
+// Default initial state
+const defaultState = {
+    telecom: { traffic: "Normal", latency: "15ms" },
+    cloud: { cpu: "32%", nodes: 8 },
+    cyber: { anomalies: "None", authFails: "Low" },
+    nodes: [
+        { id: "core", name: "Core Router", status: "ok" },
+        { id: "app1", name: "App Cluster Alpha", status: "ok" },
+        { id: "db1", name: "DB Cluster Beta", status: "ok" },
+        { id: "edge", name: "Edge Gateway", status: "ok" }
+    ],
+    anomalyDetected: false
+};
+
+// --- Init ---
 function init() {
+    document.getElementById('btn-custom-data').addEventListener('click', () => { byodModal.classList.remove('hidden'); jsonError.classList.add('hidden'); });
+    document.querySelector('.close-btn').addEventListener('click', () => byodModal.classList.add('hidden'));
+
+    document.getElementById('btn-load-json').addEventListener('click', handleCustomData);
+
     document.getElementById('scenario-congestion').addEventListener('click', () => triggerScenario('congestion'));
     document.getElementById('scenario-attack').addEventListener('click', () => triggerScenario('attack'));
     document.getElementById('scenario-reset').addEventListener('click', resetState);
 
-    // Normal pulse
-    paths.forEach(p => p.classList.add('traffic'));
+    // Initial render
+    applyState(defaultState);
 }
 
 function logMsg(msg, type) {
@@ -44,127 +66,183 @@ function setBrainState(stateStr, className) {
     brainState.className = className;
 }
 
-// --- Scenarios ---
-async function triggerScenario(type) {
-    if (isSimulating) return;
-    isSimulating = true;
+// --- Dynamic Rendering ---
+function applyState(state) {
+    currentState = JSON.parse(JSON.stringify(state)); // deep copy
 
-    if (type === 'congestion') {
-        // 1. Ingestion detects issue
-        metricTraffic.innerText = 'High (Spike)'; metricTraffic.className = 'val warn';
-        metricLatency.innerText = '85ms'; metricLatency.className = 'val warn';
-        metricCpu.innerText = '92%'; metricCpu.className = 'val danger';
+    // Update Metrics
+    metricTraffic.innerText = state.telecom.traffic;
+    metricTraffic.className = `val ${getValClass(state.telecom.traffic)}`;
 
-        hubNode.classList.add('stressed');
-        paths[0].classList.replace('traffic', 'traffic-heavy');
+    metricLatency.innerText = state.telecom.latency;
+    metricLatency.className = `val ${getValClass(state.telecom.latency)}`;
 
-        logMsg("INGESTION: Detected massive telecom traffic spike to App Cluster Alpha. CPU reaching critical.", "detect");
+    metricCpu.innerText = state.cloud.cpu;
+    metricCpu.className = `val ${getValClass(state.cloud.cpu)}`;
 
-        // 2. AGI Thinks & Simulates
-        await runSimulationSequence([
-            { el: simOpt1, text: "Scenario A: Throttle Traffic -> Impact: High user friction.", ok: false },
-            { el: simOpt2, text: "Scenario B: Auto-Scale App Node -> Impact: Low Cost, fixes CPU.", ok: true },
-            { el: simOpt3, text: "Scenario C: Reroute via Edge -> Impact: Moderate latency.", ok: false }
-        ], 1); // Selects index 1 (Opt 2)
+    metricNodes.innerText = state.cloud.nodes;
 
-        // 3. Execute
-        setBrainState("STATUS: EXECUTING", "state-executing");
-        logMsg("EXECUTION: Firing API to orchestrator to provision 4 new containers for App Cluster Alpha.", "exec");
+    metricAnomalies.innerText = state.cyber.anomalies;
+    metricAnomalies.className = `val ${getValClass(state.cyber.anomalies)}`;
 
-        node1.classList.add('active-scale');
-        metricNodes.innerText = '12';
+    metricAuth.innerText = state.cyber.authFails;
+    metricAuth.className = `val ${getValClass(state.cyber.authFails)}`;
 
-        await wait(1500);
+    // Render Nodes
+    dynamicNodesContainer.innerHTML = '';
+    state.nodes.forEach(node => {
+        const div = document.createElement('div');
+        div.className = `dyn-node status-${node.status}`;
+        div.id = `node-${node.id}`;
+        const spanId = document.createElement("span"); spanId.className="dyn-node-id"; spanId.textContent = node.id.toUpperCase(); const spanName = document.createElement("span"); spanName.textContent = node.name; div.appendChild(spanId); div.appendChild(spanName);
+        dynamicNodesContainer.appendChild(div);
+    });
 
-        // 4. Learn & Resolve
-        metricCpu.innerText = '45%'; metricCpu.className = 'val ok';
-        metricLatency.innerText = '20ms'; metricLatency.className = 'val ok';
-        paths[0].classList.replace('traffic-heavy', 'traffic');
-        hubNode.classList.remove('stressed');
-
-        logMsg("LEARNING: Simulation prediction matched reality. CPU stabilized at 45%. Model weights updated.", "learn");
-        setBrainState("STATUS: OBSERVING", "state-idle");
-        isSimulating = false;
-
-    } else if (type === 'attack') {
-        // 1. Ingestion
-        metricAnomalies.innerText = 'DDoS Sig Match'; metricAnomalies.className = 'val danger';
-        metricTraffic.innerText = 'CRITICAL VOL'; metricTraffic.className = 'val danger';
-        metricAuth.innerText = 'Spike'; metricAuth.className = 'val warn';
-
-        hubNode.classList.add('attacked');
-        paths.forEach(p => p.classList.replace('traffic', 'traffic-heavy'));
-
-        logMsg("INGESTION: Cybersecurity layer flagged volumetric anomaly matching DDoS signature targeting Core Router.", "detect");
-
-        // 2. Sim
-        await runSimulationSequence([
-            { el: simOpt1, text: "Scenario A: Scale Infra -> Impact: Cost explosion, attack persists.", ok: false },
-            { el: simOpt2, text: "Scenario B: Isolate Cluster Beta -> Impact: Breaks lateral movement, drops benign DB traffic.", ok: false },
-            { el: simOpt3, text: "Scenario C: Inject BGP Null-Route & Shift to Edge WAF -> Impact: Attack neutralized, minimal latency.", ok: true }
-        ], 2);
-
-        // 3. Execute
-        setBrainState("STATUS: EXECUTING", "state-executing");
-        logMsg("EXECUTION: Updating SDN controller to inject BGP null-routes for attacker ASNs. Rerouting clean traffic through Edge Gateway.", "exec");
-
-        paths[0].classList.replace('traffic-heavy', 'traffic-blocked');
-        paths[1].classList.replace('traffic-heavy', 'traffic-blocked');
-
-        await wait(1500);
-
-        // 4. Learn
-        metricAnomalies.innerText = 'None'; metricAnomalies.className = 'val ok';
-        metricTraffic.innerText = 'Normal (Filtered)'; metricTraffic.className = 'val ok';
-        hubNode.classList.remove('attacked');
-        paths.forEach(p => p.className = 'path traffic');
-
-        logMsg("LEARNING: Attack isolated at edge. Zero internal downtime. AENT threat model updated with new IP signatures.", "learn");
-        setBrainState("STATUS: OBSERVING", "state-idle");
-        isSimulating = false;
+    if (state.anomalyDetected && !isSimulating) {
+        processAnomaly(state);
     }
 }
 
-async function runSimulationSequence(opts, winnerIndex) {
-    setBrainState("STATUS: SIMULATING", "state-thinking");
-    sandboxOverlay.classList.remove('hidden');
+function getValClass(val) {
+    val = String(val).toLowerCase();
+    if (val.includes('high') || val.includes('spike') || val.includes('critical') || val.includes('ddos') || (parseInt(val) > 80)) return 'danger';
+    if (val.includes('warn') || (parseInt(val) > 60)) return 'warn';
+    return 'ok';
+}
 
-    // Reset options
-    opts.forEach(o => { o.el.innerText = o.text; o.el.className = 'sim-option'; });
+// --- Custom Data Handling ---
+function handleCustomData() {
+    try {
+        const raw = jsonInput.value;
+        const parsed = JSON.parse(raw);
 
-    logMsg("DIGITAL TWIN: Cloning current state... spawning sandbox environments.", "sim");
-    await wait(1000);
+        // Basic validation
+        if(!parsed.telecom || !parsed.cloud || !parsed.cyber || !parsed.nodes) {
+            throw new Error("Missing required fields");
+        }
 
-    // Evaluate
-    for(let i=0; i<opts.length; i++) {
-        opts[i].el.classList.add('evaluating');
-        await wait(800);
-        opts[i].el.classList.remove('evaluating');
+        byodModal.classList.add('hidden');
+        jsonError.classList.add('hidden');
+
+        logMsg("INGESTION: Custom BYOD JSON payload received and validated.", "detect");
+        applyState(parsed);
+
+    } catch(e) {
+        jsonError.classList.remove('hidden');
+        jsonError.innerText = "Invalid JSON structure. Ensure all keys exist.";
+    }
+}
+
+// --- AGI Loop ---
+async function processAnomaly(state) {
+    isSimulating = true;
+    logMsg(`AGI TRIGGER: Anomaly flagged by ingestion layer. Msg: "${state.anomalyMessage || 'Unknown'}"`, "detect");
+
+    let opts = [];
+    let winnerIndex = 0;
+
+    if(state.cyber.anomalies.toLowerCase().includes('ddos') || state.cyber.anomalies.toLowerCase() !== 'none') {
+        opts = [
+            { text: "Scenario A: Scale Infra -> Impact: High Cost, Attack continues.", ok: false },
+            { text: "Scenario B: Null-Route at Edge -> Impact: Blocks attack, secures core.", ok: true },
+            { text: "Scenario C: Reboot Nodes -> Impact: Downtime, ineffective.", ok: false }
+        ];
+        winnerIndex = 1;
+    } else {
+        // Assume congestion/scaling issue
+        opts = [
+            { text: "Scenario A: Throttle Users -> Impact: High friction.", ok: false },
+            { text: "Scenario B: Auto-Scale App Nodes -> Impact: Solves load.", ok: true },
+            { text: "Scenario C: Reroute Traffic -> Impact: Shifts bottleneck.", ok: false }
+        ];
+        winnerIndex = 1;
     }
 
-    // Select
-    opts[winnerIndex].el.classList.add('selected');
-    logMsg(`AGI BRAIN: Optimal path found. Selecting: ${opts[winnerIndex].text.split('->')[0].trim()}`, "sim");
+    await runSimulationSequence(opts, winnerIndex);
+
+    setBrainState("STATUS: EXECUTING", "state-executing");
+
+    // Execute remediation based on scenario
+    if(winnerIndex === 1 && opts[1].text.includes('Null-Route')) {
+        logMsg("EXECUTION: Injecting BGP null-route rules at edge gateway.", "exec");
+        state.cyber.anomalies = "None";
+        state.telecom.traffic = "Normal";
+        state.nodes.forEach(n => { if(n.status === 'attacked') n.status = 'isolated'; });
+    } else {
+        logMsg("EXECUTION: Provisioning additional container nodes.", "exec");
+        state.cloud.cpu = "45%";
+        state.telecom.latency = "20ms";
+        state.cloud.nodes += 4;
+        state.nodes.forEach(n => { if(n.status === 'stressed') n.status = 'scaled'; });
+    }
+
     await wait(1500);
 
-    sandboxOverlay.classList.add('hidden');
+    state.anomalyDetected = false;
+    applyState(state);
+
+    logMsg("LEARNING: Execution successful. Infrastructure stabilized. Neural weights updated.", "learn");
+    setBrainState("STATUS: OBSERVING", "state-idle");
+    isSimulating = false;
+}
+
+// --- Demo Scenarios ---
+async function triggerScenario(type) {
+    if (isSimulating) return;
+
+    let newState = JSON.parse(JSON.stringify(defaultState));
+    newState.anomalyDetected = true;
+
+    if (type === 'congestion') {
+        newState.telecom.traffic = "High (Spike)";
+        newState.telecom.latency = "85ms";
+        newState.cloud.cpu = "92%";
+        newState.nodes[1].status = "stressed"; // app1
+        newState.anomalyMessage = "Volumetric spike degrading App Cluster Alpha CPU.";
+    } else if (type === 'attack') {
+        newState.cyber.anomalies = "DDoS Signature";
+        newState.telecom.traffic = "CRITICAL";
+        newState.cyber.authFails = "Spike";
+        newState.nodes[0].status = "attacked"; // core router
+        newState.anomalyMessage = "DDoS signature matched targeting Core Router.";
+    }
+
+    applyState(newState);
 }
 
 function resetState() {
     if(isSimulating) return;
-
-    metricTraffic.innerText = 'Normal'; metricTraffic.className = 'val ok';
-    metricLatency.innerText = '15ms'; metricLatency.className = 'val ok';
-    metricCpu.innerText = '32%'; metricCpu.className = 'val ok';
-    metricNodes.innerText = '8';
-    metricAnomalies.innerText = 'None'; metricAnomalies.className = 'val ok';
-    metricAuth.innerText = 'Low'; metricAuth.className = 'val ok';
-
-    hubNode.className = 'hub-node';
-    node1.classList.remove('active-scale');
-    paths.forEach(p => p.className = 'path traffic');
-
     executionLog.innerHTML = '<div class="log-entry system">System Online. AENT unified model synchronized.</div>';
+    applyState(defaultState);
+}
+
+// --- Sim Helper ---
+async function runSimulationSequence(opts, winnerIndex) {
+    setBrainState("STATUS: SIMULATING", "state-thinking");
+    sandboxOverlay.classList.remove('hidden');
+
+    for(let i=0; i<3; i++) {
+        const el = document.getElementById(`sim-opt-${i+1}`);
+        el.innerText = opts[i] ? opts[i].text : "";
+        el.className = 'sim-option';
+    }
+
+    logMsg("DIGITAL TWIN: Cloning current state... spawning sandbox environments.", "sim");
+    await wait(1000);
+
+    for(let i=0; i<opts.length; i++) {
+        const el = document.getElementById(`sim-opt-${i+1}`);
+        el.classList.add('evaluating');
+        await wait(800);
+        el.classList.remove('evaluating');
+    }
+
+    const winnerEl = document.getElementById(`sim-opt-${winnerIndex+1}`);
+    winnerEl.classList.add('selected');
+    logMsg(`AGI BRAIN: Optimal path selected: ${opts[winnerIndex].text.split('->')[0].trim()}`, "sim");
+    await wait(1500);
+
+    sandboxOverlay.classList.add('hidden');
 }
 
 const wait = (ms) => new Promise(res => setTimeout(res, ms));

@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Enterprise Network Twin (AENT)</title>
+    <title>Autonomous Enterprise Network Twin (AENT) - Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Autonomous Enterprise Network Twin (AENT)</h1>
+            <h1>Autonomous Enterprise Network Twin (AENT) <span class="badge">PRO</span></h1>
             <p>Live Digital Clone | Predictive Simulation | Autonomous Execution</p>
         </div>
         <div class="header-actions">
-            <button id="scenario-congestion" class="btn warning">Simulate Congestion</button>
-            <button id="scenario-attack" class="btn danger">Simulate Cyber Attack</button>
+            <button id="btn-custom-data" class="btn primary">Bring Your Own Data (JSON)</button>
+            <button id="scenario-congestion" class="btn warning">Demo: Congestion</button>
+            <button id="scenario-attack" class="btn danger">Demo: Cyber Attack</button>
             <button id="scenario-reset" class="btn secondary">Reset State</button>
         </div>
     </header>
+
+    <!-- BYOD Modal -->
+    <div id="byod-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Inject Custom Telemetry (BYOD)</h2>
+            <p>Paste a JSON payload representing your network state to see how the AGI reacts. In a production environment, this would be an API webhook.</p>
+            <textarea id="json-input" rows="12" placeholder='{
+  "telecom": { "traffic": "High", "latency": "120ms" },
+  "cloud": { "cpu": "98%", "nodes": 10 },
+  "cyber": { "anomalies": "None", "authFails": "Low" },
+  "nodes": [
+    { "id": "n1", "name": "API Gateway", "status": "stressed" },
+    { "id": "n2", "name": "Auth Service", "status": "ok" }
+  ],
+  "anomalyDetected": true,
+  "anomalyMessage": "Latency spike detected on API Gateway."
+}'></textarea>
+            <div class="modal-actions">
+                <button id="btn-load-json" class="btn primary">Ingest Data</button>
+                <div id="json-error" class="error-msg hidden">Invalid JSON format</div>
+            </div>
+        </div>
+    </div>
 
     <main class="dashboard">
 
@@ -48,21 +73,15 @@
         <section class="panel twin-panel">
             <h2>☁️ Digital Twin Engine (Live Replica)</h2>
             <div class="network-map" id="network-map">
-                <!-- Nodes injected by JS -->
-                <div class="hub-node">Core Router</div>
-                <div class="path path-1"></div>
-                <div class="path path-2"></div>
-                <div class="path path-3"></div>
-                <div class="app-node node-1">App Cluster Alpha</div>
-                <div class="app-node node-2">DB Cluster Beta</div>
-                <div class="app-node node-3">Edge Gateway</div>
+                <!-- Dynamically generated nodes will go here -->
+                <div id="dynamic-nodes-container" class="dynamic-nodes"></div>
             </div>
 
             <div class="simulation-sandbox hidden" id="sandbox-overlay">
                 <h3>🧪 Running Sandbox Simulations...</h3>
-                <div class="sim-option" id="sim-opt-1">Scenario A: Reroute Traffic -> Impact: Medium</div>
-                <div class="sim-option" id="sim-opt-2">Scenario B: Scale Infra -> Impact: Low Cost</div>
-                <div class="sim-option" id="sim-opt-3">Scenario C: Block IPs -> Impact: High Sec</div>
+                <div class="sim-option" id="sim-opt-1">Scenario A: Evaluating...</div>
+                <div class="sim-option" id="sim-opt-2">Scenario B: Evaluating...</div>
+                <div class="sim-option" id="sim-opt-3">Scenario C: Evaluating...</div>
             </div>
         </section>
 
@@ -74,7 +93,7 @@
             </div>
 
             <div class="execution-log" id="execution-log">
-                <div class="log-entry system">System Online. AENT unified model synchronized.</div>
+                <div class="log-entry system">System Online. AENT unified model synchronized. Ready for data ingestion.</div>
             </div>
         </section>
 
