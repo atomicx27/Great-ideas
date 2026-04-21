@@ -1,0 +1,58 @@
+:root {
+    --primary: #ef4444; /* Red to differentiate from Agentic AI */
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --status-idle: #64748b;
+    --status-working: #eab308;
+    --status-done: #22c55e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+.app-header { background-color: var(--bg-card); padding: 1rem 2rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+
+.logo { display: flex; align-items: center; gap: 1rem; font-size: 1.2rem; }
+.logo i { color: var(--primary); font-size: 1.5rem; }
+.badge { background-color: var(--primary); color: white; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; vertical-align: middle; margin-left: 0.5rem; }
+
+.btn { padding: 0.6rem 1.2rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
+.btn-primary { background-color: var(--primary); color: white; }
+
+.hidden { display: none !important; }
+
+/* Settings */
+.settings-panel { position: fixed; top: 0; right: 0; width: 350px; height: 100vh; background-color: var(--bg-card); border-left: 1px solid var(--border); padding: 2rem; z-index: 100; box-shadow: -5px 0 15px rgba(0,0,0,0.5); }
+.panel-header { display: flex; justify-content: space-between; margin-bottom: 2rem; }
+.icon-btn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.2rem; }
+.form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group input, .form-group select { padding: 0.8rem; background-color: var(--bg-dark); border: 1px solid var(--border); color: white; border-radius: 4px; }
+
+/* Main Layout */
+.container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+
+.goal-input-section { background-color: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 2rem; }
+.input-group { display: flex; gap: 1rem; margin-top: 1rem; }
+.input-group input { flex: 1; padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: var(--bg-dark); color: white; }
+
+/* Swarm Dashboard */
+.orchestrator-status { background-color: rgba(239, 68, 68, 0.1); border: 1px solid var(--primary); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; }
+.orchestrator-status h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+.agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+
+.agent-card { background-color: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; }
+.agent-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.status-indicator { width: 12px; height: 12px; border-radius: 50%; background-color: var(--status-idle); }
+.status-indicator.working { background-color: var(--status-working); box-shadow: 0 0 8px var(--status-working); }
+.status-indicator.done { background-color: var(--status-done); }
+
+.agent-log { flex: 1; background-color: var(--bg-dark); padding: 1rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem; color: var(--text-muted); overflow-y: auto; max-height: 150px; }
+
+.final-output-section { background-color: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); }
+.output-box { margin-top: 1rem; padding: 1.5rem; background-color: var(--bg-dark); border-radius: 6px; font-family: monospace; white-space: pre-wrap; }
