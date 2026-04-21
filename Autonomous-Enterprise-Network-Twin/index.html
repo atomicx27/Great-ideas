@@ -3,29 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Enterprise Network Twin (AENT) - Pro</title>
+    <title>Autonomous Enterprise Network Twin (AENT) - Enterprise</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Autonomous Enterprise Network Twin (AENT) <span class="badge">PRO</span></h1>
-            <p>Live Digital Clone | Predictive Simulation | Autonomous Execution</p>
+            <h1>Autonomous Enterprise Network Twin (AENT) <span class="badge">ENTERPRISE</span></h1>
+            <p>Live Digital Clone | Predictive Simulation | Autonomous Execution via AGI</p>
         </div>
         <div class="header-actions">
-            <button id="btn-custom-data" class="btn primary">Bring Your Own Data (JSON)</button>
+            <button id="btn-llm-settings" class="btn secondary">AGI Settings (BYOK)</button>
+            <button id="btn-custom-data" class="btn primary">Ingest Custom Telemetry</button>
             <button id="scenario-congestion" class="btn warning">Demo: Congestion</button>
             <button id="scenario-attack" class="btn danger">Demo: Cyber Attack</button>
             <button id="scenario-reset" class="btn secondary">Reset State</button>
         </div>
     </header>
 
+    <!-- LLM Settings Modal -->
+    <div id="llm-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="close-llm-modal">&times;</span>
+            <h2>AGI Core Settings (BYOK)</h2>
+            <p>Select the LLM provider that powers the AENT Decision Layer for real-time sandbox simulations.</p>
+            <div class="form-group">
+                <label for="llm-provider">LLM Provider</label>
+                <select id="llm-provider">
+                    <option value="simulation">Simulation Mode (Mock API)</option>
+                    <option value="ollama">Ollama (Local)</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                </select>
+            </div>
+            <div id="api-key-group" class="form-group hidden">
+                <label for="api-key">API Key</label>
+                <input type="password" id="api-key" placeholder="sk-...">
+            </div>
+            <div id="ollama-url-group" class="form-group hidden">
+                <label for="ollama-url">Ollama Base URL</label>
+                <input type="text" id="ollama-url" value="http://localhost:11434">
+            </div>
+            <div class="modal-actions">
+                <button id="btn-save-llm" class="btn primary">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
     <!-- BYOD Modal -->
     <div id="byod-modal" class="modal hidden">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" id="close-byod-modal">&times;</span>
             <h2>Inject Custom Telemetry (BYOD)</h2>
-            <p>Paste a JSON payload representing your network state to see how the AGI reacts. In a production environment, this would be an API webhook.</p>
+            <p>Paste a JSON payload representing your network state to see how the AGI reacts.</p>
             <textarea id="json-input" rows="12" placeholder='{
   "telecom": { "traffic": "High", "latency": "120ms" },
   "cloud": { "cpu": "98%", "nodes": 10 },
@@ -54,12 +85,14 @@
                 <h3>Telecom Data</h3>
                 <div class="metric"><span>Traffic Vol:</span> <span id="metric-traffic" class="val ok">Normal</span></div>
                 <div class="metric"><span>Latency:</span> <span id="metric-latency" class="val ok">15ms</span></div>
+                <div class="chart-container"><canvas id="telecomChart"></canvas></div>
             </div>
 
             <div class="metrics-card">
                 <h3>Cloud Infra</h3>
                 <div class="metric"><span>CPU Load:</span> <span id="metric-cpu" class="val ok">32%</span></div>
                 <div class="metric"><span>Active Nodes:</span> <span id="metric-nodes" class="val">8</span></div>
+                <div class="chart-container"><canvas id="cloudChart"></canvas></div>
             </div>
 
             <div class="metrics-card">
@@ -73,12 +106,11 @@
         <section class="panel twin-panel">
             <h2>☁️ Digital Twin Engine (Live Replica)</h2>
             <div class="network-map" id="network-map">
-                <!-- Dynamically generated nodes will go here -->
                 <div id="dynamic-nodes-container" class="dynamic-nodes"></div>
             </div>
 
             <div class="simulation-sandbox hidden" id="sandbox-overlay">
-                <h3>🧪 Running Sandbox Simulations...</h3>
+                <h3>🧪 Running Sandbox Simulations via LLM...</h3>
                 <div class="sim-option" id="sim-opt-1">Scenario A: Evaluating...</div>
                 <div class="sim-option" id="sim-opt-2">Scenario B: Evaluating...</div>
                 <div class="sim-option" id="sim-opt-3">Scenario C: Evaluating...</div>
@@ -93,7 +125,7 @@
             </div>
 
             <div class="execution-log" id="execution-log">
-                <div class="log-entry system">System Online. AENT unified model synchronized. Ready for data ingestion.</div>
+                <div class="log-entry system">System Online. AENT unified model synchronized.</div>
             </div>
         </section>
 

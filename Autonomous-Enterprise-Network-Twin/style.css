@@ -304,3 +304,27 @@ textarea {
     75% { transform: translateX(-3px); }
     100% { transform: translateX(0); }
 }
+
+/* Enhancements for LLM Settings & Charts */
+.chart-container {
+    height: 80px;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
+.form-group input, .form-group select {
+    width: 100%; padding: 0.5rem;
+    background: var(--bg-base);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.metrics-card { padding: 0.75rem 1rem; }
+.dashboard { grid-template-columns: 280px 1fr 350px; }
+
+/* Refined typography */
+.badge { background-color: var(--accent-danger); font-weight: bold; }
