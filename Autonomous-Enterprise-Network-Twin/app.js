@@ -22,10 +22,20 @@ const ollamaUrlGroup = document.getElementById('ollama-url-group');
 const apiKeyInput = document.getElementById('api-key');
 const ollamaUrlInput = document.getElementById('ollama-url');
 
+const dvrScrubber = document.getElementById('dvr-scrubber');
+const dvrStatus = document.getElementById('dvr-status');
+const twinPanel = document.querySelector('.twin-panel');
+const strategySelector = document.getElementById('strategy-selector');
+
 // --- State & Config ---
 let isSimulating = false;
 let currentState = null;
 let telemetryInterval = null;
+
+// Time Travel DVR
+const MAX_HISTORY = 60;
+let stateHistory = [];
+let isHistoricalView = false;
 
 let llmConfig = { provider: 'simulation', key: '', url: 'http://localhost:11434' };
 
@@ -40,7 +50,8 @@ const defaultState = {
         { id: "edge", name: "Edge Gateway", status: "ok" }
     ],
     anomalyDetected: false,
-    anomalyMessage: ""
+    anomalyMessage: "",
+    timestamp: Date.now()
 };
 
 // --- Charts Setup ---
@@ -68,8 +79,8 @@ function initCharts() {
     });
 }
 
-function updateChartsTick() {
-    if(!currentState) return;
+function updateTick() {
+    if(!currentState || isHistoricalView) return; // Freeze if in historical mode
 
     // Add noise to base value
     let targetT = currentState.telecom.numericTraffic;
@@ -82,6 +93,24 @@ function updateChartsTick() {
     cData.push(Math.max(0, Math.min(100, nextC))); cData.shift();
 
     tChart.update(); cChart.update();
+
+    // Record History
+    recordStateHistory();
+}
+
+function recordStateHistory() {
+    // Deep clone current state and append timestamp
+    let snap = JSON.parse(JSON.stringify(currentState));
+    snap.timestamp = Date.now();
+
+    stateHistory.push(snap);
+    if(stateHistory.length > MAX_HISTORY) stateHistory.shift();
+
+    // Keep scrubber at max if live
+    dvrScrubber.max = stateHistory.length - 1;
+    if(!isHistoricalView) {
+        dvrScrubber.value = stateHistory.length - 1;
+    }
 }
 
 // --- Init ---
@@ -106,7 +135,7 @@ function init() {
         llmConfig.key = apiKeyInput.value;
         llmConfig.url = ollamaUrlInput.value;
         llmModal.classList.add('hidden');
-        logMsg(`SYSTEM: LLM Provider updated to ${llmConfig.provider.toUpperCase()}`, "system");
+        logMsg(`SYSTEM: AGI Provider updated to ${llmConfig.provider.toUpperCase()}`, "system");
     });
 
     // Scenarios
@@ -114,9 +143,35 @@ function init() {
     document.getElementById('scenario-attack').addEventListener('click', () => triggerScenario('attack'));
     document.getElementById('scenario-reset').addEventListener('click', resetState);
 
+    // DVR Events
+    dvrScrubber.addEventListener('input', handleDvrScrub);
+
     initCharts();
     applyState(defaultState);
-    telemetryInterval = setInterval(updateChartsTick, 1000);
+
+    // Prefill some history
+    for(let i=0; i<10; i++) recordStateHistory();
+
+    telemetryInterval = setInterval(updateTick, 1000);
+}
+
+function handleDvrScrub(e) {
+    const idx = parseInt(e.target.value);
+    const maxIdx = stateHistory.length - 1;
+
+    if(idx < maxIdx) {
+        isHistoricalView = true;
+        dvrStatus.innerText = `PAST: -${maxIdx - idx}s`;
+        dvrStatus.className = 'dvr-historical';
+        twinPanel.classList.add('historical-mode');
+        renderStateUI(stateHistory[idx]); // Render without triggering AGI
+    } else {
+        isHistoricalView = false;
+        dvrStatus.innerText = 'LIVE';
+        dvrStatus.className = 'dvr-live';
+        twinPanel.classList.remove('historical-mode');
+        renderStateUI(currentState);
+    }
 }
 
 function logMsg(msg, type) {
@@ -135,7 +190,15 @@ function setBrainState(stateStr, className) {
 // --- Rendering ---
 function applyState(state) {
     currentState = JSON.parse(JSON.stringify(state));
+    renderStateUI(currentState);
 
+    // Only process anomaly if we are LIVE
+    if (currentState.anomalyDetected && !isSimulating && !isHistoricalView) {
+        processAnomaly(currentState);
+    }
+}
+
+function renderStateUI(state) {
     metricTraffic.innerText = state.telecom.traffic;
     metricTraffic.className = `val ${getValClass(state.telecom.traffic)}`;
     metricLatency.innerText = state.telecom.latency;
@@ -165,10 +228,6 @@ function applyState(state) {
         div.appendChild(spanName);
         dynamicNodesContainer.appendChild(div);
     });
-
-    if (state.anomalyDetected && !isSimulating) {
-        processAnomaly(state);
-    }
 }
 
 function getValClass(val) {
@@ -190,6 +249,13 @@ function handleCustomData() {
         byodModal.classList.add('hidden');
         jsonError.classList.add('hidden');
         logMsg("INGESTION: Custom BYOD JSON payload received.", "detect");
+
+        // Jump to live when loading data
+        isHistoricalView = false;
+        dvrStatus.innerText = 'LIVE';
+        dvrStatus.className = 'dvr-live';
+        twinPanel.classList.remove('historical-mode');
+
         applyState(parsed);
     } catch(e) {
         jsonError.classList.remove('hidden');
@@ -199,10 +265,13 @@ function handleCustomData() {
 
 // --- LLM API Logic ---
 async function fetchLLMSimulation(state) {
+    const strategy = strategySelector.value;
     const prompt = `You are the AGI Brain of an Enterprise Network Twin.
 An anomaly was detected: ${state.anomalyMessage}
 Current State: Telecom Traffic=${state.telecom.traffic}, Cloud CPU=${state.cloud.cpu}, Cyber=${state.cyber.anomalies}.
-Provide 3 simulation scenarios (A, B, C) with brief Impact statements, and indicate which is the optimal choice.
+Optimization Priority: ${strategy.toUpperCase()} (Crucial: Select the scenario that best aligns with this priority).
+
+Provide 3 simulation scenarios (A, B, C) with brief Impact statements.
 Format EXACTLY as:
 Scenario A: [Action] -> Impact: [Result]
 Scenario B: [Action] -> Impact: [Result]
@@ -238,16 +307,33 @@ EXECUTION: [Brief instruction for remediation]`;
         return parseLLMResponse(data.response);
     }
 
-    // Fallback Mock Logic
+    // Fallback Mock Logic reflecting Strategy
     let isAttack = state.cyber.anomalies.toLowerCase().includes('ddos') || state.cyber.anomalies.toLowerCase() !== 'none';
+    let wIdx = 1;
+    let sOpts = [];
+
+    if(isAttack) {
+        sOpts = [
+            "Scenario A: Scale Infra -> Impact: Cost explosion, Attack persists",
+            "Scenario B: Block Malicious IPs -> Impact: Blocks attack cleanly",
+            "Scenario C: Disconnect all Edge nodes -> Impact: High downtime, max security"
+        ];
+        wIdx = (strategy === 'security') ? 2 : 1;
+    } else {
+        sOpts = [
+            "Scenario A: Throttle Users -> Impact: High friction, zero cost",
+            "Scenario B: Auto-Scale App Nodes -> Impact: Solves load, moderate cost",
+            "Scenario C: Migrate to Premium Tier -> Impact: Max performance, max cost"
+        ];
+        if(strategy === 'cost') wIdx = 0;
+        else if(strategy === 'balanced') wIdx = 1;
+        else wIdx = 2; // Security/Performance
+    }
+
     return {
-        scenarios: [
-            isAttack ? "Scenario A: Scale Infra -> Impact: Cost explosion, Attack persists" : "Scenario A: Throttle Users -> Impact: High friction",
-            isAttack ? "Scenario B: Null-Route at Edge -> Impact: Blocks attack, secures core" : "Scenario B: Auto-Scale App Nodes -> Impact: Solves load, low cost",
-            isAttack ? "Scenario C: Reboot Nodes -> Impact: Downtime, ineffective" : "Scenario C: Reroute Traffic -> Impact: Shifts bottleneck"
-        ],
-        winnerIndex: 1,
-        execution: isAttack ? "Injecting BGP null-route rules at edge gateway." : "Provisioning additional container nodes."
+        scenarios: sOpts,
+        winnerIndex: wIdx,
+        execution: "Injecting remediation rules via AENT orchestrator API."
     };
 }
 
@@ -269,11 +355,11 @@ function parseLLMResponse(text) {
     return { scenarios, winnerIndex, execution: execLine ? execLine.replace('EXECUTION:', '').trim() : "Executing optimal path." };
 }
 
-
 // --- AGI Loop ---
 async function processAnomaly(state) {
     isSimulating = true;
     logMsg(`AGI TRIGGER: Anomaly flagged. Msg: "${state.anomalyMessage || 'Unknown'}"`, "detect");
+    logMsg(`STRATEGY TUNING: Applying user priority [${strategySelector.value.toUpperCase()}] to simulation weighting.`, "system");
 
     setBrainState("STATUS: SIMULATING", "state-thinking");
     sandboxOverlay.classList.remove('hidden');
@@ -306,7 +392,7 @@ async function processAnomaly(state) {
 
     const winnerEl = document.getElementById(`sim-opt-${llmResult.winnerIndex+1}`);
     winnerEl.classList.add('selected');
-    logMsg(`AGI BRAIN: Optimal path selected based on LLM heuristic evaluation.`, "sim");
+    logMsg(`AGI BRAIN: Optimal path selected aligning with business strategy.`, "sim");
     await wait(2000);
 
     sandboxOverlay.classList.add('hidden');
@@ -340,7 +426,7 @@ async function processAnomaly(state) {
 
 // --- Demo Triggers ---
 function triggerScenario(type) {
-    if (isSimulating) return;
+    if (isSimulating || isHistoricalView) return;
 
     let newState = JSON.parse(JSON.stringify(defaultState));
     newState.anomalyDetected = true;
@@ -367,6 +453,11 @@ function triggerScenario(type) {
 
 function resetState() {
     if(isSimulating) return;
+    isHistoricalView = false;
+    dvrStatus.innerText = 'LIVE';
+    dvrStatus.className = 'dvr-live';
+    twinPanel.classList.remove('historical-mode');
+
     executionLog.innerHTML = '<div class="log-entry system">System Online. AENT unified model synchronized.</div>';
     tData = Array(15).fill(45);
     cData = Array(15).fill(32);

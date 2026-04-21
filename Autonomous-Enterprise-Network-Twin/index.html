@@ -109,6 +109,18 @@
                 <div id="dynamic-nodes-container" class="dynamic-nodes"></div>
             </div>
 
+            <div class="timeline-dvr">
+                <div class="dvr-header">
+                    <span>⏳ State DVR (Time Travel)</span>
+                    <span id="dvr-status" class="dvr-live">LIVE</span>
+                </div>
+                <input type="range" id="dvr-scrubber" min="0" max="60" value="60" class="scrubber">
+                <div class="dvr-labels">
+                    <span>-60s</span>
+                    <span>Live</span>
+                </div>
+            </div>
+
             <div class="simulation-sandbox hidden" id="sandbox-overlay">
                 <h3>🧪 Running Sandbox Simulations via LLM...</h3>
                 <div class="sim-option" id="sim-opt-1">Scenario A: Evaluating...</div>
@@ -122,6 +134,15 @@
             <h2>🧠 AGI Decision Layer</h2>
             <div class="brain-status">
                 <span id="brain-state" class="state-idle">STATUS: OBSERVING</span>
+            </div>
+
+            <div class="agi-strategy">
+                <label for="strategy-selector">Optimization Priority:</label>
+                <select id="strategy-selector" class="strategy-dropdown">
+                    <option value="balanced">Balanced (Cost vs Sec)</option>
+                    <option value="security">Max Security (Aggressive Isolation)</option>
+                    <option value="cost">Max Cost Efficiency (Minimal Scaling)</option>
+                </select>
             </div>
 
             <div class="execution-log" id="execution-log">
