@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Autonomous Network Defense</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for real-time visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Autonomous Smart Network Defense System</h1>
+            <p>An AGI-driven system that autonomously monitors telecom networks, scales cloud infrastructure, and neutralizes cyber threats in real time.</p>
+        </div>
+        <div class="header-actions">
+            <button id="simulate-attack-btn" class="btn danger">Simulate DDoS Attack</button>
+            <button id="reset-btn" class="btn secondary">Reset Simulation</button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <!-- 1. Telecom Layer -->
+        <section class="layer-panel" id="telecom-layer">
+            <div class="panel-header">
+                <h2>📡 Telecom Layer</h2>
+                <span class="status-indicator online" id="telecom-status">Normal Traffic</span>
+            </div>
+            <div class="panel-content">
+                <div class="chart-container">
+                    <canvas id="trafficChart"></canvas>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="label">Current Load</span>
+                        <span class="value" id="current-load-val">45 Gbps</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Latency</span>
+                        <span class="value" id="latency-val">12 ms</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Cloud Layer -->
+        <section class="layer-panel" id="cloud-layer">
+            <div class="panel-header">
+                <h2>☁️ Cloud Layer</h2>
+                <span class="status-indicator online" id="cloud-status">Optimized</span>
+            </div>
+            <div class="panel-content">
+                <div class="server-grid" id="server-grid">
+                    <!-- Servers injected by JS -->
+                </div>
+                <div class="metrics mt-2">
+                    <div class="metric">
+                        <span class="label">Active Instances</span>
+                        <span class="value" id="instance-count-val">4</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">CPU Utilization</span>
+                        <span class="value" id="cpu-val">35%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Cybersecurity Layer -->
+        <section class="layer-panel" id="cyber-layer">
+            <div class="panel-header">
+                <h2>🔐 Cybersecurity Layer</h2>
+                <span class="status-indicator online" id="cyber-status">Secure</span>
+            </div>
+            <div class="panel-content">
+                <div class="threat-log" id="threat-log">
+                    <!-- Threats injected by JS -->
+                </div>
+                <div class="metrics mt-2">
+                    <div class="metric">
+                        <span class="label">Blocked IPs</span>
+                        <span class="value" id="blocked-ips-val">0</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Threat Level</span>
+                        <span class="value" id="threat-level-val">Low</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AGI Brain Output -->
+        <section class="agi-panel">
+            <h2>🧠 AGI Reasoning Log</h2>
+            <div class="agi-log" id="agi-log">
+                <!-- AGI thought process injected here -->
+                <div class="log-entry system">[SYSTEM] AGI Initialized. Monitoring all layers.</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
