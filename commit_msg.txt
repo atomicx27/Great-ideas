@@ -1,0 +1,5 @@
+🧪 Add tests for addWorkspace in Context-Switcher-Dashboard
+
+🎯 **What:** Added tests for the addWorkspace functionality in the Context-Switcher-Dashboard using Jest and JSDOM. Set up testing environment for the project.
+📊 **Coverage:** Covered creating new workspace with a valid name, using Enter key, and edge cases for empty and whitespace-only inputs.
+✨ **Result:** Improved test coverage for core workspace creation logic.
