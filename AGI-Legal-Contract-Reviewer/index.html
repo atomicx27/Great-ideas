@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Legal Contract Reviewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-scale-balanced"></i> AGI Legal Contract Reviewer</h1>
+            <p>Orchestrated multi-agent review of complex legal documents.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Contract Input</h2>
+                <textarea id="contract-text" placeholder="Paste contract text here..." rows="8"></textarea>
+                <button id="start-review-btn">Initialize AGI Review Swarm</button>
+            </section>
+
+            <section id="swarm-dashboard" class="dashboard hidden">
+                <div class="orchestrator">
+                    <h3><i class="fa-solid fa-brain"></i> Master Orchestrator</h3>
+                    <p id="orchestrator-status">Waiting for document...</p>
+                </div>
+
+                <div class="agents-grid">
+                    <div class="agent-card" id="agent-liability">
+                        <div class="agent-header">
+                            <h4><i class="fa-solid fa-shield-halved"></i> Liability Expert</h4>
+                            <span class="status-indicator"></span>
+                        </div>
+                        <div class="agent-log" id="log-liability">Idle.</div>
+                    </div>
+
+                    <div class="agent-card" id="agent-compliance">
+                        <div class="agent-header">
+                            <h4><i class="fa-solid fa-clipboard-check"></i> Compliance Officer</h4>
+                            <span class="status-indicator"></span>
+                        </div>
+                        <div class="agent-log" id="log-compliance">Idle.</div>
+                    </div>
+
+                    <div class="agent-card" id="agent-finance">
+                        <div class="agent-header">
+                            <h4><i class="fa-solid fa-coins"></i> Financial Risk Analyst</h4>
+                            <span class="status-indicator"></span>
+                        </div>
+                        <div class="agent-log" id="log-finance">Idle.</div>
+                    </div>
+                </div>
+
+                <div id="final-report" class="final-report hidden">
+                    <h3><i class="fa-solid fa-file-contract"></i> Executive Summary Report</h3>
+                    <div id="report-content" class="report-content"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- DOMPurify for XSS prevention as instructed by memory -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.3/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
