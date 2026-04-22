@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Cybersecurity Analyst</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Cybersecurity Analyst</h1>
+            <p>Real-time autonomous threat detection, investigation, and mitigation.</p>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <div class="card network-status">
+                    <h2>Network Status</h2>
+                    <div id="status-indicator" class="status safe">Safe</div>
+                    <div class="log-stream" id="network-logs">
+                        <!-- Network logs will appear here -->
+                    </div>
+                </div>
+
+                <div class="card agent-panel">
+                    <h2>Agent Activity</h2>
+                    <div class="agent-actions" id="agent-actions">
+                        <!-- Agent actions will appear here -->
+                    </div>
+                    <button id="simulate-attack-btn">Simulate Threat</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- DOMPurify for XSS prevention as instructed by memory -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.3/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
