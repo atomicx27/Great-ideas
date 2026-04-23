@@ -82,14 +82,32 @@ document.addEventListener('DOMContentLoaded', () => {
         node.className = 'sub-agent-node processing';
         node.id = `agent-${id}`;
 
-        node.innerHTML = `
-            <div class="agent-header">
-                <i class="fa-solid fa-gear agent-icon"></i>
-                <h5 class="agent-title">${title}</h5>
-            </div>
-            <p class="agent-task">${task}</p>
-            <p class="agent-status" id="status-${id}">Executing...</p>
-        `;
+        const header = document.createElement('div');
+        header.className = 'agent-header';
+
+        const icon = document.createElement('i');
+        icon.className = 'fa-solid fa-gear agent-icon';
+
+        const h5 = document.createElement('h5');
+        h5.className = 'agent-title';
+        h5.textContent = title;
+
+        header.appendChild(icon);
+        header.appendChild(h5);
+
+        const pTask = document.createElement('p');
+        pTask.className = 'agent-task';
+        pTask.textContent = task;
+
+        const pStatus = document.createElement('p');
+        pStatus.className = 'agent-status';
+        pStatus.id = `status-${id}`;
+        pStatus.textContent = 'Executing...';
+
+        node.appendChild(header);
+        node.appendChild(pTask);
+        node.appendChild(pStatus);
+
         subAgentsContainer.appendChild(node);
         return node;
     }
@@ -206,7 +224,8 @@ ${compiledContext}`;
 
             // Render Output
             rawMarkdownOutput = finalDocument;
-            outputContent.innerHTML = marked.parse(finalDocument);
+            const dirtyHTML = marked.parse(finalDocument);
+            outputContent.innerHTML = DOMPurify.sanitize(dirtyHTML);
             finalOutputContainer.classList.remove('hidden');
 
         } catch (error) {
