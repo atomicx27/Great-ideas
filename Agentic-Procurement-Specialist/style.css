@@ -1,0 +1,132 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 1.5rem;
+}
+
+header h1 {
+    margin: 0;
+    color: #1a202c;
+    font-size: 2rem;
+}
+
+header p {
+    color: #718096;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+h2 {
+    color: #2b6cb0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3182ce;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2b6cb0;
+}
+
+/* Log Container Styles */
+.log-container {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 6px;
+    height: 300px;
+    overflow-y: auto;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+.log-container p {
+    margin: 0.5rem 0;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #2d3748;
+}
+
+.log-container p:last-child {
+    border-bottom: none;
+}
+
+.log-info { color: #a0aec0; }
+.log-action { color: #63b3ed; font-weight: bold; }
+.log-thought { color: #d6bcfa; font-style: italic; }
+.log-success { color: #68d391; }
+.log-error { color: #fc8181; }
+
+/* Hide model input initially if not Ollama */
+#model-group {
+    display: none;
+}

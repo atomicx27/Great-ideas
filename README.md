@@ -47,3 +47,12 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 15. **AGI-Legal-Contract-Reviewer**
     An Artificial General Intelligence (AGI) application designed to simulate a multi-departmental executive review of complex legal documents and contracts. In typical enterprise environments, getting a contract reviewed requires sequential approvals from Legal, Finance, and Compliance—a process that often takes weeks. This tool uses an AGI Master Orchestrator to break the contract down and spawn specialized sub-agents (Liability Expert, Compliance Officer, Financial Risk Analyst) that review the document simultaneously. It synthesizes their findings into a cohesive Executive Summary, highlighting critical risks and conflicting opinions instantly, drastically accelerating deal cycles.
+
+16. **Automated-Inventory-Tracker**
+    A classic **Automation** tool replacing manual inventory spreadsheets. It uses deterministic rules and predefined low-stock thresholds to automate the tracking process, preventing out-of-stock scenarios and streamlining replenishment without requiring complex AI.
+
+17. **Agentic-Procurement-Specialist**
+    A step up into **Agentic AI**. This autonomous AI Agent handles optimal inventory replenishment. Given a goal and access to tools (like checking inventory and supplier prices), it autonomously decides which actions to take to maintain optimal stock levels within a budget. Includes BYOK support.
+
+18. **AGI-Global-Supply-Chain-Orchestrator**
+    A hypothetical leap into **Artificial General Intelligence (AGI)**. This multi-agent swarm orchestrator tackles complex, ambiguous business problems (e.g., "Optimize supply chain for Q4 amidst port delays"). A Master Orchestrator breaks down the high-level goal and spawns parallel sub-agents (Logistics, Risk, Demand) to evaluate massive datasets simultaneously, synthesizing their findings into an executive strategy. Includes BYOK support.
