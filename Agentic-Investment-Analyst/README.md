@@ -1,0 +1,3 @@
+# Agentic-Investment-Analyst
+
+A step up into **Agentic AI**. Unlike traditional screeners that just pull static charts, this agent has a financial analysis goal and access to "tools" (simulated APIs like `get_stock_price`, `fetch_latest_news`). The agent autonomously decides which tools to call, inspects the results, synthesizes the context, and formulates a recommendation. Features the BYOK architecture for major cloud providers or local execution via Ollama. It makes the work easier by automating the research and data synthesis phase of investment analysis.

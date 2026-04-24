@@ -1,0 +1,77 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    border-top: 4px solid #17a2b8;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+h1 { color: #2c3e50; }
+h2 { color: #34495e; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 5px;}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+button:hover { background-color: #138496; }
+button:disabled { background-color: #8cd4e0; cursor: not-allowed; }
+
+.log-container {
+    background: #212529;
+    color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    height: 300px;
+    overflow-y: auto;
+    font-family: monospace;
+}
+
+.log-container p { margin: 5px 0; }
+.log-info { color: #6cb2eb; }
+.log-action { color: #f6993f; }
+.log-thought { color: #a29bfe; font-style: italic; }
+.log-success { color: #38c172; font-weight: bold; }
