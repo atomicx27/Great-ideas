@@ -1,0 +1,3 @@
+# AGI-Hospital-Operations-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** for complex healthcare operations. When a sudden, ambiguous crisis occurs (e.g., "Mass casualty event, 50+ trauma patients arriving in 30 mins"), standard static protocols often break down. The Master Orchestrator breaks this high-level crisis into parallel operational domains and spawns sub-agents: Staffing (calling in off-duty surgeons), Logistics (rerouting blood supplies), and Patient Flow (clearing ICU beds). They operate simultaneously, share constraints, and the Master synthesizes their output into an immediate, hospital-wide Emergency Action Plan. Includes BYOK support.

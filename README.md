@@ -56,3 +56,21 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 18. **AGI-Global-Supply-Chain-Orchestrator**
     A hypothetical leap into **Artificial General Intelligence (AGI)**. This multi-agent swarm orchestrator tackles complex, ambiguous business problems (e.g., "Optimize supply chain for Q4 amidst port delays"). A Master Orchestrator breaks down the high-level goal and spawns parallel sub-agents (Logistics, Risk, Demand) to evaluate massive datasets simultaneously, synthesizing their findings into an executive strategy. Includes BYOK support.
+
+19. **Automated-Financial-Report-Compiler**
+    A classic **Automation** tool replacing manual financial data aggregation in spreadsheets. It uses deterministic rules to automate the generation of quarterly financial reports, reducing human error.
+
+20. **Agentic-Investment-Analyst**
+    A step up into **Agentic AI**. This autonomous AI Agent synthesizes investment data. Given a goal and access to tools (like checking stock prices and news), it autonomously evaluates the context and provides a recommendation. Includes BYOK support.
+
+21. **AGI-Hedge-Fund-Manager**
+    A hypothetical leap into **Artificial General Intelligence (AGI)**. This multi-agent swarm orchestrator tackles complex investment strategies. A Master Orchestrator spawns parallel sub-agents (Quant, Macro, Risk) to evaluate diverse datasets simultaneously, synthesizing their findings into an executable strategy. Includes BYOK support.
+
+22. **Automated-Patient-Intake-System**
+    A classic **Automation** tool designed to streamline hospital admissions. It uses simple deterministic rules to evaluate basic patient criteria and automatically routes them to the correct department without AI.
+
+23. **Agentic-Medical-Triage-Specialist**
+    A step up into **Agentic AI**. This agent autonomously assesses a patient's symptoms. Given access to tools (like checking history and asking follow-ups), it dynamically decides what questions are necessary to rule out critical conditions before scoring. Includes BYOK support.
+
+24. **AGI-Hospital-Operations-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** for complex healthcare operations. During an ambiguous crisis, the Master Orchestrator spawns sub-agents (Staffing, Logistics, Patient Flow) to operate simultaneously and share constraints, synthesizing their output into an emergency action plan. Includes BYOK support.

@@ -1,0 +1,3 @@
+# Agentic-Medical-Triage-Specialist
+
+A step up into **Agentic AI**. Rather than relying on a static questionnaire, this agent autonomously assesses a patient's initial symptoms and decides what to do next. Given access to "tools" (like `check_vitals_history`, `ask_followup_question`), it dynamically decides which follow-up questions are necessary to rule out critical conditions (e.g., asking about fever if appendicitis is suspected) before generating a triage priority score. It supports BYOK architecture for major cloud providers or local execution via Ollama. It makes the triage process smarter and more adaptable to complex cases.

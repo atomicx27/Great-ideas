@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Medical Triage Specialist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Medical Triage Specialist</h1>
+            <p>Autonomous AI Agent for dynamic patient symptom assessment.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>LLM Configuration (BYOK)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="task-section">
+                <h2>Initial Patient Report</h2>
+                <div class="form-group">
+                    <label for="task-prompt">Patient Symptom Description:</label>
+                    <textarea id="task-prompt" rows="3">Patient is a 45-year-old male complaining of sudden, sharp pain in the lower right abdomen and nausea.</textarea>
+                </div>
+                <button id="run-agent-btn">Begin Triage Assessment</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Agent Activity Log</h2>
+                <div id="output-log" class="log-container">
+                    <p class="log-info">Awaiting patient report...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
