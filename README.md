@@ -74,3 +74,21 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 24. **AGI-Hospital-Operations-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** for complex healthcare operations. During an ambiguous crisis, the Master Orchestrator spawns sub-agents (Staffing, Logistics, Patient Flow) to operate simultaneously and share constraints, synthesizing their output into an emergency action plan. Includes BYOK support.
+
+25. **Automated-Exam-Scorer**
+    A classic **Automation** tool in the Education domain designed to replace manual grading of multiple-choice exams. It relies on deterministic rules and a predefined answer key to automate the grading process rapidly and predictably, without using AI.
+
+26. **Agentic-Personal-Tutor**
+    A step up into **Agentic AI** in the Education domain. This autonomous agent has a goal to ensure a student understands a topic. It uses tools to ask questions, evaluate answers, and provide targeted corrections in a loop until the student demonstrates understanding. Supports BYOK.
+
+27. **AGI-Curriculum-Designer-Swarm**
+    A leap into **Artificial General Intelligence (AGI)** for education. A Master Orchestrator takes a high-level educational goal and spawns specialized sub-agents (Math, Science, Literature) to design curriculum components simultaneously. It then synthesizes their parallel outputs into a cohesive plan. Supports BYOK.
+
+28. **Automated-Code-Linter**
+    A classic **Automation** tool in the Software Engineering domain. It performs static code analysis to enforce coding standards using predefined, deterministic string-parsing rules (e.g., checking for missing semicolons or `var` usage) to catch errors before code review.
+
+29. **Agentic-Code-Reviewer**
+    A step up into **Agentic AI** in Software Engineering. This agent understands code context and modern best practices. It autonomously analyzes code structure, identifies logical flaws, and generates a comprehensive, markdown-formatted review with suggested refactoring. Supports BYOK.
+
+30. **AGI-Software-Architecture-Swarm**
+    A leap into **Artificial General Intelligence (AGI)** for software design. A Master Orchestrator receives a high-level product requirement and spawns specialized agents (Frontend, Backend, Database) to design architectural layers simultaneously. It synthesizes their outputs into a cohesive Software Architecture Document. Supports BYOK.

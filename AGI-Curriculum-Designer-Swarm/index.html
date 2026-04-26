@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Curriculum Designer Swarm</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Curriculum Designer Swarm <i class="fa-solid fa-network-wired"></i></h1>
+            <p>A multi-agent AGI orchestrator that spawns specialized experts to design a comprehensive educational curriculum.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2><i class="fa-solid fa-gear"></i> AGI Configuration (BYOK)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+                <div class="form-group" id="model-group" style="display: none;">
+                    <label for="model">Model Name (for Ollama):</label>
+                    <input type="text" id="model" placeholder="e.g. llama3">
+                </div>
+            </section>
+
+            <section class="task-section">
+                <h2><i class="fa-solid fa-bullseye"></i> High-Level Educational Goal</h2>
+                <div class="form-group">
+                    <textarea id="goal-prompt" rows="3">Design a 4-week introductory STEM curriculum for 8th graders focusing on sustainable energy.</textarea>
+                </div>
+                <button id="run-swarm-btn">Initialize AGI Swarm <i class="fa-solid fa-rocket"></i></button>
+            </section>
+
+            <section class="orchestrator-section hidden" id="orchestrator-view">
+                <h2><i class="fa-solid fa-microchip"></i> Master Orchestrator View</h2>
+
+                <div class="agents-grid" id="agents-grid">
+                    <!-- Agent cards will be spawned here -->
+                </div>
+
+                <div class="synthesis-container">
+                    <h3><i class="fa-solid fa-object-group"></i> Final Synthesized Curriculum</h3>
+                    <div id="final-output" class="final-output">
+                        Waiting for sub-agents to complete their tasks...
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Code Linter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Code Linter</h1>
+            <p>Deterministic, rule-based static code analysis.</p>
+        </header>
+
+        <main>
+            <section class="linter-section">
+                <h2>Analyze JavaScript Code</h2>
+                <div class="form-group">
+                    <textarea id="code-input" rows="8">
+function calculateSum(a, b) {
+    let result = a + b
+    console.log("Sum is:", result);
+    return result;
+}
+var myVar = 10;
+                    </textarea>
+                </div>
+                <button id="run-linter-btn">Run Linter</button>
+
+                <div id="results-output" class="results-container hidden">
+                    <h3>Linting Results</h3>
+                    <ul id="lint-issues" class="lint-issues">
+                        <!-- Issues populated here -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

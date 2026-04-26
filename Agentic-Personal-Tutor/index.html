@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Personal Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Personal Tutor</h1>
+            <p>Autonomous AI Agent that tutors a student to ensure understanding.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>LLM Configuration (BYOK)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+                <div class="form-group" id="model-group" style="display: none;">
+                    <label for="model">Model Name (for Ollama):</label>
+                    <input type="text" id="model" placeholder="e.g. llama3">
+                </div>
+            </section>
+
+            <section class="task-section">
+                <h2>Tutoring Session</h2>
+                <div class="form-group">
+                    <label for="topic-input">Topic to learn:</label>
+                    <input type="text" id="topic-input" value="Photosynthesis">
+                </div>
+                <button id="start-tutor-btn">Start Tutor</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Agent Activity Log</h2>
+                <div id="output-log" class="log-container">
+                    <p class="log-info">Waiting for topic...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
