@@ -1,0 +1,50 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8f5e9;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 650px;
+    margin: auto;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:disabled {
+    background-color: #9e9e9e;
+}
+
+.log-container {
+    background: #263238;
+    color: #eceff1;
+    padding: 15px;
+    border-radius: 5px;
+    height: 350px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.log-info { color: #81d4fa; }
+.log-thought { color: #ffb74d; font-style: italic; }
+.log-action { color: #ff8a65; font-weight: bold; }
+.log-success { color: #aed581; font-weight: bold; }

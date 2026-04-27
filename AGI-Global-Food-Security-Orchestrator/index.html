@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Global Food Security Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Global Food Security Orchestrator</h1>
+        <p>Simulating AGI orchestrating a multi-agent swarm to mitigate a global food supply crisis caused by extreme weather.</p>
+
+        <button id="start-swarm-btn">Analyze Crisis & Deploy Swarm</button>
+        <p id="master-status" class="status-text">Status: Monitoring Global Data Feeds...</p>
+
+        <div id="swarm-container" class="swarm" style="display:none;">
+            <div id="agent-climate" class="agent-card">
+                <h3>🌍 Climate Impact Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-logistics" class="agent-card">
+                <h3>🚢 Global Supply Logistics</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-economic" class="agent-card">
+                <h3>📉 Economic Policy Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" style="display:none; margin-top:20px;">
+            <h3>Synthesized Global Mitigation Strategy</h3>
+            <div id="final-strategy" class="strategy-output"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
