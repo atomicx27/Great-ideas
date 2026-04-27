@@ -75,20 +75,37 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 24. **AGI-Hospital-Operations-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** for complex healthcare operations. During an ambiguous crisis, the Master Orchestrator spawns sub-agents (Staffing, Logistics, Patient Flow) to operate simultaneously and share constraints, synthesizing their output into an emergency action plan. Includes BYOK support.
 
-25. **Automated-Traffic-Light-Controller**
+25. **Automated-Exam-Scorer**
+    A classic **Automation** tool in the Education domain designed to replace manual grading of multiple-choice exams. It relies on deterministic rules and a predefined answer key to automate the grading process rapidly and predictably, without using AI.
+
+26. **Agentic-Personal-Tutor**
+    A step up into **Agentic AI** in the Education domain. This autonomous agent has a goal to ensure a student understands a topic. It uses tools to ask questions, evaluate answers, and provide targeted corrections in a loop until the student demonstrates understanding. Supports BYOK.
+
+27. **AGI-Curriculum-Designer-Swarm**
+    A leap into **Artificial General Intelligence (AGI)** for education. A Master Orchestrator takes a high-level educational goal and spawns specialized sub-agents (Math, Science, Literature) to design curriculum components simultaneously. It then synthesizes their parallel outputs into a cohesive plan. Supports BYOK.
+
+28. **Automated-Code-Linter**
+    A classic **Automation** tool in the Software Engineering domain. It performs static code analysis to enforce coding standards using predefined, deterministic string-parsing rules (e.g., checking for missing semicolons or `var` usage) to catch errors before code review.
+
+29. **Agentic-Code-Reviewer**
+    A step up into **Agentic AI** in Software Engineering. This agent understands code context and modern best practices. It autonomously analyzes code structure, identifies logical flaws, and generates a comprehensive, markdown-formatted review with suggested refactoring. Supports BYOK.
+
+30. **AGI-Software-Architecture-Swarm**
+    A leap into **Artificial General Intelligence (AGI)** for software design. A Master Orchestrator receives a high-level product requirement and spawns specialized agents (Frontend, Backend, Database) to design architectural layers simultaneously. It synthesizes their outputs into a cohesive Software Architecture Document. Supports BYOK.
+31. **Automated-Traffic-Light-Controller**
     A classic **Automation** tool designed to manage traffic flow at an intersection. It uses deterministic rules, timers, and basic input (a pedestrian button) to cycle through red, yellow, and green lights. It does not use AI or ML; instead, it relies on predefined logic, making it predictable, reliable, and suitable for simple intersections without complex traffic patterns.
 
-26. **Agentic-Autonomous-Vehicle**
+32. **Agentic-Autonomous-Vehicle**
     A step up into **Agentic AI**. This agent simulates an autonomous vehicle's decision-making process. Given an environment observation, it autonomously decides which "tools" (simulated sensors like LIDAR and Camera) to use to gather more context. It then evaluates the data to make a dynamic safety decision (e.g., applying brakes for a pedestrian). This demonstrates how Agentic AI can act autonomously to achieve a goal (safe navigation) in a dynamic environment, featuring BYOK architecture support.
 
-27. **AGI-Smart-City-Traffic-Orchestrator**
+33. **AGI-Smart-City-Traffic-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to Smart City infrastructure. When a complex, ambiguous traffic crisis occurs (e.g., a major accident during rush hour), the Master Orchestrator breaks the problem down. It spawns specialized sub-agents: Emergency Services (clearing paths for ambulances), Dynamic Routing (adjusting traffic lights and rerouting GPS), and Public Transit (managing bus schedules). These agents operate in parallel, and the Master synthesizes their outputs into a cohesive, city-wide recovery strategy. Includes BYOK architecture support.
 
-28. **Automated-Irrigation-System**
+34. **Automated-Irrigation-System**
     A classic **Automation** tool for precision agriculture. It relies on deterministic rules and thresholds (e.g., soil moisture dropping below 30%) to automatically trigger water pumps. It does not use AI or ML. By automating this process, farmers save time, conserve water, and ensure crops receive consistent hydration without manual monitoring.
 
-29. **Agentic-Crop-Disease-Specialist**
+35. **Agentic-Crop-Disease-Specialist**
     A step up into **Agentic AI** for precision agriculture. Rather than just returning a static encyclopedia entry for a crop disease, this agent acts autonomously. Given a farmer's description of symptoms, it decides which "tools" to use (e.g., querying a pathogen database, checking local weather forecasts for treatment viability). It dynamically synthesizes this multi-source data to provide a contextualized, actionable treatment plan. Supports BYOK architecture for deployment flexibility.
 
-30. **AGI-Global-Food-Security-Orchestrator**
+36. **AGI-Global-Food-Security-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** for global precision agriculture. When a complex, ambiguous macro-level crisis occurs (e.g., severe multi-regional drought threatening global wheat supplies), the AGI Master Orchestrator takes over. It breaks down the high-level threat and spawns specialized sub-agents: Climate Impact (analyzing weather and crop strains), Global Logistics (rerouting shipping vessels), and Economic Policy (simulating market shocks). They operate simultaneously across massive datasets. The Orchestrator then synthesizes their findings into a cohesive, global mitigation strategy to prevent famine and market collapse. Features BYOK architecture support.

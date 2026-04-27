@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Software Architecture Swarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Architecture Swarm <i class="fa-solid fa-server"></i></h1>
+            <p>A multi-agent AGI orchestrator that spawns specialized engineering experts to design a comprehensive software architecture.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2><i class="fa-solid fa-gear"></i> AGI Configuration (BYOK)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+                <div class="form-group" id="model-group" style="display: none;">
+                    <label for="model">Model Name (for Ollama):</label>
+                    <input type="text" id="model" placeholder="e.g. llama3">
+                </div>
+            </section>
+
+            <section class="task-section">
+                <h2><i class="fa-solid fa-rocket"></i> Product Requirement</h2>
+                <div class="form-group">
+                    <textarea id="goal-prompt" rows="3">Design a scalable, real-time chat application for enterprise teams (like Slack) supporting 10,000 concurrent users.</textarea>
+                </div>
+                <button id="run-swarm-btn">Initialize Architecture Swarm</button>
+            </section>
+
+            <section class="orchestrator-section hidden" id="orchestrator-view">
+                <h2><i class="fa-solid fa-microchip"></i> Master Orchestrator View</h2>
+
+                <div class="agents-grid" id="agents-grid">
+                    <!-- Agent cards will be spawned here -->
+                </div>
+
+                <div class="synthesis-container">
+                    <h3><i class="fa-solid fa-sitemap"></i> Final Synthesized Architecture Document</h3>
+                    <div id="final-output" class="final-output markdown-body">
+                        Waiting for sub-agents to complete their analysis...
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
