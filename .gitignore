@@ -1,3 +1,8 @@
 node_modules/
 server.log
 screenshot_*.png
+package.json
+package-lock.json
+screenshot.js
+*_screenshot.png
+server_output.log

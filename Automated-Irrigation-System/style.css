@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8e9;
+    color: #33691e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 400px;
+}
+
+.sensor-panel {
+    margin: 20px 0;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #558b2f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover { background-color: #33691e; }
+
+.status {
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.pump-off { background-color: #e0e0e0; color: #757575; }
+.pump-on { background-color: #81d4fa; color: #01579b; animation: pulse 2s infinite; }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.log {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: left;
+    height: 100px;
+    overflow-y: auto;
+    background: #fafafa;
+    padding: 10px;
+    border: 1px solid #eee;
+}
