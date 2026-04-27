@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Solar Panel Positioner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Solar Panel Positioner</h1>
+        <p>A classic automation tool using deterministic rules to set optimal solar panel angles based on time and weather.</p>
+
+        <div class="card">
+            <h2>Current Conditions</h2>
+            <form id="positioner-form">
+                <label for="hour">Hour of Day (0-23):</label>
+                <input type="number" id="hour" min="0" max="23" required>
+
+                <label for="weather">Weather:</label>
+                <select id="weather" required>
+                    <option value="sunny">Sunny</option>
+                    <option value="cloudy">Cloudy</option>
+                    <option value="stormy">Stormy</option>
+                </select>
+
+                <button type="submit">Calculate Optimal Angle</button>
+            </form>
+        </div>
+
+        <div class="card result-card" id="output-card" style="display:none;">
+            <h2>Recommended Position</h2>
+            <div id="position-output"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

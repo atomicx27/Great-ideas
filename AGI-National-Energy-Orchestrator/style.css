@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.control-panel {
+    text-align: center;
+}
+
+button {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #732d91;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.status-text {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.swarm-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.agent-card {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 4px solid #ccc;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.agent-card.active {
+    transform: translateY(-5px);
+    border-color: #3498db;
+}
+
+.agent-card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.agent-status {
+    font-weight: bold;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.agent-output {
+    height: 150px;
+    overflow-y: auto;
+    background-color: #f1f2f6;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+.agent-output p {
+    margin: 0 0 0.5rem 0;
+}
+
+.synthesis-node {
+    border-left: 5px solid #8e44ad;
+}
+
+#final-strategy ul {
+    list-style-type: square;
+}

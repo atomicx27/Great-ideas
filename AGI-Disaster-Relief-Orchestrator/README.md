@@ -1,0 +1,3 @@
+# AGI-Disaster-Relief-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** for complex disaster management. During a massive natural disaster, the Master Orchestrator takes a high-level goal (e.g., "Coordinate regional relief post-hurricane") and spawns specialized sub-agents: Evacuation Routing, Logistics (food/water), and Medical Dispatch. These agents operate simultaneously, share real-time constraints, and their output is synthesized into a cohesive, multi-agency Emergency Action Plan. Includes BYOK support.
