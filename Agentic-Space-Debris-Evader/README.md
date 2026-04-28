@@ -1,0 +1,2 @@
+# Agentic-Space-Debris-Evader
+A step up into **Agentic AI** for Space Exploration. This autonomous agent receives preliminary orbital debris warnings. Given the goal of spacecraft survival, it autonomously decides which "tools" (e.g., radar ping, trajectory calculation) to use to gather more context. It dynamically synthesizes this data to calculate exact collision probabilities and automatically executes the necessary thruster burn to evade. Supports BYOK architecture.

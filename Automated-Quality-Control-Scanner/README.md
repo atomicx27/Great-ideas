@@ -1,0 +1,2 @@
+# Automated-Quality-Control-Scanner
+A classic **Automation** tool for Smart Manufacturing (Industry 4.0). This system uses deterministic rules to evaluate product metrics (e.g., temperature and size) against predefined thresholds. Products that fall outside of acceptable parameters are automatically flagged as defective, preventing faulty goods from reaching the market without the need for complex AI.
