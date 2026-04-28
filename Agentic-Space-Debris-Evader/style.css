@@ -1,0 +1,112 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #1f2833;
+    padding: 30px;
+    border-radius: 4px;
+    border: 1px solid #45a29e;
+    box-shadow: 0 0 15px rgba(69, 162, 158, 0.2);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #45a29e;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    margin: 0;
+    color: #66fcf1;
+    font-size: 24px;
+}
+
+h2 {
+    color: #66fcf1;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #45a29e;
+    padding-bottom: 5px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #ff4136;
+    color: #0b0c10;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover {
+    background-color: #ff7b72;
+}
+
+button:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.log-window {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    padding: 15px;
+    border: 1px solid #45a29e;
+    border-radius: 4px;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.log-window p {
+    margin: 5px 0;
+}
+
+.decision-window {
+    background-color: #0b0c10;
+    padding: 15px;
+    border: 1px solid #45a29e;
+    border-radius: 4px;
+    min-height: 60px;
+}
+
+.decision-action {
+    color: #ff4136;
+    font-weight: bold;
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    background-color: #c5c6c7;
+    color: #0b0c10;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    font-weight: bold;
+}

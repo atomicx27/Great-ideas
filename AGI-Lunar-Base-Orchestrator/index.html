@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Lunar Base Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Lunar Base Orchestrator</h1>
+            <p>Master Swarm Intelligence for Extraterrestrial Crisis Management</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <button id="start-swarm-btn">Simulate Crisis: Life Support Array Failure</button>
+                <div id="master-status" class="master-status">Idle. Awaiting input.</div>
+            </div>
+
+            <div id="swarm-container" class="swarm-container" style="display: none;">
+                <div class="agent-card" id="agent-life">
+                    <h3>Life Support Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <div class="agent-card" id="agent-energy">
+                    <h3>Energy Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <div class="agent-card" id="agent-comms">
+                    <h3>Communications Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </div>
+
+            <div id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

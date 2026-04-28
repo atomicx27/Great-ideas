@@ -1,0 +1,2 @@
+# Automated-Spacecraft-Telemetry-Monitor
+A classic **Automation** tool for Space Exploration. This system continuously monitors incoming spacecraft telemetry data (like oxygen levels, battery percentage, and cabin pressure). It relies on predefined deterministic threshold rules to automatically alert operators if any vital metrics drop into dangerous ranges, operating reliably without complex AI logic.
