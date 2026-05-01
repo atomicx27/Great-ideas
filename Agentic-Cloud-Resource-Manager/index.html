@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Cloud Resource Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Cloud Resource Manager</h1>
+        <div class="card">
+            <div class="input-section">
+                <label for="event">Incoming Traffic Event:</label>
+                <input type="text" id="event" value="Sudden spike in Web Traffic on us-east-1" style="width:100%; margin-bottom:10px;">
+                <button id="run-btn">Let Agent Analyze & Scale</button>
+            </div>
+
+            <div id="log-window" class="log-window">
+                <div id="output-log"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

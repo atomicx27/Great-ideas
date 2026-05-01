@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Data Center Cooling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Center Cooling Automation</h1>
+        <div class="card">
+            <form id="cooling-form">
+                <div class="form-group">
+                    <label for="temp">Server Rack Temperature (°C):</label>
+                    <input type="number" id="temp" value="25" required style="width: 100%;">
+                </div>
+                <button type="submit">Check Thresholds</button>
+            </form>
+            <div id="output-card" style="display:none; margin-top:20px;">
+                <h3>System Response:</h3>
+                <div id="alert-output"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
