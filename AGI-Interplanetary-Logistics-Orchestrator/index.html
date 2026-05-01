@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Interplanetary Logistics Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Interplanetary Logistics Orchestrator</h1>
+        <p class="subtitle">Multi-Agent Swarm for Deep Space Supply Chain</p>
+
+        <div class="orchestrator-control">
+            <button id="start-swarm-btn">Initiate Lunar Resupply Mission</button>
+            <div id="master-status" class="status-indicator">Awaiting Mission Parameters...</div>
+        </div>
+
+        <div id="swarm-container" class="swarm-grid" style="display: none;">
+            <div class="agent-card" id="agent-fuel">
+                <div class="agent-header">Agent: Propellant</div>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-trajectory">
+                <div class="agent-header">Agent: Orbital Trajectory</div>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-cargo">
+                <div class="agent-header">Agent: Payload/Cargo</div>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" class="synthesis-panel" style="display: none;">
+            <h3>Mission Executive Summary</h3>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

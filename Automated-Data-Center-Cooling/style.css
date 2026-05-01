@@ -1,0 +1,12 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+.container { width: 100%; max-width: 400px; text-align: center; }
+.card { background-color: #1e293b; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); text-align: left;}
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; color: #cbd5e1; }
+.form-group input { padding: 10px; border: 1px solid #334155; border-radius: 4px; background-color: #0f172a; color: white; box-sizing: border-box;}
+button { width: 100%; padding: 12px; background-color: #06b6d4; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.2s;}
+button:hover { background-color: #0891b2; }
+.alert-level { padding: 15px; border-radius: 8px; font-weight: bold; text-align: center; margin-top: 10px;}
+.critical { background-color: rgba(220, 38, 38, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+.warning { background-color: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+.normal { background-color: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid #22c55e; }
