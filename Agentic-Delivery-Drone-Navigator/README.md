@@ -1,0 +1,3 @@
+# Agentic Delivery Drone Navigator
+
+A step up into **Agentic AI** in Logistics. This autonomous agent receives a delivery destination. Given the goal of successful and safe delivery, it autonomously decides which "tools" (e.g., GPS query, weather check, local airspace radar) to use to gather more context. It dynamically synthesizes this multi-source data to adjust its route mid-flight. Supports BYOK architecture.

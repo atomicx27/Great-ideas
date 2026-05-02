@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic News Reporter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic News Reporter</h1>
+            <p>Autonomous AI Agent for gathering and synthesizing news.</p>
+        </header>
+
+        <main>
+            <section class="agent-config">
+                <h2>Configure LLM Provider</h2>
+                <div class="form-group">
+                    <label for="provider-select">Select Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI (BYOK)</option>
+                        <option value="anthropic">Anthropic (BYOK)</option>
+                        <option value="ollama">Ollama (Local/Private)</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="action-section">
+                <h2>Generate Report</h2>
+                <div class="form-group">
+                    <label for="topic-input">Topic:</label>
+                    <input type="text" id="topic-input" value="Recent advancements in quantum computing" placeholder="Enter news topic">
+                </div>
+                <button id="start-reporter-btn">Start Reporter Agent</button>
+            </section>
+
+            <section class="agent-output">
+                <h3>Agent Thought Process & Execution Logs</h3>
+                <div id="output-log" class="log-container">
+                    <!-- Logs will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
