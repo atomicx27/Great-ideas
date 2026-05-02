@@ -1,0 +1,132 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #00d2ff;
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #bbb;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #444;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.swarm-visualization {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #252525;
+    border-radius: 8px;
+}
+
+.agent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.agent-card {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    border-left: 4px solid #555;
+    transition: all 0.3s ease;
+}
+
+.agent-card h4 {
+    margin-top: 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.agent-card .status {
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    color: #aaa;
+}
+
+/* Status Colors */
+.status-active { border-left-color: #f39c12 !important; box-shadow: 0 0 10px rgba(243, 156, 18, 0.2); }
+.status-active .status { color: #f39c12; }
+
+.status-complete { border-left-color: #2ecc71 !important; }
+.status-complete .status { color: #2ecc71; }
+
+.agent-output {
+    margin-top: 2rem;
+}
+
+.log-container {
+    background-color: #000;
+    color: #00ff00;
+    padding: 1rem;
+    border-radius: 4px;
+    min-height: 150px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+    white-space: pre-wrap;
+}
