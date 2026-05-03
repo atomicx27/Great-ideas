@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Airspace Control Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Airspace Control Orchestrator</h1>
+            <p>Master AGI managing parallel sub-agents for city-wide airspace stabilization.</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-swarm-btn">Simulate Grid Failure Crisis (Launch AGI Swarm)</button>
+                <div id="master-status" class="master-status">Awaiting crisis trigger...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Emergency Corridors -->
+                <div class="agent-card" id="agent-emergency">
+                    <h3>Sub-Agent: Emergency Corridors</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Delivery Swarm Control -->
+                <div class="agent-card" id="agent-delivery">
+                    <h3>Sub-Agent: Delivery Swarm Control</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Air Taxi Management -->
+                <div class="agent-card" id="agent-taxi">
+                    <h3>Sub-Agent: Air Taxi Management</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Executive Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

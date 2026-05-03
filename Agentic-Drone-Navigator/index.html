@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic Drone Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Drone Navigator</h1>
+            <p>Autonomous AI Agent for dynamic mid-flight route recalibration.</p>
+        </header>
+
+        <main>
+            <section class="trigger-section">
+                <button id="launch-agent-btn">Deploy Drone (Mid-Flight Anomaly Simulated)</button>
+            </section>
+
+            <section class="agent-interaction">
+                <div class="agent-log-container">
+                    <h3>Agent Thought Process</h3>
+                    <div id="agent-log" class="agent-log"></div>
+                </div>
+
+                <div class="agent-decision-container">
+                    <h3>Final Decision</h3>
+                    <div id="agent-decision" class="agent-decision">
+                        <p>Waiting for drone deployment...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
