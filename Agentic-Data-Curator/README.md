@@ -1,0 +1,2 @@
+# Agentic-Data-Curator
+A step up into **Agentic AI** for Synthetic Data Generation. This autonomous agent does not just apply blind augmentations; it curates datasets intelligently. Given a raw dataset, it autonomously decides which "tools" (simulated Quality Scorer, Anomaly Detector, and Label Generator) to use to gather context on each image. It synthesizes this data to filter out bad samples and assign high-quality synthetic labels, ensuring only the best data reaches the ML training pipeline. Supports BYOK architecture.

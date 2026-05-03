@@ -1,0 +1,2 @@
+# Agentic-Drone-Navigator
+A step up into **Agentic AI** for Urban Drone Logistics. This autonomous agent receives a primary delivery target but operates in a dynamic environment. Given the goal of safe delivery, it autonomously decides which "tools" (simulated Weather API, Radar, Air Traffic) to use to gather context mid-flight. It dynamically synthesizes this multi-source data to recalculate its route, avoiding sudden storms or dynamic no-fly zones. Supports BYOK architecture.

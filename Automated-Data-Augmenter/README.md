@@ -1,0 +1,2 @@
+# Automated-Data-Augmenter
+A classic **Automation** tool for Synthetic Data Generation. This tool uses deterministic rules to apply standard image transformations (like 90-degree rotation, grayscale conversion, and cropping) to existing datasets to artificially expand them for Machine Learning training. It relies entirely on predefined parameters and does not use AI for its own operations.
