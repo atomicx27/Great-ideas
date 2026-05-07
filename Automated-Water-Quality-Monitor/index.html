@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Water Quality Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Water Quality Monitor</h1>
+        <p>A deterministic system that triggers alerts when water pH or turbidity fall outside safe parameters.</p>
+
+        <div class="input-group">
+            <label for="ph-level">Current pH Level (Safe: 6.5 - 8.5):</label>
+            <input type="number" id="ph-level" step="0.1" value="7.2">
+        </div>
+
+        <div class="input-group">
+            <label for="turbidity">Turbidity (NTU) (Safe: < 5):</label>
+            <input type="number" id="turbidity" step="0.1" value="2.1">
+        </div>
+
+        <button id="check-btn">Run Quality Check</button>
+
+        <div class="result-area">
+            <h2>Status:</h2>
+            <div id="status-display" class="status-safe">System Ready</div>
+            <div id="log" class="log-area"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

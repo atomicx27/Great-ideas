@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Pricing Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Pricing Engine</h1>
+        <p>A deterministic automation tool that adjusts your product price based on competitor pricing rules.</p>
+
+        <div class="input-group">
+            <label for="base-price">Your Base Price ($):</label>
+            <input type="number" id="base-price" value="100">
+        </div>
+
+        <div class="input-group">
+            <label for="competitor-price">Competitor Price ($):</label>
+            <input type="number" id="competitor-price" value="95">
+        </div>
+
+        <button id="calculate-btn">Calculate New Price</button>
+
+        <div class="result-area">
+            <h2>Pricing Decision:</h2>
+            <div id="new-price-display" class="price-display">Waiting for input...</div>
+            <div id="log" class="log-area"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
