@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Media Production Swarm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Media Production Swarm</h1>
+            <p>Multi-Agent Orchestration for end-to-end media creation.</p>
+        </header>
+
+        <main>
+            <section class="scenario-section">
+                <h2>Define Production Goal</h2>
+                <div class="form-group">
+                    <label for="project-input">High-Level Project Goal:</label>
+                    <textarea id="project-input" rows="2">Produce a 2-minute explainer video about the history of the internet.</textarea>
+                </div>
+                <button id="start-orchestrator-btn">Deploy Production Swarm</button>
+            </section>
+
+            <section class="swarm-visualization">
+                <h3>Production Pipeline Activity</h3>
+                <div class="agent-pipeline">
+                    <div class="agent-node" id="agent-master">
+                        <div class="node-circle">M</div>
+                        <h4>Master</h4>
+                        <p class="status">Idle</p>
+                    </div>
+                    <div class="pipeline-line"></div>
+                    <div class="agent-node" id="agent-script">
+                        <div class="node-circle">S</div>
+                        <h4>Scripting</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                    <div class="pipeline-line"></div>
+                    <div class="agent-node" id="agent-assets">
+                        <div class="node-circle">A</div>
+                        <h4>Assets</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                    <div class="pipeline-line"></div>
+                    <div class="agent-node" id="agent-editor">
+                        <div class="node-circle">E</div>
+                        <h4>Editor</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="agent-output">
+                <h3>Final Deliverable Status</h3>
+                <div id="output-log" class="log-container">
+                    <!-- Final synthesized output will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
