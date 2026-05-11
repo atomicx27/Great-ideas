@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Entertainment Studio Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Entertainment Studio Orchestrator</h1>
+            <p>Autonomous Multi-Agent Media Campaign Generation</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input type="text" id="campaign-prompt" placeholder="e.g., Launch campaign for an eco-friendly smart home device" value="Launch campaign for an eco-friendly smart home device">
+                <button id="run-agi-btn">Execute AGI Swarm</button>
+            </div>
+
+            <div id="master-status" class="master-status">Master Orchestrator: Waiting for prompt...</div>
+
+            <div class="swarm-container" id="swarm-container" style="display: none;">
+                <div class="agent-box" id="agent-writer">
+                    <h3>✍️ Scriptwriter Agent</h3>
+                    <div class="status">Idle</div>
+                    <div class="output"></div>
+                </div>
+                <div class="agent-box" id="agent-video">
+                    <h3>🎬 Video Generation Agent</h3>
+                    <div class="status">Idle</div>
+                    <div class="output"></div>
+                </div>
+                <div class="agent-box" id="agent-marketing">
+                    <h3>📈 Marketing Strategy Agent</h3>
+                    <div class="status">Idle</div>
+                    <div class="output"></div>
+                </div>
+            </div>
+
+            <div class="final-campaign" id="final-campaign" style="display: none;">
+                <h2>Master Orchestrator: Final Campaign Assets</h2>
+                <div id="campaign-assets"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

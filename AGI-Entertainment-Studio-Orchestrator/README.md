@@ -1,0 +1,3 @@
+# AGI-Entertainment-Studio-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** for digital media production. Rather than just creating a single piece of text or scheduling one post, the Master Orchestrator handles an entire, ambiguous creative campaign (e.g., "Launch a campaign for a new eco-friendly smart home device"). It autonomously breaks this massive goal down and spawns specialized sub-agents: a Scriptwriter (for the ad copy), a Video Generation Agent (for the visuals), and a Marketing Strategy Agent (for budget allocation). These agents operate in parallel, sharing context, before the Master Orchestrator synthesizes their outputs into a cohesive, ready-to-deploy media campaign.

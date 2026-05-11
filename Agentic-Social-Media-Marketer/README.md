@@ -1,0 +1,3 @@
+# Agentic-Social-Media-Marketer
+
+A step up into **Agentic AI** for digital media production. Rather than just auto-posting pre-written text on a timer, this autonomous agent is given a high-level goal (e.g., "Market this new product"). It autonomously decides to query external "tools" (simulated APIs) to find trending hashtags and optimal engagement times. It then synthesizes this data to draft a relevant post and schedules it dynamically, acting as an autonomous social media manager.

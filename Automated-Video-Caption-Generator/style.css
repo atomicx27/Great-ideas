@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    color: #2f3640;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 600px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: #8c7ae6;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #718093;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #dcdde1;
+    border-radius: 4px;
+    font-family: inherit;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.settings {
+    margin-bottom: 1rem;
+}
+
+.settings input {
+    width: 60px;
+    padding: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+button {
+    background-color: #8c7ae6;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9c88ff;
+}
+
+.output-area h2 {
+    font-size: 1.1rem;
+    color: #2f3640;
+    border-bottom: 1px solid #dcdde1;
+    padding-bottom: 0.5rem;
+}
+
+.vtt-output {
+    background-color: #2f3640;
+    color: #f5f6fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    min-height: 150px;
+}

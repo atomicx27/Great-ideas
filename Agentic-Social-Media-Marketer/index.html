@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Social Media Marketer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Social Media Marketer</h1>
+            <p>Autonomous engagement analysis and post scheduling</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <button id="start-campaign-btn">Initiate Marketing Campaign</button>
+            </div>
+
+            <div class="status-panel">
+                <div id="agent-status" class="status-text">Agent Status: Sleeping</div>
+            </div>
+
+            <div class="agent-workspace">
+                <div class="panel api-panel">
+                    <h3>Simulated API Tools</h3>
+                    <div id="api-log" class="log-area"></div>
+                </div>
+
+                <div class="panel decision-panel">
+                    <h3>Agent Decision Log</h3>
+                    <div id="decision-log" class="log-area"></div>
+                </div>
+            </div>
+
+            <div class="post-preview" id="post-preview" style="display: none;">
+                <h3>Final Scheduled Post</h3>
+                <div class="mock-tweet">
+                    <div class="author">🤖 MarketingBot <span>@ai_marketer</span></div>
+                    <div class="content" id="final-post-content"></div>
+                    <div class="meta" id="final-post-meta"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
