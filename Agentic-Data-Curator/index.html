@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic Data Curator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Data Curator</h1>
+            <p>Autonomous AI Agent for intelligent dataset curation and synthetic labeling.</p>
+        </header>
+
+        <main>
+            <section class="trigger-section">
+                <button id="curate-btn">Process Raw Data Batch</button>
+            </section>
+
+            <section class="agent-interaction">
+                <div class="agent-log-container">
+                    <h3>Agent Curating Process</h3>
+                    <div id="agent-log" class="agent-log"></div>
+                </div>
+
+                <div class="agent-decision-container">
+                    <h3>Curation Decision</h3>
+                    <div id="agent-decision" class="agent-decision">
+                        <p>Awaiting batch...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

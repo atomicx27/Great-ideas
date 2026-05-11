@@ -1,0 +1,3 @@
+# Agentic-Drug-Designer
+
+A step up into **Agentic AI** for Synthetic Biology and Drug Discovery. This autonomous agent receives a target protein structure. Given the goal of designing an effective drug candidate, it autonomously decides which "tools" (e.g., binding affinity simulator, toxicity predictor) to use. It dynamically synthesizes this multi-source simulated data to iteratively optimize the candidate molecule's structure. Supports BYOK architecture.

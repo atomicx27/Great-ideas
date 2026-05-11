@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Game Coach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Game Coach</h1>
+            <p>Autonomous AI Agent simulating the analysis of player replays to provide tactical feedback.</p>
+        </header>
+
+        <main>
+            <section class="task-section">
+                <h2>Replay Analysis</h2>
+                <div class="form-group">
+                    <label for="replay-id">Replay ID:</label>
+                    <input type="text" id="replay-id" value="REP-9921-A" disabled>
+                </div>
+                <button id="run-agent-btn">Analyze Replay</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Coach Activity Log</h2>
+                <div id="output-log" class="log-container">
+                    <p class="log-info">Waiting for replay submission...</p>
+                </div>
+                <div id="final-feedback" class="feedback-container hidden">
+                    <!-- Final feedback will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

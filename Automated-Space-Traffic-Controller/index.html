@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Space Traffic Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Space Traffic Controller</h1>
+        <div class="card">
+            <form id="traffic-form">
+                <div class="form-group">
+                    <label>Sat A (X, Y, Z km):</label>
+                    <input type="number" id="a-x" value="1000" required>
+                    <input type="number" id="a-y" value="2000" required>
+                    <input type="number" id="a-z" value="3000" required>
+                </div>
+                <div class="form-group">
+                    <label>Sat B (X, Y, Z km):</label>
+                    <input type="number" id="b-x" value="1010" required>
+                    <input type="number" id="b-y" value="2010" required>
+                    <input type="number" id="b-z" value="3010" required>
+                </div>
+                <button type="submit">Check Trajectory</button>
+            </form>
+            <div id="output-card" style="display:none; margin-top:20px;">
+                <h3>Status:</h3>
+                <div id="alert-output"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Molecule Designer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Molecule Designer</h1>
+            <p>Autonomous AI Agent simulating the optimization of a drug molecule for target affinity.</p>
+        </header>
+
+        <main>
+            <section class="task-section">
+                <h2>Target Profile</h2>
+                <div class="form-group">
+                    <label for="target-protein">Target Protein:</label>
+                    <input type="text" id="target-protein" value="Kinase Inhibitor Target A" disabled>
+                </div>
+                <button id="run-agent-btn">Start Molecule Optimization Agent</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Agent Activity Log</h2>
+                <div id="output-log" class="log-container">
+                    <p class="log-info">Waiting to start optimization...</p>
+                </div>
+                <div id="final-molecule" class="molecule-container hidden">
+                    <!-- Final molecule details will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "context-switcher-dashboard",
+  "version": "1.0.0",
+  "description": "The Context Switcher Dashboard is a workflow automation tool aimed at mitigating the \"context switching tax\"—the time and mental energy lost when shifting between completely different tasks or projects. It allows users to create saved \"Workspaces.\" A Workspace bundles relevant links, quick notes, and a specific task list. When an employee switches from \"Project A\" to \"Project B,\" they simply select the corresponding workspace, and their digital environment instantly reconfigures to provide exactly what they need for that project.",
+  "main": "script.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0"
+  }
+}

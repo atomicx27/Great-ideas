@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Ecosystem Preservation Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Ecosystem Preservation Orchestrator</h1>
+        <p>Input a complex ecological crisis to see the AGI swarm synthesize a comprehensive mitigation strategy.</p>
+
+        <div class="input-area">
+            <textarea id="crisis-input" rows="3" placeholder="e.g., 'Severe unprecedented drought affecting the northern wetlands reserve'"></textarea>
+            <button id="orchestrate-btn">Deploy AGI Swarm</button>
+        </div>
+
+        <div class="swarm-visualizer">
+            <div class="agent-box" id="agent-water">
+                <h3>Water Resource Agent</h3>
+                <div class="agent-status" id="status-water">Idle</div>
+            </div>
+            <div class="agent-box" id="agent-wildlife">
+                <h3>Wildlife Mgmt Agent</h3>
+                <div class="agent-status" id="status-wildlife">Idle</div>
+            </div>
+            <div class="agent-box" id="agent-community">
+                <h3>Community Impact Agent</h3>
+                <div class="agent-status" id="status-community">Idle</div>
+            </div>
+        </div>
+
+        <div class="synthesis-area">
+            <h2>Master Mitigation Strategy:</h2>
+            <div id="final-output" class="final-output">Awaiting deployment...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

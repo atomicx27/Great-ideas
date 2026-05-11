@@ -104,9 +104,9 @@ Output ONLY the email body. Do not include subject lines unless asked. Do not in
         try {
             let result = '';
             if (provider === 'openai') {
-                result = await fetchOpenAI(apiKey, model, systemPrompt, context);
+                result = await fetchOpenAI(apiKey, model, systemPrompt, context, { temperature: 0.7 });
             } else if (provider === 'anthropic') {
-                result = await fetchAnthropic(apiKey, model, systemPrompt, context);
+                result = await fetchAnthropic(apiKey, model, systemPrompt, context, { max_tokens: 1024 });
             } else if (provider === 'ollama') {
                 result = await fetchOllama(ollamaUrlInput.value.trim(), model, systemPrompt, context);
             }
@@ -119,90 +119,5 @@ Output ONLY the email body. Do not include subject lines unless asked. Do not in
             loadingOverlay.classList.add('hidden');
             generateBtn.disabled = false;
         }
-    }
-
-    // --- API Integrations ---
-
-    async function fetchOpenAI(apiKey, model, systemPrompt, userMessage) {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                model: model,
-                messages: [
-                    { role: 'system', content: systemPrompt },
-                    { role: 'user', content: userMessage }
-                ],
-                temperature: 0.7
-            })
-        });
-
-        if (!response.ok) {
-            const err = await response.json();
-            throw new Error(err.error?.message || 'OpenAI API Error');
-        }
-
-        const data = await response.json();
-        return data.choices[0].message.content.trim();
-    }
-
-    async function fetchAnthropic(apiKey, model, systemPrompt, userMessage) {
-        // Note: Anthropic CORS requires proxy in real browser usage,
-        // using anthropic-version header. Some browser extensions might block this.
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': apiKey,
-                'anthropic-version': '2023-06-01',
-                'anthropic-dangerously-allow-browser': 'true'
-            },
-            body: JSON.stringify({
-                model: model,
-                max_tokens: 1024,
-                system: systemPrompt,
-                messages: [
-                    { role: 'user', content: userMessage }
-                ]
-            })
-        });
-
-        if (!response.ok) {
-            const err = await response.json();
-            throw new Error(err.error?.message || 'Anthropic API Error');
-        }
-
-        const data = await response.json();
-        return data.content[0].text.trim();
-    }
-
-    async function fetchOllama(baseUrl, model, systemPrompt, userMessage) {
-        // Ollama usually runs on localhost, ensure URL ends without trailing slash
-        const url = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
-
-        const response = await fetch(`${url}/api/chat`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                model: model,
-                messages: [
-                    { role: 'system', content: systemPrompt },
-                    { role: 'user', content: userMessage }
-                ],
-                stream: false
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Ollama API Error. Ensure Ollama is running and CORS is enabled if needed.');
-        }
-
-        const data = await response.json();
-        return data.message.content.trim();
     }
 });
