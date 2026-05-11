@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated DNA Sequencer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated DNA Sequencer</h1>
+            <p>A deterministic tool to process and align DNA sequences automatically.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>DNA Input</h2>
+                <div class="form-group">
+                    <label for="sequence1">Sequence 1:</label>
+                    <input type="text" id="sequence1" value="ATGCGTACGTTAG">
+                </div>
+                <div class="form-group">
+                    <label for="sequence2">Sequence 2:</label>
+                    <input type="text" id="sequence2" value="ATGCCTACGTTAG">
+                </div>
+                <button id="process-btn">Process Sequences</button>
+            </section>
+
+            <section class="output-section">
+                <h2>Processing Results</h2>
+                <div id="results" class="results-container hidden">
+                    <p><strong>Alignment Score:</strong> <span id="alignment-score"></span></p>
+                    <div id="alignment-visualization" class="visualization"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
