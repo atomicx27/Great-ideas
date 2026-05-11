@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Airspace Traffic Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Airspace Traffic Orchestrator</h1>
+            <p>Multi-Agent Swarm for Urban Drone Logistics</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <button id="simulate-crisis-btn">Simulate Scenario: Sudden Microburst</button>
+            </div>
+
+            <div id="master-status" class="master-status">Master Orchestrator: Idle</div>
+
+            <div class="agent-grid" id="agent-grid" style="display: none;">
+                <div class="agent-card" id="agent-atc">
+                    <h3>Air Traffic Control Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-log"></div>
+                </div>
+                <div class="agent-card" id="agent-weather">
+                    <h3>Weather Forecasting Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-log"></div>
+                </div>
+                <div class="agent-card" id="agent-emergency">
+                    <h3>Emergency Response Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-log"></div>
+                </div>
+            </div>
+
+            <div id="synthesis-panel" class="synthesis-panel" style="display: none;">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="final-strategy"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Video Caption Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Video Caption Generator</h1>
+            <p>Deterministic parsing of audio transcripts to VTT format</p>
+        </header>
+
+        <main>
+            <div class="input-area">
+                <label for="transcript-input">Raw Transcript (one sentence per line):</label>
+                <textarea id="transcript-input" rows="6">Hello and welcome to our channel.
+Today we are going to talk about automation.
+This saves a lot of time for video editors.</textarea>
+
+                <div class="settings">
+                    <label>Seconds per line: <input type="number" id="sec-per-line" value="3" min="1"></label>
+                </div>
+
+                <button id="generate-btn">Generate VTT File</button>
+            </div>
+
+            <div class="output-area">
+                <h2>Generated VTT</h2>
+                <pre id="vtt-output" class="vtt-output"></pre>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

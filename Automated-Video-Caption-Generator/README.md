@@ -1,0 +1,3 @@
+# Automated-Video-Caption-Generator
+
+A classic **Automation** tool for digital media production. This system takes raw text transcripts and automatically converts them into standard WEBVTT caption files. It uses simple, deterministic string parsing and mathematical time-stepping rules (e.g., advancing timestamps by 3 seconds per line). It does not use AI; it relies on predictable logic to save video editors hours of manual timestamp entry.

@@ -1,0 +1,3 @@
+# Agentic-Drone-Delivery-Pilot
+
+A step up into **Agentic AI** for drone logistics. This autonomous agent is responsible for navigating a package to its destination. Given a flight path, it autonomously evaluates live sensor data (like weather conditions and LIDAR obstacle detection). If it encounters an anomaly (e.g., heavy rain or a construction crane), it dynamically decides on the best action to take, such as adjusting speed or calculating an evasive maneuver, ensuring successful delivery in dynamic environments.
