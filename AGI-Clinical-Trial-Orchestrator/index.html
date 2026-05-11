@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Clinical Trial Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Clinical Trial Orchestrator</h1>
+        <p>Simulating multi-agent swarm intelligence for clinical trial design and setup.</p>
+
+        <button id="start-swarm-btn">Initiate Swarm Orchestration</button>
+
+        <div id="master-node" class="node">
+            <h3>Master Orchestrator</h3>
+            <p id="master-status">Awaiting high-level directive...</p>
+        </div>
+
+        <div id="swarm-container" style="display: none;">
+            <div id="agent-recruitment" class="agent-card">
+                <h4>Sub-Agent: Recruitment</h4>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-regulatory" class="agent-card">
+                <h4>Sub-Agent: Regulatory</h4>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-biostats" class="agent-card">
+                <h4>Sub-Agent: Biostats</h4>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" class="node" style="display: none;">
+            <h3>Synthesized Trial Protocol</h3>
+            <div id="final-protocol"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

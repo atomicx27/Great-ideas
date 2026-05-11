@@ -1,0 +1,96 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2b3a2a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: #1a241a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    max-width: 650px;
+    width: 100%;
+    border: 1px solid #3c523c;
+}
+
+h1 {
+    color: #8fbc8f;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    color: #a0b0a0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #8fbc8f;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background-color: #0f140f;
+    color: #fff;
+    border: 1px solid #4a634a;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c9302c;
+}
+
+button:disabled {
+    background-color: #7a4341;
+    cursor: not-allowed;
+}
+
+.log-area {
+    margin-top: 20px;
+    background: #000;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    min-height: 250px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.log-area p {
+    margin: 5px 0;
+}
+
+.log-info { color: #5bc0de; }
+.log-thought { color: #f0ad4e; font-style: italic; }
+.log-action { color: #d9534f; font-weight: bold; }
+.log-success { color: #5cb85c; font-weight: bold; }

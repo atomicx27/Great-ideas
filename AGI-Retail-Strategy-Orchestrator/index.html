@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Retail Strategy Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Retail Strategy Orchestrator</h1>
+        <p>Input a high-level retail challenge to see the AGI swarm synthesize a multi-departmental strategy.</p>
+
+        <div class="input-area">
+            <textarea id="goal-input" rows="3" placeholder="e.g., 'Launch a new summer clothing line amidst global shipping delays'"></textarea>
+            <button id="orchestrate-btn">Execute AGI Swarm</button>
+        </div>
+
+        <div class="swarm-visualizer">
+            <div class="agent-box" id="agent-marketing">
+                <h3>Marketing Agent</h3>
+                <div class="agent-status" id="status-marketing">Idle</div>
+            </div>
+            <div class="agent-box" id="agent-logistics">
+                <h3>Logistics Agent</h3>
+                <div class="agent-status" id="status-logistics">Idle</div>
+            </div>
+            <div class="agent-box" id="agent-pricing">
+                <h3>Pricing Agent</h3>
+                <div class="agent-status" id="status-pricing">Idle</div>
+            </div>
+        </div>
+
+        <div class="synthesis-area">
+            <h2>Master Synthesis Strategy:</h2>
+            <div id="final-output" class="final-output">Waiting for swarm execution...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# AGI Media Production Swarm
+
+A leap into **Artificial General Intelligence (AGI)** applied to Media Production. When given a high-level goal (e.g., "Produce a 5-minute documentary on Mars colonization"), the AGI Master Orchestrator takes over. It breaks down the ambiguous goal and spawns specialized sub-agents: Scriptwriting, Asset Generation (Voiceover & Images), and Video Editing. These agents operate in parallel, and the Master synthesizes their outputs into a cohesive final video file. Features BYOK architecture support.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Delivery Drone Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Delivery Drone Navigator</h1>
+            <p>Autonomous AI Agent for dynamic route adjustment.</p>
+        </header>
+
+        <main>
+            <section class="agent-config">
+                <h2>Configure LLM Provider</h2>
+                <div class="form-group">
+                    <label for="provider-select">Select Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI (BYOK)</option>
+                        <option value="anthropic">Anthropic (BYOK)</option>
+                        <option value="ollama">Ollama (Local/Private)</option>
+                    </select>
+                </div>
+
+                <div id="api-key-group" class="form-group">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter your API Key">
+                </div>
+
+                <div id="model-group" class="form-group" style="display: none;">
+                    <label for="model-name">Ollama Model:</label>
+                    <input type="text" id="model-name" value="llama3" placeholder="e.g., llama3, mistral">
+                </div>
+            </section>
+
+            <section class="action-section">
+                <h2>Initiate Delivery</h2>
+                <div class="form-group">
+                    <label for="destination-input">Destination:</label>
+                    <input type="text" id="destination-input" value="123 Main St, Sector 4" placeholder="Enter destination">
+                </div>
+                <button id="start-nav-btn">Start Navigation Agent</button>
+            </section>
+
+            <section class="agent-output">
+                <h3>Agent Thought Process & Execution Logs</h3>
+                <div id="output-log" class="log-container">
+                    <!-- Logs will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
