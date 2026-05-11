@@ -1,0 +1,3 @@
+# Agentic-Waste-Collection-Bot
+
+A step up into **Agentic AI** within Smart City / Waste Management. This autonomous single-agent system simulates a smart garbage truck fleet director. Instead of following a static, pre-programmed daily route, the agent dynamically checks live bin capacity sensors (`checkBinSensors`) and real-time traffic data (`queryTrafficAPI`). It autonomously synthesizes this context to generate and execute an optimal collection route, skipping empty bins and avoiding traffic jams. Features BYOK architecture support.

@@ -1,0 +1,156 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #4facfe;
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: center;
+    color: #8892b0;
+    margin-bottom: 30px;
+}
+
+.input-panel {
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #0f3460;
+    color: #fff;
+    border: 1px solid #4facfe;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical;
+}
+
+button {
+    align-self: center;
+    padding: 12px 30px;
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.swarm-dashboard {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.agent-col {
+    flex: 1;
+    background-color: #16213e;
+    border-radius: 8px;
+    border-top: 4px solid #333;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#agent-genomics { border-color: #e91e63; }
+#agent-pharmacy { border-color: #4caf50; }
+#agent-oncology { border-color: #ff9800; }
+
+.agent-header {
+    background-color: rgba(0,0,0,0.2);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.agent-status {
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+    background-color: #333;
+    color: #aaa;
+}
+
+.agent-status.working {
+    background-color: #4facfe;
+    color: #1a1a2e;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+.agent-status.done {
+    background-color: #4caf50;
+    color: white;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.agent-output {
+    padding: 15px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #ccc;
+    min-height: 150px;
+}
+
+.master-synthesis {
+    background-color: #16213e;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #4facfe;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.2);
+}
+
+.master-synthesis h2 {
+    margin-top: 0;
+    color: #4facfe;
+    border-bottom: 1px solid rgba(79, 172, 254, 0.3);
+    padding-bottom: 10px;
+}
+
+.synthesis-content {
+    line-height: 1.6;
+    font-size: 1.05em;
+}
+
+.synthesis-content strong {
+    color: #fff;
+}

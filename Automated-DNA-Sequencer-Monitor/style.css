@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+p {
+    color: #7f8c8d;
+    text-align: center;
+}
+
+.monitor-panel {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    background-color: #fafbfc;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #34495e;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.metric {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.metric span:last-child {
+    font-size: 1.2em;
+    color: #2980b9;
+    margin-left: 10px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.status {
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.status.alert {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.status.ok {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.log {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+}
+
+.log-entry.warning {
+    color: #c0392b;
+}

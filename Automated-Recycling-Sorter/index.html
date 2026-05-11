@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Recycling Sorter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Recycling Sorter</h1>
+        <p>Deterministic sensor-based sorting automation.</p>
+
+        <div class="control-panel">
+            <button id="run-conveyor">Start Conveyor Belt</button>
+            <button id="stop-conveyor" disabled>Stop Conveyor</button>
+        </div>
+
+        <div class="belt-view">
+            <div id="sensor-readout">Waiting for item...</div>
+        </div>
+
+        <div class="bins">
+            <div class="bin" id="bin-metal">
+                <h3>Metal</h3>
+                <div class="count">0</div>
+            </div>
+            <div class="bin" id="bin-plastic">
+                <h3>Plastic</h3>
+                <div class="count">0</div>
+            </div>
+            <div class="bin" id="bin-paper">
+                <h3>Paper</h3>
+                <div class="count">0</div>
+            </div>
+            <div class="bin" id="bin-reject">
+                <h3>Reject (Landfill)</h3>
+                <div class="count">0</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
