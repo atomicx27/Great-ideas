@@ -252,10 +252,25 @@ EXECUTION: [Brief instruction for remediation]`;
 }
 
 function parseLLMResponse(text) {
-    const lines = text.split('\n').filter(l => l.trim().length > 0);
-    const scenarios = lines.filter(l => l.startsWith('Scenario')).slice(0,3);
-    const optLine = lines.find(l => l.startsWith('OPTIMAL:'));
-    const execLine = lines.find(l => l.startsWith('EXECUTION:'));
+    const lines = text.split('\n');
+    const scenarios = [];
+    let optLine = null;
+    let execLine = null;
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.length === 0) continue;
+
+        if (line.startsWith('Scenario')) {
+            if (scenarios.length < 3) {
+                scenarios.push(line);
+            }
+        } else if (line.startsWith('OPTIMAL:')) {
+            optLine = line;
+        } else if (line.startsWith('EXECUTION:')) {
+            execLine = line;
+        }
+    }
 
     let winnerIndex = 1;
     if(optLine) {

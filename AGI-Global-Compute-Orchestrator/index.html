@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Global Compute Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Global Compute Orchestrator</h1>
+        <p class="subtitle">Multi-Agent Swarm for Infrastructure Management</p>
+
+        <div class="orchestrator-control">
+            <button id="start-swarm-btn">Resolve Global Outage</button>
+            <div id="master-status" class="status-indicator">Awaiting Crisis Report...</div>
+        </div>
+
+        <div id="swarm-container" class="swarm-grid" style="display: none;">
+            <div class="agent-card" id="agent-network">
+                <div class="agent-header">Agent: Network Router</div>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-storage">
+                <div class="agent-header">Agent: Data Replication</div>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-compute">
+                <div class="agent-header">Agent: Compute Scaler</div>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" class="synthesis-panel" style="display: none;">
+            <h3>Outage Resolution Strategy</h3>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

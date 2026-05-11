@@ -16,6 +16,12 @@
         <main>
             <section class="form-section">
                 <h2>Dispatch Request</h2>
+            <p>Deterministic Drone Assignment based on weight and distance.</p>
+        </header>
+
+        <main>
+            <section class="dispatch-form-section">
+                <h2>New Package Dispatch</h2>
                 <form id="dispatch-form">
                     <div class="form-group">
                         <label for="weight">Package Weight (kg):</label>
@@ -33,10 +39,20 @@
                 <h2>Assignment Decision</h2>
                 <div id="routing-output" class="output-container">
                     <p>Enter package details to see dispatch assignment.</p>
+                    <button type="submit">Assign Drone</button>
+                </form>
+            </section>
+
+            <section class="result-section">
+                <h2>Dispatch Assignment</h2>
+                <div id="output" class="output">
+                    <p>Awaiting input...</p>
                 </div>
             </section>
         </main>
     </div>
+
+    <div id="toast-container"></div>
     <script src="script.js"></script>
 </body>
 </html>

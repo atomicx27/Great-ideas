@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Satellite Maintainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Satellite Maintainer</h1>
+        <div class="card">
+            <div class="input-section">
+                <label for="anomaly">Incoming Telemetry Anomaly:</label>
+                <input type="text" id="anomaly" value="Power fluctuation on Solar Array B" style="width:100%; margin-bottom:10px;">
+                <button id="run-btn">Initiate Autonomous Maintenance</button>
+            </div>
+
+            <div id="log-window" class="log-window">
+                <div id="output-log"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
