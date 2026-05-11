@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI World Simulator Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI World Simulator Orchestrator</h1>
+            <p>Master AGI orchestrating parallel agents to construct synthetic training realities.</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-simulation-btn">Initialize "Martian Storm" Training Matrix</button>
+                <div id="master-status" class="master-status">Awaiting high-level prompt...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Physics Engine -->
+                <div class="agent-card" id="agent-physics">
+                    <h3>Sub-Agent: Physics Engine</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Scenario Director -->
+                <div class="agent-card" id="agent-scenario">
+                    <h3>Sub-Agent: Scenario Director</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Render Farm -->
+                <div class="agent-card" id="agent-render">
+                    <h3>Sub-Agent: Render Farm</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Environment Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

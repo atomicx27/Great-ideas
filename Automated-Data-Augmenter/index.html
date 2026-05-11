@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Data Augmenter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Data Augmenter</h1>
+            <p>Deterministic Image Augmentation for ML Pipelines.</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Configure Augmentation Task</h2>
+                <form id="augment-form">
+                    <div class="form-group">
+                        <label for="dataset-size">Input Dataset Size (images):</label>
+                        <input type="number" id="dataset-size" required min="1" value="1000">
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label><input type="checkbox" id="rot90" checked> Apply 90&deg; Rotation</label>
+                        <label><input type="checkbox" id="grayscale" checked> Apply Grayscale</label>
+                        <label><input type="checkbox" id="crop"> Apply Center Crop</label>
+                    </div>
+
+                    <button type="submit">Execute Batch Augmentation</button>
+                </form>
+            </section>
+
+            <section class="result-section">
+                <h2>Augmentation Results</h2>
+                <div id="output" class="output">
+                    <p>Awaiting task execution...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

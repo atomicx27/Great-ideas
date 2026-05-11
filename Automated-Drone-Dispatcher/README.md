@@ -1,0 +1,2 @@
+# Automated-Drone-Dispatcher
+A classic **Automation** tool for Urban Drone Logistics. This system uses deterministic rules to assign packages to specific delivery drone models based on the package's weight and the delivery distance. It operates reliably and predictably, without complex AI or real-time adaptability, making it suitable for standard, pre-planned delivery routes.
