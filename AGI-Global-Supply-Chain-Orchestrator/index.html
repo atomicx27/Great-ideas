@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Global Supply Chain Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AGI Global Supply Chain Orchestrator</h1>
+            <p>Multi-Agent Swarm for Complex Business Problem Solving</p>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <section class="config">
+                    <h3>Master Orchestrator Config</h3>
+                    <div class="form-group">
+                        <label>LLM Provider:</label>
+                        <select id="master-provider">
+                            <option value="openai">OpenAI (GPT-4)</option>
+                            <option value="anthropic">Anthropic (Claude 3)</option>
+                            <option value="ollama">Local (Ollama)</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="task-input">
+                    <h3>High-Level Goal</h3>
+                    <textarea id="agi-goal" rows="5">Optimize our global supply chain for Q4 tech product launches, accounting for the recent Suez Canal delays and silicon shortage.</textarea>
+                    <button id="start-swarm-btn">Initialize Swarm</button>
+                </section>
+            </aside>
+
+            <main class="dashboard">
+                <div class="swarm-visualizer" id="swarm-container" style="display: none;">
+
+                    <div class="master-node">
+                        <h3>Master Orchestrator</h3>
+                        <p id="master-status">Deconstructing Goal...</p>
+                    </div>
+
+                    <div class="sub-agents-grid">
+                        <div class="agent-card" id="agent-logistics">
+                            <h4>Logistics Agent</h4>
+                            <div class="loader"></div>
+                            <p class="agent-status">Pending...</p>
+                            <div class="agent-output"></div>
+                        </div>
+
+                        <div class="agent-card" id="agent-risk">
+                            <h4>Risk Management Agent</h4>
+                            <div class="loader"></div>
+                            <p class="agent-status">Pending...</p>
+                            <div class="agent-output"></div>
+                        </div>
+
+                        <div class="agent-card" id="agent-demand">
+                            <h4>Demand Forecaster</h4>
+                            <div class="loader"></div>
+                            <p class="agent-status">Pending...</p>
+                            <div class="agent-output"></div>
+                        </div>
+                    </div>
+
+                    <div class="synthesis-node" id="synthesis-node" style="display: none;">
+                        <h3>Executive Synthesis</h3>
+                        <div id="final-strategy"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

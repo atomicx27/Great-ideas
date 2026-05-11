@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Evacuation Route Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Evacuation Route Planner</h1>
+        <p>An autonomous agent that checks real-time road conditions to plan safe evacuation routes.</p>
+
+        <div class="card">
+            <h2>Route Request</h2>
+            <form id="route-form">
+                <label for="prompt">Describe scenario:</label>
+                <textarea id="prompt" rows="3" required placeholder="e.g., Need to evacuate from downtown to the hills due to flooding."></textarea>
+                <button type="button" id="run-btn">Find Safe Route</button>
+            </form>
+        </div>
+
+        <div class="card result-card" id="output-card">
+            <h2>Agent Log</h2>
+            <div id="output-log"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

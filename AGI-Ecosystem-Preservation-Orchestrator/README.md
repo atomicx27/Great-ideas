@@ -1,0 +1,2 @@
+# AGI-Ecosystem-Preservation-Orchestrator
+A leap into **Artificial General Intelligence (AGI)** applied to Ecosystem Preservation. When a complex, ambiguous macro-level crisis occurs (e.g., severe prolonged drought), the AGI Master Orchestrator takes over. It spawns specialized sub-agents: Water Resources, Wildlife Management, and Local Community Impact. These operate simultaneously across vast datasets to synthesize a holistic survival strategy.

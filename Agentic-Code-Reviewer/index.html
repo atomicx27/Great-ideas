@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Code Reviewer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Include DOMPurify for sanitization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Code Reviewer</h1>
+            <p>Autonomous AI Agent that reviews code, suggests improvements, and explains reasoning.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>LLM Configuration (BYOK)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+                <div class="form-group" id="model-group" style="display: none;">
+                    <label for="model">Model Name (for Ollama):</label>
+                    <input type="text" id="model" placeholder="e.g. llama3">
+                </div>
+            </section>
+
+            <section class="task-section">
+                <h2>Code to Review</h2>
+                <div class="form-group">
+                    <textarea id="code-input" rows="8">
+function fetchUserData(id) {
+    let url = "https://api.example.com/users/" + id;
+    fetch(url).then(res => {
+        return res.json();
+    }).then(data => {
+        console.log(data);
+    });
+}
+                    </textarea>
+                </div>
+                <button id="run-agent-btn">Start Review Agent</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Agent Activity Log & Review</h2>
+                <div id="output-log" class="log-container">
+                    <p class="log-info">Waiting for code submission...</p>
+                </div>
+                <div id="final-review" class="review-container hidden markdown-body">
+                    <!-- Final review parsed from markdown will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

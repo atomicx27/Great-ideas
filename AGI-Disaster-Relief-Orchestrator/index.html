@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Disaster Relief Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Disaster Relief Orchestrator</h1>
+        <p>A multi-agent system coordinating Evacuation, Logistics, and Medical resources simultaneously.</p>
+
+        <div class="card control-panel">
+            <button id="start-swarm-btn">Deploy Emergency Swarm</button>
+            <p id="master-status" class="status-text">Awaiting Command</p>
+        </div>
+
+        <div class="swarm-container" id="swarm-container" style="display:none;">
+            <div class="agent-card" id="agent-evac">
+                <h3>🚗 Evacuation Agent</h3>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-logistics">
+                <h3>📦 Logistics Agent</h3>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-medical">
+                <h3>🚑 Medical Agent</h3>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div class="card synthesis-node" id="synthesis-node" style="display:none;">
+            <h2>Master Orchestrator Synthesis</h2>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

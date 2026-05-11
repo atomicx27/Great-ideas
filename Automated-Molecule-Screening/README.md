@@ -1,0 +1,3 @@
+# Automated-Molecule-Screening
+
+A classic **Automation** tool for Synthetic Biology and Drug Discovery. This system uses deterministic rules (such as Lipinski's Rule of Five) to evaluate candidate molecules based on molecular weight and logP (lipophilicity). Molecules that fall outside of acceptable parameters are automatically filtered out of the drug pipeline, preventing wasted resources in later clinical phases without needing complex AI.

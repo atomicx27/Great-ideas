@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Smart Factory Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Smart Factory Orchestrator</h1>
+            <p>Master Swarm Intelligence for Factory Crisis Management</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <button id="start-swarm-btn">Simulate Crisis: Main Assembly Power Failure</button>
+                <div id="master-status" class="master-status">Idle. Awaiting input.</div>
+            </div>
+
+            <div id="swarm-container" class="swarm-container" style="display: none;">
+                <div class="agent-card" id="agent-supply">
+                    <h3>Supply Chain Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <div class="agent-card" id="agent-production">
+                    <h3>Production Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <div class="agent-card" id="agent-maintenance">
+                    <h3>Maintenance Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </div>
+
+            <div id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

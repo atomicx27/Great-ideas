@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Patient Intake System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Patient Intake System</h1>
+            <p>Deterministic, rule-based medical routing logic.</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Patient Intake Form</h2>
+                <form id="intake-form">
+                    <div class="form-group">
+                        <label for="age">Patient Age:</label>
+                        <input type="number" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="symptom">Primary Symptom:</label>
+                        <select id="symptom" required>
+                            <option value="">Select a symptom...</option>
+                            <option value="chest_pain">Chest Pain</option>
+                            <option value="broken_bone">Suspected Broken Bone</option>
+                            <option value="rash">Skin Rash</option>
+                            <option value="fever">High Fever</option>
+                        </select>
+                    </div>
+                    <button type="submit">Submit and Route</button>
+                </form>
+            </section>
+
+            <section class="routing-section">
+                <h2>Routing Decision</h2>
+                <div id="routing-output" class="output-container">
+                    <p>Fill out the form to see routing decision.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

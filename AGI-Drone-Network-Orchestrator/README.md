@@ -1,0 +1,3 @@
+# AGI Drone Network Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** applied to Logistics. When a complex, ambiguous crisis occurs (e.g., "City-wide GPS spoofing attack during peak delivery hours"), the AGI Master Orchestrator assumes control. It breaks down the high-level survival/delivery goal and spawns specialized sub-agents: Inertial Navigation, Fleet Rerouting, and Customer Communication. These agents operate in parallel, and the Master synthesizes their outputs into a cohesive, network-wide stabilization strategy. Features BYOK architecture support.

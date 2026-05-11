@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI National Energy Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI National Energy Orchestrator</h1>
+        <p>A multi-agent AGI system orchestrating Solar, Wind, and Battery sub-agents to stabilize the grid.</p>
+
+        <div class="card control-panel">
+            <button id="start-swarm-btn">Initiate Swarm Orchestration</button>
+            <p id="master-status" class="status-text">Standby</p>
+        </div>
+
+        <div class="swarm-container" id="swarm-container" style="display:none;">
+            <div class="agent-card" id="agent-solar">
+                <h3>☀️ Solar Agent</h3>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-wind">
+                <h3>💨 Wind Agent</h3>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-battery">
+                <h3>🔋 Battery Agent</h3>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div class="card synthesis-node" id="synthesis-node" style="display:none;">
+            <h2>Master Orchestrator Synthesis</h2>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Agentic-Predictive-Maintenance-Bot
+A step up into **Agentic AI** for Smart Manufacturing. Unlike deterministic automation, this autonomous agent evaluates complex machine sensor telemetry. Given the goal of zero downtime, it autonomously decides which "tools" (e.g., vibration analysis, thermal imaging checks) to use when anomalies are detected. It synthesizes this multi-tool data to dynamically schedule preventative maintenance before a critical failure occurs, supporting BYOK architecture.

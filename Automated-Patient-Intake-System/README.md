@@ -1,0 +1,3 @@
+# Automated-Patient-Intake-System
+
+A classic **Automation** tool designed to streamline hospital admissions. It uses simple deterministic rules to evaluate basic patient criteria (like age and primary symptom) and automatically routes them to the correct department (Cardiology, Orthopedics, General Practice). This reduces administrative bottlenecks at the front desk and speeds up the triage process without needing complex AI.

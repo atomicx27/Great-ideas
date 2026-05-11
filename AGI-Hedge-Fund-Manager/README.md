@@ -1,0 +1,3 @@
+# AGI-Hedge-Fund-Manager
+
+A hypothetical leap into **Artificial General Intelligence (AGI)** for financial modeling. This multi-agent swarm orchestrator tackles complex, ambiguous investment goals (e.g., "Design a market-neutral strategy for Q3 hedging against inflation"). A Master Orchestrator breaks down the high-level goal and spawns parallel sub-agents (Quantitative Analyst, Macro-Economics, Risk Management) to evaluate massive, diverse datasets simultaneously, synthesizing their conflicting findings into a cohesive, executable trading strategy. Includes BYOK support. It drastically reduces the time a team of analysts needs to cross-reference their data, making high-level strategic work easier.

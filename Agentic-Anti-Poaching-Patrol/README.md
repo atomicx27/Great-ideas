@@ -1,0 +1,2 @@
+# Agentic-Anti-Poaching-Patrol
+A step up into **Agentic AI** for Ecosystem Preservation. This autonomous agent receives preliminary acoustic anomalies (like a suspected gunshot). Given the goal of protecting wildlife, it autonomously decides which "tools" (e.g., launching a drone camera, querying GPS collars) to use to gather more context. It dynamically synthesizes this data to confirm a threat and automatically dispatch rangers.

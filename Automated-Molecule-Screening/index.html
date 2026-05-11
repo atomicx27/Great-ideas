@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Molecule Screening</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Molecule Screening</h1>
+            <p>Deterministic, rule-based molecular filtering.</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Molecule Evaluation</h2>
+                <form id="screening-form">
+                    <div class="form-group">
+                        <label for="weight">Molecular Weight (Daltons):</label>
+                        <input type="number" id="weight" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="logp">logP (Lipophilicity):</label>
+                        <input type="number" id="logp" step="0.1" required>
+                    </div>
+                    <button type="submit">Screen Molecule</button>
+                </form>
+            </section>
+
+            <section class="routing-section">
+                <h2>Screening Result</h2>
+                <div id="screening-output" class="output-container">
+                    <p>Enter molecule properties to evaluate.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

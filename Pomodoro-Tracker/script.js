@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 startBtn.disabled = false;
                 pauseBtn.disabled = true;
                 // Optional: Play sound here
-                alert('Timer finished!');
+                showNotification('Timer finished!');
                 resetTimer(); // Reset to default for current mode
             }
         }, 1000);
@@ -140,5 +140,22 @@ document.addEventListener('DOMContentLoaded', () => {
         li.appendChild(span);
         li.appendChild(deleteBtn);
         taskList.appendChild(li);
+    }
+
+    function showNotification(message) {
+        const container = document.getElementById('notification-container');
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+
+        container.appendChild(notification);
+
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => {
+                notification.remove();
+            }, 500);
+        }, 3000);
     }
 });

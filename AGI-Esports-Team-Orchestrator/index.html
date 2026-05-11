@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI eSports Team Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI eSports Team Orchestrator</h1>
+        <p>Simulating an AGI orchestrating multiple sub-agents to manage a professional eSports team for a major tournament.</p>
+
+        <button id="start-swarm-btn">Initialize Tournament Prep</button>
+        <p id="master-status" class="status-text">Status: Idle</p>
+
+        <div id="swarm-container" class="swarm" style="display:none;">
+            <div id="agent-draft" class="agent-card">
+                <h3>🎮 Draft & Meta Analyst</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-training" class="agent-card">
+                <h3>🏋️ Training Scheduler</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-business" class="agent-card">
+                <h3>💼 Sponsor Negotiator</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" style="display:none; margin-top:20px;">
+            <h3>Master Tournament Strategy</h3>
+            <div id="final-strategy" class="strategy-output"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Irrigation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Irrigation System</h1>
+        <p>A deterministic system that triggers irrigation based on soil moisture thresholds.</p>
+
+        <div class="sensor-panel">
+            <label for="moisture-level">Soil Moisture Level (%):</label>
+            <input type="number" id="moisture-level" value="40" min="0" max="100">
+            <button id="check-btn">Check Status</button>
+        </div>
+
+        <div id="pump-status" class="status pump-off">Pump: OFF</div>
+        <div id="log" class="log"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
