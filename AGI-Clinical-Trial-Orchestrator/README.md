@@ -1,0 +1,3 @@
+# AGI-Clinical-Trial-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** applied to Clinical Research. When faced with the complex, ambiguous goal of launching a Phase II clinical trial for a new oncology drug, the AGI Master Orchestrator takes charge. It breaks down the high-level objective and spawns specialized sub-agents: Patient Recruitment (targeting demographics), Regulatory Compliance (FDA filings), and Biostatistical Analysis (designing the power analysis). These agents operate in parallel, and the Master synthesizes their outputs into a cohesive, ready-to-execute clinical trial protocol. Features BYOK architecture support.
