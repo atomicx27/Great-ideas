@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Matchmaking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Matchmaking System</h1>
+            <p>A deterministic tool in the eSports/Gaming domain to match players based on MMR.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Queue Players</h2>
+                <div class="form-group">
+                    <label for="player-mmr">New Player MMR (0-3000):</label>
+                    <input type="number" id="player-mmr" value="1500" min="0" max="3000">
+                </div>
+                <button id="queue-btn">Add to Queue</button>
+                <button id="match-btn">Run Matchmaker</button>
+            </section>
+
+            <section class="output-section">
+                <div class="queue-container">
+                    <h3>Current Queue</h3>
+                    <ul id="player-queue"></ul>
+                </div>
+                <div class="matches-container">
+                    <h3>Generated Matches</h3>
+                    <ul id="match-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
