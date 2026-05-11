@@ -1,3 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 { margin-top: 0; color: #2c3e50; }
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover { background-color: #2980b9; }
+
+.log-container {
+    height: 300px;
+    overflow-y: auto;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+.log-container p { margin: 5px 0; }
+.log-info { color: #9cdcfe; }
+.log-thought { color: #c586c0; font-style: italic; }
+.log-action { color: #dcdcaa; }
+.log-success { color: #6a9955; font-weight: bold; }
 :root {
     --bg-color: #eef2f3;
     --container-bg: #ffffff;

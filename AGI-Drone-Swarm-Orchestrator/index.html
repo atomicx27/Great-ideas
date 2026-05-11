@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Drone Swarm Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Drone Swarm Orchestrator</h1>
+        <p>Simulating multi-agent swarm intelligence for fleet-wide logistics optimization.</p>
+
+        <button id="start-swarm-btn">Initiate Swarm Orchestration</button>
+
+        <div id="master-node" class="node">
+            <h3>Master Orchestrator</h3>
+            <p id="master-status">Awaiting high-level directive...</p>
+        </div>
+
+        <div id="swarm-container" style="display: none;">
+            <div id="agent-logistics" class="agent-card">
+                <h4>Sub-Agent: Logistics</h4>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-atc" class="agent-card">
+                <h4>Sub-Agent: ATC</h4>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-maintenance" class="agent-card">
+                <h4>Sub-Agent: Maintenance</h4>
+                <div class="agent-status">Pending...</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" class="node" style="display: none;">
+            <h3>Synthesized Fleet Strategy</h3>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
