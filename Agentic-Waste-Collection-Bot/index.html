@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Waste Collection Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Waste Collection Routing</h1>
+        <p>Autonomous AI Agent generating optimal collection routes based on live sensor and traffic data.</p>
+
+        <div class="actions">
+            <button id="plan-route-btn">Generate Optimal Route</button>
+        </div>
+
+        <div class="agent-workspace">
+            <div class="log-panel">
+                <h3>Agent Thought Process</h3>
+                <div id="agent-log" class="log"></div>
+            </div>
+            <div class="map-panel">
+                <h3>Final Route Plan</h3>
+                <ul id="route-list" class="route">
+                    <li class="route-point placeholder">Awaiting generation...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

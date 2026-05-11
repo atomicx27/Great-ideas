@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated DNA Sequencer Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated DNA Sequencer Monitor</h1>
+        <p>Monitors DNA sequencing runs using deterministic rules to alert on low-quality reads.</p>
+
+        <div class="monitor-panel">
+            <h2>Current Run Metrics</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <span>Average Q-Score:</span>
+                    <span id="q-score">--</span>
+                </div>
+                <div class="metric">
+                    <span>Error Rate:</span>
+                    <span id="error-rate">--</span>%
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start-btn">Start Monitor</button>
+                <button id="stop-btn" disabled>Stop Monitor</button>
+            </div>
+
+            <div id="status-message" class="status">System idle.</div>
+            <div id="alert-log" class="log"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

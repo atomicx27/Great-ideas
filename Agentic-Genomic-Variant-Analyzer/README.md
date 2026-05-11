@@ -1,0 +1,3 @@
+# Agentic-Genomic-Variant-Analyzer
+
+A step up into **Agentic AI** in the Genomics/Biotech domain. This autonomous single-agent system analyzes identified genetic variants (e.g., from a patient's sequenced DNA). Instead of a static lookup, the agent receives a variant (like "BRCA1 c.68_69delAG") and autonomously decides which simulated tools to use (e.g., `queryClinVar`, `checkLiterature`, `assessPathogenicity`). It synthesizes the tool outputs to provide a comprehensive, clinical-grade variant interpretation report. Features BYOK architecture support.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Precision Medicine Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Precision Medicine Orchestrator</h1>
+        <p>Swarm intelligence designing personalized medicine protocols through parallel expert agent synthesis.</p>
+
+        <div class="input-panel">
+            <textarea id="patient-data" rows="4" placeholder="Enter patient clinical and genomic profile... (e.g., 45yo Female, Stage II Breast Cancer, BRCA1 Pathogenic Variant, Allergic to Penicillin)"></textarea>
+            <button id="orchestrate-btn">Commence Multi-Agent Orchestration</button>
+        </div>
+
+        <div class="swarm-dashboard">
+            <div class="agent-col" id="agent-genomics">
+                <div class="agent-header">Genomics Expert</div>
+                <div class="agent-status">Idle</div>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-col" id="agent-pharmacy">
+                <div class="agent-header">Pharmacologist</div>
+                <div class="agent-status">Idle</div>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-col" id="agent-oncology">
+                <div class="agent-header">Oncology Specialist</div>
+                <div class="agent-status">Idle</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div class="master-synthesis">
+            <h2>Master Orchestrator Synthesis</h2>
+            <div id="master-output" class="synthesis-content">Awaiting sub-agent completion...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Genomic Variant Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Genomic Variant Analyzer</h1>
+        <p>Autonomous AI Agent that investigates genetic variants using simulated clinical tools.</p>
+
+        <div class="input-section">
+            <input type="text" id="variant-input" placeholder="Enter Variant (e.g., BRCA1 c.68_69delAG)" value="BRCA1 c.68_69delAG">
+            <button id="analyze-btn">Analyze Variant</button>
+        </div>
+
+        <div class="agent-workspace">
+            <div class="log-panel">
+                <h3>Agent Thought Process & Tool Execution</h3>
+                <div id="agent-log" class="log"></div>
+            </div>
+            <div class="report-panel">
+                <h3>Final Synthesis Report</h3>
+                <div id="final-report" class="report">Awaiting analysis...</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

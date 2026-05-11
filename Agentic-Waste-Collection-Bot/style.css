@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #34495e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+h1 { text-align: center; color: #f1c40f; }
+p { text-align: center; color: #bdc3c7; margin-bottom: 25px; }
+
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) { background-color: #d35400; }
+button:disabled { background-color: #7f8c8d; cursor: not-allowed; }
+
+.agent-workspace {
+    display: flex;
+    gap: 20px;
+}
+
+.log-panel, .map-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color: #ecf0f1;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.log {
+    flex: 1;
+    background-color: #1e272e;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9em;
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: 400px;
+    border: 1px solid #2c3e50;
+}
+
+.log-entry { margin-bottom: 8px; line-height: 1.4; }
+.log-entry.thought { color: #3498db; }
+.log-entry.tool-call { color: #f39c12; }
+.log-entry.tool-result { color: #2ecc71; }
+
+.route {
+    flex: 1;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 15px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin: 0;
+    min-height: 300px;
+    border: 1px solid #bdc3c7;
+}
+
+.route-point {
+    padding: 10px;
+    border-bottom: 1px solid #bdc3c7;
+    position: relative;
+    padding-left: 30px;
+}
+
+.route-point::before {
+    content: '→';
+    position: absolute;
+    left: 10px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.route-point.placeholder::before { content: ''; }
+.route-point:last-child { border-bottom: none; }
