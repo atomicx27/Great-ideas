@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Drone Network Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Drone Network Orchestrator</h1>
+            <p>Multi-Agent Swarm Orchestration for complex logistics crises.</p>
+        </header>
+
+        <main>
+            <section class="orchestrator-config">
+                <h2>Configure AGI Brain (Master Orchestrator)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Select Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI (BYOK)</option>
+                        <option value="anthropic">Anthropic (BYOK)</option>
+                        <option value="ollama">Ollama (Local/Private)</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="scenario-section">
+                <h2>Simulate Crisis Scenario</h2>
+                <div class="form-group">
+                    <label for="crisis-input">High-Level Crisis Goal:</label>
+                    <textarea id="crisis-input" rows="3">City-wide GPS spoofing attack detected. Ensure all airborne drones switch to inertial navigation and safely land or complete deliveries without collisions.</textarea>
+                </div>
+                <button id="start-orchestrator-btn">Deploy AGI Orchestrator</button>
+            </section>
+
+            <section class="swarm-visualization">
+                <h3>Swarm Activity</h3>
+                <div class="agent-grid">
+                    <div class="agent-card" id="agent-master">
+                        <h4>Master Orchestrator</h4>
+                        <p class="status">Idle</p>
+                    </div>
+                    <div class="agent-card" id="agent-nav">
+                        <h4>Inertial Nav Sub-Agent</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                    <div class="agent-card" id="agent-fleet">
+                        <h4>Fleet Rerouting Sub-Agent</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                    <div class="agent-card" id="agent-comms">
+                        <h4>Comms Sub-Agent</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="agent-output">
+                <h3>Executive Summary & Action Plan</h3>
+                <div id="output-log" class="log-container">
+                    <!-- Final synthesized output will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
