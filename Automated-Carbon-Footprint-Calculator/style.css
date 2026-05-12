@@ -1,0 +1,107 @@
+:root {
+    --primary: #10b981;
+    --primary-hover: #059669;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-muted);
+}
+
+.calculator-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.hidden {
+    display: none;
+}
+
+.results-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.calculation-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calculation-item:last-child {
+    border-bottom: none;
+}
+
+.total-emissions {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ef4444;
+    margin-top: 1rem;
+}

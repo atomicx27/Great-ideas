@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Global Climate Mitigation Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Global Climate Mitigation Orchestrator</h1>
+            <p>Master AGI managing parallel sub-agents to synthesize a Net-Zero climate strategy.</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-swarm-btn">Initialize Net-Zero Master Plan (Launch AGI Swarm)</button>
+                <div id="master-status" class="master-status">Awaiting task initialization...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Policy Simulator -->
+                <div class="agent-card" id="agent-policy">
+                    <h3>Sub-Agent: Policy Simulator</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Energy Grid Transition -->
+                <div class="agent-card" id="agent-energy">
+                    <h3>Sub-Agent: Energy Grid Transition</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Global Reforestation -->
+                <div class="agent-card" id="agent-reforestation">
+                    <h3>Sub-Agent: Global Reforestation</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Executive Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

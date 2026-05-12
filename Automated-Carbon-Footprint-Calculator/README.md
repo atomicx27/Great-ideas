@@ -1,0 +1,2 @@
+# Automated-Carbon-Footprint-Calculator
+A classic **Automation** tool for Carbon Management & Climate Tech. This system uses deterministic rules to calculate CO2 emissions based on user inputs such as electricity consumption and flight data. It relies on standard, fixed emission factors to provide a predictable and consistent footprint calculation, automating the tracking process without requiring complex AI.
