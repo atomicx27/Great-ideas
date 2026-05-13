@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Interview Conductor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import shared LLM API script -->
+    <script src="../shared/llm-api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Interview Conductor</h1>
+            <p>Autonomous AI Agent for dynamic technical interviews and scoring.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>API Configuration</h2>
+                <div class="input-group">
+                    <label for="llm-provider">LLM Provider:</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama" selected>Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </section>
+
+            <section class="agent-section">
+                <h2>Interview Session</h2>
+                <div class="input-group">
+                    <label for="candidate-profile">Candidate Profile / Goal:</label>
+                    <textarea id="candidate-profile" rows="3" placeholder="e.g., Senior React Developer">Senior React Developer</textarea>
+                </div>
+                <div class="controls">
+                    <button id="start-interview-btn">Start Autonomous Interview</button>
+                </div>
+                <div id="agent-state" class="agent-state-container">
+                    <p>Status: <span id="status-text">Idle</span></p>
+                    <div id="agent-log" class="log-container"></div>
+                </div>
+                <div id="interview-result" class="result-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -246,3 +246,21 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 48. **AGI-Global-Compute-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to global Cloud Infrastructure. During a complex, multi-region outage, a Master Orchestrator breaks down the crisis and spawns specialized sub-agents (Network, Storage, Compute). They operate simultaneously to reroute traffic, promote database replicas, and spin up compute instances, synthesizing their work into a global recovery strategy.
+
+49. **Automated-Resume-Screener**
+    A classic **Automation** tool in the Human Resources domain. It is designed to quickly evaluate candidate resumes against a predefined set of required keywords. It does not use AI; instead, it relies on simple, deterministic string parsing to calculate a match percentage and automatically filter out applicants who don't meet the minimum threshold, saving recruiters hours of manual scanning.
+
+50. **Agentic-Interview-Conductor**
+    A step up into **Agentic AI** in the Human Resources domain. Unlike a static script, this autonomous agent is given a target candidate profile. It autonomously decides which technical topics to cover, dynamically generates questions, evaluates the candidate's simulated responses, and synthesizes the data into a final hiring recommendation. Supports BYOK architecture.
+
+51. **AGI-Workforce-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** for enterprise Human Resources. The Master Orchestrator takes an ambiguous, high-level business objective (e.g., "Scale engineering team by 50 developers globally") and spawns specialized sub-agents: Recruitment, Onboarding, and Culture. These agents operate in parallel, and the Master synthesizes their outputs into a cohesive execution strategy. Supports BYOK architecture.
+
+52. **Automated-Carbon-Footprint-Calculator**
+    A classic **Automation** tool in the Climate Tech & Carbon Management domain. It is designed to replace manual environmental auditing spreadsheets. It relies on deterministic mathematical rules and standard EPA conversion factors to calculate an enterprise's Scope 1 and Scope 2 emissions based on raw usage data, without using AI.
+
+53. **Agentic-Carbon-Offset-Trader**
+    A step up into **Agentic AI** in the Climate Tech domain. This autonomous agent is given a complex financial and environmental goal. It autonomously decides which simulated market APIs to use to gather live pricing data, dynamically synthesizes this data to solve an optimization problem, and executes the necessary trades to balance the offset portfolio. Supports BYOK architecture.
+
+54. **AGI-Climate-Mitigation-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to global Climate Tech and Crisis Management. When faced with a complex macro-level crisis, the AGI Master Orchestrator breaks down the threat and spawns specialized sub-agents: Climate Modeler, Agri-Economics, and Policy & Relief. The Orchestrator synthesizes their parallel findings into a cohesive, global mitigation strategy. Features BYOK architecture support.

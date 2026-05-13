@@ -1,0 +1,124 @@
+/* Base Styles from other automation projects */
+:root {
+    --primary: #10b981;
+    --primary-hover: #059669;
+    --bg-color: #f0fdf4;
+    --card-bg: #ffffff;
+    --text-main: #064e3b;
+    --text-muted: #475569;
+    --border-color: #a7f3d0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-muted);
+}
+
+.calculator-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.results-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #ecfdf5;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.results-container h3 {
+    margin-top: 0;
+    color: var(--primary-hover);
+}
+
+.metric-box {
+    margin: 1.5rem 0;
+}
+
+.total-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #047857;
+}
+
+.unit {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.breakdown {
+    text-align: left;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.breakdown p {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
