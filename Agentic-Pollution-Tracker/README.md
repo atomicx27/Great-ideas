@@ -1,0 +1,3 @@
+# Agentic-Pollution-Tracker
+
+A step up into **Agentic AI** for ocean cleanup operations. This autonomous drone does not rely on simple battery or bin thresholds. Instead, it is given the goal to maximize microplastic collection efficiency. It autonomously decides which "tools" (simulated Ocean Currents API, Microplastic Density Scanner) to use to gather context about its environment. It dynamically synthesizes this multi-source data to chart the optimal path, recalculating in real-time as currents shift. Features BYOK architecture.

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Ocean Cleanup Orchestrator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #eef; }
+        .container { max-width: 1000px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .agent-card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; background: #fafafa; }
+        .agent-title { font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #333; }
+        .agent-output { font-family: monospace; font-size: 0.9em; min-height: 80px; color: #555; }
+        .master-card { border: 2px solid #007bff; background: #f0f8ff; padding: 20px; border-radius: 5px; }
+        .master-title { font-weight: bold; font-size: 1.2em; color: #0056b3; margin-bottom: 10px; }
+        .master-output { font-family: monospace; font-size: 1em; color: #111; min-height: 100px; }
+        button { padding: 12px 20px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; width: 100%; margin-bottom: 20px;}
+        button:hover { background: #218838; }
+        button:disabled { background: #6c757d; cursor: not-allowed; }
+        .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #333; animation: spin 1s ease-in-out infinite; margin-right: 10px; display: none; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Ocean Cleanup Orchestrator</h1>
+        <p>Goal: Coordinate a response to a massive new garbage patch discovery amidst an incoming typhoon.</p>
+
+        <button id="orchestrate-btn"><span class="spinner" id="spinner"></span>Engage Master Orchestrator</button>
+
+        <div class="grid">
+            <div class="agent-card">
+                <div class="agent-title">Drone Navigators (Mapping)</div>
+                <div id="drone-output" class="agent-output">Waiting for command...</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-title">Skimmer Fleets (Collection)</div>
+                <div id="skimmer-output" class="agent-output">Waiting for command...</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-title">Logistics (Weather/Offload)</div>
+                <div id="logistics-output" class="agent-output">Waiting for command...</div>
+            </div>
+        </div>
+
+        <div class="master-card">
+            <div class="master-title">Master Orchestrator Synthesis</div>
+            <div id="master-output" class="master-output">Awaiting sub-agent reports...</div>
+        </div>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Automated-Ore-Crusher
+
+A classic **Automation** tool for asteroid mining operations. This system manages a zero-gravity ore crusher. It uses deterministic rules to evaluate its hopper capacity and internal crushing temperature. If the temperature exceeds a safety threshold, or the hopper becomes full, the crusher automatically halts operations and engages cooling mechanisms. It operates on predefined, predictable logic without the need for AI.
