@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e272e;
+    color: #d2dae2;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #485460;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.api-setup, .input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #808e9b;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #808e9b;
+    border-radius: 4px;
+    background-color: #1e272e;
+    color: white;
+}
+
+button {
+    padding: 12px;
+    background-color: #0fbcf9;
+    color: #1e272e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button:hover { background-color: #00d8d6; }
+
+.swarm-visualizer {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.agent-card {
+    flex: 1;
+    background-color: #1e272e;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #808e9b;
+    text-align: center;
+}
+
+.agent-card h3 { margin-top: 0; font-size: 16px; color: #0fbcf9; }
+.agent-card .status { font-family: monospace; font-size: 14px; color: #d2dae2; height: 100px; overflow-y: auto;}
+
+.result-box {
+    padding: 15px;
+    background-color: #d2dae2;
+    color: #1e272e;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+/* Animations */
+.working {
+    border-color: #0fbcf9;
+    box-shadow: 0 0 10px #0fbcf9;
+}

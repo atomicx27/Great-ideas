@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Resume Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Resume Filter</h1>
+        <div class="input-section">
+            <label for="keywords">Required Keywords (comma-separated):</label>
+            <input type="text" id="keywords" placeholder="e.g., JavaScript, React, Node.js">
+
+            <label for="resume">Applicant Resume:</label>
+            <textarea id="resume" rows="10" placeholder="Paste applicant resume here..."></textarea>
+
+            <button id="filter-btn">Filter Resume</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Result</h2>
+            <div id="result" class="result-box">Waiting for input...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

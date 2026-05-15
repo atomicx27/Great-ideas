@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Resume Evaluator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Resume Evaluator</h1>
+
+        <div class="api-setup">
+            <h3>API Configuration</h3>
+            <select id="provider">
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+                <option value="ollama">Ollama (Local)</option>
+            </select>
+            <input type="password" id="apiKey" placeholder="Enter API Key / URL">
+            <input type="text" id="model" placeholder="Model (e.g., gpt-4, claude-3)">
+        </div>
+
+        <div class="input-section">
+            <label for="jobDesc">Job Description:</label>
+            <textarea id="jobDesc" rows="5" placeholder="Paste job description here..."></textarea>
+
+            <label for="resume">Applicant Resume:</label>
+            <textarea id="resume" rows="5" placeholder="Paste applicant resume here..."></textarea>
+
+            <button id="evaluate-btn">Run Agentic Evaluation</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Agent Log</h2>
+            <div id="agent-log" class="log-box"></div>
+
+            <h2>Final Recommendation</h2>
+            <div id="result" class="result-box">Waiting for evaluation...</div>
+        </div>
+    </div>
+
+    <!-- DOMPurify for sanitization and marked for markdown -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -246,3 +246,20 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 48. **AGI-Global-Compute-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to global Cloud Infrastructure. During a complex, multi-region outage, a Master Orchestrator breaks down the crisis and spawns specialized sub-agents (Network, Storage, Compute). They operate simultaneously to reroute traffic, promote database replicas, and spin up compute instances, synthesizing their work into a global recovery strategy.
+49. **Automated-Resume-Filter**
+    A classic **Automation** tool for the Human Resources domain. It uses deterministic keyword-matching logic to filter incoming resumes based on required skills. It evaluates the presence of keywords and automatically calculates a match score, saving recruiters time on initial screening without relying on complex AI.
+
+50. **Agentic-Resume-Evaluator**
+    A step up into **Agentic AI** in the Human Resources domain. Unlike simple keyword matching, this autonomous agent evaluates a candidate's resume holistically against a job description. It uses simulated tools to perform a gap analysis of missing skills and synthesizes this data to provide a nuanced, qualitative recommendation. Supports BYOK architecture.
+
+51. **AGI-Workforce-Planner-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to Human Resources and Workforce Planning. When a company faces a complex, ambiguous restructuring challenge, the AGI Master Orchestrator takes control. It breaks down the high-level business goal and spawns specialized sub-agents (Recruiting, Training, Restructuring) that operate in parallel. The Master synthesizes their outputs into a cohesive, company-wide execution strategy. Supports BYOK architecture.
+
+52. **Automated-Email-Campaign-Manager**
+    A classic **Automation** tool in the Sales & Marketing domain. It allows users to define a single email template with placeholder tags. It automatically loops through a provided contact list, replacing the placeholders with the correct deterministic data for each contact, drastically speeding up mass outreach campaigns without using AI.
+
+53. **Agentic-Sales-Development-Rep**
+    A step up into **Agentic AI** in the Sales & Marketing domain. Instead of sending identical templates, this autonomous agent researches a prospect. Given a prospect's basic information and a goal, it synthesizes multi-source data to draft highly personalized, contextual outreach tailored to their recent events and pain points. Supports BYOK architecture.
+
+54. **AGI-Marketing-Campaign-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to Sales & Marketing. When tasked with launching a new global product, the AGI Master Orchestrator breaks down the complex campaign goal. It spawns specialized sub-agents: Copywriter, SEO Analyst, and Ad-Buyer. These agents operate in parallel, and the Master synthesizes their outputs into a cohesive, ready-to-deploy global marketing campaign strategy. Supports BYOK architecture.
