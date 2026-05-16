@@ -48,22 +48,22 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 15. **AGI-Legal-Contract-Reviewer**
     An Artificial General Intelligence (AGI) application designed to simulate a multi-departmental executive review of complex legal documents and contracts. In typical enterprise environments, getting a contract reviewed requires sequential approvals from Legal, Finance, and Compliance—a process that often takes weeks. This tool uses an AGI Master Orchestrator to break the contract down and spawn specialized sub-agents (Liability Expert, Compliance Officer, Financial Risk Analyst) that review the document simultaneously. It synthesizes their findings into a cohesive Executive Summary, highlighting critical risks and conflicting opinions instantly, drastically accelerating deal cycles.
 
-16. **Automated-Inventory-Tracker**
+49. **Automated-Inventory-Tracker**
     A classic **Automation** tool replacing manual inventory spreadsheets. It uses deterministic rules and predefined low-stock thresholds to automate the tracking process, preventing out-of-stock scenarios and streamlining replenishment without requiring complex AI.
 
-17. **Agentic-Procurement-Specialist**
+50. **Agentic-Procurement-Specialist**
     A step up into **Agentic AI**. This autonomous AI Agent handles optimal inventory replenishment. Given a goal and access to tools (like checking inventory and supplier prices), it autonomously decides which actions to take to maintain optimal stock levels within a budget. Includes BYOK support.
 
-18. **AGI-Global-Supply-Chain-Orchestrator**
+51. **AGI-Global-Supply-Chain-Orchestrator**
     A hypothetical leap into **Artificial General Intelligence (AGI)**. This multi-agent swarm orchestrator tackles complex, ambiguous business problems (e.g., "Optimize supply chain for Q4 amidst port delays"). A Master Orchestrator breaks down the high-level goal and spawns parallel sub-agents (Logistics, Risk, Demand) to evaluate massive datasets simultaneously, synthesizing their findings into an executive strategy. Includes BYOK support.
 
-19. **Automated-Financial-Report-Compiler**
+52. **Automated-Financial-Report-Compiler**
     A classic **Automation** tool replacing manual financial data aggregation in spreadsheets. It uses deterministic rules to automate the generation of quarterly financial reports, reducing human error.
 
-20. **Agentic-Investment-Analyst**
+53. **Agentic-Investment-Analyst**
     A step up into **Agentic AI**. This autonomous AI Agent synthesizes investment data. Given a goal and access to tools (like checking stock prices and news), it autonomously evaluates the context and provides a recommendation. Includes BYOK support.
 
-21. **AGI-Hedge-Fund-Manager**
+54. **AGI-Hedge-Fund-Manager**
     A hypothetical leap into **Artificial General Intelligence (AGI)**. This multi-agent swarm orchestrator tackles complex investment strategies. A Master Orchestrator spawns parallel sub-agents (Quant, Macro, Risk) to evaluate diverse datasets simultaneously, synthesizing their findings into an executable strategy. Includes BYOK support.
 
 22. **Automated-Patient-Intake-System**
@@ -246,3 +246,21 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 48. **AGI-Global-Compute-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to global Cloud Infrastructure. During a complex, multi-region outage, a Master Orchestrator breaks down the crisis and spawns specialized sub-agents (Network, Storage, Compute). They operate simultaneously to reroute traffic, promote database replicas, and spin up compute instances, synthesizing their work into a global recovery strategy.
+
+49. **Automated-Sonar-Mapper**
+    A classic **Automation** tool for mapping the sea floor. It uses deterministic mathematical rules to process raw sonar data, categorize depths, and highlight hazards without relying on AI, demonstrating the foundational layer of deep-sea exploration automation.
+
+50. **Agentic-Submarine-Explorer**
+    A step up into **Agentic AI** applied to deep-sea navigation. Unlike deterministic mappers, this autonomous submarine agent uses a ReAct loop to analyze telemetry, decide on actions, and use simulated tools (`adjustDepth`, `scanEnvironment`, `propel`) to dynamically navigate trenches and avoid obstacles.
+
+51. **AGI-Oceanic-Research-Swarm**
+    A leap into **Artificial General Intelligence (AGI)** for oceanic research. Given a high-level research goal, a Master Orchestrator spawns and coordinates a swarm of specialized sub-agents (Mapper, Biologist, Chemist). These agents execute tasks in parallel, simulating a massive, synchronized scientific expedition, and synthesize their findings into a cohesive report.
+
+52. **Automated-Asteroid-Scanner**
+    A deterministic **Automation** tool for deep space. It scans spectral data from near-Earth objects and uses predefined threshold rules to categorize asteroid composition (e.g., Water-Ice, Iron, Silicate) and identify viable targets without AI.
+
+53. **Agentic-Asteroid-Rover**
+    An **Agentic AI** application for surface mining. Placed on an asteroid, this autonomous agent uses a ReAct loop and simulated tools (`moveRover`, `analyzeSample`, `drillSample`) to search for and extract specific valuable ores, adapting its behavior based on localized sensor feedback.
+
+54. **AGI-Asteroid-Mining-Orchestrator**
+    A multi-agent **AGI** system orchestrating a large-scale supply chain operation in space. A Master Orchestrator breaks down macro logistics goals and simultaneously deploys orbital scanners, surface miners, and heavy transports to secure and deliver resources.

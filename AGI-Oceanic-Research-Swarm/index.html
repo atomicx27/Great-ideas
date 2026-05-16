@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Oceanic Research Swarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Oceanic Research Swarm</h1>
+        <p>Multi-Agent Orchestrator for Deep Sea Research</p>
+    </header>
+
+    <main class="container">
+        <section class="orchestrator-panel">
+            <h2>Master Orchestrator</h2>
+            <div class="input-group">
+                <label for="research-goal">Research Goal:</label>
+                <textarea id="research-goal" rows="3" placeholder="e.g., Analyze the biodiversity and thermal vent activity in the Mariana Trench..."></textarea>
+            </div>
+            <button id="deploy-swarm-btn" class="primary-btn">Deploy Research Swarm</button>
+            <div id="orchestrator-log" class="orchestrator-text">Awaiting directive...</div>
+        </section>
+
+        <section id="swarm-dashboard" class="swarm-grid hidden">
+            <div class="agent-card" id="agent-mapper">
+                <h3><i class="fa-solid fa-map"></i> Topographic Mapper</h3>
+                <div class="status-indicator"></div>
+                <div class="agent-log" id="log-mapper">Awaiting orders...</div>
+            </div>
+
+            <div class="agent-card" id="agent-biologist">
+                <h3><i class="fa-solid fa-fish"></i> Bio-Sampler</h3>
+                <div class="status-indicator"></div>
+                <div class="agent-log" id="log-biologist">Awaiting orders...</div>
+            </div>
+
+            <div class="agent-card" id="agent-chemist">
+                <h3><i class="fa-solid fa-flask"></i> Chem-Analyzer</h3>
+                <div class="status-indicator"></div>
+                <div class="agent-log" id="log-chemist">Awaiting orders...</div>
+            </div>
+        </section>
+
+        <section id="synthesis-panel" class="hidden">
+            <h2>Final Synthesized Report</h2>
+            <div id="final-report" class="report-content"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

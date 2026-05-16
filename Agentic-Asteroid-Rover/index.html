@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Asteroid Rover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Asteroid Rover</h1>
+        <p>Autonomous Surface Mining Operations</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Mission Command</h2>
+            <div class="input-group">
+                <label for="target-ore">Target Ore Type:</label>
+                <select id="target-ore">
+                    <option value="Iron">Iron</option>
+                    <option value="Platinum">Platinum</option>
+                    <option value="Ice">Water-Ice</option>
+                </select>
+            </div>
+            <button id="launch-btn" class="primary-btn">Deploy Rover</button>
+
+            <div id="rover-status" class="status-panel">
+                <h3>Rover Telemetry</h3>
+                <p>Location Sector: <span id="current-loc">0</span></p>
+                <p>Cargo: <span id="cargo-status">Empty</span></p>
+            </div>
+        </section>
+
+        <section class="agent-log">
+            <h2>Rover Logic Feed</h2>
+            <div class="log-container" id="thought-log"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

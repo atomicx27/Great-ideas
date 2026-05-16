@@ -1,0 +1,113 @@
+:root {
+    --bg-color: #0b132b;
+    --text-color: #e2e8f0;
+    --panel-bg: #1c2541;
+    --accent-color: #3a506b;
+    --highlight-color: #5bc0be;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    color: var(--highlight-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+section {
+    background: var(--panel-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--accent-color);
+    background: #0f172a;
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--highlight-color);
+    color: #0b132b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.primary-btn:hover {
+    background: #6fffe9;
+}
+
+.primary-btn:disabled {
+    background: #475569;
+    cursor: not-allowed;
+}
+
+.status-panel {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0f172a;
+    border-radius: 6px;
+    border-left: 4px solid var(--highlight-color);
+}
+
+.status-panel h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.log-container {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 6px;
+    height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+}
+
+.log-entry {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #334155;
+}
+
+.log-thought { color: #94a3b8; }
+.log-action { color: #f59e0b; }
+.log-observation { color: var(--highlight-color); }

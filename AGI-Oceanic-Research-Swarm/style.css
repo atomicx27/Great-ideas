@@ -1,0 +1,143 @@
+:root {
+    --bg-color: #051622;
+    --text-color: #e2e8f0;
+    --panel-bg: #132738;
+    --accent-color: #1ba098;
+    --highlight-color: #deb992;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--highlight-color);
+    margin: 0 0 10px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section {
+    background: var(--panel-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #1e3a5f;
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: #0b1a28;
+    color: white;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.primary-btn:hover { background: #168a83; }
+.primary-btn:disabled { background: #475569; cursor: not-allowed; }
+
+.orchestrator-text {
+    margin-top: 15px;
+    padding: 15px;
+    background: #0b1a28;
+    border-left: 4px solid var(--highlight-color);
+    font-family: monospace;
+}
+
+.swarm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.hidden { display: none !important; }
+
+.agent-card {
+    background: #0b1a28;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #1e3a5f;
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-indicator {
+    height: 4px;
+    background: #334155;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.status-indicator.working {
+    background: var(--accent-color);
+    animation: pulse 1s infinite;
+}
+
+.status-indicator.done { background: #10b981; }
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.agent-log {
+    flex-grow: 1;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    background: #051622;
+    padding: 10px;
+    border-radius: 4px;
+    height: 150px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.report-content {
+    background: #0b1a28;
+    padding: 20px;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    border-top: 4px solid #10b981;
+}
