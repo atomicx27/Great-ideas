@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 600px;
+}
+
+header h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.log-window {
+    background-color: #1e1e1e;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 4px;
+    height: 150px;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+}
+
+.log-window p {
+    margin: 5px 0;
+}
+
+.decision-window {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.decision-action {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}

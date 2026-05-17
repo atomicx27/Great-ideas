@@ -1,0 +1,2 @@
+# Agentic-Bus-Router
+A step up into **Agentic AI** in the Public Transit domain. This autonomous agent is given the goal of maintaining efficient bus routing. When a route obstruction is detected, it autonomously decides which simulated tools (e.g., checking traffic APIs, querying passenger loads) to use. It synthesizes this multi-source data to dynamically recalculate and execute an optimal alternative route. Supports BYOK architecture.

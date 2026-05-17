@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Fire Watch Tower</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Fire Watch Tower</h1>
+            <p>Wildfire Response - Automation Level</p>
+        </header>
+
+        <main>
+            <section class="metrics">
+                <div class="metric">
+                    <h3>Temperature Sensor</h3>
+                    <p id="temp-val">75°F</p>
+                </div>
+                <div class="metric">
+                    <h3>Smoke Particulate Sensor</h3>
+                    <p id="smoke-val">12 AQI</p>
+                </div>
+            </section>
+
+            <section class="controls">
+                <button id="trigger-fire-btn">Simulate Lightning Strike</button>
+            </section>
+
+            <section class="alert-status">
+                <h2>Alert Status</h2>
+                <div id="alert-indicator" class="safe">SAFE</div>
+                <p id="status-message">Status: All metrics within normal range.</p>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

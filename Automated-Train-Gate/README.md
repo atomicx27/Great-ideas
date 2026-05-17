@@ -1,0 +1,2 @@
+# Automated-Train-Gate
+A classic **Automation** tool for Public Transit. It uses simple deterministic rules to close a train crossing gate when a train approaches and open it when the train has passed. This operates purely on predefined logic without the use of AI.
