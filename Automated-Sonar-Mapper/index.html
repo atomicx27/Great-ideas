@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Sonar Mapper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Sonar Mapper</h1>
+        <p>Deterministic Ocean Floor Mapping System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Sonar Controls</h2>
+            <button id="start-scan-btn" class="primary-btn">Initiate Sonar Sweep</button>
+            <p id="status-text" class="status-indicator">Status: Standby</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Mapping Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Points Scanned</h3>
+                    <p id="total-points">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Hazards Detected</h3>
+                    <p id="total-hazards">0</p>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <h3>Depth Log</h3>
+                <ul id="depth-log"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
