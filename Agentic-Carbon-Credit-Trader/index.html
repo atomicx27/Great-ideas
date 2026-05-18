@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Carbon Credit Trader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Carbon Credit Trader</h1>
+            <p>Autonomous AI Agent for dynamic carbon credit market trading.</p>
+        </header>
+        <main>
+            <div class="card">
+                <div class="form-group">
+                    <label for="portfolio-goal">Portfolio Goal:</label>
+                    <input type="text" id="portfolio-goal" value="Offset 500 tons CO2 under $15/ton" style="width: 100%;">
+                </div>
+                <button id="run-btn">Start Autonomous Trading Session</button>
+            </div>
+
+            <div class="log-container">
+                <h3>Agent Trading Log</h3>
+                <div id="output-log" class="output-log"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

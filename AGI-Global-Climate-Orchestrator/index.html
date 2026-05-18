@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Global Climate Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Global Climate Orchestrator</h1>
+            <p>Multi-Agent Swarm for global emission reduction and climate engineering.</p>
+        </header>
+
+        <div class="mission-control">
+            <h2>Mission Command</h2>
+            <textarea id="mission-input" rows="3" style="width: 100%;" placeholder="Enter high-level goal... e.g., 'Optimize global energy grid to offset a 5% spike in industrial emissions.'">Optimize global energy grid to offset a 5% spike in industrial emissions.</textarea>
+            <button id="start-swarm-btn">Deploy AGI Swarm</button>
+        </div>
+
+        <div id="swarm-container" class="swarm-container" style="display: none;">
+            <div class="agent-card" id="agent-energy">
+                <h3>Energy Grid Agent</h3>
+                <p class="agent-status">Idle</p>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-capture">
+                <h3>Carbon Capture Agent</h3>
+                <p class="agent-status">Idle</p>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-policy">
+                <h3>Economic Policy Agent</h3>
+                <p class="agent-status">Idle</p>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" class="synthesis-node" style="display: none;">
+            <h2>Master Orchestrator Synthesis</h2>
+            <p id="master-status">Awaiting sub-agent completion...</p>
+            <div id="final-strategy" class="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
