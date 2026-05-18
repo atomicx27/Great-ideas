@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Mining Drone Pilot</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include DOMPurify for sanitization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Mining Drone Pilot</h1>
+            <p>Autonomous AI Agent navigating microgravity and extracting asteroid resources.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>LLM Configuration (BYOK)</h2>
+                <div class="form-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+                <div class="form-group" id="model-group" style="display: none;">
+                    <label for="model">Model Name (for Ollama):</label>
+                    <input type="text" id="model" placeholder="e.g. llama3">
+                </div>
+            </section>
+
+            <section class="task-section">
+                <h2>Mission Brief</h2>
+                <div class="form-group">
+                    <label for="target-asteroid">Target Asteroid:</label>
+                    <input type="text" id="target-asteroid" value="Psyche-16">
+                </div>
+                <div class="form-group">
+                    <label for="extraction-goal">Extraction Goal (kg):</label>
+                    <input type="number" id="extraction-goal" value="500">
+                </div>
+                <button id="run-agent-btn">Initiate Landing & Extraction Protocol</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Flight & Telemetry Log</h2>
+                <div id="output-log" class="log-container">
+                    <p class="log-info">Drone docked. Awaiting deployment commands...</p>
+                </div>
+                <div id="final-results" class="results-container hidden">
+                    <!-- Final mission results will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

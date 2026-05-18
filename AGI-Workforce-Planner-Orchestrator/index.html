@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Workforce Planner Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Workforce Planner Orchestrator</h1>
+
+        <div class="api-setup">
+            <h3>API Configuration</h3>
+            <select id="provider">
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+                <option value="ollama">Ollama (Local)</option>
+            </select>
+            <input type="password" id="apiKey" placeholder="Enter API Key / URL">
+            <input type="text" id="model" placeholder="Model (e.g., gpt-4, claude-3)">
+        </div>
+
+        <div class="input-section">
+            <label for="goal">High-Level Ambiguous Goal:</label>
+            <textarea id="goal" rows="4" placeholder="e.g., Pivot company focus from legacy hardware to AI software in 12 months."></textarea>
+
+            <button id="orchestrate-btn">Run Master Orchestrator</button>
+        </div>
+
+        <div class="swarm-visualizer">
+            <div class="agent-card" id="agent-recruiting">
+                <h3>Recruiting Sub-Agent</h3>
+                <div class="status">Idle</div>
+            </div>
+            <div class="agent-card" id="agent-training">
+                <h3>Training Sub-Agent</h3>
+                <div class="status">Idle</div>
+            </div>
+            <div class="agent-card" id="agent-restructuring">
+                <h3>Restructuring Sub-Agent</h3>
+                <div class="status">Idle</div>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <h2>Master Synthesis Strategy</h2>
+            <div id="result" class="result-box">Waiting for goal...</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

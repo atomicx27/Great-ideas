@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Space Mining Orchestrator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #0a0a1a; color: #e0e0ff; }
+        .container { max-width: 1000px; margin: 0 auto; background: #11112a; padding: 20px; border-radius: 8px; border: 1px solid #335; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .agent-card { border: 1px solid #446; padding: 15px; border-radius: 5px; background: #1a1a3a; }
+        .agent-title { font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #446; padding-bottom: 5px; color: #88aaff; }
+        .agent-output { font-family: monospace; font-size: 0.9em; min-height: 80px; color: #aaccff; }
+        .master-card { border: 2px solid #ffaa00; background: #2a1a00; padding: 20px; border-radius: 5px; }
+        .master-title { font-weight: bold; font-size: 1.2em; color: #ffaa00; margin-bottom: 10px; }
+        .master-output { font-family: monospace; font-size: 1em; color: #ffdd99; min-height: 100px; }
+        button { padding: 12px 20px; background: #5555cc; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; width: 100%; margin-bottom: 20px; font-weight: bold; }
+        button:hover { background: #6666ee; }
+        button:disabled { background: #333355; color: #777; cursor: not-allowed; }
+        h1 { border-bottom: 2px solid #5555cc; padding-bottom: 10px; }
+        .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.1); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; margin-right: 10px; display: none; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Space Mining Orchestrator</h1>
+        <p>Goal: Establish a profitable extraction operation on near-Earth asteroid 433 Eros within 6 months.</p>
+
+        <button id="orchestrate-btn"><span class="spinner" id="spinner"></span>Commence Mission Planning Synthesis</button>
+
+        <div class="grid">
+            <div class="agent-card">
+                <div class="agent-title">Extraction Engineering</div>
+                <div id="ext-output" class="agent-output">Awaiting telemetry...</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-title">Orbital Processing</div>
+                <div id="proc-output" class="agent-output">Awaiting feed analysis...</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-title">Interplanetary Logistics</div>
+                <div id="log-output" class="agent-output">Awaiting orbital mechanics...</div>
+            </div>
+        </div>
+
+        <div class="master-card">
+            <div class="master-title">Master Orchestrator Blueprint</div>
+            <div id="master-output" class="master-output">Awaiting sub-agent parallel processing...</div>
+        </div>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

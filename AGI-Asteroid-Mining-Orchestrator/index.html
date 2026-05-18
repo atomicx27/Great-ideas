@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Asteroid Mining Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Asteroid Mining Orchestrator</h1>
+            <p>Master AGI managing a multi-agent swarm to establish a deep space supply chain.</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-swarm-btn">Initialize Main Belt Supply Chain (Launch AGI Swarm)</button>
+                <div id="master-status" class="master-status">Awaiting mission parameters...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Prospecting -->
+                <div class="agent-card" id="agent-prospecting">
+                    <h3>Sub-Agent: Prospecting Fleet</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Extraction -->
+                <div class="agent-card" id="agent-extraction">
+                    <h3>Sub-Agent: Extraction Swarm</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Logistics -->
+                <div class="agent-card" id="agent-logistics">
+                    <h3>Sub-Agent: Deep Space Logistics</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Executive Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

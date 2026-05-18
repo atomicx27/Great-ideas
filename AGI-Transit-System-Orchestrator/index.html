@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Transit System Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Transit System Orchestrator</h1>
+            <p>Public Transit - AGI Multi-Agent Swarm (Simulated)</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <button id="start-swarm-btn">Simulate Major Transit Disruption</button>
+                <div id="master-status" class="master-status">System Standby</div>
+            </section>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <div class="agent-card" id="agent-train">
+                    <h3>Subway Network Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-bus">
+                    <h3>Bus Fleet Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-passenger">
+                    <h3>Passenger Flow Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

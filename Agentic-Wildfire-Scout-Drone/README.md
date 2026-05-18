@@ -1,0 +1,2 @@
+# Agentic-Wildfire-Scout-Drone
+A step up into **Agentic AI** in the Wildfire Response domain. This autonomous drone agent is tasked with assessing an active fire front. It autonomously decides which simulated tools (e.g., thermal cameras, wind sensors, topography databases) to use. It synthesizes this multi-source data to dynamically predict the fire's behavior and execute an informed decision, such as issuing a targeted evacuation order. Supports BYOK architecture.

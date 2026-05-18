@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Asteroid Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Asteroid Scanner</h1>
+        <p>Deterministic Spectral Analysis System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Sensor Array Controls</h2>
+            <button id="scan-btn" class="primary-btn">Initialize Deep Space Scan</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Scan Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Objects Scanned</h3>
+                    <p id="total-objects">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Viable Targets</h3>
+                    <p id="viable-targets">0</p>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <h3>Asteroid Log</h3>
+                <table id="asteroid-log">
+                    <thead>
+                        <tr>
+                            <th>Designation</th>
+                            <th>Spectrum Value</th>
+                            <th>Composition</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

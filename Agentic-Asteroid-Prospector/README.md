@@ -1,0 +1,3 @@
+# Agentic-Asteroid-Prospector
+
+A step up into **Agentic AI** for asteroid mining operations. This autonomous probe does not rely on simple distance or light thresholds. Instead, it is given the goal to maximize rare-earth mineral discovery. It autonomously decides which "tools" (simulated Spectrometer API, Core Drill) to use to gather context about the asteroid's composition. It dynamically synthesizes this multi-source data to evaluate the target's value and decides whether to plant a mining beacon or move to the next target. Features BYOK architecture.

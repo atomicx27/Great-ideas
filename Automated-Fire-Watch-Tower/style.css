@@ -1,0 +1,104 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 450px;
+}
+
+header h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.metric {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    width: 40%;
+}
+
+.metric h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+    color: #495057;
+}
+
+.metric p {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #212529;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#alert-indicator {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    width: 200px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#alert-indicator.safe {
+    background-color: #2ecc71;
+}
+
+#alert-indicator.danger {
+    background-color: #e74c3c;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+#status-message {
+    font-size: 16px;
+    color: #444;
+}

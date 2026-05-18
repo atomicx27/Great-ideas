@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Ore Crusher</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: #222; color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .status-box { padding: 15px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #444; font-weight: bold; }
+        .alert { background: #600; border-color: #f00; color: #fcc; }
+        .ok { background: #040; border-color: #0f0; color: #cfc; }
+        button { padding: 10px 15px; background: #c60; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #e80; }
+        button:disabled { background: #555; cursor: not-allowed; }
+        .metrics { margin-top: 20px; font-family: monospace; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Ore Crusher</h1>
+        <p>Simulation of deterministic zero-gravity ore crushing based on temperature and hopper thresholds.</p>
+
+        <div id="status" class="status-box ok">Status: Crushing active.</div>
+
+        <div class="metrics">
+            Hopper Capacity: <span id="hopper">0</span>% / 100%<br>
+            Internal Temp: <span id="temp">50</span>&deg;C / 300&deg;C
+        </div>
+        <br>
+        <button id="crush-btn">Simulate Crushing Batch</button>
+        <button id="reset-btn">Vent Heat & Empty Hopper</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

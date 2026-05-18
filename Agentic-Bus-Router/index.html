@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Bus Router</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Bus Router</h1>
+            <p>Public Transit - Agentic AI Level (Simulated)</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <p>Bot Goal: <strong>Efficient Bus Routing</strong></p>
+                <button id="trigger-reroute-btn">Simulate Route Obstruction</button>
+            </section>
+
+            <section class="agent-activity">
+                <h2>AI Copilot Thought Process</h2>
+                <div id="agent-log" class="log-window">
+                    <p class="status-msg">Monitoring route... normal traffic conditions.</p>
+                </div>
+            </section>
+
+            <section class="action-panel">
+                <h2>Autonomous Decision</h2>
+                <div id="agent-decision" class="decision-window">
+                    <p>Awaiting context...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
