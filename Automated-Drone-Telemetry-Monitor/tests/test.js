@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { checkTelemetry } = require('../script.js');
+const { checkTelemetry, generateResultsHTML } = require('../script.js');
 
 test('Automated-Drone-Telemetry-Monitor logic', (t) => {
     const mockDrones = [
@@ -24,4 +24,40 @@ test('Automated-Drone-Telemetry-Monitor logic', (t) => {
     assert.strictEqual(results[2].status, 'Alert');
     assert.match(results[2].alertMessage, /Weak Signal/);
     assert.match(results[2].alertMessage, /High Temp/);
+});
+
+test('generateResultsHTML output', (t) => {
+    const mockResults = [
+        {
+            droneId: 'D-NORMAL',
+            battery: 85,
+            signal: 90,
+            temperature: 45,
+            status: 'Normal',
+            alertMessage: ''
+        },
+        {
+            droneId: 'D-ALERT',
+            battery: 15,
+            signal: 20,
+            temperature: 95,
+            status: 'Alert',
+            alertMessage: 'Low Battery! Weak Signal! High Temp!'
+        }
+    ];
+
+    const html = generateResultsHTML(mockResults);
+
+    assert.ok(html.includes('<h3>Telemetry Results</h3>'));
+    assert.ok(html.includes('<table class="results-table">'));
+
+    // Check D-NORMAL row
+    assert.ok(html.includes('<td>D-NORMAL</td>'));
+    assert.ok(html.includes('<td>85%</td>'));
+    assert.ok(html.includes('<td class="normal">Normal </td>'));
+
+    // Check D-ALERT row
+    assert.ok(html.includes('<td>D-ALERT</td>'));
+    assert.ok(html.includes('<td>15%</td>'));
+    assert.ok(html.includes('<td class="alert">Alert (Low Battery! Weak Signal! High Temp!)</td>'));
 });
