@@ -72,3 +72,58 @@ button:hover {
 .watch { background-color: #f39c12; color: white; }
 .advisory { background-color: #f1c40f; color: #333; }
 .clear { background-color: #2ecc71; color: white; }
+
+/* --- Modern UX & Animations Enhancements --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+input, select, textarea {
+    transition: all 0.3s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+}
+
+.container, section, .agent-card, .card, main {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
