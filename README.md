@@ -247,6 +247,23 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 48. **AGI-Global-Compute-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to global Cloud Infrastructure. During a complex, multi-region outage, a Master Orchestrator breaks down the crisis and spawns specialized sub-agents (Network, Storage, Compute). They operate simultaneously to reroute traffic, promote database replicas, and spin up compute instances, synthesizing their work into a global recovery strategy.
 
+49. **Automated-Train-Gate**
+    A classic **Automation** tool for Public Transit. It uses simple deterministic rules to close a train crossing gate when a train approaches and open it when the train has passed. This operates purely on predefined logic without the use of AI.
+
+50. **Agentic-Bus-Router**
+    A step up into **Agentic AI** in the Public Transit domain. This autonomous agent is given the goal of maintaining efficient bus routing. When a route obstruction is detected, it autonomously decides which simulated tools (e.g., checking traffic APIs, querying passenger loads) to use. It synthesizes this multi-source data to dynamically recalculate and execute an optimal alternative route. Supports BYOK architecture.
+
+51. **AGI-Transit-System-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to Public Transit infrastructure. When a complex, ambiguous crisis occurs (e.g., "Major flooding at Central Station during rush hour"), the AGI Master Orchestrator takes control. It breaks down the high-level stabilization goal and spawns specialized sub-agents: Subway Network, Bus Fleet, and Passenger Flow. These agents operate in parallel across massive real-time datasets, and the Master synthesizes their outputs into a cohesive, city-wide transit recovery strategy. Features BYOK architecture support.
+
+52. **Automated-Fire-Watch-Tower**
+    A classic **Automation** tool for Wildfire Response. It continuously monitors incoming environmental sensor data (temperature and Air Quality Index). It relies on predefined deterministic threshold rules to automatically trigger an alert if metrics spike into dangerous ranges, operating reliably without complex AI logic.
+
+53. **Agentic-Wildfire-Scout-Drone**
+    A step up into **Agentic AI** in the Wildfire Response domain. This autonomous drone agent is tasked with assessing an active fire front. It autonomously decides which simulated tools (e.g., thermal cameras, wind sensors, topography databases) to use. It synthesizes this multi-source data to dynamically predict the fire's behavior and execute an informed decision, such as issuing a targeted evacuation order. Supports BYOK architecture.
+
+54. **AGI-Wildfire-Response-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to Wildfire Response and Emergency Management. When a complex, ambiguous crisis occurs (e.g., "Mega-fire convergence threatening a populated valley"), the AGI Master Orchestrator takes control. It breaks down the high-level mitigation goal and spawns specialized sub-agents: Evacuation Routing, Fire Suppression Tactics, and Logistics Supply. These agents operate in parallel across massive real-time datasets, and the Master synthesizes their outputs into a cohesive, regional recovery strategy. Features BYOK architecture support.
 49. **Automated-Sonar-Mapper**
     A classic **Automation** tool for mapping the sea floor. It uses deterministic mathematical rules to process raw sonar data, categorize depths, and highlight hazards without relying on AI, demonstrating the foundational layer of deep-sea exploration automation.
 

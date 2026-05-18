@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Wildfire Response Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Wildfire Response Orchestrator</h1>
+            <p>Wildfire Response - AGI Multi-Agent Swarm (Simulated)</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <button id="start-swarm-btn">Simulate Mega-Fire Incident</button>
+                <div id="master-status" class="master-status">System Standby</div>
+            </section>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <div class="agent-card" id="agent-evac">
+                    <h3>Evacuation Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-suppression">
+                    <h3>Fire Suppression Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-logistics">
+                    <h3>Logistics Agent</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

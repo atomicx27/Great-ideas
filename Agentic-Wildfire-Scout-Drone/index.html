@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Wildfire Scout Drone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Wildfire Scout Drone</h1>
+            <p>Wildfire Response - Agentic AI Level (Simulated)</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <p>Bot Goal: <strong>Assess Active Fire Front</strong></p>
+                <button id="trigger-scout-btn">Deploy Drone to Suspected Zone</button>
+            </section>
+
+            <section class="agent-activity">
+                <h2>AI Copilot Thought Process</h2>
+                <div id="agent-log" class="log-window">
+                    <p class="status-msg">Drone standing by. Awaiting deployment coordinates...</p>
+                </div>
+            </section>
+
+            <section class="action-panel">
+                <h2>Autonomous Decision</h2>
+                <div id="agent-decision" class="decision-window">
+                    <p>Awaiting context...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

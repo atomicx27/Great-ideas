@@ -1,0 +1,2 @@
+# Automated-Fire-Watch-Tower
+A classic **Automation** tool for Wildfire Response. It continuously monitors incoming environmental sensor data (temperature and Air Quality Index). It relies on predefined deterministic threshold rules to automatically trigger an alert if metrics spike into dangerous ranges, operating reliably without complex AI logic.
