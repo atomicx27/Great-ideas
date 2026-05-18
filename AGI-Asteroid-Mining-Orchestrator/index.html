@@ -2,54 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGI Asteroid Mining Orchestrator</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>AGI Asteroid Mining Orchestrator</h1>
-        <p>Swarm Intelligence for Deep Space Extraction</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>AGI Asteroid Mining Orchestrator</h1>
+            <p>Master AGI managing a multi-agent swarm to establish a deep space supply chain.</p>
+        </header>
 
-    <main class="container">
-        <section class="orchestrator-panel">
-            <h2>Command Core</h2>
-            <div class="input-group">
-                <label for="mining-goal">Macro Directive:</label>
-                <textarea id="mining-goal" rows="3" placeholder="e.g., Secure 500 tons of Iron and 100 tons of Platinum for Shipyard Alpha..."></textarea>
-            </div>
-            <button id="deploy-btn" class="primary-btn">Initialize Mining Swarm</button>
-            <div id="orchestrator-log" class="orchestrator-text">Awaiting directive...</div>
-        </section>
-
-        <section id="swarm-dashboard" class="swarm-grid hidden">
-            <div class="agent-card" id="agent-scanner">
-                <h3><i class="fa-solid fa-satellite"></i> Orbital Scanner Swarm</h3>
-                <div class="status-indicator"></div>
-                <div class="agent-log" id="log-scanner">Standby...</div>
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-swarm-btn">Initialize Main Belt Supply Chain (Launch AGI Swarm)</button>
+                <div id="master-status" class="master-status">Awaiting mission parameters...</div>
             </div>
 
-            <div class="agent-card" id="agent-miner">
-                <h3><i class="fa-solid fa-robot"></i> Surface Mining Drones</h3>
-                <div class="status-indicator"></div>
-                <div class="agent-log" id="log-miner">Standby...</div>
-            </div>
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Prospecting -->
+                <div class="agent-card" id="agent-prospecting">
+                    <h3>Sub-Agent: Prospecting Fleet</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
 
-            <div class="agent-card" id="agent-transport">
-                <h3><i class="fa-solid fa-rocket"></i> Heavy Transports</h3>
-                <div class="status-indicator"></div>
-                <div class="agent-log" id="log-transport">Standby...</div>
-            </div>
-        </section>
+                <!-- Sub-Agent: Extraction -->
+                <div class="agent-card" id="agent-extraction">
+                    <h3>Sub-Agent: Extraction Swarm</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
 
-        <section id="synthesis-panel" class="hidden">
-            <h2>Operation Manifest</h2>
-            <div id="final-report" class="report-content"></div>
-        </section>
-    </main>
+                <!-- Sub-Agent: Logistics -->
+                <div class="agent-card" id="agent-logistics">
+                    <h3>Sub-Agent: Deep Space Logistics</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
 
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Executive Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

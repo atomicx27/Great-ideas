@@ -1,0 +1,3 @@
+# AGI-Ocean-Cleanup-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** applied to global ocean cleanup operations. When a complex, ambiguous problem arises (e.g., "Coordinate a response to a massive new garbage patch discovery amidst an incoming typhoon"), the AGI Master Orchestrator takes charge. It breaks down the high-level goal and spawns specialized sub-agents: Drone Navigators (for mapping), Skimmer Fleets (for collection), and Logistics (for predicting wave disruptions and managing offload vessels). These agents operate in parallel, and the Master synthesizes their outputs into a cohesive, fleet-wide execution strategy. Features BYOK architecture.

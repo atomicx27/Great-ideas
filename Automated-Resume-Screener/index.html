@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Resume Screener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Resume Screener</h1>
+            <p>Deterministic, keyword-based resume screening system.</p>
+        </header>
+
+        <main>
+            <section class="screening-section">
+                <h2>Screen Resumes</h2>
+                <div class="input-group">
+                    <label for="required-keywords">Required Keywords (comma-separated):</label>
+                    <input type="text" id="required-keywords" value="JavaScript, React, Node.js, HTML, CSS" placeholder="e.g., Python, SQL">
+                </div>
+
+                <div class="controls">
+                    <button id="screen-btn">Screen Resumes</button>
+                </div>
+
+                <div id="results-output" class="results-container">
+                    <p>Click "Screen Resumes" to process the sample batch.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

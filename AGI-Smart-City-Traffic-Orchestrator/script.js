@@ -41,10 +41,10 @@ if (typeof document !== 'undefined') {
 
         const simulateAgentProcessing = async (agentKey, steps) => {
             setAgentState(agentKey, true, "Processing...");
-            for (let step of steps) {
+            await Promise.all(steps.map(async (step) => {
                 await new Promise(r => setTimeout(r, Math.random() * 1000 + 400));
                 appendAgentLog(agentKey, step);
-            }
+            }));
             setAgentState(agentKey, false, "Task Complete");
         };
 

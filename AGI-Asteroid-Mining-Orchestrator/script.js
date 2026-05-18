@@ -1,102 +1,101 @@
-// Swarm Logic Simulation
-async function simulateAgentTask(agentName, steps, callback) {
-    callback(agentName, 'status', 'working');
-
-    for (let i=0; i<steps.length; i++) {
-        callback(agentName, 'log', steps[i]);
-        await new Promise(resolve => setTimeout(resolve, typeof window !== 'undefined' ? 900 : 10));
-    }
-
-    callback(agentName, 'status', 'done');
-    return `${agentName} operational phase complete.`;
+function synthesizeMiningStrategy(prospecting, extraction, logistics) {
+    return {
+        missionStatus: "Supply Chain Established: PGM-Class Main Belt",
+        actions: [
+            `Prospecting: Target designated as ${prospecting.targetName}. Estimated yield: ${prospecting.estimatedYield} metric tons of Platinum Group Metals.`,
+            `Extraction: Swarm deployed ${extraction.droneCount} drones. Projected extraction timeline: ${extraction.timelineDays} days using thermal-fracture techniques.`,
+            `Logistics: Established mass-driver return trajectory. Rendezvous window at Earth-Moon L2 in ${logistics.returnTransitDays} days.`
+        ]
+    };
 }
 
-async function orchestrateMiningSwarm(goal, uiCallbacks) {
-    uiCallbacks.orchestrator("Directive received. Computing logistical breakdown...");
-    await new Promise(r => setTimeout(r, typeof window !== 'undefined' ? 1500 : 10));
-
-    uiCallbacks.orchestrator("Initiating Scanners, Miners, and Transport agents simultaneously.");
-    uiCallbacks.showSwarm();
-
-    const scannerTask = simulateAgentTask('scanner', [
-        "Deploying micro-satellites...",
-        "Running spectral analysis on Asteroid Belt Region 4...",
-        "Targeting high-yield veins..."
-    ], uiCallbacks.agentUpdate);
-
-    const minerTask = simulateAgentTask('miner', [
-        "Landing surface drones...",
-        "Establishing drilling perimeters...",
-        "Extracting raw ore into localized hoppers..."
-    ], uiCallbacks.agentUpdate);
-
-    const transportTask = simulateAgentTask('transport', [
-        "Aligning orbital trajectories...",
-        "Docking with surface hoppers...",
-        "Initiating payload transfer to Shipyard..."
-    ], uiCallbacks.agentUpdate);
-
-    await Promise.all([scannerTask, minerTask, transportTask]);
-
-    uiCallbacks.orchestrator("All swarm elements synchronized. Generating final manifest...");
-    await new Promise(r => setTimeout(r, typeof window !== 'undefined' ? 1500 : 10));
-
-    const finalReport = `### Logistics Manifest\n\n**Directive:** ${goal}\n\n**Operational Results:**\n- **Scanned Sectors:** 45\n- **Target Veins Locked:** 12\n- **Extracted Tonnage:** 620 Tons\n- **Delivered Payload:** 100% to Shipyard Alpha\n\n**Status:** Directive Achieved. Swarm returning to standby.`;
-
-    uiCallbacks.showReport(finalReport);
-    uiCallbacks.orchestrator("Manifest finalized. Operations concluded.");
-
-    return finalReport;
-}
-
-// UI Binding
 if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
-        const deployBtn = document.getElementById('deploy-btn');
-        const goalInput = document.getElementById('mining-goal');
-        const orchLog = document.getElementById('orchestrator-log');
-        const swarmDash = document.getElementById('swarm-dashboard');
-        const synthesisPanel = document.getElementById('synthesis-panel');
-        const finalReportEl = document.getElementById('final-report');
+        const startBtn = document.getElementById('start-swarm-btn');
+        const swarmContainer = document.getElementById('swarm-container');
+        const synthesisNode = document.getElementById('synthesis-node');
+        const masterStatus = document.getElementById('master-status');
+        const finalStrategy = document.getElementById('final-strategy');
 
-        const agentsUI = {
-            scanner: { log: document.getElementById('log-scanner'), ind: document.querySelector('#agent-scanner .status-indicator') },
-            miner: { log: document.getElementById('log-miner'), ind: document.querySelector('#agent-miner .status-indicator') },
-            transport: { log: document.getElementById('log-transport'), ind: document.querySelector('#agent-transport .status-indicator') }
+        const agents = {
+            prospecting: { card: document.getElementById('agent-prospecting'), status: document.querySelector('#agent-prospecting .agent-status'), output: document.querySelector('#agent-prospecting .agent-output') },
+            extraction: { card: document.getElementById('agent-extraction'), status: document.querySelector('#agent-extraction .agent-status'), output: document.querySelector('#agent-extraction .agent-output') },
+            logistics: { card: document.getElementById('agent-logistics'), status: document.querySelector('#agent-logistics .agent-status'), output: document.querySelector('#agent-logistics .agent-output') }
         };
 
-        const uiCallbacks = {
-            orchestrator: (msg) => orchLog.innerText = msg,
-            showSwarm: () => swarmDash.classList.remove('hidden'),
-            showReport: (text) => {
-                finalReportEl.innerText = text;
-                synthesisPanel.classList.remove('hidden');
-            },
-            agentUpdate: (agent, type, value) => {
-                const ui = agentsUI[agent];
-                if (type === 'status') {
-                    ui.ind.className = 'status-indicator ' + value;
-                    if (value === 'working') ui.log.innerText = '';
-                } else if (type === 'log') {
-                    ui.log.innerText += '> ' + value + '\n';
-                }
+        function appendAgentLog(agentKey, message) {
+            const p = document.createElement('p');
+            p.textContent = `> ${message}`;
+            agents[agentKey].output.appendChild(p);
+            agents[agentKey].output.scrollTop = agents[agentKey].output.scrollHeight;
+        }
+
+        function setAgentState(agentKey, isActive, statusText) {
+            agents[agentKey].status.textContent = statusText;
+            if (isActive) {
+                agents[agentKey].card.classList.add('active');
+            } else {
+                agents[agentKey].card.classList.remove('active');
             }
+        }
+
+        const simulateAgentProcessing = async (agentKey, steps) => {
+            setAgentState(agentKey, true, "Processing...");
+            for (let step of steps) {
+                await new Promise(r => setTimeout(r, Math.random() * 800 + 500));
+                appendAgentLog(agentKey, step);
+            }
+            setAgentState(agentKey, false, "Task Complete");
         };
 
-        deployBtn.addEventListener('click', async () => {
-            const goal = goalInput.value.trim();
-            if (!goal) return;
+        startBtn.addEventListener('click', async () => {
+            startBtn.disabled = true;
+            swarmContainer.style.display = 'flex';
+            synthesisNode.style.display = 'none';
+            finalStrategy.innerHTML = '';
 
-            deployBtn.disabled = true;
-            synthesisPanel.classList.add('hidden');
+            Object.keys(agents).forEach(k => {
+                agents[k].output.innerHTML = '';
+                setAgentState(k, false, "Pending...");
+            });
 
-            await orchestrateMiningSwarm(goal, uiCallbacks);
+            masterStatus.textContent = "Analyzing Main Belt orbital dynamics and market demands...";
+            await new Promise(r => setTimeout(r, 1500));
+            masterStatus.textContent = "Deploying AGI Swarm for Mission Planning";
 
-            deployBtn.disabled = false;
+            const prospectSteps = ["Scanning Sector 4 for high-albedo signatures", "Cross-referencing orbital delta-v costs", "Locking target: 16 Psyche-B"];
+            const extractSteps = ["Simulating thermal fracture patterns in microgravity", "Optimizing swarm topology for 500 units", "Calculating energy requirements per drone"];
+            const logicSteps = ["Calculating Hohmann transfer windows", "Reserving processing capacity at Lunar Gateway", "Designing mass-driver payload casings"];
+
+            await Promise.all([
+                simulateAgentProcessing('prospecting', prospectSteps),
+                simulateAgentProcessing('extraction', extractSteps),
+                simulateAgentProcessing('logistics', logicSteps)
+            ]);
+
+            masterStatus.textContent = "Synthesizing Supply Chain Architecture...";
+            await new Promise(r => setTimeout(r, 1500));
+
+            masterStatus.textContent = "Master Strategy Ready. Awaiting launch authorization.";
+            synthesisNode.style.display = 'block';
+
+            const result = synthesizeMiningStrategy(
+                { targetName: "16 Psyche-B", estimatedYield: 15000 },
+                { droneCount: 500, timelineDays: 45 },
+                { returnTransitDays: 120 }
+            );
+
+            finalStrategy.innerHTML = `
+                <p><strong>Status:</strong> <span style="color:var(--accent-orange); font-weight:bold;">${result.missionStatus}</span></p>
+                <ul>
+                    ${result.actions.map(a => `<li>${a}</li>`).join('')}
+                </ul>
+            `;
+            startBtn.disabled = false;
         });
     });
 }
 
-if (typeof module !== 'undefined') {
-    module.exports = { orchestrateMiningSwarm, simulateAgentTask };
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { synthesizeMiningStrategy };
 }

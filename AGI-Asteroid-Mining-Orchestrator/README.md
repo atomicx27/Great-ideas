@@ -1,8 +1,2 @@
-# AGI Asteroid Mining Orchestrator
-
-A multi-agent AGI system orchestrating a swarm of scanners, rovers, and transport ships for large-scale asteroid mining operations. The Master Orchestrator breaks down macro-goals into concurrent tasks, deploying specialized agents to map, extract, and transport resources dynamically to meet orbital shipyard demands.
-
-## Features
-- AGI Master Orchestrator for complex supply-chain goal breakdown.
-- Parallel multi-agent swarm visualization (Scanners, Miners, Transports).
-- Real-time synthesis of operational flow and supply metrics.
+# AGI-Asteroid-Mining-Orchestrator
+A leap into **Artificial General Intelligence (AGI)** applied to Space Resources. When tasked with a complex, ambiguous macro-level goal (e.g., "Establish a profitable, continuous supply chain of Platinum Group Metals from the Main Belt"), the AGI Master Orchestrator takes charge. It breaks down the mission and spawns specialized sub-agents: Prospecting Fleet, Extraction Swarm, and Deep Space Logistics. These agents operate in parallel across vast distances. The Master synthesizes their findings into a cohesive, multi-year supply chain strategy. Includes BYOK architecture support.
