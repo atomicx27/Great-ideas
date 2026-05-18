@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Quantum Algorithm Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Quantum Algorithm Orchestrator</h1>
+            <p>Multi-Agent Swarm for complex quantum algorithm design and hardware mapping.</p>
+        </header>
+
+        <div class="mission-control">
+            <h2>Mission Command</h2>
+            <textarea id="mission-input" rows="3" style="width: 100%;" placeholder="Enter high-level goal... e.g., 'Design Shor's algorithm for 1024-bit factorization mapping to heavy-hex topology.'">Design Shor's algorithm for 1024-bit factorization mapping to heavy-hex topology.</textarea>
+            <button id="start-swarm-btn">Deploy AGI Swarm</button>
+        </div>
+
+        <div id="swarm-container" class="swarm-container" style="display: none;">
+            <div class="agent-card" id="agent-compiler">
+                <h3>Circuit Compiler</h3>
+                <p class="agent-status">Idle</p>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-mapper">
+                <h3>Hardware Mapper</h3>
+                <p class="agent-status">Idle</p>
+                <div class="agent-output"></div>
+            </div>
+            <div class="agent-card" id="agent-optimizer">
+                <h3>Noise Optimizer</h3>
+                <p class="agent-status">Idle</p>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="synthesis-node" class="synthesis-node" style="display: none;">
+            <h2>Master Orchestrator Synthesis</h2>
+            <p id="master-status">Awaiting sub-agent completion...</p>
+            <div id="final-strategy" class="final-strategy"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
