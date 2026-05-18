@@ -125,7 +125,7 @@ Always include a "## Key Decisions" section outlining what was agreed upon.`;
             }
 
             rawMarkdownOutput = result;
-            outputContent.innerHTML = marked.parse(result); // Render markdown to HTML
+            outputContent.innerHTML = DOMPurify.sanitize(marked.parse(result)); // Render markdown to HTML
 
         } catch (error) {
             console.error(error);
