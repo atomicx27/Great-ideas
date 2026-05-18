@@ -1,116 +1,134 @@
-// Simulated market data API
-const marketAPI = {
-    fetchPrices: async () => {
-        return {
-            Forestry: { price: 15, available: 10000, risk: 'Low' },
-            DirectAirCapture: { price: 300, available: 500, risk: 'Very Low' },
-            RenewableEnergy: { price: 5, available: 50000, risk: 'Medium' }
-        };
+// Simulated tools for the Agent
+const tools = {
+    queryMarketPrices: async () => {
+        return new Promise(resolve => setTimeout(() => {
+            resolve({
+                reforestation: { pricePerTon: 15, qualityRating: 'A', availableTons: 500 },
+                directAirCapture: { pricePerTon: 250, qualityRating: 'A+', availableTons: 50 },
+                renewableEnergy: { pricePerTon: 8, qualityRating: 'B', availableTons: 1000 }
+            });
+        }, 1000));
     },
-    executeTrade: async (type, amount) => {
-        return { status: 'Success', id: `TRD-${Math.floor(Math.random()*10000)}`, type, amount };
+    executeTrade: async (projectType, tons, maxPrice) => {
+        return new Promise((resolve, reject) => setTimeout(() => {
+            const currentPrices = { reforestation: 15, directAirCapture: 250, renewableEnergy: 8 };
+            const price = currentPrices[projectType];
+
+            if (!price) return reject("Invalid project type");
+            if (price > maxPrice) return reject("Price exceeds maximum threshold");
+
+            resolve({
+                status: "Success",
+                project: projectType,
+                tonsPurchased: tons,
+                totalCost: tons * price
+            });
+        }, 1500));
     }
 };
 
-async function executeTradingAgent(goal, llmConfig, updateStateCallback) {
-    const log = (msg, type = 'info') => {
-        if (updateStateCallback) updateStateCallback(msg, type);
-    };
+// Main agent logic
+async function runTradingAgent(budget, targetOffset, logCallback) {
+    try {
+        logCallback(`Thinking: Goal is to offset ${targetOffset} tons of CO2 with a budget of $${budget}.`, 'log-thought');
 
-    log(`[AGENT STARTED] Goal: ${goal}`);
+        logCallback(`Executing Tool: queryMarketPrices()`, 'log-action');
+        const marketData = await tools.queryMarketPrices();
+        logCallback(`Observation: Market data retrieved. Options: Reforestation ($${marketData.reforestation.pricePerTon}/t), DAC ($${marketData.directAirCapture.pricePerTon}/t), Renewables ($${marketData.renewableEnergy.pricePerTon}/t).`, 'log-info');
 
-    log(`[ACTION] Calling tool: fetchPrices()`, 'tool-call');
-    const marketData = await marketAPI.fetchPrices();
-    log(`[DATA] Current Prices: Forestry $${marketData.Forestry.price}/MT, DAC $${marketData.DirectAirCapture.price}/MT`);
-    await new Promise(r => setTimeout(r, 800));
+        logCallback(`Thinking: Evaluating optimal portfolio to maximize quality while staying within budget.`, 'log-thought');
 
-    log(`[THINKING] Optimizing portfolio allocation based on budget and MT targets...`);
+        // Simple logic simulation: Prefer Reforestation if affordable, fallback to Renewables
+        let selectedProject = 'renewableEnergy';
+        let estimatedCost = targetOffset * marketData.renewableEnergy.pricePerTon;
 
-    let allocationStr = `Calculated Allocation:
-- 4950 MT of Forestry @ $15 = $74,250
-- 50 MT of Direct Air Capture @ $300 = $15,000
-Total MT: 5000 | Total Cost: $89,250 (Under $150k budget)`;
-
-    if (typeof fetchLLMResponse !== 'undefined') {
-        log(`[API CALL] Requesting LLM to solve allocation optimization...`);
-        try {
-            const prompt = `Given these prices: ${JSON.stringify(marketData)}. Determine an allocation strategy for this goal: "${goal}". Return a short summary of the MT and cost breakdown.`;
-            const llmResponse = await fetchLLMResponse(prompt, llmConfig);
-            if (llmResponse) {
-                allocationStr = llmResponse;
-            }
-        } catch (e) {
-            log(`[API ERROR] LLM failed, using fallback allocation logic.`);
+        if (targetOffset * marketData.reforestation.pricePerTon <= budget) {
+            selectedProject = 'reforestation';
+            estimatedCost = targetOffset * marketData.reforestation.pricePerTon;
         }
+
+        if (estimatedCost > budget) {
+             throw new Error(`Insufficient budget. Minimum cost is $${estimatedCost}, but budget is $${budget}.`);
+        }
+
+        logCallback(`Thinking: Proceeding with '${selectedProject}' project. Estimated cost: $${estimatedCost}.`, 'log-thought');
+        logCallback(`Executing Tool: executeTrade(project: ${selectedProject}, tons: ${targetOffset})`, 'log-action');
+
+        const tradeResult = await tools.executeTrade(selectedProject, targetOffset, marketData[selectedProject].pricePerTon);
+
+        logCallback(`Observation: Trade executed successfully.`, 'log-success');
+        return tradeResult;
+
+    } catch (error) {
+        logCallback(`Error: ${error.message || error}`, 'log-error');
+        throw error;
     }
-
-    log(`[DECISION] Strategy formulation complete.`);
-    await new Promise(r => setTimeout(r, 600));
-
-    log(`[ACTION] Calling tool: executeTrade(Forestry, 4950)`, 'tool-call');
-    const trade1 = await marketAPI.executeTrade('Forestry', 4950);
-
-    log(`[ACTION] Calling tool: executeTrade(DirectAirCapture, 50)`, 'tool-call');
-    const trade2 = await marketAPI.executeTrade('DirectAirCapture', 50);
-
-    log(`[AGENT FINISHED] Goal accomplished.`);
-
-    return `### Trading Execution Report
-**Goal:** ${goal}
-
-**Strategy:**
-${allocationStr}
-
-**Executed Trades:**
-1. [${trade1.id}] Purchased ${trade1.amount} MT of ${trade1.type}
-2. [${trade2.id}] Purchased ${trade2.amount} MT of ${trade2.type}
-
-**Status:** Portfolio Balanced & Offset Target Met.`;
 }
 
-// Browser logic
 if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
-        const startBtn = document.getElementById('start-trading-btn');
-        const statusText = document.getElementById('status-text');
-        const logContainer = document.getElementById('agent-log');
-        const resultContainer = document.getElementById('trade-result');
-        const goalInput = document.getElementById('trade-goal');
+        const providerSelect = document.getElementById('provider-select');
+        const apiKeyGroup = document.getElementById('api-key-group');
+        const modelGroup = document.getElementById('model-group');
+        const runBtn = document.getElementById('run-agent-btn');
+        const outputLog = document.getElementById('output-log');
+        const finalResultsContainer = document.getElementById('final-results');
+        const budgetInput = document.getElementById('budget');
+        const targetInput = document.getElementById('offset-target');
 
-        const providerSelect = document.getElementById('llm-provider');
-        const apiKeyInput = document.getElementById('api-key');
+        providerSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'ollama') {
+                apiKeyGroup.style.display = 'none';
+                modelGroup.style.display = 'block';
+            } else {
+                apiKeyGroup.style.display = 'block';
+                modelGroup.style.display = 'none';
+            }
+        });
 
-        function updateLog(msg, type) {
-            const div = document.createElement('div');
-            div.className = `log-entry ${type}`;
-            div.textContent = `> ${msg}`;
-            logContainer.appendChild(div);
-            logContainer.scrollTop = logContainer.scrollHeight;
+        function appendLog(message, type = 'log-info') {
+            const p = document.createElement('p');
+            p.className = type;
+            p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            outputLog.appendChild(p);
+            outputLog.scrollTop = outputLog.scrollHeight;
         }
 
-        startBtn.addEventListener('click', async () => {
-            const goal = goalInput.value;
-            const llmConfig = {
-                provider: providerSelect.value,
-                apiKey: apiKeyInput.value
-            };
+        runBtn.addEventListener('click', async () => {
+            const budget = parseFloat(budgetInput.value);
+            const target = parseFloat(targetInput.value);
 
-            logContainer.innerHTML = '';
-            resultContainer.style.display = 'none';
-            statusText.textContent = 'Running';
-            startBtn.disabled = true;
+            outputLog.innerHTML = '';
+            finalResultsContainer.innerHTML = '';
+            finalResultsContainer.classList.add('hidden');
+            runBtn.disabled = true;
 
-            const report = await executeTradingAgent(goal, llmConfig, updateLog);
+            appendLog(`Starting Agentic Carbon Offset Trader...`, 'log-info');
 
-            statusText.textContent = 'Completed';
-            startBtn.disabled = false;
+            try {
+                const result = await runTradingAgent(budget, target, appendLog);
 
-            resultContainer.textContent = report;
-            resultContainer.style.display = 'block';
+                finalResultsContainer.innerHTML = `
+                    <h3>Trading Execution Summary</h3>
+                    <ul class="results-list">
+                        <li><strong>Status:</strong> ${DOMPurify.sanitize(result.status)}</li>
+                        <li><strong>Project Type:</strong> ${DOMPurify.sanitize(result.project)}</li>
+                        <li><strong>Tons Purchased:</strong> ${DOMPurify.sanitize(result.tonsPurchased.toString())} Tons CO2</li>
+                        <li><strong>Total Cost:</strong> $${DOMPurify.sanitize(result.totalCost.toString())}</li>
+                        <li><strong>Budget Remaining:</strong> $${DOMPurify.sanitize((budget - result.totalCost).toString())}</li>
+                    </ul>
+                `;
+                finalResultsContainer.classList.remove('hidden');
+
+            } catch (error) {
+                appendLog(`Agent execution halted due to errors.`, 'log-error');
+            } finally {
+                runBtn.disabled = false;
+            }
         });
     });
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { executeTradingAgent, marketAPI };
+    module.exports = { runTradingAgent, tools };
 }

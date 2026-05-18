@@ -10,36 +10,29 @@
     <div class="container">
         <header>
             <h1>Automated Carbon Footprint Calculator</h1>
-            <p>Deterministic, rules-based enterprise emissions tracking.</p>
+            <p>Deterministic automation for calculating CO2 emissions based on standard factors.</p>
         </header>
 
         <main>
             <section class="calculator-section">
-                <h2>Calculate Monthly Emissions</h2>
-                <div class="input-group">
-                    <label for="elec-usage">Electricity Usage (kWh):</label>
-                    <input type="number" id="elec-usage" value="50000" min="0">
+                <h2>Input Data</h2>
+                <div class="form-group">
+                    <label for="electricity">Electricity Consumption (kWh):</label>
+                    <input type="number" id="electricity" value="500">
                 </div>
-                <div class="input-group">
-                    <label for="gas-usage">Natural Gas Usage (Therms):</label>
-                    <input type="number" id="gas-usage" value="1200" min="0">
+                <div class="form-group">
+                    <label for="flights">Short-haul Flights (Count):</label>
+                    <input type="number" id="flights" value="2">
                 </div>
-                <div class="input-group">
-                    <label for="flights-usage">Business Flights (Miles):</label>
-                    <input type="number" id="flights-usage" value="15000" min="0">
+                <div class="form-group">
+                    <label for="driving">Driving Distance (Miles):</label>
+                    <input type="number" id="driving" value="1000">
                 </div>
+                <button id="calculate-btn">Calculate Footprint</button>
 
-                <div class="controls">
-                    <button id="calculate-btn">Calculate Footprint</button>
-                </div>
-
-                <div id="results-output" class="results-container" style="display: none;">
-                    <h3>Total Scope 1 & 2 Emissions</h3>
-                    <div class="metric-box">
-                        <span id="total-co2" class="total-number">0</span>
-                        <span class="unit"> Metric Tons CO2e</span>
-                    </div>
-                    <div id="breakdown-details" class="breakdown"></div>
+                <div id="results-output" class="results-container hidden">
+                    <h3>Calculation Results</h3>
+                    <div id="calculation-details"></div>
                 </div>
             </section>
         </main>

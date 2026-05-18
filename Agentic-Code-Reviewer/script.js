@@ -49,25 +49,6 @@ The \`fetch\` API does not reject on HTTP error statuses. You should check \`res
 
 **3. Async/Await (Optional but recommended)**
 Consider refactoring to use \`async/await\` for cleaner asynchronous flow.
-
-#### Suggested Refactor:
-\`\`\`javascript
-async function fetchUserData(id) {
-    try {
-        const url = \`https://api.example.com/users/\${id}\`;
-        const res = await fetch(url);
-
-        if (!res.ok) {
-            throw new Error(\`HTTP error! status: \${res.status}\`);
-        }
-
-        const data = await res.json();
-        console.log(data);
-    } catch (error) {
-        console.error("Failed to fetch user data:", error);
-    }
-}
-\`\`\`
 `;
                 resolve(report);
             }, 2000));

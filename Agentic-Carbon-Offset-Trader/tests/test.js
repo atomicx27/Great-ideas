@@ -1,18 +1,32 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { executeTradingAgent } = require('../script.js');
+const { runTradingAgent } = require('../script.js');
 
-test('Agentic-Carbon-Offset-Trader execution flow', async (t) => {
-    let logCount = 0;
-    const mockLogger = (msg, type) => { logCount++; };
+test('Agentic-Carbon-Offset-Trader logic', async (t) => {
+    const logs = [];
+    const logCallback = (msg, type) => logs.push({msg, type});
 
-    const llmConfig = { provider: 'mock', apiKey: '' };
-    const goal = 'Test offset 500 MT';
+    // Test successful trade (Reforestation)
+    const result1 = await runTradingAgent(1000, 50, logCallback);
+    assert.strictEqual(result1.status, 'Success');
+    assert.strictEqual(result1.project, 'reforestation');
+    assert.strictEqual(result1.totalCost, 50 * 15);
 
-    const report = await executeTradingAgent(goal, llmConfig, mockLogger);
+    // Test fallback to renewables due to budget constraint
+    const logs2 = [];
+    const logCallback2 = (msg, type) => logs2.push({msg, type});
+    const result2 = await runTradingAgent(600, 50, logCallback2);
+    assert.strictEqual(result2.status, 'Success');
+    assert.strictEqual(result2.project, 'renewableEnergy');
+    assert.strictEqual(result2.totalCost, 50 * 8);
 
-    assert.ok(report.includes('Trading Execution Report'));
-    assert.ok(report.includes(goal));
-    assert.ok(report.includes('Purchased 4950 MT of Forestry')); // Verifying fallback logic executed
-    assert.ok(logCount > 5, 'Agent should generate multiple logs');
+    // Test failure due to insufficient budget
+    const logs3 = [];
+    const logCallback3 = (msg, type) => logs3.push({msg, type});
+    try {
+        await runTradingAgent(100, 50, logCallback3);
+        assert.fail("Should have thrown error");
+    } catch (e) {
+        assert.ok(e.message.includes("Insufficient budget"));
+    }
 });

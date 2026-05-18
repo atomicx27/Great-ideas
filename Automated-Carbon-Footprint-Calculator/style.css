@@ -1,12 +1,11 @@
-/* Base Styles from other automation projects */
 :root {
     --primary: #10b981;
     --primary-hover: #059669;
-    --bg-color: #f0fdf4;
+    --bg-color: #f8fafc;
     --card-bg: #ffffff;
-    --text-main: #064e3b;
-    --text-muted: #475569;
-    --border-color: #a7f3d0;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
 }
 
 body {
@@ -18,7 +17,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -43,23 +42,23 @@ header p {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.input-group {
-    margin-bottom: 1.5rem;
+.form-group {
+    margin-bottom: 1rem;
 }
 
-.input-group label {
+.form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.input-group input {
+.form-group input {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 4px;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 button {
@@ -72,53 +71,37 @@ button {
     cursor: pointer;
     transition: background-color 0.2s;
     width: 100%;
-    font-size: 1.1rem;
+    margin-top: 1rem;
 }
 
 button:hover {
     background-color: var(--primary-hover);
 }
 
+.hidden {
+    display: none;
+}
+
 .results-container {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: #ecfdf5;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f1f5f9;
     border-radius: 6px;
     border: 1px solid var(--border-color);
-    text-align: center;
 }
 
-.results-container h3 {
-    margin-top: 0;
-    color: var(--primary-hover);
+.calculation-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.metric-box {
-    margin: 1.5rem 0;
+.calculation-item:last-child {
+    border-bottom: none;
 }
 
-.total-number {
-    font-size: 3rem;
+.total-emissions {
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #047857;
-}
-
-.unit {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-}
-
-.breakdown {
-    text-align: left;
+    color: #ef4444;
     margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border-color);
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.breakdown p {
-    margin: 0.5rem 0;
-    display: flex;
-    justify-content: space-between;
 }

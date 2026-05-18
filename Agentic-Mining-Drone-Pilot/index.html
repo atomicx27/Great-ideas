@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Carbon Offset Trader</title>
+    <title>Agentic Mining Drone Pilot</title>
     <link rel="stylesheet" href="style.css">
     <!-- Include DOMPurify for sanitization -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
@@ -11,8 +11,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>Agentic Carbon Offset Trader</h1>
-            <p>Autonomous AI Agent managing carbon credit trading.</p>
+            <h1>Agentic Mining Drone Pilot</h1>
+            <p>Autonomous AI Agent navigating microgravity and extracting asteroid resources.</p>
         </header>
 
         <main>
@@ -37,25 +37,25 @@
             </section>
 
             <section class="task-section">
-                <h2>Trading Goals</h2>
+                <h2>Mission Brief</h2>
                 <div class="form-group">
-                    <label for="budget">Budget ($):</label>
-                    <input type="number" id="budget" value="1000">
+                    <label for="target-asteroid">Target Asteroid:</label>
+                    <input type="text" id="target-asteroid" value="Psyche-16">
                 </div>
                 <div class="form-group">
-                    <label for="offset-target">Target Offset (Tons CO2):</label>
-                    <input type="number" id="offset-target" value="50">
+                    <label for="extraction-goal">Extraction Goal (kg):</label>
+                    <input type="number" id="extraction-goal" value="500">
                 </div>
-                <button id="run-agent-btn">Deploy Trading Agent</button>
+                <button id="run-agent-btn">Initiate Landing & Extraction Protocol</button>
             </section>
 
             <section class="agent-output-section">
-                <h2>Agent Activity Log & Results</h2>
+                <h2>Flight & Telemetry Log</h2>
                 <div id="output-log" class="log-container">
-                    <p class="log-info">Waiting for trading goals...</p>
+                    <p class="log-info">Drone docked. Awaiting deployment commands...</p>
                 </div>
                 <div id="final-results" class="results-container hidden">
-                    <!-- Final trading results will appear here -->
+                    <!-- Final mission results will appear here -->
                 </div>
             </section>
         </main>

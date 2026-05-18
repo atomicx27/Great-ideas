@@ -1,7 +1,2 @@
-# Agentic Carbon Offset Trader
-
-The Agentic Carbon Offset Trader represents a step up into **Agentic AI** in the Climate Tech domain.
-
-Rather than executing a static calculation, this autonomous agent is given a complex financial and environmental goal (e.g., "Offset 5,000 MT CO2e using a mix of Forestry and Direct Air Capture under a $150,000 budget"). It autonomously decides which "tools" (simulated market APIs) to use to gather live pricing data. It then dynamically synthesizes this data to solve the optimization problem and executes the necessary trades to balance the portfolio.
-
-It supports the Bring Your Own Key (BYOK) architecture, allowing integration with OpenAI, Anthropic, or local execution via Ollama.
+# Agentic-Carbon-Offset-Trader
+A step up into **Agentic AI** in the Carbon Management domain. This autonomous AI Agent simulates a carbon credit trader. Given a budget and a target amount of CO2 to offset, it autonomously decides which simulated tools to use (e.g., querying current carbon offset prices, verifying project quality). It dynamically evaluates the market context and executes a purchase order that maximizes impact while staying within budget. Includes BYOK architecture support.

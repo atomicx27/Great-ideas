@@ -1,0 +1,2 @@
+# Agentic-Mining-Drone-Pilot
+A step up into **Agentic AI** in the Space Resources domain. This autonomous AI Agent simulates navigating an asteroid's chaotic microgravity environment. Given the goal of landing on a rich ore vein, it autonomously decides which simulated tools to use (e.g., firing stabilizing thrusters, pinging surface radar, deploying anchoring drills). It dynamically evaluates sensor data to avoid hazards and secure the payload. Includes BYOK architecture support.

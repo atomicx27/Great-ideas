@@ -247,20 +247,20 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 48. **AGI-Global-Compute-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to global Cloud Infrastructure. During a complex, multi-region outage, a Master Orchestrator breaks down the crisis and spawns specialized sub-agents (Network, Storage, Compute). They operate simultaneously to reroute traffic, promote database replicas, and spin up compute instances, synthesizing their work into a global recovery strategy.
 
-49. **Automated-Resume-Screener**
-    A classic **Automation** tool in the Human Resources domain. It is designed to quickly evaluate candidate resumes against a predefined set of required keywords. It does not use AI; instead, it relies on simple, deterministic string parsing to calculate a match percentage and automatically filter out applicants who don't meet the minimum threshold, saving recruiters hours of manual scanning.
+49. **Automated-Carbon-Footprint-Calculator**
+    A classic **Automation** tool for Carbon Management & Climate Tech. This system uses deterministic rules to calculate CO2 emissions based on user inputs such as electricity consumption and flight data. It relies on standard, fixed emission factors to provide a predictable and consistent footprint calculation, automating the tracking process without requiring complex AI.
 
-50. **Agentic-Interview-Conductor**
-    A step up into **Agentic AI** in the Human Resources domain. Unlike a static script, this autonomous agent is given a target candidate profile. It autonomously decides which technical topics to cover, dynamically generates questions, evaluates the candidate's simulated responses, and synthesizes the data into a final hiring recommendation. Supports BYOK architecture.
+50. **Agentic-Carbon-Offset-Trader**
+    A step up into **Agentic AI** in the Carbon Management domain. This autonomous AI Agent simulates a carbon credit trader. Given a budget and a target amount of CO2 to offset, it autonomously decides which simulated tools to use (e.g., querying current carbon offset prices, verifying project quality). It dynamically evaluates the market context and executes a purchase order that maximizes impact while staying within budget. Includes BYOK architecture support.
 
-51. **AGI-Workforce-Orchestrator**
-    A leap into **Artificial General Intelligence (AGI)** for enterprise Human Resources. The Master Orchestrator takes an ambiguous, high-level business objective (e.g., "Scale engineering team by 50 developers globally") and spawns specialized sub-agents: Recruitment, Onboarding, and Culture. These agents operate in parallel, and the Master synthesizes their outputs into a cohesive execution strategy. Supports BYOK architecture.
+51. **AGI-Global-Climate-Mitigation-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to global Climate Tech. When tasked with an ambiguous, macro-level goal (e.g., "Achieve Net-Zero for a simulated region by 2050"), the AGI Master Orchestrator takes charge. It spawns specialized sub-agents: Policy Simulator, Energy Grid Transition, and Global Reforestation. These agents operate in parallel, evaluating massive datasets and competing constraints. The Master synthesizes their findings into a cohesive, multi-decade mitigation strategy. Includes BYOK architecture support.
 
-52. **Automated-Carbon-Footprint-Calculator**
-    A classic **Automation** tool in the Climate Tech & Carbon Management domain. It is designed to replace manual environmental auditing spreadsheets. It relies on deterministic mathematical rules and standard EPA conversion factors to calculate an enterprise's Scope 1 and Scope 2 emissions based on raw usage data, without using AI.
+52. **Automated-Asteroid-Spectrometer**
+    A classic **Automation** tool for Asteroid Mining & Space Resources. This system uses deterministic rules to filter asteroid candidates based on ore composition (e.g., Platinum Group Metals percentage) and distance thresholds. Asteroids that meet predefined criteria are automatically flagged as viable mining targets, eliminating the need for manual data sorting or complex AI.
 
-53. **Agentic-Carbon-Offset-Trader**
-    A step up into **Agentic AI** in the Climate Tech domain. This autonomous agent is given a complex financial and environmental goal. It autonomously decides which simulated market APIs to use to gather live pricing data, dynamically synthesizes this data to solve an optimization problem, and executes the necessary trades to balance the offset portfolio. Supports BYOK architecture.
+53. **Agentic-Mining-Drone-Pilot**
+    A step up into **Agentic AI** in the Space Resources domain. This autonomous AI Agent simulates navigating an asteroid's chaotic microgravity environment. Given the goal of landing on a rich ore vein, it autonomously decides which simulated tools to use (e.g., firing stabilizing thrusters, pinging surface radar, deploying anchoring drills). It dynamically evaluates sensor data to avoid hazards and secure the payload. Includes BYOK architecture support.
 
-54. **AGI-Climate-Mitigation-Orchestrator**
-    A leap into **Artificial General Intelligence (AGI)** applied to global Climate Tech and Crisis Management. When faced with a complex macro-level crisis, the AGI Master Orchestrator breaks down the threat and spawns specialized sub-agents: Climate Modeler, Agri-Economics, and Policy & Relief. The Orchestrator synthesizes their parallel findings into a cohesive, global mitigation strategy. Features BYOK architecture support.
+54. **AGI-Asteroid-Mining-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to Space Resources. When tasked with a complex, ambiguous macro-level goal (e.g., "Establish a profitable, continuous supply chain of Platinum Group Metals from the Main Belt"), the AGI Master Orchestrator takes charge. It breaks down the mission and spawns specialized sub-agents: Prospecting Fleet, Extraction Swarm, and Deep Space Logistics. These agents operate in parallel across vast distances. The Master synthesizes their findings into a cohesive, multi-year supply chain strategy. Includes BYOK architecture support.
