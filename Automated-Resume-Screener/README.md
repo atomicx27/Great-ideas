@@ -1,0 +1,3 @@
+# Automated Resume Screener
+
+The Automated Resume Screener is a classic **Automation** tool in the Human Resources domain. It is designed to quickly evaluate candidate resumes against a predefined set of required keywords. It does not use AI; instead, it relies on simple, deterministic string parsing to calculate a match percentage and automatically filter out applicants who don't meet the minimum threshold, saving recruiters hours of manual scanning.

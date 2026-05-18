@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Submarine Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Submarine Explorer</h1>
+        <p>Autonomous Trench Navigation AI</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Mission Command</h2>
+            <div class="input-group">
+                <label for="target-coord">Target Coordinate (X, Depth):</label>
+                <input type="text" id="target-coord" placeholder="e.g., 50, 1000">
+            </div>
+            <button id="launch-btn" class="primary-btn">Launch Autonomous Mission</button>
+
+            <div id="submarine-status" class="status-panel">
+                <h3>Submarine Telemetry</h3>
+                <p>Location: <span id="current-loc">0, 0</span></p>
+                <p>Status: <span id="current-status">Docked</span></p>
+            </div>
+        </section>
+
+        <section class="agent-log">
+            <h2>Agent Thought Process</h2>
+            <div class="log-container" id="thought-log">
+                <!-- Log entries will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Asteroid Spectrometer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Asteroid Spectrometer</h1>
+            <p>Deterministic filtering of asteroid mining targets.</p>
+        </header>
+
+        <main>
+            <section class="filter-section">
+                <h2>Target Criteria</h2>
+                <div class="form-group">
+                    <label for="min-pgm">Minimum PGM Content (%):</label>
+                    <input type="number" id="min-pgm" value="5">
+                </div>
+                <div class="form-group">
+                    <label for="max-dist">Maximum Distance (AU):</label>
+                    <input type="number" step="0.1" id="max-dist" value="2.5">
+                </div>
+                <button id="scan-btn">Scan Asteroid Database</button>
+
+                <div id="results-output" class="results-container hidden">
+                    <h3>Viable Targets</h3>
+                    <ul id="target-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

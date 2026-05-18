@@ -206,7 +206,7 @@ ${compiledContext}`;
 
             // Render Output
             rawMarkdownOutput = finalDocument;
-            outputContent.innerHTML = marked.parse(finalDocument);
+            outputContent.innerHTML = DOMPurify.sanitize(marked.parse(finalDocument));
             finalOutputContainer.classList.remove('hidden');
 
         } catch (error) {

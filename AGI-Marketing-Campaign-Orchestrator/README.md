@@ -1,0 +1,3 @@
+# AGI-Marketing-Campaign-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** applied to Sales & Marketing. When tasked with launching a new global product, the AGI Master Orchestrator breaks down the complex, ambiguous campaign goal. It spawns specialized sub-agents: a Copywriter (to draft messaging), an SEO Analyst (to research keywords and optimize), and an Ad-Buyer (to allocate budget and design targeting). These agents operate in parallel, sharing context, before the Master Orchestrator synthesizes their outputs into a cohesive, ready-to-deploy global marketing campaign strategy. Supports BYOK architecture.

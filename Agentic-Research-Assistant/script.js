@@ -155,7 +155,7 @@ ${wikiData.extract}`;
 
             // Render Output
             rawMarkdownOutput = finalReport;
-            outputContent.innerHTML = marked.parse(finalReport);
+            outputContent.innerHTML = DOMPurify.sanitize(marked.parse(finalReport));
             finalOutputContainer.classList.remove('hidden');
 
         } catch (error) {
