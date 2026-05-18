@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Email Campaign Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Email Campaign Manager</h1>
+
+        <div class="input-section">
+            <label for="contacts">Contacts List (CSV Format: Name,Company,Email):</label>
+            <textarea id="contacts" rows="5" placeholder="John Doe,Acme Corp,john@acme.com&#10;Jane Smith,Globex,jane@globex.com"></textarea>
+
+            <label for="template">Email Template (Use {Name}, {Company}):</label>
+            <textarea id="template" rows="8" placeholder="Hi {Name},&#10;&#10;I noticed that {Company} is doing great things. I would love to connect.&#10;&#10;Best,&#10;Sales Team"></textarea>
+
+            <button id="generate-btn">Generate Emails</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Generated Emails</h2>
+            <div id="result" class="result-box">Waiting for input...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

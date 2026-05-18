@@ -83,3 +83,7 @@ async function fetchOllama(baseUrl, model, systemPrompt, userMessage, options = 
     const data = await response.json();
     return data.message.content.trim();
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { fetchOpenAI, fetchAnthropic, fetchOllama };
+}
