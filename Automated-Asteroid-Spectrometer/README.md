@@ -1,0 +1,2 @@
+# Automated-Asteroid-Spectrometer
+A classic **Automation** tool for Asteroid Mining & Space Resources. This system uses deterministic rules to filter asteroid candidates based on ore composition (e.g., Platinum Group Metals percentage) and distance thresholds. Asteroids that meet predefined criteria are automatically flagged as viable mining targets, eliminating the need for manual data sorting or complex AI.

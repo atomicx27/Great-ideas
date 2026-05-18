@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Climate Mitigation Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Climate Mitigation Orchestrator</h1>
+            <p>Multi-agent swarm for global climate crisis modeling and mitigation strategy.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>API Configuration</h2>
+                <div class="input-group">
+                    <label for="llm-provider">LLM Provider:</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama" selected>Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </section>
+
+            <section class="orchestrator-section">
+                <h2>Crisis Directive</h2>
+                <div class="input-group">
+                    <label for="crisis-input">Macro-Level Crisis:</label>
+                    <textarea id="crisis-input" rows="3">A severe multi-year drought is projected to critically impact the agricultural output of the Mediterranean basin, threatening food security and escalating wildfire risks.</textarea>
+                </div>
+
+                <div class="controls">
+                    <button id="execute-btn">Execute Orchestrator</button>
+                </div>
+
+                <div class="swarm-visualizer" id="swarm-viz">
+                    <div class="agent-node" id="node-weather">
+                        <h4>Climate Modeler</h4>
+                        <div class="status idle">Idle</div>
+                        <div class="output"></div>
+                    </div>
+                    <div class="agent-node" id="node-agri">
+                        <h4>Agri-Economics</h4>
+                        <div class="status idle">Idle</div>
+                        <div class="output"></div>
+                    </div>
+                    <div class="agent-node" id="node-policy">
+                        <h4>Policy & Relief</h4>
+                        <div class="status idle">Idle</div>
+                        <div class="output"></div>
+                    </div>
+                </div>
+
+                <div id="master-output" class="master-container">
+                    <h3>Master Strategy Synthesis</h3>
+                    <div class="content">Awaiting execution...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

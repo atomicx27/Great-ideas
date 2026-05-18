@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="fa-solid ${icon}"></i> ${title} Critique
             </div>
             <div class="critique-body markdown-body">
-                ${marked.parse(content)}
+                ${DOMPurify.sanitize(marked.parse(content))}
             </div>
         `;
         critiqueContainer.appendChild(card);
@@ -220,7 +220,7 @@ ${compiledCritiques}`;
             updateStatusRow('master', 'Synthesis Complete');
 
             // STEP 3: Render Final Dashboard
-            synthesisOutput.innerHTML = marked.parse(rawMasterOutput);
+            synthesisOutput.innerHTML = DOMPurify.sanitize(marked.parse(rawMasterOutput));
 
             stateProcessing.classList.add('hidden');
             stateResults.classList.remove('hidden');
