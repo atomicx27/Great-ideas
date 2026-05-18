@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Workforce Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Workforce Orchestrator</h1>
+            <p>Multi-agent swarm for enterprise workforce scaling and management.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>API Configuration</h2>
+                <div class="input-group">
+                    <label for="llm-provider">LLM Provider:</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama" selected>Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </section>
+
+            <section class="orchestrator-section">
+                <h2>Workforce Directive</h2>
+                <div class="input-group">
+                    <label for="goal-input">High-Level Goal:</label>
+                    <textarea id="goal-input" rows="3">Scale engineering team by 50 developers in Q3 across 3 new global regions.</textarea>
+                </div>
+
+                <div class="controls">
+                    <button id="execute-btn">Execute Orchestrator</button>
+                </div>
+
+                <div class="swarm-visualizer" id="swarm-viz">
+                    <div class="agent-node" id="node-recruitment">
+                        <h4>Recruitment Agent</h4>
+                        <div class="status idle">Idle</div>
+                        <div class="output"></div>
+                    </div>
+                    <div class="agent-node" id="node-onboarding">
+                        <h4>Onboarding Agent</h4>
+                        <div class="status idle">Idle</div>
+                        <div class="output"></div>
+                    </div>
+                    <div class="agent-node" id="node-culture">
+                        <h4>Culture Agent</h4>
+                        <div class="status idle">Idle</div>
+                        <div class="output"></div>
+                    </div>
+                </div>
+
+                <div id="master-output" class="master-container">
+                    <h3>Master Orchestrator Synthesis</h3>
+                    <div class="content">Awaiting execution...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
