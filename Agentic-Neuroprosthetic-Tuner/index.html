@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Neuroprosthetic Tuner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Neuroprosthetic Tuner</h1>
+        <p>Autonomous Motor Output Calibration</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Patient Motor Command</h2>
+            <div class="input-group">
+                <label for="target-motion">Intended Motion:</label>
+                <select id="target-motion">
+                    <option value="Grasp">Grasp Object</option>
+                    <option value="Point">Point Finger</option>
+                    <option value="Pinch">Pinch Grip</option>
+                </select>
+            </div>
+            <button id="tune-btn" class="primary-btn">Initialize Auto-Tuning Loop</button>
+
+            <div id="tuner-status" class="status-panel">
+                <h3>Neuroprosthetic Telemetry</h3>
+                <p>Current Micro-Adjustment: <span id="current-adjust">0</span></p>
+                <p>Motion State: <span id="motion-state">Rest</span></p>
+            </div>
+        </section>
+
+        <section class="agent-log">
+            <h2>Auto-Tuner Logic Feed</h2>
+            <div class="log-container" id="thought-log"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

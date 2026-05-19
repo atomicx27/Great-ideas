@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Terraforming Rover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Terraforming Rover</h1>
+        <p>Autonomous Soil Seeding Operations</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Mission Command</h2>
+            <div class="input-group">
+                <label for="target-nutrient">Target Nutrient Requirement:</label>
+                <select id="target-nutrient">
+                    <option value="Nitrogen">Nitrogen</option>
+                    <option value="Phosphorus">Phosphorus</option>
+                    <option value="Potassium">Potassium</option>
+                </select>
+            </div>
+            <button id="launch-btn" class="primary-btn">Deploy Rover</button>
+
+            <div id="rover-status" class="status-panel">
+                <h3>Rover Telemetry</h3>
+                <p>Location Sector: <span id="current-loc">0</span></p>
+                <p>Nutrients Seeded: <span id="seeded-status">None</span></p>
+            </div>
+        </section>
+
+        <section class="agent-log">
+            <h2>Rover Logic Feed</h2>
+            <div class="log-container" id="thought-log"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
