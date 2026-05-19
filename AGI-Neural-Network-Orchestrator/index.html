@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Neural Network Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Neural Network Orchestrator</h1>
+            <p>Master AGI managing a multi-agent swarm to orchestrate full-body neural bridging.</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-swarm-btn">Initialize Full-Body Motor Synthesis</button>
+                <div id="master-status" class="master-status">Awaiting neural input data...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Motor Cortex -->
+                <div class="agent-card" id="agent-motor">
+                    <h3>Sub-Agent: Motor Cortex Interface</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Sensory -->
+                <div class="agent-card" id="agent-sensory">
+                    <h3>Sub-Agent: Sensory Feedback Loop</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Spinal -->
+                <div class="agent-card" id="agent-spinal">
+                    <h3>Sub-Agent: Spinal Cord Bridging</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Executive Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-blue: #3b82f6;
+    --accent-blue-hover: #2563eb;
+    --accent-orange: #f59e0b;
+    --border-color: #334155;
+    --log-thought: #93c5fd;
+    --log-action: #fca5a5;
+    --log-obs: #86efac;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6;
+}
+header {
+    text-align: center; padding: 2rem; background-color: var(--card-bg); border-bottom: 1px solid var(--border-color);
+}
+header h1 { margin-bottom: 0.5rem; color: var(--accent-blue); }
+header p { color: var(--text-secondary); }
+.container {
+    max-width: 1000px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;
+}
+.control-panel, .agent-log { background-color: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); }
+.control-panel h2, .agent-log h2 { margin-bottom: 1.5rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+.input-group { margin-bottom: 1.5rem; }
+.input-group label { display: block; margin-bottom: 0.5rem; color: var(--text-secondary); }
+.input-group select { width: 100%; padding: 0.75rem; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary); }
+.primary-btn { width: 100%; padding: 1rem; background-color: var(--accent-blue); color: white; border: none; border-radius: 4px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background-color 0.2s; }
+.primary-btn:hover:not(:disabled) { background-color: var(--accent-blue-hover); }
+.primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.status-panel { margin-top: 2rem; background-color: var(--bg-color); padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color); }
+.status-panel h3 { margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-secondary); }
+.status-panel p { margin-bottom: 0.5rem; font-weight: bold; }
+.status-panel span { color: var(--accent-orange); }
+.log-container { background-color: var(--bg-color); height: 400px; overflow-y: auto; padding: 1rem; border-radius: 4px; border: 1px solid var(--border-color); font-family: monospace; display: flex; flex-direction: column; gap: 0.5rem; }
+.log-entry { padding: 0.5rem; border-radius: 4px; background-color: rgba(255,255,255,0.05); }
+.log-thought { color: var(--log-thought); border-left: 3px solid var(--log-thought); }
+.log-action { color: var(--log-action); border-left: 3px solid var(--log-action); }
+.log-observation { color: var(--log-obs); border-left: 3px solid var(--log-obs); }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Planetary Terraforming Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Planetary Terraforming Orchestrator</h1>
+            <p>Master AGI managing a multi-agent swarm to engineer a planetary biosphere.</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <button id="start-swarm-btn">Initialize Planet-Wide Terraforming Protocol</button>
+                <div id="master-status" class="master-status">Awaiting planetary scan data...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Atmosphere -->
+                <div class="agent-card" id="agent-atmosphere">
+                    <h3>Sub-Agent: Atmospheric Generators</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Hydrology -->
+                <div class="agent-card" id="agent-hydrology">
+                    <h3>Sub-Agent: Hydrological Ice Melters</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Biosphere -->
+                <div class="agent-card" id="agent-biosphere">
+                    <h3>Sub-Agent: Microbial Seeders</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h2>Master Orchestrator: Executive Synthesis</h2>
+                <div id="final-strategy" class="final-strategy"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
