@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Gene Synthesizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Gene Synthesizer</h1>
+        <p>A deterministic system that processes DNA sequences based on basic biological rules.</p>
+
+        <div class="input-panel">
+            <label for="dna-input">Enter DNA Sequence (A, T, C, G):</label>
+            <input type="text" id="dna-input" value="ATCGTA">
+            <button id="synthesize-btn">Synthesize (Translate to mRNA)</button>
+        </div>
+
+        <div id="output-status" class="status">Waiting for input...</div>
+        <div id="log" class="log"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

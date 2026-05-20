@@ -351,6 +351,14 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 54. **AGI-Asteroid-Mining-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to Space Resources. When tasked with a complex, ambiguous macro-level goal (e.g., "Establish a profitable, continuous supply chain of Platinum Group Metals from the Main Belt"), the AGI Master Orchestrator takes charge. It breaks down the mission and spawns specialized sub-agents: Prospecting Fleet, Extraction Swarm, and Deep Space Logistics. These agents operate in parallel across vast distances. The Master synthesizes their findings into a cohesive, multi-year supply chain strategy. Includes BYOK architecture support.
 
+10. **Automated-Gene-Synthesizer**
+    A deterministic automation system that processes basic DNA sequences to synthesize mRNA according to standard biological transcription rules. It serves to instantly compute correct RNA counterparts while validating DNA sequence inputs, eliminating manual translation errors.
+
+11. **Agentic-Protein-Folder**
+    An autonomous single-agent system that utilizes LLMs to analyze amino acid sequences and predict likely protein folding structures (secondary and tertiary). It simulates the workflow of a bioinformatician by interpreting hydrophobic and hydrophilic properties to propose structural models, demonstrating the capability of single-agent AI in scientific discovery.
+
+12. **AGI-Synthetic-Life-Orchestrator**
+    A glimpse into multi-agent AGI architectures applied to synthetic biology. This tool achieves complex goals by orchestrating a "swarm" of specialized AI sub-agents (Genome Designer, Metabolic Engineer, and Evolutionary Simulator). The master orchestrator breaks down the high-level goal, spawns sub-agents in parallel, and synthesizes their output into a comprehensive blueprint for a new synthetic organism.
 55. **Automated-Atmosphere-Generator**
     A deterministic automation system for planetary terraforming. It uses fixed threshold rules to calculate the necessary atmospheric gas injections to reach a target CO2 level, providing an instant, predictable plan without AI.
 

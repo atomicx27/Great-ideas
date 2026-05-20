@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic Protein Folder</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include DOMPurify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Protein Folder</h1>
+        <p>A single-agent system that analyzes amino acid sequences and predicts likely protein folding structures.</p>
+
+        <div class="api-setup">
+            <label for="api-key">LLM API Key:</label>
+            <input type="password" id="api-key" placeholder="sk-..." />
+
+            <label for="llm-provider">Provider:</label>
+            <select id="llm-provider">
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+                <option value="ollama">Ollama (Local)</option>
+            </select>
+        </div>
+
+        <div class="input-panel">
+            <label for="amino-input">Enter Amino Acid Sequence (e.g., MKTLLLTLTVVQ):</label>
+            <textarea id="amino-input" rows="4">MKTLLLTLTVVQ</textarea>
+            <button id="fold-btn">Predict Structure</button>
+        </div>
+
+        <div id="output-status" class="status">Waiting for input...</div>
+        <div id="result-display" class="result-display"></div>
+        <div id="log" class="log"></div>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
