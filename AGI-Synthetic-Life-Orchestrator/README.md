@@ -1,0 +1,2 @@
+# AGI Synthetic Life Orchestrator
+A glimpse into multi-agent AGI architectures applied to synthetic biology. This tool achieves complex goals by orchestrating a "swarm" of specialized AI sub-agents (Genome Designer, Metabolic Engineer, and Evolutionary Simulator). The master orchestrator breaks down the high-level goal, spawns sub-agents in parallel, and synthesizes their output into a comprehensive blueprint for a new synthetic organism.
