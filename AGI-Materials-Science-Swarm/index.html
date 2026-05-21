@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Materials Science Swarm</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AGI Materials Science Swarm</h1>
+        <p>Multi-Agent Orchestrator for Advanced Material Synthesis</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Swarm Configuration</h2>
+            <div class="input-group">
+                <label for="macro-goal">Macro Goal (e.g., Develop a room-temperature superconductor):</label>
+                <textarea id="macro-goal" rows="3">Develop a scalable, room-temperature superconducting material.</textarea>
+            </div>
+
+            <div class="api-controls">
+                <div class="input-group">
+                    <label for="provider">LLM Provider:</label>
+                    <select id="provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key" />
+                </div>
+            </div>
+
+            <button id="start-btn" class="primary-btn">Initialize AGI Swarm</button>
+        </section>
+
+        <section id="orchestrator-view" class="hidden">
+            <div class="orchestrator-header">
+                <h2>Master Orchestrator</h2>
+                <div class="status-badge" id="master-status">Analyzing Goal...</div>
+            </div>
+
+            <div class="agents-grid">
+                <!-- Sub-Agent 1 -->
+                <div class="agent-card" id="agent-quantum">
+                    <div class="agent-header">
+                        <h3>🤖 Quantum Chemist</h3>
+                        <div class="loader quantum-loader"></div>
+                    </div>
+                    <div class="agent-log" id="log-quantum">Awaiting task...</div>
+                </div>
+
+                <!-- Sub-Agent 2 -->
+                <div class="agent-card" id="agent-thermodynamics">
+                    <div class="agent-header">
+                        <h3>🤖 Thermodynamics Simulator</h3>
+                        <div class="loader thermodynamics-loader"></div>
+                    </div>
+                    <div class="agent-log" id="log-thermodynamics">Awaiting task...</div>
+                </div>
+
+                <!-- Sub-Agent 3 -->
+                <div class="agent-card" id="agent-manufacturing">
+                    <div class="agent-header">
+                        <h3>🤖 Manufacturing Engineer</h3>
+                        <div class="loader manufacturing-loader"></div>
+                    </div>
+                    <div class="agent-log" id="log-manufacturing">Awaiting task...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Synthesized Executive Summary</h2>
+            <div id="final-report" class="markdown-content"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

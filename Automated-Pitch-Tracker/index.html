@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Pitch Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Pitch Tracker</h1>
+        <p>Deterministic Sports Analytics (Speed & Zone)</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Pitch Test Control</h2>
+            <button id="track-btn" class="primary-btn">Simulate 10 Pitches</button>
+            <p id="status-text" class="status-indicator">Status: Waiting</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Pitch Log</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Pitches</h3>
+                    <p id="total-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Strikes</h3>
+                    <p id="strike-count" class="strike">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Balls</h3>
+                    <p id="ball-count" class="ball">0</p>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <table id="pitch-log">
+                    <thead>
+                        <tr>
+                            <th>Pitch #</th>
+                            <th>Speed (mph)</th>
+                            <th>X Coord</th>
+                            <th>Y Coord</th>
+                            <th>Call</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
