@@ -106,7 +106,6 @@ button:disabled {
     transition: opacity 0.3s;
 }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

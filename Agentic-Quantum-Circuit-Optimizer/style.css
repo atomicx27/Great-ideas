@@ -67,8 +67,6 @@ button:disabled {
 .log-thought { color: #4ec9b0; }
 .log-action { color: #ce9178; }
 
-
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

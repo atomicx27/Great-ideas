@@ -38,7 +38,6 @@ th { color: var(--text-secondary); font-weight: 600; }
 .action-keep { color: var(--accent-green); }
 .action-drop { color: var(--accent-red); }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

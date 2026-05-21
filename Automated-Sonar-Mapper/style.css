@@ -128,7 +128,6 @@ section {
 .badge.danger { background: var(--danger-color); color: white; }
 .badge.warning { background: #f59e0b; color: white; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

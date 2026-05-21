@@ -260,7 +260,6 @@ textarea#transcript-input {
 .markdown-body li { margin-bottom: 5px; }
 .markdown-body strong { color: #0f172a; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;
