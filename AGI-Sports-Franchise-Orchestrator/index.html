@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Sports Franchise Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AGI Sports Franchise Orchestrator</h1>
+        <p>Multi-Agent Orchestrator for Franchise Management & Off-season Strategy</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Franchise Macro Goal</h2>
+            <div class="input-group">
+                <label for="macro-goal">Goal (e.g., Rebuild roster, target playoffs, manage cap space):</label>
+                <textarea id="macro-goal" rows="3">Rebuild roster focusing on young talent while staying under the $150M salary cap over the next 3 years.</textarea>
+            </div>
+
+            <div class="api-controls">
+                <div class="input-group">
+                    <label for="provider">LLM Provider:</label>
+                    <select id="provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key" />
+                </div>
+            </div>
+
+            <button id="start-btn" class="primary-btn">Initialize Franchise Swarm</button>
+        </section>
+
+        <section id="orchestrator-view" class="hidden">
+            <div class="orchestrator-header">
+                <h2>General Manager Orchestrator</h2>
+                <div class="status-badge" id="master-status">Analyzing Goal...</div>
+            </div>
+
+            <div class="agents-grid">
+                <!-- Sub-Agent 1 -->
+                <div class="agent-card" id="agent-scouting">
+                    <div class="agent-header">
+                        <h3>🤖 Scouting Director</h3>
+                        <div class="loader scouting-loader"></div>
+                    </div>
+                    <div class="agent-log" id="log-scouting">Awaiting task...</div>
+                </div>
+
+                <!-- Sub-Agent 2 -->
+                <div class="agent-card" id="agent-finance">
+                    <div class="agent-header">
+                        <h3>🤖 Cap Manager</h3>
+                        <div class="loader finance-loader"></div>
+                    </div>
+                    <div class="agent-log" id="log-finance">Awaiting task...</div>
+                </div>
+
+                <!-- Sub-Agent 3 -->
+                <div class="agent-card" id="agent-development">
+                    <div class="agent-header">
+                        <h3>🤖 Player Development</h3>
+                        <div class="loader development-loader"></div>
+                    </div>
+                    <div class="agent-log" id="log-development">Awaiting task...</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Executive Front Office Strategy</h2>
+            <div id="final-report" class="markdown-content"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

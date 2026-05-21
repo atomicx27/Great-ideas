@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Tactical Coach</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agentic Tactical Coach</h1>
+        <p>Autonomous AI Agent for Game Strategy & Play Calling</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Game Situation Input</h2>
+            <div class="input-group">
+                <label for="situation">Current Situation (e.g., 4th Quarter, 2 mins left, Down by 4, Opponent plays zone):</label>
+                <input type="text" id="situation" value="4th Quarter, 2 mins left, Down by 4, Opponent playing Cover 2 Zone" />
+            </div>
+
+            <div class="api-controls">
+                <div class="input-group">
+                    <label for="provider">LLM Provider:</label>
+                    <select id="provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key" />
+                </div>
+            </div>
+
+            <button id="start-btn" class="primary-btn">Generate Play Call</button>
+        </section>
+
+        <section id="agent-workspace" class="hidden">
+            <div class="agent-status-bar">
+                <h3>Coach State: <span id="agent-state" class="state-thinking">Analyzing Game...</span></h3>
+                <div class="loader" id="loader"></div>
+            </div>
+
+            <div class="workspace-grid">
+                <div class="tools-panel">
+                    <h3>Analytics Tools Used</h3>
+                    <ul id="tools-log" class="log-list"></ul>
+                </div>
+
+                <div class="thought-panel">
+                    <h3>Tactical Thought Process</h3>
+                    <div id="thought-log" class="thought-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Recommended Strategy</h2>
+            <div id="final-report" class="markdown-content"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

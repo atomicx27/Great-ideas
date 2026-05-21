@@ -1,0 +1,3 @@
+# Agentic-Tactical-Coach
+
+A step up into **Agentic AI** in the Sports Analytics domain. This autonomous agent simulates a tactical coach. Given a specific game situation, it autonomously uses simulated tools to query opponent tendencies, check player fatigue sensor data, and run play-outcome simulations. It synthesizes this multi-source data to recommend the optimal strategic play call. Supports BYOK architecture.

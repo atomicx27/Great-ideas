@@ -1,0 +1,3 @@
+# Agentic-Material-Discoverer
+
+A step up into **Agentic AI** in the Materials Science domain. This autonomous agent receives target material properties. It autonomously decides which simulated tools to use (e.g., querying databases, running property simulations, checking toxicity). It dynamically synthesizes this multi-source data to iteratively design a novel material composite. Supports BYOK (Bring Your Own Key) architecture for major LLM providers.

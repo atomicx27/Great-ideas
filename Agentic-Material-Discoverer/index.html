@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Material Discoverer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agentic Material Discoverer</h1>
+        <p>Autonomous AI Agent for New Material Discovery</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Discovery Parameters</h2>
+            <div class="input-group">
+                <label for="target-properties">Target Properties (e.g., High tensile strength, lightweight):</label>
+                <input type="text" id="target-properties" value="High thermal conductivity and lightweight" />
+            </div>
+
+            <div class="api-controls">
+                <div class="input-group">
+                    <label for="provider">LLM Provider:</label>
+                    <select id="provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key" />
+                </div>
+            </div>
+
+            <button id="start-btn" class="primary-btn">Start Autonomous Discovery</button>
+        </section>
+
+        <section id="agent-workspace" class="hidden">
+            <div class="agent-status-bar">
+                <h3>Agent State: <span id="agent-state" class="state-thinking">Initializing...</span></h3>
+                <div class="loader" id="loader"></div>
+            </div>
+
+            <div class="workspace-grid">
+                <div class="tools-panel">
+                    <h3>Simulated Tools</h3>
+                    <ul id="tools-log" class="log-list"></ul>
+                </div>
+
+                <div class="thought-panel">
+                    <h3>Agent Thought Process</h3>
+                    <div id="thought-log" class="thought-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Discovery Report</h2>
+            <div id="final-report" class="markdown-content"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

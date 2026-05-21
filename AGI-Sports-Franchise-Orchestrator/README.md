@@ -1,0 +1,3 @@
+# AGI-Sports-Franchise-Orchestrator
+
+A leap into **Artificial General Intelligence (AGI)** applied to Sports Analytics and Franchise Management. When faced with an ambiguous, multi-year goal (e.g., "Rebuild the roster while staying under the salary cap"), the General Manager Orchestrator takes over. It spawns specialized sub-agents: a Scouting Director, a Cap Manager, and a Player Development coach. These agents evaluate massive datasets in parallel. The Master GM agent synthesizes their competing constraints into a cohesive, long-term franchise strategy. Supports BYOK architecture.

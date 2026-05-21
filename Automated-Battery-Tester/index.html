@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Battery Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Battery Tester</h1>
+        <p>Deterministic Battery Capacity Verification</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Test Controls</h2>
+            <div class="input-group">
+                <label for="min-capacity">Minimum Acceptable Capacity (mAh):</label>
+                <input type="number" id="min-capacity" value="4500" />
+            </div>
+            <button id="test-btn" class="primary-btn">Run Automated Test Batch</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Test Results</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Batteries</h3>
+                    <p id="total-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Passed</h3>
+                    <p id="passed-count" class="action-keep">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Failed</h3>
+                    <p id="failed-count" class="action-drop">0</p>
+                </div>
+            </div>
+
+            <div class="log-container">
+                <h3>Batch Log</h3>
+                <table id="test-log">
+                    <thead>
+                        <tr>
+                            <th>Battery ID</th>
+                            <th>Measured Capacity (mAh)</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
