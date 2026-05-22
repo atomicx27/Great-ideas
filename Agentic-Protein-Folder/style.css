@@ -1,82 +1,134 @@
-/* Modern UX & Animations Enhancements */
-html { scroll-behavior: smooth; }
+/* --- Modern UX & Animations Enhancements --- */
+:root {
+    --transition-speed: 0.4s;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    padding: 20px;
-    margin: 0;
 }
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
-h1, p { text-align: center; }
-.api-setup, .input-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-textarea, input[type="password"], select {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
-    font-family: monospace;
 }
+::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.5);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.8);
+}
+
+/* Enhanced Buttons */
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #9b59b6;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-speed) var(--ease-out-expo) !important;
+    z-index: 1;
 }
-button:hover { background-color: #8e44ad; }
-button:active { transform: scale(0.98); }
-button:disabled { background-color: #ccc; cursor: not-allowed; }
-.status {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-    background-color: #ecf0f1;
-    color: #34495e;
+
+button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(100%);
+    transition: transform var(--transition-speed) var(--ease-out-expo);
+    z-index: -1;
 }
-.result-display {
-    padding: 20px;
-    background: #e8f8f5;
-    border-radius: 4px;
-    border: 1px solid #d1f2eb;
-    margin-bottom: 20px;
-    display: none;
+
+button:hover::after {
+    transform: translateY(0);
 }
-.log {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 15px;
-    border-radius: 4px;
-    height: 150px;
-    overflow-y: auto;
-    font-family: monospace;
-    font-size: 14px;
+
+button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-.log-entry { margin-bottom: 5px; animation: fadeUp 0.3s ease-out forwards; }
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+
+button:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Inputs */
+input, select, textarea {
+    transition: all 0.3s ease, border-color 0.3s ease !important;
+    border-radius: 6px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4) !important;
+    border-color: #3b82f6 !important;
+}
+
+/* Cards & Containers Hover Effects */
+.agent-card, .card {
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo), border-color 0.4s ease !important;
+}
+
+.agent-card:hover, .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+    border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Staggered Fade-Up Animations */
+.container, section, .agent-card, .card, main {
+    animation: fadeUpScale 0.7s var(--ease-out-expo) forwards;
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+@keyframes fadeUpScale {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+section:nth-child(1), .agent-card:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2), .agent-card:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3), .agent-card:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4), .agent-card:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5), .agent-card:nth-child(5) { animation-delay: 0.5s; }
+section:nth-child(6), .agent-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Glowing Text for Headers */
+h1, h2 {
+    transition: text-shadow 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Pulse animation for active elements */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.active, .running {
+    animation: pulseGlow 2s infinite;
 }
