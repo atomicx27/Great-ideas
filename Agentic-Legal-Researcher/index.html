@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Legal Researcher</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern UX & Animations Enhancements */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        button {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        button:hover { transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        button:active { transform: translateY(0); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.4s ease-out forwards; }
+    </style>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container fade-up">
+        <header>
+            <h1>Agentic Legal Researcher</h1>
+            <p>Autonomous AI Agent for case law research and precedent summarization</p>
+        </header>
+
+        <main>
+            <div class="config-panel">
+                <div class="input-group">
+                    <label>LLM Provider:</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>API Key / Base URL:</label>
+                    <input type="password" id="api-key" placeholder="sk-... or http://localhost:11434">
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <div class="input-group">
+                    <label>Legal Query / Scenario:</label>
+                    <textarea id="legal-query" rows="4" placeholder="e.g., Is a company liable for damages caused by an autonomous delivery robot hitting a pedestrian?"></textarea>
+                </div>
+                <button id="run-btn">Deploy Agent</button>
+            </div>
+
+            <div class="agent-log-panel">
+                <h3>Agent Execution Log</h3>
+                <div id="agent-log" class="terminal-log">
+                    <div class="log-entry system">System initialized. Awaiting query.</div>
+                </div>
+            </div>
+
+            <div class="results-panel hidden" id="results-panel">
+                <h2>Final Legal Brief</h2>
+                <div id="brief-content"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Urban Planning Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern UX & Animations Enhancements */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        button {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        button:hover { transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        button:active { transform: translateY(0); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.4s ease-out forwards; }
+    </style>
+</head>
+<body>
+    <div class="container fade-up">
+        <header>
+            <h1>AGI Urban Planning Orchestrator</h1>
+            <p>Multi-agent swarm for macro-level city infrastructure planning</p>
+        </header>
+
+        <main>
+            <div class="form-panel">
+                <div class="input-group">
+                    <label>Macro Goal / Crisis:</label>
+                    <textarea id="macro-goal" rows="3">Revitalize the decaying industrial waterfront district into a mixed-use residential zone while mitigating traffic congestion and ensuring a 30% reduction in carbon footprint.</textarea>
+                </div>
+                <button id="orchestrate-btn">Deploy AGI Swarm</button>
+            </div>
+
+            <div class="swarm-panel">
+                <div class="agent-box" id="agent-zoning">
+                    <div class="agent-header">Zoning & Housing Agent</div>
+                    <div class="agent-status">Awaiting task...</div>
+                </div>
+                <div class="agent-box" id="agent-traffic">
+                    <div class="agent-header">Traffic & Transit Agent</div>
+                    <div class="agent-status">Awaiting task...</div>
+                </div>
+                <div class="agent-box" id="agent-env">
+                    <div class="agent-header">Environmental Agent</div>
+                    <div class="agent-status">Awaiting task...</div>
+                </div>
+            </div>
+
+            <div class="results-panel hidden" id="results-panel">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="master-plan">
+                    <!-- Final plan injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
