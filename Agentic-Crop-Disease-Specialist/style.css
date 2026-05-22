@@ -49,7 +49,6 @@ button:disabled {
 .log-action { color: #ff8a65; font-weight: bold; }
 .log-success { color: #aed581; font-weight: bold; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

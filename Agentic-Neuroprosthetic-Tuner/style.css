@@ -36,7 +36,6 @@ header p { color: var(--text-secondary); }
 .log-action { color: var(--log-action); border-left: 3px solid var(--log-action); }
 .log-observation { color: var(--log-obs); border-left: 3px solid var(--log-obs); }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

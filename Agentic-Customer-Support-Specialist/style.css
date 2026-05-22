@@ -63,7 +63,6 @@ body { background-color: var(--bg-dark); color: var(--text-main); height: 100vh;
 .input-area input:focus { border-color: var(--primary); }
 .input-area button { padding: 0 1.5rem; border-radius: 8px; font-size: 1.2rem; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;

@@ -214,7 +214,6 @@ header p { margin: 0; color: var(--text-muted); font-size: 0.9rem; }
 .markdown-body strong { color: white; }
 .markdown-body blockquote { border-left: 4px solid var(--primary); padding-left: 15px; color: var(--text-muted); font-style: italic; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 html {
     scroll-behavior: smooth;
