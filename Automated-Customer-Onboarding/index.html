@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Customer Onboarding</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern UX & Animations Enhancements */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        button {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        button:hover { transform: translateY(-1px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        button:active { transform: translateY(0); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.4s ease-out forwards; }
+    </style>
+</head>
+<body>
+    <div class="container fade-up">
+        <header>
+            <h1>Automated Customer Onboarding</h1>
+            <p>Deterministic routing for new account creation</p>
+        </header>
+
+        <main>
+            <div class="form-panel">
+                <h2>New Client Data</h2>
+                <div class="input-group">
+                    <label for="company-size">Company Size (Employees):</label>
+                    <input type="number" id="company-size" value="50" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="industry">Industry:</label>
+                    <select id="industry">
+                        <option value="tech">Technology</option>
+                        <option value="finance">Finance / Banking</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="retail">Retail</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="plan-tier">Selected Plan:</label>
+                    <select id="plan-tier">
+                        <option value="basic">Basic ($99/mo)</option>
+                        <option value="pro">Pro ($299/mo)</option>
+                        <option value="enterprise">Enterprise ($999/mo)</option>
+                    </select>
+                </div>
+                <button id="process-btn">Process Onboarding</button>
+            </div>
+
+            <div class="results-panel hidden" id="results-panel">
+                <h2>Onboarding Flow Results</h2>
+                <div id="onboarding-steps" class="step-container">
+                    <!-- Steps injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

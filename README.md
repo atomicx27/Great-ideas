@@ -394,3 +394,12 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 
 66. **AGI-Sports-Franchise-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to Sports Analytics and Franchise Management. When faced with an ambiguous, multi-year goal (e.g., "Rebuild the roster while staying under the salary cap"), the General Manager Orchestrator takes over. It spawns specialized sub-agents: a Scouting Director, a Cap Manager, and a Player Development coach. These agents evaluate massive datasets in parallel. The Master GM agent synthesizes their competing constraints into a cohesive, long-term franchise strategy. Supports BYOK architecture.
+
+67. **Automated-Customer-Onboarding**
+    A deterministic automation tool designed to streamline the B2B customer onboarding process. It evaluates company size and industry against predefined rules to automatically route new accounts to the correct compliance checks and support tiers without needing AI.
+
+68. **Agentic-Legal-Researcher**
+    A step up into **Agentic AI** in the Legal domain. This autonomous agent receives a complex legal scenario. It autonomously decides which simulated tools (like querying case law or summarizing precedents) to use. It dynamically synthesizes this multi-source data to draft a comprehensive executive legal brief. Supports BYOK architecture.
+
+69. **AGI-Urban-Planning-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)** applied to Macro-level City Infrastructure. When faced with an ambiguous, multi-disciplinary goal (e.g., revitalizing a waterfront while reducing traffic and carbon emissions), the AGI Master Orchestrator takes charge. It spawns specialized sub-agents: Zoning, Traffic, and Environmental. These agents evaluate massive datasets in parallel, and the Master synthesizes their competing constraints into a cohesive, holistic master plan.
