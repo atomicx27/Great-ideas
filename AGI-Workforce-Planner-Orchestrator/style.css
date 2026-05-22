@@ -76,7 +76,6 @@ button:hover { background-color: #c0392b; }
     box-shadow: 0 0 10px #f1c40f;
 }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

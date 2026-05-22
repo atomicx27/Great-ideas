@@ -65,7 +65,6 @@ button:hover {
 .match-medium { border-left-color: #f1c40f; background-color: #fef9e7; }
 .match-low { border-left-color: #e74c3c; background-color: #fdedf0; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

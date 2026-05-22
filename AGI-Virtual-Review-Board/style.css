@@ -258,7 +258,6 @@ textarea#document-input:focus { border-color: var(--primary); }
 .markdown-body li { margin-bottom: 5px; }
 .markdown-body strong { color: var(--text-main); }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

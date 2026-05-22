@@ -329,7 +329,6 @@ textarea {
 /* Refined typography */
 .badge { background-color: var(--accent-danger); font-weight: bold; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

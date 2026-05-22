@@ -113,7 +113,6 @@ header p { color: var(--text-secondary); }
     color: var(--accent-green);
 }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

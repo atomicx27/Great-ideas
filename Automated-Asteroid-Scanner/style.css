@@ -125,7 +125,6 @@ th {
 .comp-silicate { color: var(--silicate-color); }
 .comp-unknown { color: #666; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

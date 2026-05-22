@@ -112,7 +112,6 @@ section {
 .log-action { color: #f59e0b; }
 .log-observation { color: var(--highlight-color); }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

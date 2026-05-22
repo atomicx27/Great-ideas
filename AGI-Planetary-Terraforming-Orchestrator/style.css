@@ -47,7 +47,6 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .final-strategy ul { list-style-type: none; padding-left: 0; margin-top: 1rem; }
 .final-strategy li { padding: 0.75rem; background-color: rgba(255,255,255,0.05); margin-bottom: 0.5rem; border-radius: 4px; border-left: 3px solid var(--accent-blue); }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

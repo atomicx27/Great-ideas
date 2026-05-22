@@ -287,7 +287,6 @@ textarea#goal-input:focus { border-color: var(--primary); }
 .markdown-body a { color: var(--primary); }
 .markdown-body strong { color: white; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

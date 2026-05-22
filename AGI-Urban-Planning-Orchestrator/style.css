@@ -1,0 +1,132 @@
+:root {
+    --bg-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent-blue: #0284c7;
+    --accent-dark: #0f172a;
+    --border-color: #cbd5e1;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-dark);
+}
+
+header p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.form-panel, .results-panel {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+button {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.swarm-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.agent-box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f8fafc;
+}
+
+.agent-header {
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.agent-status {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-height: 80px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.agent-status.active { color: #059669; }
+.agent-status.done { color: #2563eb; font-weight: bold; }
+
+.hidden {
+    display: none;
+}
+
+#master-plan {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    line-height: 1.6;
+}
+#master-plan h3 { margin-top: 0; color: var(--accent-dark); }

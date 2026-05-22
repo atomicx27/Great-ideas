@@ -148,29 +148,8 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
-section:nth-child(1), .agent-card:nth-child(1) { animation-delay: 0.1s; }
-section:nth-child(2), .agent-card:nth-child(2) { animation-delay: 0.2s; }
-section:nth-child(3), .agent-card:nth-child(3) { animation-delay: 0.3s; }
-section:nth-child(4), .agent-card:nth-child(4) { animation-delay: 0.4s; }
-section:nth-child(5), .agent-card:nth-child(5) { animation-delay: 0.5s; }
-section:nth-child(6), .agent-card:nth-child(6) { animation-delay: 0.6s; }
-
-/* Glowing Text for Headers */
-h1, h2 {
-    transition: text-shadow 0.3s ease;
-}
-
-h1:hover, h2:hover {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-/* Pulse animation for active elements */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-}
-
-.active, .running {
-    animation: pulseGlow 2s infinite;
-}
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }

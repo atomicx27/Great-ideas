@@ -95,7 +95,6 @@ button:disabled {
 .log-action { color: #d9534f; font-weight: bold; }
 .log-success { color: #5cb85c; font-weight: bold; }
 
-
 /* --- Modern UX & Animations Enhancements --- */
 :root {
     --transition-speed: 0.4s;

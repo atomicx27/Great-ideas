@@ -1,0 +1,137 @@
+:root {
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-blue: #2563eb;
+    --accent-dark: #1e293b;
+    --border-color: #cbd5e1;
+    --terminal-bg: #0f172a;
+    --terminal-text: #10b981;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    padding: 2.5rem;
+    max-width: 900px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-dark);
+}
+
+header p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.config-panel, .form-panel, .results-panel {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.config-panel {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+button {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.agent-log-panel {
+    margin-bottom: 1.5rem;
+}
+
+.agent-log-panel h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.terminal-log {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-text);
+    padding: 1rem;
+    border-radius: 8px;
+    height: 200px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.log-entry { margin-bottom: 0.5rem; }
+.log-entry.system { color: #94a3b8; }
+.log-entry.action { color: #fbbf24; }
+.log-entry.result { color: #38bdf8; }
+
+.hidden {
+    display: none;
+}
+
+#brief-content {
+    line-height: 1.6;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+#brief-content h3 { margin-top: 0; color: var(--accent-dark); }
