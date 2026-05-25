@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Restaurant Franchise Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Restaurant Franchise Orchestrator</h1>
+            <p>A swarm of specialized sub-agents coordinating a national restaurant franchise rollout.</p>
+        </header>
+        <main>
+
+            <div class="linter-section">
+                <h2>Orchestrate Rollout</h2>
+                <div class="form-group">
+                    <input type="text" id="goal-input" value="Launch 50 new locations in the Midwest">
+                </div>
+                <button id="orchestrate-btn">Run Swarm</button>
+                <div id="results" class="results-container hidden">
+                    <ul id="orchestration-log"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

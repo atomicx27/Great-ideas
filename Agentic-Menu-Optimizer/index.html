@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Menu Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Menu Optimizer</h1>
+            <p>An autonomous agent that optimizes a restaurant menu for profitability using external pricing data.</p>
+        </header>
+        <main>
+
+            <div class="linter-section">
+                <h2>Optimize Menu</h2>
+                <div class="form-group">
+                    <textarea id="menu-input" rows="5">Burger: $10
+Salad: $8
+Steak: $25</textarea>
+                </div>
+                <button id="optimize-btn">Optimize</button>
+                <div id="results" class="results-container hidden">
+                    <ul id="optimized-menu"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Event Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Event Scheduler</h1>
+            <p>A deterministic rule-based system for finding overlapping free time in calendars.</p>
+        </header>
+        <main>
+
+            <div class="linter-section">
+                <h2>Find Common Time</h2>
+                <div class="form-group">
+                    <textarea id="schedules-input" rows="5">Alice: 9-11, 13-15
+Bob: 10-12, 14-16</textarea>
+                </div>
+                <button id="schedule-btn">Find Time</button>
+                <div id="results" class="results-container hidden">
+                    <ul id="schedule-output"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
