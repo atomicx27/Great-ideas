@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic Fusion Reactor Tuner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Fusion Reactor Tuner</h1>
+        <p>An autonomous AI Agent that receives target fusion energy output goals and autonomously simulates tuning a stellarator or tokamak's magnetic fields to optimize containment time.</p>
+
+        <div class="input-panel">
+            <label for="llm-provider">Select LLM Provider:</label>
+            <select id="llm-provider">
+                <option value="openai">OpenAI (gpt-4o-mini)</option>
+                <option value="anthropic">Anthropic (claude-3-5-sonnet)</option>
+                <option value="ollama">Ollama (llama3 local)</option>
+            </select>
+
+            <label for="api-key">API Key (if using cloud provider):</label>
+            <input type="password" id="api-key" placeholder="Enter API Key">
+
+            <label for="target-output">Target Output / Constraints:</label>
+            <input type="text" id="target-output" value="Increase Q-factor to > 1.5 while minimizing plasma turbulence">
+
+            <button id="tune-btn">Run Reactor Tuning Simulation</button>
+        </div>
+
+        <div id="output-status" class="status">Agent is idle...</div>
+        <div id="result-display" class="result" style="display: none;"></div>
+        <div id="log" class="log"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

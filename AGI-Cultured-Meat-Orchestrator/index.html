@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Cultured Meat Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Cultured Meat Orchestrator</h1>
+        <p>A multi-agent AGI simulation for Cultured Meat. It orchestrates sub-agents (Bioreactor Design, Cell Line Genetics, Market Logistics) to synthesize a cohesive, commercial-scale lab-grown meat facility.</p>
+
+        <div class="input-panel">
+            <label for="llm-provider">Select LLM Provider:</label>
+            <select id="llm-provider">
+                <option value="openai">OpenAI (gpt-4o-mini)</option>
+                <option value="anthropic">Anthropic (claude-3-5-sonnet)</option>
+                <option value="ollama">Ollama (llama3 local)</option>
+            </select>
+
+            <label for="api-key">API Key (if using cloud provider):</label>
+            <input type="password" id="api-key" placeholder="Enter API Key">
+
+            <label for="meat-goal">Macro Goal (e.g., Target Product and Scale):</label>
+            <input type="text" id="meat-goal" value="Design a 50,000L facility for premium lab-grown Wagyu beef">
+
+            <button id="orchestrate-btn">Orchestrate Swarm Simulation</button>
+        </div>
+
+        <div id="status-display" class="status">Awaiting Initialization...</div>
+
+        <div class="agents-grid">
+            <div id="agent-bioreactor" class="agent-card">
+                <h3>Bioreactor Engineer</h3>
+                <div class="agent-status">Idle</div>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-genetics" class="agent-card">
+                <h3>Cell Genetics Lead</h3>
+                <div class="agent-status">Idle</div>
+                <div class="agent-output"></div>
+            </div>
+            <div id="agent-market" class="agent-card">
+                <h3>Market & Logistics</h3>
+                <div class="agent-status">Idle</div>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div id="final-synthesis" class="final-synthesis" style="display: none;">
+            <h2>Master AGI Synthesis Report</h2>
+            <div id="synthesis-output"></div>
+        </div>
+
+        <div id="log" class="log"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
