@@ -1,30 +1,25 @@
 const test = require('node:test');
 const assert = require('node:assert');
+const { runFoldingAgent } = require('../script.js');
 
-// Mock LLM API functions globally before requiring the script
-global.fetchOpenAI = async () => '## Predicted Structure\nGlobular protein with alpha helices.';
-global.fetchAnthropic = async () => '## Predicted Structure\nGlobular protein with alpha helices.';
-global.fetchOllama = async () => '## Predicted Structure\nGlobular protein with alpha helices.';
+test('Agentic-Protein-Folder simulation with mocked LLM', async (t) => {
+    global.fetch = async () => {
+        return {
+            ok: true,
+            json: async () => ({
+                choices: [{ message: { content: '{"prediction":"Alpha-helix formation predicted.","confidence":"89%"}' } }]
+            })
+        };
+    };
 
-const { predictFoldingStructure } = require('../script.js');
+    const logs = [];
+    const logCallback = (msg, type) => logs.push({ msg, type });
 
-test('Agentic-Protein-Folder - predictFoldingStructure', async (t) => {
-    await t.test('Correctly calls OpenAI mock and returns result', async () => {
-        const result = await predictFoldingStructure('MKTLLLTLTVVQ', 'fake_key', 'openai');
-        assert.strictEqual(result.includes('Globular protein'), true);
-    });
+    const result = await runFoldingAgent('openai', 'mock-key', 'mock-model', 'MKTLLLILVVCYHLAMF', logCallback);
 
-    await t.test('Rejects invalid sequence', async () => {
-        await assert.rejects(
-            predictFoldingStructure('123', 'fake_key', 'openai'),
-            { message: 'Sequence contains invalid amino acid characters.' }
-        );
-    });
-
-    await t.test('Rejects empty or non-string sequence', async () => {
-        await assert.rejects(
-            predictFoldingStructure(null, 'fake_key', 'openai'),
-            { message: 'Invalid amino acid sequence' }
-        );
-    });
+    assert.strictEqual(result.status, 'Folding Complete');
+    assert.strictEqual(result.prediction, 'Alpha-helix formation predicted.');
+    assert.strictEqual(result.confidence, '89%');
+    assert.ok(logs.length > 0);
+    assert.ok(logs.find(l => l.msg.includes('Executing Tool: evaluateHydrophobicity()')));
 });

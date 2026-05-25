@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Smart Grid Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Smart Grid Controller</h1>
+            <p>Deterministic filtering for microgrid load balancing.</p>
+        </header>
+
+        <main>
+            <section class="filter-section">
+                <h2>Grid Parameters</h2>
+                <div class="form-group">
+                    <label for="solar-output">Solar Output (MW):</label>
+                    <input type="number" id="solar-output" value="50">
+                </div>
+                <div class="form-group">
+                    <label for="wind-output">Wind Output (MW):</label>
+                    <input type="number" id="wind-output" value="30">
+                </div>
+                <div class="form-group">
+                    <label for="grid-demand">Current Demand (MW):</label>
+                    <input type="number" id="grid-demand" value="100">
+                </div>
+                <button id="balance-btn">Calculate Load Balance</button>
+
+                <div id="results-output" class="results-container hidden">
+                    <h3>Grid Action Plan</h3>
+                    <ul id="action-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
