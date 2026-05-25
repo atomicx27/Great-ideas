@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Festival Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Festival Orchestrator</h1>
+            <p>A swarm of sub-agents coordinating city-wide logistics, talent, and security for a major music festival.</p>
+        </header>
+        <main>
+
+            <div class="linter-section">
+                <h2>Orchestrate Festival</h2>
+                <div class="form-group">
+                    <input type="text" id="fest-goal" value="Manage 3-day music festival with 100k attendees">
+                </div>
+                <button id="fest-btn">Run Swarm</button>
+                <div id="results" class="results-container hidden">
+                    <ul id="fest-log"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

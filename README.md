@@ -404,6 +404,23 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 69. **AGI-Urban-Planning-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to Macro-level City Infrastructure. When faced with an ambiguous, multi-disciplinary goal (e.g., revitalizing a waterfront while reducing traffic and carbon emissions), the AGI Master Orchestrator takes charge. It spawns specialized sub-agents: Zoning, Traffic, and Environmental. These agents evaluate massive datasets in parallel, and the Master synthesizes their competing constraints into a cohesive, holistic master plan.
 
+70. **Automated-Recipe-Scaler**
+    A deterministic automation tool that mathematically scales ingredients based on target serving size, without using AI.
+
+71. **Agentic-Menu-Optimizer**
+    An autonomous agent that optimizes a restaurant menu for profitability using external pricing data, simulating a pricing strategist.
+
+72. **AGI-Restaurant-Franchise-Orchestrator**
+    A swarm of specialized sub-agents coordinating a national restaurant franchise rollout, including Real Estate, Supply Chain, and Marketing, operating in parallel.
+
+73. **Automated-Event-Scheduler**
+    A deterministic rule-based system for finding overlapping free time in calendars.
+
+74. **Agentic-Event-Planner**
+    An autonomous agent that negotiates vendor contracts and adapts to changing event requirements.
+
+75. **AGI-Festival-Orchestrator**
+    A swarm of sub-agents coordinating city-wide logistics, talent, and security for a major music festival.
 70. **Automated-Smart-Grid-Controller**
     A deterministic **Automation** tool for balancing load in a microgrid based on static rules, highlighting the foundational layer of energy infrastructure automation.
 

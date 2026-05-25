@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Recipe Scaler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Recipe Scaler</h1>
+            <p>A deterministic automation tool that mathematically scales ingredients based on target serving size.</p>
+        </header>
+        <main>
+
+            <div class="linter-section">
+                <h2>Scale Recipe</h2>
+                <div class="form-group">
+                    <label>Base Servings: <input type="number" id="base-servings" value="4"></label>
+                </div>
+                <div class="form-group">
+                    <label>Target Servings: <input type="number" id="target-servings" value="12"></label>
+                </div>
+                <div class="form-group">
+                    <textarea id="recipe-input" rows="5">2 cups flour
+1 cup sugar
+3 eggs</textarea>
+                </div>
+                <button id="scale-btn">Scale</button>
+                <div id="results" class="results-container hidden">
+                    <ul id="scaled-recipe"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
