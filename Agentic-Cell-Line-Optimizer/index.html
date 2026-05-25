@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agentic Cell Line Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Markdown parser and Sanitizer for LLM outputs -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <!-- Include shared LLM API script -->
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Cell Line Optimizer</h1>
+        <p>An autonomous AI Agent that receives target meat characteristics (e.g., marbling, protein density) and autonomously simulates genetic edits to optimize the cell line.</p>
+
+        <div class="input-panel">
+            <label for="llm-provider">Select LLM Provider:</label>
+            <select id="llm-provider">
+                <option value="openai">OpenAI (gpt-4o-mini)</option>
+                <option value="anthropic">Anthropic (claude-3-5-sonnet)</option>
+                <option value="ollama">Ollama (llama3 local)</option>
+            </select>
+
+            <label for="api-key">API Key (if using cloud provider):</label>
+            <input type="password" id="api-key" placeholder="Enter API Key">
+
+            <label for="target-traits">Target Traits:</label>
+            <input type="text" id="target-traits" value="High marbling, increased iron density, rapid proliferation">
+
+            <button id="optimize-btn">Run Cell Line Optimization</button>
+        </div>
+
+        <div id="output-status" class="status">Agent is idle...</div>
+        <div id="result-display" class="result" style="display: none;"></div>
+        <div id="log" class="log"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
