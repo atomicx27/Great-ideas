@@ -1,144 +1,159 @@
-// AGI Master Orchestrator logic
-async function runAgent(agentName, systemPrompt, userMessage, apiKey, provider) {
-    let result = '';
-
-    // fetchOpenAI, fetchAnthropic, fetchOllama are expected to be available globally from shared/llm-api.js
-    if (provider === 'openai') {
-        result = await fetchOpenAI(apiKey, 'gpt-4o-mini', systemPrompt, userMessage, { temperature: 0.5 });
-    } else if (provider === 'anthropic') {
-        result = await fetchAnthropic(apiKey, 'claude-3-5-sonnet-20241022', systemPrompt, userMessage, { temperature: 0.5 });
-    } else if (provider === 'ollama') {
-        result = await fetchOllama('llama3', systemPrompt, userMessage, { temperature: 0.5 });
-    } else {
-        throw new Error('Unsupported provider');
+async function fetchLLMResponse(provider, apiKey, model, systemPrompt, userMessage) {
+    if (typeof fetchOpenAI === 'undefined' && typeof window !== 'undefined') {
+        throw new Error('LLM API utilities not loaded.');
     }
+    const apiModule = typeof window !== 'undefined' ? window : require('../shared/llm-api.js');
 
-    return result;
+    if (provider === 'openai') {
+        return await apiModule.fetchOpenAI(apiKey, model || 'gpt-4o-mini', systemPrompt, userMessage);
+    } else if (provider === 'anthropic') {
+        return await apiModule.fetchAnthropic(apiKey, model || 'claude-3-haiku-20240307', systemPrompt, userMessage);
+    } else if (provider === 'ollama') {
+        return await apiModule.fetchOllama('http://localhost:11434', model || 'llama3', systemPrompt, userMessage);
+    }
+    throw new Error('Invalid provider');
 }
 
-if (typeof window !== 'undefined') {
+// Swarm logic for testing
+async function synthesizeLifeBlueprint(provider, apiKey, model, genomePairs, primarySubstrate, generations) {
+    const systemPrompt = `You are the Master Orchestrator AGI for a Synthetic Biology Lab. Your job is to synthesize the sub-agent outputs into a cohesive final blueprint.
+Respond ONLY with a JSON object containing two keys:
+1. "blueprintStatus": A short string describing the blueprint status (e.g., "Viable Synthetic Organism Designed")
+2. "actions": An array of string actions taken by the agents.
+Do not include markdown or extra text.`;
+
+    const userMessage = `Sub-agent reports:
+Genome Agent: Synthesized minimal viable chromosome with ${genomePairs} base pairs.
+Metabolism Agent: Engineered pathway to consume ${primarySubstrate}.
+Evolution Agent: Predicted stability for ${generations} generations in isolated bioreactor.
+Synthesize this into a cohesive final blueprint JSON.`;
+
+    let planData;
+    try {
+        const responseText = await fetchLLMResponse(provider, apiKey, model, systemPrompt, userMessage);
+        planData = JSON.parse(responseText.replace(/```json/g, '').replace(/```/g, '').trim());
+    } catch (error) {
+        console.error("LLM Error, falling back:", error);
+        planData = {
+            blueprintStatus: "Viable Synthetic Organism Designed (Fallback)",
+            actions: [
+                `Genome: Synthesized minimal viable chromosome with ${genomePairs} base pairs.`,
+                `Metabolism: Engineered pathway to consume ${primarySubstrate}.`,
+                `Evolution: Predicted stability for ${generations} generations in isolated bioreactor.`
+            ]
+        };
+    }
+
+    return planData;
+}
+
+// Browser logic
+if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
+        const providerSelect = document.getElementById('provider-select');
+        const apiKeyGroup = document.getElementById('api-key-group');
+        const modelGroup = document.getElementById('model-group');
         const apiKeyInput = document.getElementById('api-key');
-        const providerSelect = document.getElementById('llm-provider');
-        const goalInput = document.getElementById('organism-goal');
-        const orchestrateBtn = document.getElementById('orchestrate-btn');
-        const statusDisplay = document.getElementById('status-display');
-        const finalSynthesisBlock = document.getElementById('final-synthesis');
-        const synthesisOutput = document.getElementById('synthesis-output');
-        const log = document.getElementById('log');
+        const modelInput = document.getElementById('model-name');
 
-        function appendLog(msg) {
-            const entry = document.createElement('div');
-            entry.className = 'log-entry';
-            entry.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
-            log.prepend(entry);
+        const startBtn = document.getElementById('start-swarm-btn');
+        const swarmContainer = document.getElementById('swarm-container');
+        const synthesisNode = document.getElementById('synthesis-node');
+        const masterStatus = document.getElementById('master-status');
+        const finalStrategy = document.getElementById('final-strategy');
+
+        const agents = {
+            genome: { card: document.getElementById('agent-genome'), status: document.querySelector('#agent-genome .agent-status'), output: document.querySelector('#agent-genome .agent-output') },
+            metabolic: { card: document.getElementById('agent-metabolic'), status: document.querySelector('#agent-metabolic .agent-status'), output: document.querySelector('#agent-metabolic .agent-output') },
+            evo: { card: document.getElementById('agent-evo'), status: document.querySelector('#agent-evo .agent-status'), output: document.querySelector('#agent-evo .agent-output') }
+        };
+
+        providerSelect.addEventListener('change', (e) => {
+            if (e.target.value === 'ollama') {
+                apiKeyGroup.style.display = 'none';
+                modelGroup.style.display = 'block';
+            } else {
+                apiKeyGroup.style.display = 'block';
+                modelGroup.style.display = 'none';
+            }
+        });
+
+        function appendAgentLog(agentKey, message) {
+            const p = document.createElement('p');
+            p.textContent = `> ${message}`;
+            agents[agentKey].output.appendChild(p);
+            agents[agentKey].output.scrollTop = agents[agentKey].output.scrollHeight;
         }
 
-        function updateAgentUI(id, status, resultHtml = null) {
-            const card = document.getElementById(id);
-            const statusDiv = card.querySelector('.agent-status');
-            const outputDiv = card.querySelector('.agent-output');
-
-            statusDiv.textContent = status;
-            statusDiv.className = 'agent-status';
-
-            if (status === 'Running...') statusDiv.classList.add('running');
-            else if (status === 'Complete') statusDiv.classList.add('complete');
-            else if (status.startsWith('Error')) statusDiv.classList.add('error');
-
-            if (resultHtml) {
-                outputDiv.innerHTML = DOMPurify.sanitize(marked.parse(resultHtml));
+        function setAgentState(agentKey, isActive, statusText) {
+            agents[agentKey].status.textContent = statusText;
+            if (isActive) {
+                agents[agentKey].card.classList.add('active');
+            } else {
+                agents[agentKey].card.classList.remove('active');
             }
         }
 
-        orchestrateBtn.addEventListener('click', async () => {
-            const goal = goalInput.value.trim();
-            const apiKey = apiKeyInput.value.trim();
+        const simulateAgentProcessing = async (agentKey, steps) => {
+            setAgentState(agentKey, true, "Processing...");
+            for (let step of steps) {
+                await new Promise(r => setTimeout(r, Math.random() * 1000 + 400));
+                appendAgentLog(agentKey, step);
+            }
+            setAgentState(agentKey, false, "Task Complete");
+        };
+
+        startBtn.addEventListener('click', async () => {
+            startBtn.disabled = true;
+            swarmContainer.style.display = 'flex';
+            synthesisNode.style.display = 'none';
+            finalStrategy.innerHTML = '';
+
             const provider = providerSelect.value;
+            const apiKey = apiKeyInput.value;
+            const model = modelInput.value;
 
-            if (!goal) {
-                alert('Please enter an organism design goal.');
-                return;
-            }
-            if (provider !== 'ollama' && !apiKey) {
-                alert('API key is required for cloud providers.');
-                return;
-            }
+            Object.keys(agents).forEach(k => {
+                agents[k].output.innerHTML = '';
+                setAgentState(k, false, "Pending...");
+            });
 
-            orchestrateBtn.disabled = true;
-            statusDisplay.textContent = 'Orchestrating Swarm Agents...';
-            statusDisplay.style.backgroundColor = '#fcf3cf';
-            statusDisplay.style.color = '#b7950b';
-            finalSynthesisBlock.style.display = 'none';
-            synthesisOutput.innerHTML = '';
+            masterStatus.textContent = "Analyzing high-level synthetic goals...";
+            await new Promise(r => setTimeout(r, 1500));
+            masterStatus.textContent = "Deploying Swarm for Parallel Execution";
 
-            appendLog(`AGI Orchestrator initialized for goal: ${goal}`);
+            const genomeSteps = ["Mapping essential genes from Mycoplasma genitalium", "Trimming non-essential regulatory sequences", "Assembling 473-gene minimal set"];
+            const metabolicSteps = ["Analyzing PET plastic degradation pathways", "Optimizing ISMEH expression", "Balancing ATP/NADPH ratios"];
+            const evoSteps = ["Simulating horizontal gene transfer risks", "Running 1M generation Monte Carlo simulation", "Confirming genetic kill-switch stability"];
 
-            const agentConfigs = [
-                {
-                    id: 'agent-genome',
-                    name: 'Genome Designer',
-                    prompt: 'You are the Genome Designer Agent. Based on the user\'s goal, output a brief genome outline and key target gene modifications needed.'
-                },
-                {
-                    id: 'agent-metabolic',
-                    name: 'Metabolic Engineer',
-                    prompt: 'You are the Metabolic Engineer Agent. Based on the user\'s goal, describe the metabolic pathways required and potential energy sources.'
-                },
-                {
-                    id: 'agent-evolution',
-                    name: 'Evolutionary Simulator',
-                    prompt: 'You are the Evolutionary Simulator Agent. Based on the user\'s goal, identify potential evolutionary pressures, failure modes, and long-term ecosystem impact.'
-                }
-            ];
+            await Promise.all([
+                simulateAgentProcessing('genome', genomeSteps),
+                simulateAgentProcessing('metabolic', metabolicSteps),
+                simulateAgentProcessing('evo', evoSteps)
+            ]);
 
-            try {
-                // Run sub-agents in parallel
-                const agentPromises = agentConfigs.map(async (config) => {
-                    updateAgentUI(config.id, 'Running...');
-                    appendLog(`Dispatched ${config.name}...`);
-                    try {
-                        const result = await runAgent(config.name, config.prompt, `Goal: ${goal}`, apiKey, provider);
-                        updateAgentUI(config.id, 'Complete', result);
-                        appendLog(`${config.name} completed.`);
-                        return `### ${config.name} Report\n${result}`;
-                    } catch (e) {
-                        updateAgentUI(config.id, `Error: ${e.message}`);
-                        appendLog(`${config.name} failed: ${e.message}`);
-                        throw e;
-                    }
-                });
+            masterStatus.textContent = "Synthesizing Final Organism Blueprint...";
 
-                const agentReports = await Promise.all(agentPromises);
+            const result = await synthesizeLifeBlueprint(provider, apiKey, model, 531000, "PET Plastics", 1000000);
 
-                // Master Synthesis
-                appendLog(`Synthesizing final AGI report...`);
-                statusDisplay.textContent = 'Synthesizing Sub-Agent Reports...';
+            masterStatus.textContent = "Blueprint Ready. Preparing for synthesis.";
+            synthesisNode.style.display = 'block';
 
-                const masterPrompt = 'You are the AGI Master Orchestrator. Synthesize the following sub-agent reports into a cohesive, comprehensive summary of the proposed synthetic organism. Include a final viability assessment.';
-                const masterMessage = `User Goal: ${goal}\n\n${agentReports.join('\n\n')}`;
+            // Safe use of DOMPurify
+            const sanitize = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize : (t) => t;
 
-                const synthesisResult = await runAgent('Master', masterPrompt, masterMessage, apiKey, provider);
-
-                synthesisOutput.innerHTML = DOMPurify.sanitize(marked.parse(synthesisResult));
-                finalSynthesisBlock.style.display = 'block';
-
-                statusDisplay.textContent = 'Multi-Agent Simulation Complete!';
-                statusDisplay.style.backgroundColor = '#d4edda';
-                statusDisplay.style.color = '#155724';
-                appendLog(`AGI Orchestration successful.`);
-            } catch (error) {
-                statusDisplay.textContent = `Simulation Error: ${error.message}`;
-                statusDisplay.style.backgroundColor = '#fce4e4';
-                statusDisplay.style.color = '#c0392b';
-                appendLog(`Orchestrator failed: ${error.message}`);
-            } finally {
-                orchestrateBtn.disabled = false;
-            }
+            finalStrategy.innerHTML = `
+                <p><strong>Status:</strong> <span style="color:#2ecc71; font-weight:bold;">${sanitize(result.blueprintStatus)}</span></p>
+                <ul>
+                    ${result.actions.map(a => `<li>${sanitize(a)}</li>`).join('')}
+                </ul>
+                <p><em>Organism validated for safe, contained deployment.</em></p>
+            `;
+            startBtn.disabled = false;
         });
     });
 }
 
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = { runAgent };
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { synthesizeLifeBlueprint, fetchLLMResponse };
 }

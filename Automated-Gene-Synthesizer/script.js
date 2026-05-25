@@ -1,65 +1,56 @@
-function synthesizemRNA(dnaSequence) {
+function transcribeDNAtoMRNA(dnaSequence) {
     if (!dnaSequence || typeof dnaSequence !== 'string') {
-        return { error: 'Invalid DNA sequence' };
+        throw new Error("Invalid DNA Sequence.");
     }
 
-    dnaSequence = dnaSequence.toUpperCase();
-    const validBases = ['A', 'T', 'C', 'G'];
-    let mRNA = '';
+    // Convert to uppercase and replace bases according to transcription rules:
+    // DNA -> mRNA
+    // G -> C
+    // C -> G
+    // T -> A
+    // A -> U
+    let mrna = '';
+    const sequence = dnaSequence.toUpperCase();
 
-    for (let i = 0; i < dnaSequence.length; i++) {
-        const base = dnaSequence[i];
-        if (!validBases.includes(base)) {
-            return { error: `Invalid base '${base}' at position ${i + 1}` };
-        }
-
-        // Transcription rules: A->U, T->A, C->G, G->C
-        switch(base) {
-            case 'A': mRNA += 'U'; break;
-            case 'T': mRNA += 'A'; break;
-            case 'C': mRNA += 'G'; break;
-            case 'G': mRNA += 'C'; break;
+    for (let i = 0; i < sequence.length; i++) {
+        const base = sequence[i];
+        switch (base) {
+            case 'G': mrna += 'C'; break;
+            case 'C': mrna += 'G'; break;
+            case 'T': mrna += 'A'; break;
+            case 'A': mrna += 'U'; break;
+            default:
+                throw new Error(`Invalid base '${base}' found in DNA sequence.`);
         }
     }
 
-    return { success: true, mRNA: mRNA };
+    return mrna;
 }
 
-if (typeof window !== 'undefined') {
+if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
-        const inputField = document.getElementById('dna-input');
-        const synthesizeBtn = document.getElementById('synthesize-btn');
-        const outputStatus = document.getElementById('output-status');
-        const log = document.getElementById('log');
+        const transcribeBtn = document.getElementById('transcribe-btn');
+        const dnaInput = document.getElementById('dna-sequence');
+        const resultsOutput = document.getElementById('results-output');
+        const mrnaOutput = document.getElementById('mrna-output');
 
-        function appendLog(msg) {
-            const entry = document.createElement('div');
-            entry.className = 'log-entry';
-            entry.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
-            log.prepend(entry);
-        }
+        transcribeBtn.addEventListener('click', () => {
+            try {
+                const dna = dnaInput.value;
+                const mrna = transcribeDNAtoMRNA(dna);
 
-        synthesizeBtn.addEventListener('click', () => {
-            const dna = inputField.value.trim();
-            appendLog(`Initiating synthesis for DNA sequence: ${dna}`);
-
-            const result = synthesizemRNA(dna);
-
-            if (result.error) {
-                outputStatus.textContent = `Error: ${result.error}`;
-                outputStatus.style.backgroundColor = '#fce4e4';
-                outputStatus.style.color = '#c0392b';
-                appendLog(`Synthesis Failed: ${result.error}`);
-            } else {
-                outputStatus.textContent = `Success! mRNA: ${result.mRNA}`;
-                outputStatus.style.backgroundColor = '#d4edda';
-                outputStatus.style.color = '#155724';
-                appendLog(`Synthesis Complete. Result: ${result.mRNA}`);
+                resultsOutput.classList.remove('hidden');
+                mrnaOutput.textContent = mrna;
+                mrnaOutput.style.color = "var(--accent-green)";
+            } catch (error) {
+                resultsOutput.classList.remove('hidden');
+                mrnaOutput.textContent = error.message;
+                mrnaOutput.style.color = "var(--accent-orange)";
             }
         });
     });
 }
 
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = { synthesizemRNA };
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { transcribeDNAtoMRNA };
 }

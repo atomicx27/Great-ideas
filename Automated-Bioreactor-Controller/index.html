@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Bioreactor Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Bioreactor Controller</h1>
+        <p>A deterministic system that processes bioreactor sensor readings and automatically triggers adjustments based on fixed thresholds.</p>
+
+        <div class="input-panel">
+            <label for="temp-input">Temperature (°C):</label>
+            <input type="number" id="temp-input" value="37.5" step="0.1">
+
+            <label for="ph-input">pH Level:</label>
+            <input type="number" id="ph-input" value="7.2" step="0.1">
+
+            <label for="oxygen-input">Dissolved Oxygen (%):</label>
+            <input type="number" id="oxygen-input" value="45" step="1">
+
+            <button id="process-btn">Process Sensor Data</button>
+        </div>
+
+        <div id="output-status" class="status">Waiting for sensor data...</div>
+        <div id="log" class="log"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
