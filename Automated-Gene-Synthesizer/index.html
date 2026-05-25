@@ -7,17 +7,26 @@
 </head>
 <body>
     <div class="container">
-        <h1>Automated Gene Synthesizer</h1>
-        <p>A deterministic system that processes DNA sequences based on basic biological rules.</p>
+        <header>
+            <h1>Automated Gene Synthesizer</h1>
+            <p>Deterministic transcription of DNA to mRNA sequences.</p>
+        </header>
 
-        <div class="input-panel">
-            <label for="dna-input">Enter DNA Sequence (A, T, C, G):</label>
-            <input type="text" id="dna-input" value="ATCGTA">
-            <button id="synthesize-btn">Synthesize (Translate to mRNA)</button>
-        </div>
+        <main>
+            <section class="transcription-section">
+                <h2>DNA Input</h2>
+                <div class="form-group">
+                    <label for="dna-sequence">Enter DNA Sequence (A, T, C, G):</label>
+                    <input type="text" id="dna-sequence" value="ATCGGCTA">
+                </div>
+                <button id="transcribe-btn">Transcribe to mRNA</button>
 
-        <div id="output-status" class="status">Waiting for input...</div>
-        <div id="log" class="log"></div>
+                <div id="results-output" class="results-container hidden">
+                    <h3>Synthesized mRNA Sequence</h3>
+                    <p id="mrna-output" class="sequence-output"></p>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>

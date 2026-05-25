@@ -2,43 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGI National Energy Orchestrator</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Load DOMPurify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>AGI National Energy Orchestrator</h1>
-        <p>A multi-agent AGI system orchestrating Solar, Wind, and Battery sub-agents to stabilize the grid.</p>
+        <header>
+            <h1>AGI National Energy Orchestrator</h1>
+            <p>Multi-Agent Swarm for National Grid Crisis Management.</p>
+        </header>
 
-        <div class="card control-panel">
-            <button id="start-swarm-btn">Initiate Swarm Orchestration</button>
-            <p id="master-status" class="status-text">Standby</p>
-        </div>
+        <main>
+            <section class="config-section">
+                <div class="form-group">
+                    <label for="provider-select">LLM Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama" selected>Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group" style="display: none;">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API key">
+                </div>
+                <div class="form-group" id="model-group">
+                    <label for="model-name">Ollama Model:</label>
+                    <input type="text" id="model-name" value="llama3">
+                </div>
+                <button id="start-swarm-btn">Initialize Crisis Response Swarm</button>
+            </section>
 
-        <div class="swarm-container" id="swarm-container" style="display:none;">
-            <div class="agent-card" id="agent-solar">
-                <h3>☀️ Solar Agent</h3>
-                <div class="agent-status">Pending...</div>
-                <div class="agent-output"></div>
-            </div>
-            <div class="agent-card" id="agent-wind">
-                <h3>💨 Wind Agent</h3>
-                <div class="agent-status">Pending...</div>
-                <div class="agent-output"></div>
-            </div>
-            <div class="agent-card" id="agent-battery">
-                <h3>🔋 Battery Agent</h3>
-                <div class="agent-status">Pending...</div>
-                <div class="agent-output"></div>
-            </div>
-        </div>
+            <section class="orchestrator-status">
+                <h2>Master Orchestrator</h2>
+                <p id="master-status" class="status-text">Awaiting input...</p>
+            </section>
 
-        <div class="card synthesis-node" id="synthesis-node" style="display:none;">
-            <h2>Master Orchestrator Synthesis</h2>
-            <div id="final-strategy"></div>
-        </div>
+            <section id="swarm-container" class="swarm-grid hidden">
+                <div class="agent-card" id="agent-solar">
+                    <h3>☀️ Solar Agent</h3>
+                    <p class="agent-status">Pending...</p>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-wind">
+                    <h3>🌬️ Wind Agent</h3>
+                    <p class="agent-status">Pending...</p>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-battery">
+                    <h3>🔋 Battery Agent</h3>
+                    <p class="agent-status">Pending...</p>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <section id="synthesis-node" class="synthesis-container hidden">
+                <h2>Final Orchestration Strategy</h2>
+                <div id="final-strategy" class="strategy-output"></div>
+            </section>
+        </main>
     </div>
+    <script src="../shared/llm-api.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

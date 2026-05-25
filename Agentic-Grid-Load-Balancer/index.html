@@ -2,29 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agentic Grid Load Balancer</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Load DOMPurify to prevent XSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Agentic Grid Load Balancer</h1>
-        <p>An autonomous agent that monitors grid load and acts to prevent collapse.</p>
+        <header>
+            <h1>Agentic Grid Load Balancer</h1>
+            <p>Autonomous AI Agent for dynamic grid stabilization.</p>
+        </header>
 
-        <div class="card">
-            <h2>Scenario Input</h2>
-            <form id="balancer-form">
-                <label for="prompt">Describe grid status:</label>
-                <textarea id="prompt" rows="3" required placeholder="e.g., Load is spiking due to a sudden heatwave."></textarea>
-                <button type="button" id="run-btn">Deploy Agent</button>
-            </form>
-        </div>
+        <main>
+            <section class="config-section">
+                <div class="form-group">
+                    <label for="provider-select">LLM Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama" selected>Ollama (Local)</option>
+                    </select>
+                </div>
 
-        <div class="card result-card" id="output-card">
-            <h2>Agent Log</h2>
-            <div id="output-log"></div>
-        </div>
+                <div class="form-group" id="api-key-group" style="display: none;">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter your API key">
+                </div>
+
+                <div class="form-group" id="model-group">
+                    <label for="model-name">Ollama Model:</label>
+                    <input type="text" id="model-name" value="llama3">
+                </div>
+
+                <button id="run-agent-btn">Deploy Balancing Agent</button>
+            </section>
+
+            <section class="agent-output-section">
+                <h2>Agent Execution Log</h2>
+                <div id="output-log" class="terminal-log"></div>
+            </section>
+
+            <section id="final-results" class="results-container hidden">
+                <!-- Agent synthesis goes here -->
+            </section>
+        </main>
     </div>
+    <script src="../shared/llm-api.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

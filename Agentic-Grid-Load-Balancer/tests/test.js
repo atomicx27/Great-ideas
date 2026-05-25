@@ -1,20 +1,25 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { tools, generateActionPlan } = require('../script.js');
+const { runGridAgent } = require('../script.js');
 
-test('Agentic-Grid-Load-Balancer logic', (t) => {
-    const load = tools.check_grid_load();
-    assert.strictEqual(load.status, 'Critical');
+test('Agentic-Grid-Load-Balancer simulation with mocked LLM', async (t) => {
+    // Mock the global fetch for the LLM call inside llm-api.js
+    global.fetch = async () => {
+        return {
+            ok: true,
+            json: async () => ({
+                choices: [{ message: { content: '{"action":"Discharge Battery Reserves at 50MW capacity","strategy":"Mock strategy."}' } }]
+            })
+        };
+    };
 
-    const battery = tools.draw_from_battery(500);
-    assert.ok(battery.includes('500MW'));
+    const logs = [];
+    const logCallback = (msg, type) => logs.push({ msg, type });
 
-    const curtail = tools.curtail_demand('industrial');
-    assert.ok(curtail.includes('industrial'));
+    const result = await runGridAgent('openai', 'mock-key', 'mock-model', logCallback);
 
-    const criticalPlan = generateActionPlan('Sudden heatwave hitting the city', true);
-    assert.ok(criticalPlan.includes('Grid stabilized'));
-
-    const normalPlan = generateActionPlan('Normal operations', false);
-    assert.ok(normalPlan.includes('Continue normal monitoring'));
+    assert.strictEqual(result.status, 'Grid Stabilized');
+    assert.strictEqual(result.strategy, 'Mock strategy.');
+    assert.ok(logs.length > 0);
+    assert.ok(logs.find(l => l.msg.includes('Executing Tool: checkWeatherForecast()')));
 });
