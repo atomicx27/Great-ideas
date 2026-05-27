@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Ocean City Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Ocean City Orchestrator</h1>
+            <p>Managing the Metropolis of the Deep.</p>
+        </header>
+
+        <section class="api-setup">
+            <div class="panel">
+                <h2>Governor API Configuration</h2>
+                <div class="input-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key-input">API Key / Base URL:</label>
+                    <input type="password" id="api-key-input" placeholder="Enter API Key or URL">
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="storm-btn">Simulate Typhoon Protocol</button>
+        </section>
+
+        <section class="dashboard">
+            <div class="panel">
+                <h2>Ballast Control Agent</h2>
+                <div id="ballast-display" class="data-display sub-agent">Awaiting scenario...</div>
+            </div>
+
+            <div class="panel">
+                <h2>Desalination Agent</h2>
+                <div id="desal-display" class="data-display sub-agent">Awaiting scenario...</div>
+            </div>
+
+            <div class="panel">
+                <h2>Traffic Control Agent</h2>
+                <div id="traffic-display" class="data-display sub-agent">Awaiting scenario...</div>
+            </div>
+        </section>
+
+        <section class="governor-section">
+            <h2>AGI Prime Governor Command</h2>
+            <div id="governor-display" class="data-display governor">Awaiting sub-system synthesis...</div>
+        </section>
+    </div>
+</body>
+</html>
