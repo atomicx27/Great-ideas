@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Meteor Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Meteor Tracker</h1>
+        <p>Deterministic Early-Warning Radar System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Sensor Array Controls</h2>
+            <div class="input-group">
+                <label for="speed-input">Meteor Speed (km/s):</label>
+                <input type="number" id="speed-input" value="20" min="1" max="100">
+            </div>
+            <div class="input-group">
+                <label for="mass-input">Meteor Mass (kg):</label>
+                <input type="number" id="mass-input" value="5000" min="100" max="1000000">
+            </div>
+            <div class="input-group">
+                <label for="angle-input">Trajectory Angle (degrees):</label>
+                <input type="number" id="angle-input" value="45" min="0" max="90">
+            </div>
+            <button id="scan-btn" class="primary-btn">Calculate Trajectory</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Tracking Results</h2>
+            <div id="results-display" class="log-box">Awaiting sensor data...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
