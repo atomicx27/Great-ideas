@@ -48,6 +48,25 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 15. **AGI-Legal-Contract-Reviewer**
     An Artificial General Intelligence (AGI) application designed to simulate a multi-departmental executive review of complex legal documents and contracts. In typical enterprise environments, getting a contract reviewed requires sequential approvals from Legal, Finance, and Compliance—a process that often takes weeks. This tool uses an AGI Master Orchestrator to break the contract down and spawn specialized sub-agents (Liability Expert, Compliance Officer, Financial Risk Analyst) that review the document simultaneously. It synthesizes their findings into a cohesive Executive Summary, highlighting critical risks and conflicting opinions instantly, drastically accelerating deal cycles.
 
+16. **Automated-Smart-Contract-Linter**
+    Deterministic rules-based scanner for basic solidity vulnerabilities.
+
+17. **Agentic-Smart-Contract-Auditor**
+    Agentic AI auditor capable of analyzing code context and running verification tools.
+
+18. **AGI-Web3-Security-Orchestrator**
+    AGI swarm simulating a multi-disciplinary security firm reviewing smart contract ecosystems.
+
+19. **Automated-Rent-Collector**
+    Deterministic automated system for sending rent reminders and verifying standard payments.
+
+20. **Agentic-Property-Manager**
+    Agentic AI manager capable of handling tenant complaints and coordinating maintenance requests autonomously.
+
+21. **AGI-Real-Estate-Orchestrator**
+    AGI orchestrator for managing entire property portfolios, simulating financial, legal, and operational planning.
+
+
 49. **Automated-Inventory-Tracker**
     A classic **Automation** tool replacing manual inventory spreadsheets. It uses deterministic rules and predefined low-stock thresholds to automate the tracking process, preventing out-of-stock scenarios and streamlining replenishment without requiring complex AI.
 
@@ -456,20 +475,9 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 75. **AGI-Fusion-Power-Orchestrator**
     A leap into **Artificial General Intelligence (AGI)** applied to Fusion Power infrastructure. When tasked with a massive, highly ambiguous goal (e.g., "Design a 500MW commercial fusion grid-connected plant"), the AGI Master Orchestrator takes charge. It spawns specialized sub-agents: Plasma Physicist, Materials Engineer, and Grid Integrator. These agents evaluate constraints in parallel, and the Master synthesizes their findings into a cohesive, holistic blueprint addressing physics, engineering, and energy economics. Includes BYOK architecture support.
 
-76. **Automated-Meteor-Tracker**
-    A classic **Automation** tool for Planetary Defense. This deterministic system calculates meteor trajectories based on sensor input (speed, mass, angle) to provide immediate, rule-based impact probability alerts without AI.
-
-77. **Agentic-Deflection-Strategist**
-    A step up into **Agentic AI** in the Planetary Defense domain. This autonomous agent analyzes high-risk asteroid data and autonomously uses an LLM to recommend the optimal deflection strategy (e.g., kinetic impactor, gravity tractor). Features BYOK architecture.
-
-78. **AGI-Planetary-Defense-Orchestrator**
-    A leap into **Artificial General Intelligence (AGI)** applied to Planetary Defense. A Master Orchestrator delegates workload to specialized sub-agents (Tracking, Deflection, Evacuation) to handle a global asteroid swarm threat, synthesizing their parallel constraints into a unified survival strategy. Features BYOK architecture.
-
-79. **Automated-Solar-Sail-Deployer**
-    A deterministic **Automation** tool for Orbital Megastructures. It calculates the necessary strut tension and deployment angle for orbital solar sails based on fixed thermal and orbital physics rules, ensuring safe rigging without AI.
-
-80. **Agentic-Microwave-Beam-Router**
-    A step up into **Agentic AI** in the Orbital Megastructure domain. This autonomous agent analyzes real-time atmospheric data and uses an LLM to dynamically adjust the frequency and focal width of orbital power beams, optimizing energy transmission to Earth. Features BYOK architecture.
-
-81. **AGI-Orbital-Megastructure-Orchestrator**
-    A leap into **Artificial General Intelligence (AGI)** applied to Macro-Engineering. A Master Orchestrator delegates workload to specialized sub-agents (Asteroid Mining, Orbital Assembly, Energy Logistics) to coordinate the decades-long assembly of a Dyson Swarm, synthesizing a unified master blueprint. Features BYOK architecture.
+107. **Automated-Exoplanet-Telescope**: An automated system to scan skies and identify exoplanet transit candidates using light curves.
+108. **Automated-Seafloor-Drill**: An automated system for monitoring and controlling a deep-sea drilling rig with safety protocol logic.
+109. **Agentic-Exoplanet-Rover**: An autonomous rover system that uses LLM decision making to navigate terrain and evaluate samples.
+110. **Agentic-Deep-Sea-Explorer**: An AUV system that processes sonar data to classify biological anomalies and plot safe trajectories.
+111. **AGI-Exoplanet-Habitat-Orchestrator**: A multi-agent orchestration system that manages life support, resources, and structural integrity of an exoplanet base.
+112. **AGI-Ocean-City-Orchestrator**: An overarching AI governor system coordinating subsystems to manage a floating oceanic city during extreme events.

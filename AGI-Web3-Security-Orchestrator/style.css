@@ -1,0 +1,16 @@
+
+:root {
+    --bg-main: #f0f2f5;
+    --bg-panel: #ffffff;
+    --text-main: #1e293b;
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --border: #e2e8f0;
+}
+body { font-family: "Inter", sans-serif; background: var(--bg-main); margin: 0; padding: 20px; color: var(--text-main); }
+.container { max-width: 800px; margin: auto; background: var(--bg-panel); padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+h1 { color: var(--primary); margin-top: 0; }
+button { background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+button:hover { background: var(--primary-hover); }
+textarea { width: 100%; height: 100px; margin: 10px 0; padding: 10px; box-sizing: border-box; }
+#output { margin-top: 20px; padding: 15px; background: #f8fafc; border: 1px solid var(--border); border-radius: 4px; white-space: pre-wrap; }
