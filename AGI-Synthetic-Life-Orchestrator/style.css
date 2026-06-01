@@ -1,312 +1,135 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    padding: 20px;
-    margin: 0;
-}
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-h1, p { text-align: center; }
-.api-setup, .input-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-textarea, input[type="password"], select {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb {
-    background: rgba(100, 116, 139, 0.5);
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 116, 139, 0.8);
-}
-
-/* Enhanced Buttons */
-button {
-    position: relative;
-    overflow: hidden;
-    transition: all var(--transition-speed) var(--ease-out-expo) !important;
-    z-index: 1;
-}
-
-button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(100%);
-    transition: transform var(--transition-speed) var(--ease-out-expo);
-    z-index: -1;
-}
-
-button:hover::after {
-    transform: translateY(0);
-}
-
-button:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-button:active {
-    transform: translateY(-1px) scale(0.98);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Enhanced Inputs */
-input, select, textarea {
-    transition: all 0.3s ease, border-color 0.3s ease !important;
-    border-radius: 6px;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4) !important;
-    border-color: #3b82f6 !important;
-}
-
-/* Cards & Containers Hover Effects */
-.agent-card, .card {
-    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo), border-color 0.4s ease !important;
-}
-
-.agent-card:hover, .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
-    border-color: rgba(59, 130, 246, 0.5) !important;
-}
-
-/* Staggered Fade-Up Animations */
-.container, section, .agent-card, .card, main {
-    animation: fadeUpScale 0.7s var(--ease-out-expo) forwards;
-    opacity: 0;
-    will-change: opacity, transform;
-}
-
-@keyframes fadeUpScale {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-section:nth-child(1), .agent-card:nth-child(1) { animation-delay: 0.1s; }
-section:nth-child(2), .agent-card:nth-child(2) { animation-delay: 0.2s; }
-section:nth-child(3), .agent-card:nth-child(3) { animation-delay: 0.3s; }
-section:nth-child(4), .agent-card:nth-child(4) { animation-delay: 0.4s; }
-section:nth-child(5), .agent-card:nth-child(5) { animation-delay: 0.5s; }
-section:nth-child(6), .agent-card:nth-child(6) { animation-delay: 0.6s; }
-
-/* Glowing Text for Headers */
-h1, h2 {
-    transition: text-shadow 0.3s ease;
-}
-
-h1:hover, h2:hover {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-/* Pulse animation for active elements */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-}
-
-.active, .running {
-    animation: pulseGlow 2s infinite;
-}
-
-/* --- Modern UX & Animations Enhancements --- */
 :root {
-    --transition-speed: 0.5s;
-    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --hover-bg: rgba(59, 130, 246, 0.05);
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --accent-blue: #3b82f6;
+    --accent-green: #10b981;
+    --accent-orange: #f59e0b;
+    --border-color: #475569;
+    --font-stack: system-ui, -apple-system, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* Modern UX & Animations Enhancements */
+html { scroll-behavior: smooth; }
 body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-stack);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
 }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb {
-    background: rgba(100, 116, 139, 0.6);
-    border-radius: 5px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 116, 139, 0.9);
-    border: 2px solid transparent;
-    background-clip: padding-box;
-}
-
-/* Enhanced Buttons */
-button {
-    position: relative;
-    overflow: hidden;
-    transition: all var(--transition-speed) var(--ease-out-expo) !important;
-    z-index: 1;
-    border-radius: 8px;
-}
-
-button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.container {
     width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(100%);
-    transition: transform var(--transition-speed) var(--ease-out-expo);
-    z-index: -1;
-    border-radius: inherit;
+    max-width: 1200px;
 }
 
-button:hover::after {
-    transform: translateY(0);
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.5s ease-out forwards;
 }
 
-button:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
+h1 { color: var(--accent-blue); margin-bottom: 0.5rem; }
 
-button:active {
-    transform: translateY(-1px) scale(0.97);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Enhanced Inputs */
-input, select, textarea {
-    transition: all 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
+button {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    padding: 1rem;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    animation: fadeUp 0.6s ease-out forwards;
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3) !important;
-    border-color: #3b82f6 !important;
-    background-color: #ffffff !important;
+button:hover { background-color: #2563eb; transform: translateY(-2px); }
+button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.orchestrator-status {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-blue);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
 }
 
-/* Cards & Containers Hover Effects */
-.agent-card, .card {
-    transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo), border-color 0.5s ease, background-color 0.5s ease !important;
-    border-radius: 12px;
+.status-text { font-size: 1.2rem; font-weight: 500; color: var(--accent-orange); }
+
+.swarm-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
-.agent-card:hover, .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
-    border-color: rgba(59, 130, 246, 0.6) !important;
-    background-color: var(--hover-bg) !important;
+.agent-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Staggered Fade-Up Animations */
-.container, section, .agent-card, .card, main {
-    animation: fadeUpScale 0.8s var(--ease-out-expo) forwards;
-    opacity: 0;
-    will-change: opacity, transform;
+.agent-card.active {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
-@keyframes fadeUpScale {
-    0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.92);
-        filter: blur(4px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
+.agent-card h3 { margin-top: 0; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+
+.agent-status { font-weight: bold; margin-bottom: 1rem; color: #94a3b8; }
+.agent-card.active .agent-status { color: var(--accent-green); }
+
+.agent-output {
+    background-color: #000;
+    color: #0f0;
+    font-family: monospace;
+    font-size: 0.9rem;
+    padding: 1rem;
+    border-radius: 6px;
+    flex-grow: 1;
+    height: 150px;
+    overflow-y: auto;
+}
+.agent-output p { margin: 0.25rem 0; }
+
+.synthesis-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-orange);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+    animation: fadeUp 0.5s ease-out forwards;
 }
 
-section:nth-child(1), .agent-card:nth-child(1) { animation-delay: 0.1s; }
-section:nth-child(2), .agent-card:nth-child(2) { animation-delay: 0.2s; }
-section:nth-child(3), .agent-card:nth-child(3) { animation-delay: 0.3s; }
-section:nth-child(4), .agent-card:nth-child(4) { animation-delay: 0.4s; }
-section:nth-child(5), .agent-card:nth-child(5) { animation-delay: 0.5s; }
-section:nth-child(6), .agent-card:nth-child(6) { animation-delay: 0.6s; }
+.strategy-output ul { padding-left: 1.5rem; }
+.strategy-output li { margin-bottom: 0.5rem; }
 
-/* Glowing Text for Headers */
-h1, h2 {
-    transition: text-shadow 0.4s ease, color 0.4s ease;
-}
+.hidden { display: none !important; }
 
-h1:hover, h2:hover {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    color: #e2e8f0;
-}
-
-/* Pulse animation for active elements */
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
-    70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-}
-
-.active, .running {
-    animation: pulseGlow 2.5s infinite;
-}
-
-/* Interactive List Items */
-li {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-li:hover {
-    transform: translateX(5px);
-    background-color: rgba(59, 130, 246, 0.05);
-    border-radius: 4px;
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

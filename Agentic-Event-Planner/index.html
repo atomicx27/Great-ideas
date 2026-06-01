@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Event Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Event Planner</h1>
+            <p>An autonomous agent that negotiates vendor contracts and adapts to changing event requirements.</p>
+        </header>
+        <main>
+
+            <div class="linter-section">
+                <h2>Plan Event</h2>
+                <div class="form-group">
+                    <textarea id="event-reqs" rows="5">500 guests, vegan options, budget $10k</textarea>
+                </div>
+                <button id="plan-btn">Plan</button>
+                <div id="results" class="results-container hidden">
+                    <ul id="plan-output"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

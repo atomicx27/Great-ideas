@@ -1,28 +1,22 @@
 const test = require('node:test');
 const assert = require('node:assert');
+const { synthesizeLifeBlueprint } = require('../script.js');
 
-// Mock LLM API functions globally
-global.fetchOpenAI = async (apiKey, model, systemPrompt, userMessage) => `Mock response from ${systemPrompt.split('.')[0]}`;
-global.fetchAnthropic = async (apiKey, model, systemPrompt, userMessage) => `Mock response from ${systemPrompt.split('.')[0]}`;
-global.fetchOllama = async (model, systemPrompt, userMessage) => `Mock response from ${systemPrompt.split('.')[0]}`;
+test('AGI-Synthetic-Life-Orchestrator synthesis with mocked LLM', async (t) => {
+    global.fetch = async () => {
+        return {
+            ok: true,
+            json: async () => ({
+                choices: [{ message: { content: '{"blueprintStatus":"Viable Synthetic Organism Designed","actions":["Genome: 531000", "Metabolism: PET Plastics", "Evolution: 1000000"]}' } }]
+            })
+        };
+    };
 
-const { runAgent } = require('../script.js');
+    const result = await synthesizeLifeBlueprint('openai', 'mock-key', 'mock-model', 531000, "PET Plastics", 1000000);
 
-test('AGI-Synthetic-Life-Orchestrator - runAgent', async (t) => {
-    await t.test('Correctly calls OpenAI mock and returns result', async () => {
-        const result = await runAgent('Test Agent', 'You are a test agent.', 'User message', 'fake_key', 'openai');
-        assert.strictEqual(result, 'Mock response from You are a test agent');
-    });
-
-    await t.test('Correctly calls Ollama mock and returns result', async () => {
-        const result = await runAgent('Test Agent', 'You are a test agent.', 'User message', '', 'ollama');
-        assert.strictEqual(result, 'Mock response from You are a test agent');
-    });
-
-    await t.test('Rejects unsupported provider', async () => {
-        await assert.rejects(
-            runAgent('Test Agent', 'prompt', 'message', 'key', 'invalid'),
-            { message: 'Unsupported provider' }
-        );
-    });
+    assert.strictEqual(result.blueprintStatus, 'Viable Synthetic Organism Designed');
+    assert.strictEqual(result.actions.length, 3);
+    assert.ok(result.actions[0].includes('531000'));
+    assert.ok(result.actions[1].includes('PET Plastics'));
+    assert.ok(result.actions[2].includes('1000000'));
 });

@@ -4,61 +4,66 @@
     <meta charset="UTF-8">
     <title>AGI Synthetic Life Orchestrator</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Include DOMPurify -->
+    <!-- Load DOMPurify -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>AGI Synthetic Life Orchestrator</h1>
-        <p>A multi-agent AGI system orchestrating a swarm of specialized sub-agents (Genome Designer, Metabolic Engineer, Evolutionary Simulator) to design and simulate a new synthetic organism.</p>
+        <header>
+            <h1>AGI Synthetic Life Orchestrator</h1>
+            <p>Multi-Agent Swarm for Synthetic Organism Design.</p>
+        </header>
 
-        <div class="api-setup">
-            <label for="api-key">LLM API Key:</label>
-            <input type="password" id="api-key" placeholder="sk-..." />
+        <main>
+            <section class="config-section">
+                <div class="form-group">
+                    <label for="provider-select">LLM Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama" selected>Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-group" style="display: none;">
+                    <label for="api-key">API Key:</label>
+                    <input type="password" id="api-key" placeholder="Enter API key">
+                </div>
+                <div class="form-group" id="model-group">
+                    <label for="model-name">Ollama Model:</label>
+                    <input type="text" id="model-name" value="llama3">
+                </div>
+                <button id="start-swarm-btn">Initialize Design Swarm</button>
+            </section>
 
-            <label for="llm-provider">Provider:</label>
-            <select id="llm-provider">
-                <option value="openai">OpenAI</option>
-                <option value="anthropic">Anthropic</option>
-                <option value="ollama">Ollama (Local)</option>
-            </select>
-        </div>
+            <section class="orchestrator-status">
+                <h2>Master Orchestrator</h2>
+                <p id="master-status" class="status-text">Awaiting input...</p>
+            </section>
 
-        <div class="input-panel">
-            <label for="organism-goal">Synthetic Organism Goal:</label>
-            <textarea id="organism-goal" rows="4">Design a synthetic microbe capable of efficiently breaking down microplastics in cold ocean environments.</textarea>
-            <button id="orchestrate-btn">Commence Multi-Agent Simulation</button>
-        </div>
+            <section id="swarm-container" class="swarm-grid hidden">
+                <div class="agent-card" id="agent-genome">
+                    <h3>🧬 Genome Designer</h3>
+                    <p class="agent-status">Pending...</p>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-metabolic">
+                    <h3>⚗️ Metabolic Engineer</h3>
+                    <p class="agent-status">Pending...</p>
+                    <div class="agent-output"></div>
+                </div>
+                <div class="agent-card" id="agent-evo">
+                    <h3>⏳ Evolutionary Simulator</h3>
+                    <p class="agent-status">Pending...</p>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
 
-        <div id="status-display" class="status">Waiting for input...</div>
-
-        <div class="agent-grid">
-            <div class="agent-card" id="agent-genome">
-                <h3>Genome Designer Agent</h3>
-                <div class="agent-status">Idle</div>
-                <div class="agent-output"></div>
-            </div>
-            <div class="agent-card" id="agent-metabolic">
-                <h3>Metabolic Engineer Agent</h3>
-                <div class="agent-status">Idle</div>
-                <div class="agent-output"></div>
-            </div>
-            <div class="agent-card" id="agent-evolution">
-                <h3>Evolutionary Simulator Agent</h3>
-                <div class="agent-status">Idle</div>
-                <div class="agent-output"></div>
-            </div>
-        </div>
-
-        <div id="final-synthesis" class="final-synthesis">
-            <h3>AGI Orchestrator Synthesis</h3>
-            <div id="synthesis-output"></div>
-        </div>
-
-        <div id="log" class="log"></div>
+            <section id="synthesis-node" class="synthesis-container hidden">
+                <h2>Final Synthetic Blueprint</h2>
+                <div id="final-strategy" class="strategy-output"></div>
+            </section>
+        </main>
     </div>
-
     <script src="../shared/llm-api.js"></script>
     <script src="script.js"></script>
 </body>
