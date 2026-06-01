@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Crop Yield Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Crop Yield Optimizer</h1>
+        <p>An autonomous agent that monitors plant health imagery (simulated) and decides localized nutrient treatments via LLM analysis.</p>
+
+        <div class="config-section">
+            <label for="apiKey">LLM API Key (OpenAI):</label>
+            <input type="password" id="apiKey" placeholder="sk-...">
+            <label for="cropData">Simulated Crop Health Data:</label>
+            <textarea id="cropData" rows="3">Leaf discoloration index: 14%, Growth rate: -5% from baseline, Soil pH: 6.2</textarea>
+            <button id="optimizeBtn">Run Optimization Agent</button>
+        </div>
+
+        <div id="resultsArea" class="results-area hidden">
+            <h2>Agent Log</h2>
+            <div id="agentLog" class="log"></div>
+            <div class="report-card">
+                <h3>Treatment Plan</h3>
+                <div id="treatmentPlan"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

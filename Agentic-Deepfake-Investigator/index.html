@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Deepfake Investigator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Deepfake Investigator</h1>
+        <p>An autonomous agent that utilizes external tools and LLM analysis to investigate suspected deepfakes.</p>
+
+        <div class="config-section">
+            <label for="apiKey">LLM API Key (OpenAI):</label>
+            <input type="password" id="apiKey" placeholder="sk-...">
+            <label for="videoUrl">Target Video URL (Simulated):</label>
+            <input type="text" id="videoUrl" placeholder="https://example.com/suspicious-video.mp4">
+            <button id="investigateBtn">Begin Investigation</button>
+        </div>
+
+        <div id="resultsArea" class="results-area hidden">
+            <h2>Investigation Log</h2>
+            <div id="investigationLog" class="log"></div>
+            <div class="report-card">
+                <h3>Final Forensics Report</h3>
+                <div id="finalReport"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
