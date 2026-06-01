@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Probe Navigator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container fade-up">
+        <h1>Agentic Probe Navigator</h1>
+
+        <div class="input-section">
+            <label for="sensorData">Current Sensor Data:</label>
+            <textarea id="sensorData" rows="3" placeholder="e.g., Obstacle detected 50m ahead, moving at 20m/s."></textarea>
+
+            <button id="navigateBtn">Consult Navigation Agent</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Navigation Log:</h2>
+            <div id="navigationLog" class="status-box">Awaiting data...</div>
+        </div>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

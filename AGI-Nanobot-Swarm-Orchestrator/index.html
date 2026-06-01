@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Nanobot Swarm Orchestrator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container fade-up">
+        <h1>Nanobot Swarm Orchestrator</h1>
+
+        <div class="input-section">
+            <label for="patientCondition">Patient Condition Overview:</label>
+            <textarea id="patientCondition" rows="4" placeholder="e.g., Stage 2 carcinoma detected in left lung. Surrounding tissue inflamed."></textarea>
+
+            <button id="orchestrateBtn">Deploy Swarm Intelligence</button>
+        </div>
+
+        <div class="agent-logs">
+            <div class="agent-box">
+                <h3>Targeting Agent Plan:</h3>
+                <div id="targetingLog" class="status-box">Awaiting data...</div>
+            </div>
+            <div class="agent-box">
+                <h3>Payload Agent Plan:</h3>
+                <div id="payloadLog" class="status-box">Awaiting data...</div>
+            </div>
+            <div class="agent-box leader-box">
+                <h3>Swarm Leader Directive (Final):</h3>
+                <div id="leaderLog" class="status-box">Awaiting data...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
