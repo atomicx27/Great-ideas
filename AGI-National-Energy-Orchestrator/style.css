@@ -134,3 +134,161 @@ button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- Modern UX & Animations Enhancements --- */
+:root {
+    --primary-glow: rgba(79, 172, 254, 0.6);
+    --secondary-glow: rgba(0, 242, 254, 0.6);
+    --bg-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    --card-bg: rgba(22, 33, 62, 0.6);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.5s;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    min-height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(79, 172, 254, 0.5), rgba(0, 242, 254, 0.5));
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(79, 172, 254, 0.8), rgba(0, 242, 254, 0.8));
+}
+
+/* Glassmorphism Cards & Containers */
+.input-panel, .agent-col, .master-synthesis, .agent-card, .card {
+    background-color: var(--card-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo), border-color 0.4s ease !important;
+}
+
+.input-panel:hover, .agent-col:hover, .master-synthesis:hover, .agent-card:hover, .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5) !important;
+    border-color: rgba(79, 172, 254, 0.4) !important;
+}
+
+/* Enhanced Inputs */
+input, select, textarea {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease, border-color 0.3s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none !important;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 0 15px var(--primary-glow) !important;
+    border-color: #4facfe !important;
+}
+
+/* Neon Glowing Buttons */
+button {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #4facfe, #00f2fe, #4facfe) !important;
+    background-size: 200% auto !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 30px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700 !important;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+    transition: all var(--transition-speed) var(--ease-out-expo) !important;
+    z-index: 1;
+    box-shadow: 0 4px 15px var(--primary-glow) !important;
+}
+
+button:hover {
+    background-position: right center !important;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 25px var(--secondary-glow) !important;
+}
+
+button:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+button:disabled {
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 3D Flip-In Entrance Animations */
+.container, section, .agent-card, .card, main {
+    animation: flipIn 0.8s var(--ease-out-expo) forwards;
+    opacity: 0;
+    transform-origin: top center;
+    will-change: opacity, transform;
+}
+
+@keyframes flipIn {
+    0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(-15deg) translateY(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
+    }
+}
+
+/* Staggering delays for children */
+section:nth-child(1), .agent-col:nth-child(1), .agent-card:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2), .agent-col:nth-child(2), .agent-card:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3), .agent-col:nth-child(3), .agent-card:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4), .agent-card:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5), .agent-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Glowing Text for Headers */
+h1, h2 {
+    transition: text-shadow 0.4s ease;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+h1:hover, h2:hover {
+    text-shadow: 0 0 15px var(--primary-glow), 0 0 30px var(--secondary-glow);
+}
+
+/* Pulse animation for active elements */
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px var(--primary-glow); }
+    50% { box-shadow: 0 0 20px var(--secondary-glow), 0 0 40px var(--primary-glow); }
+    100% { box-shadow: 0 0 5px var(--primary-glow); }
+}
+
+.active, .running, .working {
+    animation: neonPulse 2s infinite alternate !important;
+    border-color: #00f2fe !important;
+}
