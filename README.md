@@ -48,6 +48,25 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 15. **AGI-Legal-Contract-Reviewer**
     An Artificial General Intelligence (AGI) application designed to simulate a multi-departmental executive review of complex legal documents and contracts. In typical enterprise environments, getting a contract reviewed requires sequential approvals from Legal, Finance, and Compliance—a process that often takes weeks. This tool uses an AGI Master Orchestrator to break the contract down and spawn specialized sub-agents (Liability Expert, Compliance Officer, Financial Risk Analyst) that review the document simultaneously. It synthesizes their findings into a cohesive Executive Summary, highlighting critical risks and conflicting opinions instantly, drastically accelerating deal cycles.
 
+16. **Automated-Smart-Contract-Linter**
+    Deterministic rules-based scanner for basic solidity vulnerabilities.
+
+17. **Agentic-Smart-Contract-Auditor**
+    Agentic AI auditor capable of analyzing code context and running verification tools.
+
+18. **AGI-Web3-Security-Orchestrator**
+    AGI swarm simulating a multi-disciplinary security firm reviewing smart contract ecosystems.
+
+19. **Automated-Rent-Collector**
+    Deterministic automated system for sending rent reminders and verifying standard payments.
+
+20. **Agentic-Property-Manager**
+    Agentic AI manager capable of handling tenant complaints and coordinating maintenance requests autonomously.
+
+21. **AGI-Real-Estate-Orchestrator**
+    AGI orchestrator for managing entire property portfolios, simulating financial, legal, and operational planning.
+
+
 49. **Automated-Inventory-Tracker**
     A classic **Automation** tool replacing manual inventory spreadsheets. It uses deterministic rules and predefined low-stock thresholds to automate the tracking process, preventing out-of-stock scenarios and streamlining replenishment without requiring complex AI.
 
