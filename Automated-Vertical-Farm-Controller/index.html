@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Vertical Farm Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Vertical Farm Controller</h1>
+        <p>A deterministic automation tool for scheduling watering, lighting, and nutrient dispensing.</p>
+
+        <div class="sensor-dashboard">
+            <div class="sensor-card">
+                <h3>Moisture Sensor</h3>
+                <div class="sensor-value"><span id="moistureVal">45</span>%</div>
+                <button onclick="triggerUpdate('moisture')">Simulate Update</button>
+            </div>
+            <div class="sensor-card">
+                <h3>Light Level</h3>
+                <div class="sensor-value"><span id="lightVal">12000</span> lux</div>
+                <button onclick="triggerUpdate('light')">Simulate Update</button>
+            </div>
+            <div class="sensor-card">
+                <h3>Nutrient Timer</h3>
+                <div class="sensor-value"><span id="timerVal">02:00</span> hr</div>
+                <button onclick="triggerUpdate('timer')">Simulate Update</button>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <h2>System Log</h2>
+            <div id="systemLog" class="log"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

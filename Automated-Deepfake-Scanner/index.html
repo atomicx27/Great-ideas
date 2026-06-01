@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Deepfake Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Deepfake Scanner</h1>
+        <p>A deterministic tool to scan video metadata and frame anomalies for potential deepfakes.</p>
+
+        <div class="input-section">
+            <label for="videoInput">Upload Video File (Simulated):</label>
+            <input type="file" id="videoInput" accept="video/*">
+            <button id="scanBtn">Scan for Deepfakes</button>
+        </div>
+
+        <div id="resultsArea" class="results-area hidden">
+            <h2>Scan Results</h2>
+            <div id="scanLog" class="log"></div>
+            <div class="score-card">
+                <h3>Final Threat Score: <span id="finalScore">-</span>/100</h3>
+                <p id="verdict"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

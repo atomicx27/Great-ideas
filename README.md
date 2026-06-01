@@ -48,6 +48,25 @@ This is a repo of making great ideas each folder in the repo is a Different idea
 15. **AGI-Legal-Contract-Reviewer**
     An Artificial General Intelligence (AGI) application designed to simulate a multi-departmental executive review of complex legal documents and contracts. In typical enterprise environments, getting a contract reviewed requires sequential approvals from Legal, Finance, and Compliance—a process that often takes weeks. This tool uses an AGI Master Orchestrator to break the contract down and spawn specialized sub-agents (Liability Expert, Compliance Officer, Financial Risk Analyst) that review the document simultaneously. It synthesizes their findings into a cohesive Executive Summary, highlighting critical risks and conflicting opinions instantly, drastically accelerating deal cycles.
 
+16. **Automated-Smart-Contract-Linter**
+    Deterministic rules-based scanner for basic solidity vulnerabilities.
+
+17. **Agentic-Smart-Contract-Auditor**
+    Agentic AI auditor capable of analyzing code context and running verification tools.
+
+18. **AGI-Web3-Security-Orchestrator**
+    AGI swarm simulating a multi-disciplinary security firm reviewing smart contract ecosystems.
+
+19. **Automated-Rent-Collector**
+    Deterministic automated system for sending rent reminders and verifying standard payments.
+
+20. **Agentic-Property-Manager**
+    Agentic AI manager capable of handling tenant complaints and coordinating maintenance requests autonomously.
+
+21. **AGI-Real-Estate-Orchestrator**
+    AGI orchestrator for managing entire property portfolios, simulating financial, legal, and operational planning.
+
+
 49. **Automated-Inventory-Tracker**
     A classic **Automation** tool replacing manual inventory spreadsheets. It uses deterministic rules and predefined low-stock thresholds to automate the tracking process, preventing out-of-stock scenarios and streamlining replenishment without requiring complex AI.
 
@@ -473,3 +492,9 @@ A single-agent autonomous system for dynamic diagnosis and personalized nanobot 
 
 ### AGI Nanobot Swarm Orchestrator
 A multi-agent AI system for managing billions of therapeutic nanobots within a human host. Specialized Targeting and Payload agents independently analyze physiological data, while a Leader agent orchestrates massive, coordinated cellular-level interventions.
+107. **Automated-Exoplanet-Telescope**: An automated system to scan skies and identify exoplanet transit candidates using light curves.
+108. **Automated-Seafloor-Drill**: An automated system for monitoring and controlling a deep-sea drilling rig with safety protocol logic.
+109. **Agentic-Exoplanet-Rover**: An autonomous rover system that uses LLM decision making to navigate terrain and evaluate samples.
+110. **Agentic-Deep-Sea-Explorer**: An AUV system that processes sonar data to classify biological anomalies and plot safe trajectories.
+111. **AGI-Exoplanet-Habitat-Orchestrator**: A multi-agent orchestration system that manages life support, resources, and structural integrity of an exoplanet base.
+112. **AGI-Ocean-City-Orchestrator**: An overarching AI governor system coordinating subsystems to manage a floating oceanic city during extreme events.
