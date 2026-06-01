@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Exoplanet Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Exoplanet Analyzer</h1>
+            <p>LLM-powered analysis of stellar light curves to detect potential habitable zones.</p>
+        </header>
+
+        <main>
+            <section class="agent-interaction">
+                <button id="analyze-btn">Analyze Stellar Data</button>
+
+                <div class="agent-log-container">
+                    <h3>Agent Thought Process</h3>
+                    <div id="agent-log" class="agent-log"></div>
+                </div>
+
+                <div class="agent-decision-container">
+                    <h3>Final Assessment</h3>
+                    <div id="agent-decision" class="agent-decision">
+                        <p>Waiting for data...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

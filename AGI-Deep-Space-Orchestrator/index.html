@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Deep Space Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Deep Space Orchestrator</h1>
+            <p>Multi-Agent Swarm Orchestration for complex interstellar missions.</p>
+        </header>
+
+        <main>
+            <section class="scenario-section">
+                <h2>Define Mission Parameters</h2>
+                <div class="form-group">
+                    <label for="mission-input">High-Level Mission Goal:</label>
+                    <textarea id="mission-input" rows="3">Target System Proxima Centauri. Deploy observation array, establish communications relay, and maintain stable orbital trajectory.</textarea>
+                </div>
+                <button id="start-orchestrator-btn">Deploy AGI Orchestrator</button>
+            </section>
+
+            <section class="swarm-visualization">
+                <h3>Swarm Activity</h3>
+                <div class="agent-grid">
+                    <div class="agent-card" id="agent-master">
+                        <h4>Master Orchestrator</h4>
+                        <p class="status">Idle</p>
+                    </div>
+                    <div class="agent-card" id="agent-nav">
+                        <h4>Nav-Agent</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                    <div class="agent-card" id="agent-spectro">
+                        <h4>Spectro-Agent</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                    <div class="agent-card" id="agent-comms">
+                        <h4>Comms-Agent</h4>
+                        <p class="status">Waiting</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="agent-output">
+                <h3>Mission Briefing</h3>
+                <div id="output-log" class="log-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
