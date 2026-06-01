@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Deep Sea Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Deep Sea Explorer</h1>
+            <p>Autonomous AUV navigation and biological classification.</p>
+        </header>
+
+        <section class="api-setup">
+            <div class="panel">
+                <h2>LLM Configuration</h2>
+                <div class="input-group">
+                    <label for="provider-select">Provider:</label>
+                    <select id="provider-select">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="api-key-input">API Key / Base URL:</label>
+                    <input type="password" id="api-key-input" placeholder="Enter API Key or URL">
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="dive-btn">Initiate Deep Dive Analysis</button>
+        </section>
+
+        <section class="dashboard">
+            <div class="panel">
+                <h2>Sonar Classification</h2>
+                <div id="sonar-display" class="data-display">Awaiting sonar sweep...</div>
+            </div>
+
+            <div class="panel">
+                <h2>Trajectory & Sensors</h2>
+                <div id="nav-display" class="data-display">Awaiting navigation plan...</div>
+            </div>
+        </section>
+
+        <section class="log-section">
+            <h2>AUV Log</h2>
+            <div id="auv-log" class="log-container"></div>
+        </section>
+    </div>
+</body>
+</html>

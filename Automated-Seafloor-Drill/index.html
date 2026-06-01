@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Seafloor Drill</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Seafloor Drill</h1>
+            <p>Real-time telemetry and automated safety protocols.</p>
+        </header>
+
+        <section class="controls">
+            <button id="start-btn">Start Drilling Sequence</button>
+            <button id="stop-btn" disabled>Emergency Stop</button>
+        </section>
+
+        <section class="dashboard">
+            <div class="panel">
+                <h2>Depth & RPM</h2>
+                <div id="depth-display" class="data-display">Depth: 0m<br>RPM: 0</div>
+            </div>
+
+            <div class="panel">
+                <h2>Bit Temperature</h2>
+                <div id="temp-display" class="data-display">Temp: 15°C</div>
+            </div>
+
+            <div class="panel">
+                <h2>Material Density</h2>
+                <div id="density-display" class="data-display">Awaiting data...</div>
+            </div>
+        </section>
+
+        <section class="log-section">
+            <h2>Operation Log</h2>
+            <div id="op-log" class="log-container"></div>
+        </section>
+    </div>
+</body>
+</html>
