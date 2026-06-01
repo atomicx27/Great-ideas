@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Microwave Beam Router</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agentic Microwave Beam Router</h1>
+        <p>Autonomous Orbital Power Transmission</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Atmospheric Sensor Telemetry</h2>
+            <div class="input-group">
+                <label for="weather-input">Target Rectenna Weather:</label>
+                <select id="weather-input">
+                    <option value="Clear Skies">Clear Skies</option>
+                    <option value="Heavy Rain/Cumulonimbus">Heavy Rain / Cumulonimbus</option>
+                    <option value="Ionospheric Storm">Ionospheric Storm</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="power-input">Requested Power Load (GW):</label>
+                <input type="number" id="power-input" value="2.5" min="0.5" max="10" step="0.5">
+            </div>
+
+            <hr>
+
+            <div class="input-group">
+                <label for="llm-provider">LLM Provider:</label>
+                <select id="llm-provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="api-key">API Key / Base URL:</label>
+                <input type="password" id="api-key" placeholder="Enter key or http://localhost:11434">
+            </div>
+
+            <button id="route-btn" class="primary-btn">Calculate Beam Routing</button>
+            <p id="status-text" class="status-indicator">Status: Waiting for telemetry.</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Transmission AI Log</h2>
+            <div id="results-display" class="log-box">Ready to simulate beam routing strategy...</div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

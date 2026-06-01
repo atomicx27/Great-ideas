@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Exoplanet Telescope</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Exoplanet Telescope</h1>
+            <p>Scanning sectors and detecting transits.</p>
+        </header>
+
+        <section class="controls">
+            <button id="scan-btn">Scan Next Sector</button>
+        </section>
+
+        <section class="dashboard">
+            <div class="panel">
+                <h2>Sector Status</h2>
+                <div id="sector-display" class="data-display">Awaiting scan...</div>
+            </div>
+
+            <div class="panel">
+                <h2>Light Curve Analysis</h2>
+                <div id="curve-display" class="data-display">Awaiting data...</div>
+            </div>
+
+            <div class="panel">
+                <h2>Detection Results</h2>
+                <div id="result-display" class="data-display">Awaiting results...</div>
+            </div>
+        </section>
+
+        <section class="log-section">
+            <h2>Scan Log</h2>
+            <div id="scan-log" class="log-container"></div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Solar Sail Deployer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Solar Sail Deployer</h1>
+        <p>Deterministic Megastructure Rigging System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Orbital Sensor Array</h2>
+            <div class="input-group">
+                <label for="solar-flux">Solar Flux Intensity (W/m²):</label>
+                <input type="number" id="solar-flux" value="1361" min="1000" max="2000">
+            </div>
+            <div class="input-group">
+                <label for="sail-area">Sail Area (m²):</label>
+                <input type="number" id="sail-area" value="50000" min="100" max="1000000">
+            </div>
+            <div class="input-group">
+                <label for="orbit-phase">Orbit Phase (0-360 deg):</label>
+                <input type="number" id="orbit-phase" value="45" min="0" max="360">
+            </div>
+            <button id="deploy-btn" class="primary-btn">Calculate Rigging Parameters</button>
+            <p id="status-text" class="status-indicator">Status: Waiting for telemetry.</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Deployment Command Log</h2>
+            <div id="results-display" class="log-box">Awaiting sensor data...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

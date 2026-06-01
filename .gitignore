@@ -1,9 +1,4 @@
 node_modules/
-Context-Switcher-Dashboard/node_modules/
-server.log
-screenshot_*.png
-package.json
-package-lock.json
-screenshot.js
-*_screenshot.png
-server_output.log
+.DS_Store
+*.log
+__pycache__/

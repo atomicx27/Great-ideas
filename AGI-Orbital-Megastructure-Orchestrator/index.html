@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Orbital Megastructure Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AGI Orbital Megastructure Orchestrator</h1>
+        <p>Multi-Agent Macro-Engineering Management</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Megaproject Parameters</h2>
+            <div class="input-group">
+                <label for="project-input">Macro-Goal Definition:</label>
+                <textarea id="project-input" rows="4">Initiate Phase 1 of a Dyson Swarm at L1. Requirement: Construct and deploy 5,000 km² of ultra-thin solar concentrators. Constraints: Asteroid mining fleet is at 70% capacity. Earth-to-Orbit launch windows are limited. Completion target: 15 Years.</textarea>
+            </div>
+
+            <hr>
+
+            <div class="input-group">
+                <label for="llm-provider">Master LLM Provider:</label>
+                <select id="llm-provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="api-key">API Key / Base URL:</label>
+                <input type="password" id="api-key" placeholder="Enter key or http://localhost:11434">
+            </div>
+
+            <button id="orchestrate-btn" class="primary-btn">Initialize Construction Swarm</button>
+            <p id="status-text" class="status-indicator">Status: Awaiting Project Initialization</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Swarm Architecture Log</h2>
+            <div id="results-display" class="log-box">Awaiting macro-goal initialization...</div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
