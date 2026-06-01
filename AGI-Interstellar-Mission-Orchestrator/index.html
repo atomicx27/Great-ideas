@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Interstellar Mission Orchestrator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container fade-up">
+        <h1>Interstellar Mission Orchestrator</h1>
+
+        <div class="input-section">
+            <label for="missionStatus">Current Mission Status:</label>
+            <textarea id="missionStatus" rows="4" placeholder="e.g., Encountering dense nebula. Power levels at 40%."></textarea>
+
+            <button id="orchestrateBtn">Orchestrate Mission</button>
+        </div>
+
+        <div class="agent-logs">
+            <div class="agent-box">
+                <h3>Navigation Agent Log:</h3>
+                <div id="navLog" class="status-box">Awaiting data...</div>
+            </div>
+            <div class="agent-box">
+                <h3>Life Support Agent Log:</h3>
+                <div id="lifeSupportLog" class="status-box">Awaiting data...</div>
+            </div>
+            <div class="agent-box commander-box">
+                <h3>Commander Directive (Final):</h3>
+                <div id="commanderLog" class="status-box">Awaiting data...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Probe Telemetry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container fade-up">
+        <h1>Probe Telemetry Dashboard</h1>
+
+        <div class="input-section">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" value="80">
+
+            <label for="radiation">Radiation (mSv):</label>
+            <input type="number" id="radiation" value="5">
+
+            <button id="monitorBtn">Monitor Telemetry</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Status:</h2>
+            <div id="statusOutput" class="status-box">Awaiting data...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
