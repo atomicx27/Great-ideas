@@ -133,11 +133,13 @@ button:disabled { background-color: var(--text-muted); cursor: not-allowed; }
 .final-strategy ul { padding-left: 20px; }
 .final-strategy li { margin-bottom: 10px; }
 
-/* --- Modern UX & Animations Enhancements --- */
+/* --- Modern UX & Animations Enhancements V2 --- */
 :root {
-    --transition-speed: 0.5s;
+    --transition-speed: 0.4s;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --hover-bg: rgba(59, 130, 246, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 html {
@@ -221,8 +223,13 @@ input:focus, select:focus, textarea:focus {
     background-color: #ffffff !important;
 }
 
-/* Cards & Containers Hover Effects */
+/* Glassmorphism for Cards */
 .agent-card, .card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo), border-color 0.5s ease, background-color 0.5s ease !important;
     border-radius: 12px;
 }
@@ -231,10 +238,9 @@ input:focus, select:focus, textarea:focus {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
     border-color: rgba(59, 130, 246, 0.6) !important;
-    background-color: var(--hover-bg) !important;
 }
 
-/* Staggered Fade-Up Animations */
+/* Keyframe Animations */
 .container, section, .agent-card, .card, main {
     animation: fadeUpScale 0.8s var(--ease-out-expo) forwards;
     opacity: 0;
