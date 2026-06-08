@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Gravity Wave Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Gravity Wave Orchestrator</h1>
+            <p>Interstellar Communications Swarm Orchestration</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <div class="input-group">
+                    <label for="network-status">Network Status Goal:</label>
+                    <input type="text" id="network-status" value="Establish stable multi-node handshake with Andromeda cluster.">
+                </div>
+                <button id="start-swarm-btn">Initialize Comms Swarm</button>
+                <div id="master-status" class="master-status">Awaiting transmission parameters...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Detector -->
+                <div class="agent-card" id="agent-detector">
+                    <h3>Sub-Agent: Array Detector</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Decoder -->
+                <div class="agent-card" id="agent-decoder">
+                    <h3>Sub-Agent: Signal Decoder</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Transmitter -->
+                <div class="agent-card" id="agent-transmitter">
+                    <h3>Sub-Agent: Wave Transmitter</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <div id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h3>Master Orchestrator Synthesis</h3>
+                <div id="final-strategy" class="final-strategy"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
