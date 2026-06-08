@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Antimatter Synthesizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Antimatter Synthesizer</h1>
+        <p>Autonomous LLM-driven tuning of synthesis parameters</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Synthesis Parameters</h2>
+            <div class="input-group">
+                <label for="beam-energy">Antiproton Beam Energy (MeV):</label>
+                <input type="number" id="beam-energy" value="5.0" min="0.1" max="10" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="positron-density">Positron Density (10^7/cm^3):</label>
+                <input type="number" id="positron-density" value="3.0" min="0.1" max="10" step="0.1">
+            </div>
+            <button id="optimize-btn" class="primary-btn">Start Autonomous Optimization</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Agent Output</h2>
+            <div id="results-display" class="log-box">Awaiting command...</div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
