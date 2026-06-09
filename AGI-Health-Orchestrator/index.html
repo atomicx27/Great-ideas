@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Health Orchestrator</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Health Orchestrator</h1>
+            <p>Master Orchestrator spawning Diet, Fitness, and Sleep sub-agents simultaneously.</p>
+        </header>
+
+        <main>
+            <section class="card config-section">
+                <h2>Orchestrator Config</h2>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="apiKey" placeholder="sk-..." />
+                </div>
+                <div class="input-group">
+                    <label>Comprehensive Patient Data (JSON):</label>
+                    <textarea id="patientData">{ "age": 45, "weight": "85kg", "recentBloodWork": "High Cholesterol", "activity": "Sedentary", "sleep": "Poor" }</textarea>
+                </div>
+                <button id="runBtn">Run Swarm Orchestration</button>
+            </section>
+
+            <div class="agents-grid">
+                <section class="agent-card">
+                    <h3>Dietary Sub-Agent</h3>
+                    <div id="dietLog" class="log-window">Waiting to start...</div>
+                </section>
+                <section class="agent-card">
+                    <h3>Fitness Sub-Agent</h3>
+                    <div id="fitnessLog" class="log-window">Waiting to start...</div>
+                </section>
+                <section class="agent-card">
+                    <h3>Sleep Sub-Agent</h3>
+                    <div id="sleepLog" class="log-window">Waiting to start...</div>
+                </section>
+            </div>
+
+            <section class="card synthesis-section">
+                <h2>Master Orchestrator Synthesis</h2>
+                <div id="synthesisOutput" class="output-container">Awaiting sub-agent reports...</div>
+            </section>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
