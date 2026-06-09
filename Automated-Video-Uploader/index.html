@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Video Uploader</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Video Uploader</h1>
+            <p>Deterministic automation of media scheduling and metadata generation.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Schedule Upload</h2>
+                <div class="input-group">
+                    <label>Video File Name:</label>
+                    <input type="text" id="videoName" value="vlog_001.mp4" />
+                </div>
+                <div class="input-group">
+                    <label>Target Platform:</label>
+                    <select id="platform">
+                        <option value="youtube">YouTube</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="instagram">Instagram Reels</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Upload Time (Cron/Timestamp):</label>
+                    <input type="text" id="uploadTime" value="2024-11-01T12:00:00Z" />
+                </div>
+                <button id="scheduleBtn">Schedule Video</button>
+            </section>
+
+            <section class="card">
+                <h2>Upload Queue</h2>
+                <div id="queueOutput" class="output-container">No videos scheduled.</div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

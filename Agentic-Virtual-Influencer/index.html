@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Virtual Influencer</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Virtual Influencer</h1>
+            <p>Agentic AI generating dynamic social media content and engaging captions.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Content Generation Config</h2>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="apiKey" placeholder="sk-..." />
+                </div>
+                <div class="input-group">
+                    <label>Trending Topic:</label>
+                    <input type="text" id="topic" value="Sustainable Fashion Summer 2024" />
+                </div>
+                <button id="generateBtn">Generate Post</button>
+            </section>
+
+            <section class="card">
+                <h2>Generated Post</h2>
+                <div id="output" class="output-container">Awaiting generation...</div>
+            </section>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
