@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Martian Rover Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Martian Rover Explorer</h1>
+        <p>Autonomous AI Pathfinding and Exploration</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Rover Configuration</h2>
+            <div class="input-group">
+                <label for="provider-select">AI Brain:</label>
+                <select id="provider-select">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <div id="api-key-group" class="input-group">
+                <label for="api-key">API Key:</label>
+                <input type="password" id="api-key" placeholder="sk-...">
+            </div>
+
+            <div id="model-group" class="input-group" style="display: none;">
+                <label for="model-name">Ollama Model:</label>
+                <input type="text" id="model-name" value="llama3">
+            </div>
+
+            <div class="input-group">
+                <label for="sensor-data-input">LIDAR / Camera Feed (Text Rep):</label>
+                <input type="text" id="sensor-data-input" value="Obstacle 10m ahead. Interesting mineral deposit 15m to the right. Sand trap to the left.">
+            </div>
+
+            <button id="explore-btn" class="primary-btn">Initialize Autonomous Routine</button>
+        </section>
+
+        <section class="results-panel">
+            <h2>Navigation Log</h2>
+            <div id="output-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Martian Colony Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Martian Colony Orchestrator</h1>
+        <p>Swarm Logistics and Expansion Director</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Colony Demands</h2>
+            <div class="input-group">
+                <label for="provider-select">Master AGI:</label>
+                <select id="provider-select">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <div id="api-key-group" class="input-group">
+                <label for="api-key">API Key:</label>
+                <input type="password" id="api-key" placeholder="sk-...">
+            </div>
+
+            <div id="model-group" class="input-group" style="display: none;">
+                <label for="model-name">Ollama Model:</label>
+                <input type="text" id="model-name" value="llama3">
+            </div>
+
+            <div class="input-group">
+                <label for="pop-input">Target Population Addition:</label>
+                <input type="number" id="pop-input" value="50" min="10" max="1000">
+            </div>
+
+            <div class="input-group">
+                <label for="res-input">Available Resources Constraint:</label>
+                <input type="text" id="res-input" value="High ice deposits, low structural metals.">
+            </div>
+
+            <button id="orchestrate-btn" class="primary-btn">Compute Expansion Plan</button>
+        </section>
+
+        <section class="results-panel">
+            <h2>Sub-Agent Deployment</h2>
+            <div id="output-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
