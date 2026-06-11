@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Martian Atmosphere Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Martian Atmosphere Monitor</h1>
+        <p>Deterministic Habitat Safety Scanner</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Sensor Array Data</h2>
+            <div class="input-group">
+                <label for="co2-input">Internal CO2 Level (ppm):</label>
+                <input type="number" id="co2-input" value="800" min="400" max="10000" step="50">
+            </div>
+            <div class="input-group">
+                <label for="temp-input">External Temperature (°C):</label>
+                <input type="number" id="temp-input" value="-60" min="-150" max="20" step="5">
+            </div>
+            <button id="scan-btn" class="primary-btn">Run Diagnostics</button>
+            <p id="status-text" class="status-indicator">System: Standby</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Safety Protocol Status</h2>
+            <div id="results-display" class="log-box">Awaiting sensor input...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
