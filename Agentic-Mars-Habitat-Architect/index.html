@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Mars Habitat Architect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Mars Habitat Architect</h1>
+        <p>Uses OpenAI to generate intelligent habitat blueprints.</p>
+
+        <form id="design-form">
+            <label for="crew-details">Crew Specializations (e.g., 2 Botanists, 1 Medic):</label>
+            <input type="text" id="crew-details" required placeholder="Enter crew details...">
+            <button type="submit">Generate Blueprint</button>
+        </form>
+
+        <div id="output" class="output"></div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <!-- Shared Utility -->
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
