@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Gravity Wave Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Gravity Wave Detector</h1>
+        <p>Deterministic Interferometer Alert System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Interferometer Data</h2>
+            <div class="input-group">
+                <label for="amplitude-input">Wave Amplitude (10^-21 strain):</label>
+                <input type="number" id="amplitude-input" value="1.5" min="0" max="100" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="frequency-input">Frequency (Hz):</label>
+                <input type="number" id="frequency-input" value="150" min="0" max="5000">
+            </div>
+            <button id="scan-btn" class="primary-btn">Evaluate Signal</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Event Detection Log</h2>
+            <div id="results-display" class="log-box">Awaiting sensor data...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

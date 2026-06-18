@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Gravity Wave Router</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Gravity Wave Router</h1>
+        <p>Autonomous spacetime signal decoding and routing</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Signal Input</h2>
+            <div class="input-group">
+                <label for="signal-data">Raw Spacetime Ripple Data:</label>
+                <input type="text" id="signal-data" value="Complex chirp sequence 0101-alpha">
+            </div>
+            <button id="route-btn" class="primary-btn">Decode and Route</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Router Output</h2>
+            <div id="results-display" class="log-box">Awaiting signal...</div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

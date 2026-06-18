@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Antimatter Containment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Antimatter Containment</h1>
+        <p>Deterministic Safety System for Penning Traps</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Containment Sensors</h2>
+            <div class="input-group">
+                <label for="magnetic-input">Magnetic Field Strength (Tesla):</label>
+                <input type="number" id="magnetic-input" value="1.0" min="0" max="10" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="temperature-input">Trap Temperature (Kelvin):</label>
+                <input type="number" id="temperature-input" value="4.0" min="0" max="100" step="0.1">
+            </div>
+            <button id="check-btn" class="primary-btn">Run Diagnostics</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section class="results-panel">
+            <h2>Safety Status</h2>
+            <div id="results-display" class="log-box">Awaiting sensor data...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

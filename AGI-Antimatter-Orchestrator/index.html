@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AGI Antimatter Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Antimatter Orchestrator</h1>
+            <p>Multi-Agent Orchestration for Antihydrogen Production</p>
+        </header>
+
+        <main>
+            <div class="orchestrator-controls">
+                <div class="input-group">
+                    <label for="production-goal">Production Goal:</label>
+                    <input type="text" id="production-goal" value="Produce 1 microgram of stable antihydrogen in 24 hours.">
+                </div>
+                <button id="start-swarm-btn">Initialize Orchestrator Swarm</button>
+                <div id="master-status" class="master-status">Awaiting mission parameters...</div>
+            </div>
+
+            <section id="swarm-container" class="swarm-container" style="display: none;">
+                <!-- Sub-Agent: Trapping -->
+                <div class="agent-card" id="agent-trapping">
+                    <h3>Sub-Agent: Penning Trap Controller</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Cooling -->
+                <div class="agent-card" id="agent-cooling">
+                    <h3>Sub-Agent: Laser Cooling Specialist</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+
+                <!-- Sub-Agent: Synthesis -->
+                <div class="agent-card" id="agent-synthesis">
+                    <h3>Sub-Agent: Synthesis Optimizer</h3>
+                    <div class="agent-status">Pending...</div>
+                    <div class="agent-output"></div>
+                </div>
+            </section>
+
+            <div id="synthesis-node" class="synthesis-node" style="display: none;">
+                <h3>Master Orchestrator Synthesis</h3>
+                <div id="final-strategy" class="final-strategy"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
