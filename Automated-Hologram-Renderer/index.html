@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Hologram Renderer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Hologram Renderer</h1>
+        <p>Deterministic Point-Cloud Projection</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Projection Controls</h2>
+            <div class="input-group">
+                <label for="data-matrix">Input Data Matrix (3D Coordinates):</label>
+                <textarea id="data-matrix" rows="4" placeholder="[{x:0, y:1, z:0}, {x:1, y:1, z:1}]">[{"x": 10, "y": 20, "z": 5}, {"x": -5, "y": 15, "z": 0}, {"x": 0, "y": 0, "z": 10}]</textarea>
+            </div>
+            <div class="input-group">
+                <label for="projection-plane">Target Projection Plane:</label>
+                <select id="projection-plane">
+                    <option value="xy">XY Plane</option>
+                    <option value="xz">XZ Plane</option>
+                    <option value="yz">YZ Plane</option>
+                </select>
+            </div>
+            <button id="render-btn" class="primary-btn">Render Projection Matrix</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Render Output</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>2D Projection Points</h3>
+                    <pre id="projection-output" style="font-family: monospace; overflow-x: auto;">N/A</pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Programmable Matter Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Programmable Matter Orchestrator</h1>
+        <p>Multi-Agent Swarm for Complex Structure Formation</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Swarm Configuration</h2>
+            <div class="input-group">
+                <label for="high-level-goal">High-Level Formation Goal:</label>
+                <input type="text" id="high-level-goal" value="Assemble a self-supporting orbital habitat ring" placeholder="e.g. Assemble a bridge...">
+            </div>
+            <div class="input-group">
+                <label for="provider">LLM Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+            <button id="orchestrate-btn" class="primary-btn">Initialize Swarm Orchestration</button>
+            <p id="status-text" class="status-indicator">Status: Awaiting Goal</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Agent Telemetry</h2>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <h3>Structural Engineer Agent</h3>
+                    <p id="agent-structure">Awaiting Data...</p>
+                </div>
+                <div class="agent-card">
+                    <h3>Material Properties Agent</h3>
+                    <p id="agent-material">Awaiting Data...</p>
+                </div>
+                <div class="agent-card">
+                    <h3>Aerodynamics Expert</h3>
+                    <p id="agent-aero">Awaiting Data...</p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 2rem;">Master Synthesis</h2>
+            <div id="master-synthesis" class="synthesis-panel">
+                Pending Master Orchestrator Synthesis...
+            </div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Metamaterial Actuator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Metamaterial Actuator</h1>
+        <p>Deterministic Rule-Based Actuation</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Actuation Controls</h2>
+            <div class="input-group">
+                <label for="material-type">Material Type:</label>
+                <select id="material-type">
+                    <option value="auxetic">Auxetic</option>
+                    <option value="chiral">Chiral</option>
+                    <option value="origami">Origami</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="target-state">Target State:</label>
+                <select id="target-state">
+                    <option value="expanded">Expanded</option>
+                    <option value="contracted">Contracted</option>
+                    <option value="twisted">Twisted</option>
+                </select>
+            </div>
+            <button id="actuate-btn" class="primary-btn">Calculate Actuation Sequence</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Actuation Sequence</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Calculated Sequence</h3>
+                    <p id="sequence-output">N/A</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
