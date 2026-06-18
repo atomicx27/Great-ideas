@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Cognitive Optimizer</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Cognitive Optimizer</h1>
+        <p>AI-Driven Neuroplasticity Tuning</p>
+    </header>
+
+    <main class="container">
+        <section class="agent-card">
+            <h2>Neuro-Protocol Optimizer</h2>
+            <div class="input-group">
+                <label for="cognitive-load">Current Cognitive Load Profile:</label>
+                <select id="cognitive-load">
+                    <option value="High Stress">High Stress</option>
+                    <option value="Creative Block">Creative Block</option>
+                    <option value="Information Overload">Information Overload</option>
+                </select>
+            </div>
+            <button id="optimize-btn" class="primary-btn">Generate Optimization Protocol</button>
+        </section>
+
+        <section id="results-panel" class="hidden agent-card">
+            <h2>Optimization Log</h2>
+            <div id="agent-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

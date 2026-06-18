@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Mind Machine Orchestrator</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Mind Machine Orchestrator</h1>
+        <p>Global Cognitive Augmentation Swarm</p>
+    </header>
+
+    <main class="container">
+        <section class="orchestrator-card">
+            <h2>Cognitive Command Center</h2>
+            <div class="input-group">
+                <label for="brain-state">Macro Brain State:</label>
+                <textarea id="brain-state" rows="3">Subject experiencing extreme cognitive dissonance combined with episodic memory fragmentation.</textarea>
+            </div>
+            <button id="orchestrate-btn" class="primary-btn">Initialize Cognitive Swarm</button>
+        </section>
+
+        <section id="results-panel" class="hidden orchestrator-card">
+            <h2>Swarm Log</h2>
+            <div id="swarm-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
