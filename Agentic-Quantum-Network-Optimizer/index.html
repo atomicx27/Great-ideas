@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Quantum Network Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Quantum Network Optimizer</h1>
+        <p>Uses OpenAI to optimize routing configurations dynamically.</p>
+
+        <form id="optimize-form">
+            <label for="network-state">Current Network Topology JSON:</label>
+            <textarea id="network-state" rows="6" required>{"nodes": 5, "congested_links": ["Link-B", "Link-C"], "avg_latency": "45ms"}</textarea>
+            <button type="submit">Analyze & Optimize</button>
+        </form>
+
+        <div id="output" class="output"></div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <!-- Shared Utility -->
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
