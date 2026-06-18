@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Wafer Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Wafer Scanner</h1>
+        <p>Deterministic automation for semiconductor wafer defect detection based on predefined density rules.</p>
+
+        <button id="scan-btn">Scan Next Wafer</button>
+
+        <div id="status-panel">
+            <h2 id="status-text">Status: Idle</h2>
+            <p>Total Defects Detected: <span id="total-defects">0</span></p>
+            <p>Wafer Status: <span id="wafer-status">Pending</span></p>
+        </div>
+
+        <div id="results-panel" class="hidden">
+            <h3>Defect Log</h3>
+            <table id="defect-log">
+                <thead>
+                    <tr>
+                        <th>Defect ID</th>
+                        <th>Coordinates</th>
+                        <th>Severity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Semiconductor Fab Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Semiconductor Fab Orchestrator</h1>
+        <p>A multi-agent swarm system designed to manage a massive semiconductor fabrication plant. Specialized agents handle lithography, materials, and logistics while a central Master Orchestrator synthesizes their outputs into cohesive production directives.</p>
+
+        <button id="start-swarm-btn">Initialize Fab Orchestration Swarm</button>
+        <p class="status-indicator" id="master-status">System Standby. Awaiting command.</p>
+
+        <div class="agent-grid" id="swarm-container" style="display: none;">
+            <div class="agent-card" id="agent-lithography">
+                <h3>Lithography Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-materials">
+                <h3>Materials Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-logistics">
+                <h3>Logistics Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div class="synthesis-node" id="synthesis-node" style="display: none;">
+            <h2>Master Orchestrator Synthesis</h2>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

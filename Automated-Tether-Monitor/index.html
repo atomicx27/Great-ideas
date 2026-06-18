@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Tether Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Tether Monitor</h1>
+        <p>Deterministic automation for monitoring space elevator tether tension. Triggers safety protocols if tension exceeds critical thresholds.</p>
+
+        <button id="monitor-btn">Run Tension Diagnostics</button>
+
+        <div id="status-panel">
+            <h2 id="system-status">System Status: Standby</h2>
+            <div id="gauge-container">
+                <div class="gauge-label">Tension (GPa)</div>
+                <div class="gauge-bar">
+                    <div id="gauge-fill" style="width: 0%;"></div>
+                </div>
+                <div id="gauge-value">0 GPa</div>
+            </div>
+            <p id="alert-message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Space Elevator Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Space Elevator Orchestrator</h1>
+        <p>A multi-agent AGI system managing the complex interplay of tether dynamics, counterweight orbital mechanics, and climber scheduling for a fully operational Space Elevator.</p>
+
+        <button id="start-swarm-btn">Initialize Elevator Orchestration</button>
+        <p class="status-indicator" id="master-status">System Offline. Awaiting boot sequence.</p>
+
+        <div class="agent-grid" id="swarm-container" style="display: none;">
+            <div class="agent-card" id="agent-tether">
+                <h3>Tether Dynamics Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-orbital">
+                <h3>Orbital Mechanics Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+
+            <div class="agent-card" id="agent-climber">
+                <h3>Climber Logistics Agent</h3>
+                <p class="agent-status">Pending...</p>
+                <div class="agent-output"></div>
+            </div>
+        </div>
+
+        <div class="synthesis-node" id="synthesis-node" style="display: none;">
+            <h2>Master Orchestrator Synthesis</h2>
+            <div id="final-strategy"></div>
+        </div>
+    </div>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
