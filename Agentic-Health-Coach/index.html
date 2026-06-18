@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Health Coach</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Health Coach</h1>
+            <p>Agentic AI generating personalized health advice based on sleep data.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Health Coach Config</h2>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="apiKey" placeholder="sk-..." />
+                </div>
+                <div class="input-group">
+                    <label>Sleep Data (JSON):</label>
+                    <textarea id="sleepData" placeholder="Enter sleep summary...">{ "score": 65, "quality": "Good", "summary": { "deep": 1, "light": 3, "rem": 1, "awake": 2 } }</textarea>
+                </div>
+                <button id="coachBtn">Generate Advice</button>
+            </section>
+
+            <section class="card">
+                <h2>Coach Output</h2>
+                <div id="output" class="output-container">Awaiting advice...</div>
+            </section>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

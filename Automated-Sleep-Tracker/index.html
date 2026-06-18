@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Sleep Tracker</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Sleep Tracker</h1>
+            <p>Deterministic analysis of raw sleep sensor data.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Raw Sensor Data Input</h2>
+                <textarea id="sensorData" placeholder="Enter raw sensor data (e.g. ['deep', 'light', 'rem', 'awake'])...">['deep', 'light', 'rem', 'deep', 'awake', 'light']</textarea>
+                <button id="processBtn">Process Sleep Data</button>
+            </section>
+
+            <section class="card">
+                <h2>Sleep Analysis Output</h2>
+                <div id="output" class="output-container">Awaiting data...</div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
