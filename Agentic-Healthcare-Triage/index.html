@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Healthcare Triage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Healthcare Triage</h1>
+            <p>Single-agent LLM assessing symptoms, medical history, and context</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Patient Assessment</h2>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="api-key" placeholder="sk-..." />
+
+                    <label>Patient Context (Symptoms, Age, History):</label>
+                    <textarea id="context-input" placeholder="e.g. 65yo male, type 2 diabetes. Complains of mild chest pressure after dinner..."></textarea>
+
+                    <button id="process-btn">Analyze Context</button>
+                </div>
+            </section>
+
+            <section id="results-section" class="card hidden">
+                <h2>Clinical Assessment</h2>
+                <div id="result-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

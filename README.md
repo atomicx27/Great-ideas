@@ -498,3 +498,19 @@ A multi-agent AI system for managing billions of therapeutic nanobots within a h
 110. **Agentic-Deep-Sea-Explorer**: An AUV system that processes sonar data to classify biological anomalies and plot safe trajectories.
 111. **AGI-Exoplanet-Habitat-Orchestrator**: A multi-agent orchestration system that manages life support, resources, and structural integrity of an exoplanet base.
 112. **AGI-Ocean-City-Orchestrator**: An overarching AI governor system coordinating subsystems to manage a floating oceanic city during extreme events.
+
+### Additional Healthcare Triage Domains
+201. **Automated-Healthcare-Triage**
+    A rule-based deterministic system that assigns priority levels based on explicit symptom keyword matching.
+202. **Agentic-Healthcare-Triage**
+    A single-agent system that analyzes symptoms, patient history, and medical context to output nuanced clinical risk assessments.
+203. **AGI-Healthcare-Triage**
+    A complex orchestration system coordinating a Primary Triage Agent, Specialist Consult Agent, and Resource Allocation Agent to devise comprehensive, resource-aware emergency action plans.
+
+### Additional Content Moderation Domains
+204. **Automated-Content-Moderator**
+    A deterministic system that filters content using a strict set of banned words and regular expressions.
+205. **Agentic-Content-Moderator**
+    A single-agent LLM system that evaluates user content, understanding context and nuance, to flag community guideline violations.
+206. **AGI-Content-Moderator**
+    A multi-agent swarm where a Master Orchestrator manages Legal, Cultural, and Safety sub-agents that debate and synthesize complex, ambiguous content to reach a consensus.

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Content Moderator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Content Moderator (Multi-Agent Swarm)</h1>
+            <p>Orchestrator coordinates Legal, Cultural, and Safety Agents to debate and reach consensus.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Analyze Content</h2>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="api-key" placeholder="sk-..." />
+
+                    <label>Content to analyze:</label>
+                    <textarea id="content-input" placeholder="Paste complex, ambiguous content here..."></textarea>
+
+                    <button id="process-btn">Start Orchestration</button>
+                </div>
+            </section>
+
+            <section id="agents-section" class="card hidden">
+                <h2>Live Agent Debate</h2>
+                <div class="agents-grid">
+                    <div class="agent-box" id="legal-agent">
+                        <h3>⚖️ Legal Agent</h3>
+                        <div class="status running">Waiting...</div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="agent-box" id="cultural-agent">
+                        <h3>🌍 Cultural Agent</h3>
+                        <div class="status running">Waiting...</div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="agent-box" id="safety-agent">
+                        <h3>🛡️ Safety Agent</h3>
+                        <div class="status running">Waiting...</div>
+                        <div class="content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="final-decision-section" class="card hidden">
+                <h2>Master Orchestrator Consensus</h2>
+                <div id="result-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

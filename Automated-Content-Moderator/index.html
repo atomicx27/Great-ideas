@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Content Moderator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Content Moderator</h1>
+            <p>Deterministic rule-based filtering system</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Submit Content</h2>
+                <div class="input-group">
+                    <textarea id="content-input" placeholder="Enter text to moderate..."></textarea>
+                    <button id="process-btn">Analyze Content</button>
+                </div>
+            </section>
+
+            <section id="results-section" class="card hidden">
+                <h2>Moderation Results</h2>
+                <div id="result-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

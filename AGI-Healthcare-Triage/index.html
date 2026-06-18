@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Healthcare Triage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Healthcare Triage Orchestrator</h1>
+            <p>Master Orchestrator coordinating Triage, Specialist, and Resource Allocation Agents for holistic patient management.</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Patient & Hospital Context</h2>
+                <div class="input-group">
+                    <label>OpenAI API Key:</label>
+                    <input type="password" id="api-key" placeholder="sk-..." />
+
+                    <label>Case Details (Patient Status + Hospital Constraints):</label>
+                    <textarea id="context-input" placeholder="e.g. Mass casualty event. Patient 1: severe burns. Hospital bed capacity: 95% full. Available specialists: 1 burn surgeon."></textarea>
+
+                    <button id="process-btn">Initiate Swarm Orchestration</button>
+                </div>
+            </section>
+
+            <section id="agents-section" class="card hidden">
+                <h2>Live Agent Operations</h2>
+                <div class="agents-grid">
+                    <div class="agent-box" id="triage-agent">
+                        <h3>🩺 Primary Triage Agent</h3>
+                        <div class="status running">Waiting...</div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="agent-box" id="specialist-agent">
+                        <h3>👨‍⚕️ Specialist Consult Agent</h3>
+                        <div class="status running">Waiting...</div>
+                        <div class="content"></div>
+                    </div>
+                    <div class="agent-box" id="resource-agent">
+                        <h3>🏥 Resource Allocation Agent</h3>
+                        <div class="status running">Waiting...</div>
+                        <div class="content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="final-decision-section" class="card hidden">
+                <h2>Master Orchestrator Action Plan</h2>
+                <div id="result-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
