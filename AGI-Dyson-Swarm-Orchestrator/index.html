@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Dyson Swarm Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Dyson Swarm Orchestrator</h1>
+        <p>Multi-Agent Swarm Topology Optimization</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Orchestration Goal</h2>
+            <div class="input-group">
+                <label for="provider-select">Master AI Provider:</label>
+                <select id="provider-select">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <div id="api-key-group" class="input-group">
+                <label for="api-key">API Key:</label>
+                <input type="password" id="api-key" placeholder="sk-...">
+            </div>
+
+            <div id="model-group" class="input-group" style="display: none;">
+                <label for="model-name">Ollama Model:</label>
+                <input type="text" id="model-name" value="llama3">
+            </div>
+
+            <div class="input-group">
+                <label for="goal-input">High-Level Objective:</label>
+                <input type="text" id="goal-input" value="Optimize swarm topology for a 15% increase in energy capture around a binary star system.">
+            </div>
+
+            <button id="orchestrate-btn" class="primary-btn">Initialize Master Orchestrator</button>
+        </section>
+
+        <section class="results-panel">
+            <h2>Swarm Intelligence Operations</h2>
+            <div id="output-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
