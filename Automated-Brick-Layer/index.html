@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Brick Layer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Brick Layer</h1>
+        <p>Deterministic Coordinate Generator for Robotic Layering</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Wall Parameters</h2>
+            <div class="input-group">
+                <label for="wall-width">Wall Width (mm):</label>
+                <input type="number" id="wall-width" value="2000" min="200">
+            </div>
+            <div class="input-group">
+                <label for="wall-height">Wall Height (mm):</label>
+                <input type="number" id="wall-height" value="1000" min="100">
+            </div>
+            <div class="input-group">
+                <label for="brick-width">Brick Width (mm):</label>
+                <input type="number" id="brick-width" value="215" min="50">
+            </div>
+            <div class="input-group">
+                <label for="brick-height">Brick Height (mm):</label>
+                <input type="number" id="brick-height" value="65" min="20">
+            </div>
+            <div class="input-group">
+                <label for="mortar-joint">Mortar Joint (mm):</label>
+                <input type="number" id="mortar-joint" value="10" min="0">
+            </div>
+            <button id="calculate-btn" class="primary-btn">Generate Coordinates</button>
+            <p id="status-text" class="status-indicator">Status: Ready</p>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Layering Plan</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Bricks Required</h3>
+                    <p id="total-bricks">0</p>
+                </div>
+            </div>
+            <div class="log-container">
+                <h3>Coordinate Log (First 10)</h3>
+                <table id="coordinate-log">
+                    <thead>
+                        <tr>
+                            <th>Brick #</th>
+                            <th>X (mm)</th>
+                            <th>Y (mm)</th>
+                            <th>Z (mm)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

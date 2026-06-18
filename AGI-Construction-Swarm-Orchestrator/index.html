@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Construction Swarm Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AGI Construction Swarm Orchestrator</h1>
+        <p>Real-time Multi-Agent Swarm Logistics & Heavy Machinery Coordination</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Swarm Telemetry Input</h2>
+
+            <div class="input-group">
+                <label for="logistics-data">Logistics Data (JSON):</label>
+                <textarea id="logistics-data" rows="2">{"steel_delivery": "ETA 15m", "drones_available": 12}</textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="site-status">Site Status:</label>
+                <input type="text" id="site-status" value="Crane 1 active, heavy winds approaching">
+            </div>
+
+            <div class="input-group">
+                <label for="api-key">LLM API Key (OpenAI/Anthropic):</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div class="input-group">
+                <label for="provider">LLM Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <button id="manage-btn" class="primary-btn">Compute Swarm Directives</button>
+            <p id="status-text" class="status-indicator">Status: Waiting for input...</p>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Swarm Directives</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Execution Plan</h3>
+                    <p id="swarm-plan" class="agent-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

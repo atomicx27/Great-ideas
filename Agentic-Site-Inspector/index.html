@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Site Inspector</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agentic Site Inspector</h1>
+        <p>Autonomous Structural Evaluation & Issue Flagging</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Sensor Telemetry</h2>
+            <div class="input-group">
+                <label for="sensor-data">Structural Sensor Data (JSON):</label>
+                <textarea id="sensor-data" rows="4">{"vibration_hz": 4.2, "tilt_degrees": 1.5, "material": "concrete"}</textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="api-key">LLM API Key (OpenAI/Anthropic):</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div class="input-group">
+                <label for="provider">LLM Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <button id="inspect-btn" class="primary-btn">Evaluate Structural Integrity</button>
+            <p id="status-text" class="status-indicator">Status: Awaiting Telemetry...</p>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Inspection Report</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Integrity Analysis</h3>
+                    <p id="inspection-report" class="agent-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

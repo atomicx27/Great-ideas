@@ -498,3 +498,11 @@ A multi-agent AI system for managing billions of therapeutic nanobots within a h
 110. **Agentic-Deep-Sea-Explorer**: An AUV system that processes sonar data to classify biological anomalies and plot safe trajectories.
 111. **AGI-Exoplanet-Habitat-Orchestrator**: A multi-agent orchestration system that manages life support, resources, and structural integrity of an exoplanet base.
 112. **AGI-Ocean-City-Orchestrator**: An overarching AI governor system coordinating subsystems to manage a floating oceanic city during extreme events.
+
+113. **Automated-Surgical-Laser**: A deterministic rule-based tool for the Robotic Surgery domain that calculates and stops laser ablation at a precisely defined depth based on tissue type.
+114. **Agentic-Surgical-Assistant**: An autonomous agent for the Robotic Surgery domain that analyzes tissue anomalies and dynamically suggests surgical tool parameter adjustments.
+115. **AGI-Surgical-Theater-Orchestrator**: A multi-agent orchestration system for the Robotic Surgery domain that coordinates robotic arms, patient vitals monitoring, and anesthesiology in real-time during complex procedures.
+
+116. **Automated-Brick-Layer**: A deterministic system for the Autonomous Construction domain that generates precise coordinate arrays for layering bricks based on fixed wall dimensions.
+117. **Agentic-Site-Inspector**: A single-agent system for the Autonomous Construction domain that evaluates structural integrity via sensor APIs and dynamically flags critical issues.
+118. **AGI-Construction-Swarm-Orchestrator**: A multi-agent swarm orchestrator for the Autonomous Construction domain that simultaneously manages drones, material logistics, and crane operations in real-time.

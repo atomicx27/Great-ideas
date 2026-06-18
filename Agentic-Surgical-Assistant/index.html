@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Surgical Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Agentic Surgical Assistant</h1>
+        <p>Autonomous Tissue Anomaly Analysis & Parameter Tuning</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Anomaly Observation</h2>
+            <div class="input-group">
+                <label for="anomaly-data">Sensor Data (JSON format):</label>
+                <textarea id="anomaly-data" rows="5">{"density": 1.4, "vascularization": "high", "margins": "irregular"}</textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="api-key">LLM API Key (OpenAI/Anthropic):</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div class="input-group">
+                <label for="provider">LLM Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <button id="analyze-btn" class="primary-btn">Analyze Anomaly</button>
+            <p id="status-text" class="status-indicator">Status: Standing by...</p>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Agent Recommendation</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Analysis</h3>
+                    <p id="agent-analysis" class="agent-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

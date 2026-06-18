@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Surgical Laser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Surgical Laser</h1>
+        <p>Deterministic Tissue Ablation Depth Calculator</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Laser Parameters</h2>
+            <div class="input-group">
+                <label for="tissue-type">Tissue Type:</label>
+                <select id="tissue-type">
+                    <option value="epidermis">Epidermis</option>
+                    <option value="dermis">Dermis</option>
+                    <option value="subcutaneous">Subcutaneous Fat</option>
+                    <option value="muscle">Muscle</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="laser-power">Laser Power (Watts):</label>
+                <input type="number" id="laser-power" value="10" min="1" max="50">
+            </div>
+            <div class="input-group">
+                <label for="duration">Duration (Seconds):</label>
+                <input type="number" id="duration" value="5" min="1" max="60">
+            </div>
+            <button id="calculate-btn" class="primary-btn">Calculate Depth</button>
+            <p id="status-text" class="status-indicator">Status: Ready</p>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Ablation Result</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Calculated Depth</h3>
+                    <p id="ablation-depth">0.00 mm</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Surgical Theater Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AGI Surgical Theater Orchestrator</h1>
+        <p>Multi-Agent Coordination for Complex Procedures</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Theater Controls</h2>
+
+            <div class="input-group">
+                <label for="patient-vitals">Patient Vitals (JSON):</label>
+                <textarea id="patient-vitals" rows="2">{"hr": 85, "bp": "120/80", "o2": 98}</textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="surgical-step">Current Surgical Step:</label>
+                <input type="text" id="surgical-step" value="Incision Phase">
+            </div>
+
+            <div class="input-group">
+                <label for="api-key">LLM API Key (OpenAI/Anthropic):</label>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+
+            <div class="input-group">
+                <label for="provider">LLM Provider:</label>
+                <select id="provider">
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="ollama">Ollama (Local)</option>
+                </select>
+            </div>
+
+            <button id="orchestrate-btn" class="primary-btn">Execute Orchestration</button>
+            <p id="status-text" class="status-indicator">Status: Waiting for input...</p>
+        </section>
+
+        <section id="results-panel" class="hidden card">
+            <h2>Orchestrator Output</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Sub-Agent Directives</h3>
+                    <p id="orchestrator-plan" class="agent-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
