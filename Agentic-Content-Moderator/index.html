@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Content Moderator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Agentic Content Moderator</h1>
+            <p>Autonomous AI Agent for Context-Aware Moderation</p>
+        </header>
+        <main>
+            <section class="config-section">
+                <div class="form-group">
+                    <label for="provider">LLM Provider:</label>
+                    <select id="provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+            </section>
+            <section class="moderation-form">
+                <form id="moderation-form">
+                    <div class="form-group">
+                        <label for="content">Content to Moderate:</label>
+                        <textarea id="content" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="context">Platform Context:</label>
+                        <select id="context">
+                            <option value="professional">Professional Network</option>
+                            <option value="gaming">Gaming Forum</option>
+                            <option value="kids">Children's Educational Site</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="moderate-btn">Analyze Content</button>
+                </form>
+            </section>
+            <section class="results">
+                <h2>Agent Analysis</h2>
+                <div id="loading" class="loader" style="display: none;"></div>
+                <div id="analysis-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

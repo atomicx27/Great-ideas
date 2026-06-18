@@ -498,3 +498,21 @@ A multi-agent AI system for managing billions of therapeutic nanobots within a h
 110. **Agentic-Deep-Sea-Explorer**: An AUV system that processes sonar data to classify biological anomalies and plot safe trajectories.
 111. **AGI-Exoplanet-Habitat-Orchestrator**: A multi-agent orchestration system that manages life support, resources, and structural integrity of an exoplanet base.
 112. **AGI-Ocean-City-Orchestrator**: An overarching AI governor system coordinating subsystems to manage a floating oceanic city during extreme events.
+
+55. **Automated-Budget-Tracker**
+    A classic **Automation** tool utilizing deterministic rule-based logic to automatically categorize user expenses based on explicit types and thresholds, highlighting potential areas of overspending.
+
+56. **Agentic-Wealth-Advisor**
+    A step up into **Agentic AI**. This autonomous AI Agent dynamically assesses a client's income, goals, and risk profile. Leveraging LLM providers, it synthesizes personalized financial strategies and immediate actionable steps.
+
+57. **AGI-Wealth-Management-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)**. This complex swarm orchestrator simulates a high-net-worth advisory board. A Master Orchestrator breaks down ambiguous client scenarios and deploys parallel sub-agents (Tax Optimization, Real Estate, Legal & Trust) to simultaneously process the goal before synthesizing a cohesive executive wealth strategy.
+
+58. **Automated-Content-Filter**
+    A classic **Automation** tool applying deterministic logic to moderate user-submitted text. It scans input against predefined banned word lists to instantly approve or reject content based on strict matching rules without relying on AI.
+
+59. **Agentic-Content-Moderator**
+    A step up into **Agentic AI**. This autonomous AI Agent evaluates text contextually. Rather than relying on simple keyword blocks, it understands nuance, sarcasm, and the specific platform context (e.g., gaming forum vs. professional network) to autonomously moderate content and provide reasoning.
+
+60. **AGI-Platform-Safety-Orchestrator**
+    A leap into **Artificial General Intelligence (AGI)**. This orchestrator handles complex, evolving trust and safety incidents. Upon receiving an incident report, the Master Orchestrator spawns specialized parallel sub-agents (Threat Intelligence, Policy & Legal, Crisis Communications) to evaluate technical mitigation, legal violations, and public response simultaneously, synthesizing them into a rapid Incident Action Plan.

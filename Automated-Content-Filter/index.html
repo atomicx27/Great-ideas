@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Content Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Automated Content Filter</h1>
+            <p>Deterministic Rule-Based Profanity Moderation</p>
+        </header>
+        <main>
+            <section class="filter-form">
+                <form id="content-form">
+                    <div class="form-group">
+                        <label for="content">User Comment:</label>
+                        <textarea id="content" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Filter Comment</button>
+                </form>
+            </section>
+            <section class="results">
+                <h2>Moderation Result</h2>
+                <div id="result-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
