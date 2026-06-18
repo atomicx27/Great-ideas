@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Energy Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-bolt"></i> Energy Optimizer <span class="badge">Agentic-AI</span></h1>
+        </header>
+
+        <div class="main-content">
+            <div class="panel data-panel">
+                <h2><i class="fa-solid fa-chart-line"></i> Home Energy Profile</h2>
+                <div class="form-group">
+                    <label>Appliance Usage (JSON Array)</label>
+                    <textarea id="usage-data" rows="5">
+[
+  { "appliance": "HVAC", "usage_kwh": 45, "peak_hours": "14:00-18:00" },
+  { "appliance": "Water Heater", "usage_kwh": 20, "peak_hours": "06:00-08:00" },
+  { "appliance": "EV Charger", "usage_kwh": 30, "peak_hours": "18:00-22:00" }
+]
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label>User Preferences</label>
+                    <textarea id="user-prefs" rows="3">Prioritize cost savings over comfort, but do not turn off AC completely during the day.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>LLM Provider</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-container">
+                    <label>API Key</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+                <button id="btn-optimize" class="btn btn-primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Run Optimization Agent</button>
+            </div>
+
+            <div class="panel results-panel">
+                <h2><i class="fa-solid fa-robot"></i> Agent Output</h2>
+                <div id="loading" class="hidden">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Analyzing energy patterns...
+                </div>
+                <div id="agent-output" class="markdown-body">
+                    <p class="text-muted">Click 'Run Optimization Agent' to see results.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

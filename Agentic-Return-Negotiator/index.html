@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Return Negotiator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-handshake"></i> Return Negotiator <span class="badge">Agentic-AI</span></h1>
+            <p class="subtitle">An autonomous agent that analyzes complex return requests and dynamically negotiates alternatives to full refunds to retain revenue.</p>
+        </header>
+
+        <main class="main-content">
+            <div class="panel form-panel">
+                <h2>Customer Return Request</h2>
+                <div class="form-group">
+                    <label>Customer Profile</label>
+                    <textarea id="customer-profile" rows="3">
+- Lifetime Value (LTV): $2,450
+- Return Rate: 5% (Low)
+- Status: VIP Member
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label>Return Details</label>
+                    <textarea id="return-details" rows="3">
+- Item: Pro Wireless Headphones ($299)
+- Reason: "They squeeze my ears too tight after 2 hours."
+- Condition: Opened, used for 3 days.
+                    </textarea>
+                </div>
+
+                <div class="config-section">
+                    <h3>LLM Configuration</h3>
+                    <div class="form-group">
+                        <label>Provider</label>
+                        <select id="llm-provider">
+                            <option value="openai">OpenAI</option>
+                            <option value="anthropic">Anthropic</option>
+                            <option value="ollama">Ollama (Local)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="api-key-container">
+                        <label>API Key</label>
+                        <input type="password" id="api-key" placeholder="Enter API Key">
+                    </div>
+                </div>
+
+                <button id="btn-negotiate" class="btn btn-primary"><i class="fa-solid fa-brain"></i> Agent: Generate Offers</button>
+            </div>
+
+            <div class="panel result-panel">
+                <h2>Negotiation Strategy</h2>
+                <div id="loading" class="hidden loading-state">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Agent analyzing request and generating offers...
+                </div>
+                <div id="agent-output" class="markdown-body">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-comments-dollar text-muted"></i>
+                        <p class="text-muted">Click 'Generate Offers' to see the agent's negotiation strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

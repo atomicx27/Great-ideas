@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Home Automation Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-network-wired"></i> Multi-Agent Orchestrator <span class="badge">AGI</span></h1>
+            <p class="subtitle">Enter a high-level goal, and the Master Agent will break it down and coordinate a swarm of specialized sub-agents.</p>
+        </header>
+
+        <div class="config-panel panel">
+            <div class="settings-grid">
+                <div class="form-group full-width">
+                    <label>High-Level Goal</label>
+                    <textarea id="agi-goal" rows="3">"We are throwing a dinner party for 8 people at 7 PM. Prepare the house (lighting, temperature, music) and order necessary groceries."</textarea>
+                </div>
+                <div class="form-group">
+                    <label>LLM Provider</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-container">
+                    <label>API Key</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </div>
+            <button id="btn-run" class="btn btn-primary"><i class="fa-solid fa-play"></i> Initialize Swarm Orchestration</button>
+        </div>
+
+        <div class="orchestration-board hidden" id="orchestration-board">
+            <h2><i class="fa-solid fa-sitemap"></i> Live Swarm Activity</h2>
+            <div class="agents-grid">
+                <!-- Agents will be dynamically added here -->
+            </div>
+
+            <div class="master-summary panel mt-4 hidden" id="master-summary">
+                <h3><i class="fa-solid fa-crown"></i> Master Orchestrator Synthesis</h3>
+                <div id="summary-content" class="markdown-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for Agent Card -->
+    <template id="agent-card-template">
+        <div class="agent-card panel">
+            <div class="agent-header">
+                <i class="fa-solid agent-icon fa-robot"></i>
+                <h3 class="agent-name">Agent Name</h3>
+                <span class="agent-status pending">Pending</span>
+            </div>
+            <div class="agent-task text-muted"></div>
+            <div class="agent-output markdown-body hidden"></div>
+        </div>
+    </template>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

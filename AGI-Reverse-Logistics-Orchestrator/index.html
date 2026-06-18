@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Reverse Logistics Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-truck-ramp-box"></i> Reverse Logistics Swarm <span class="badge">AGI</span></h1>
+            <p class="subtitle">Multi-agent orchestration for processing complex return batches (Routing, Refurbishment, Liquidation, Recycling).</p>
+        </header>
+
+        <div class="config-panel panel">
+            <div class="settings-grid">
+                <div class="form-group full-width">
+                    <label>Return Batch (JSON format)</label>
+                    <textarea id="return-batch" rows="4">
+[
+  { "id": "RET-001", "item": "Gaming Laptop", "condition": "Motherboard failed", "value": 1200 },
+  { "id": "RET-002", "item": "Office Chair", "condition": "Unopened", "value": 150 },
+  { "id": "RET-003", "item": "Seasonal Decor", "condition": "Used, out of season", "value": 45 }
+]
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label>LLM Provider</label>
+                    <select id="llm-provider">
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                        <option value="ollama">Ollama (Local)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="api-key-container">
+                    <label>API Key</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </div>
+            <button id="btn-run" class="btn btn-primary"><i class="fa-solid fa-play"></i> Initialize Logistics Swarm</button>
+        </div>
+
+        <div class="orchestration-board hidden" id="orchestration-board">
+            <h2><i class="fa-solid fa-sitemap"></i> Live Swarm Activity</h2>
+            <div class="agents-grid">
+                <!-- Agents will be dynamically added here -->
+            </div>
+
+            <div class="master-summary panel mt-4 hidden" id="master-summary">
+                <h3><i class="fa-solid fa-crown"></i> Master Orchestrator Final Report</h3>
+                <div id="summary-content" class="markdown-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for Agent Card -->
+    <template id="agent-card-template">
+        <div class="agent-card panel">
+            <div class="agent-header">
+                <i class="fa-solid agent-icon fa-robot"></i>
+                <h3 class="agent-name">Agent Name</h3>
+                <span class="agent-status pending">Pending</span>
+            </div>
+            <div class="agent-task text-muted"></div>
+            <div class="agent-output markdown-body hidden"></div>
+        </div>
+    </template>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

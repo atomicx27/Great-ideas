@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Smart Thermostat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fa-solid fa-temperature-three-quarters"></i> Smart Thermostat <span class="badge">Automated</span></h1>
+        </header>
+
+        <main>
+            <div class="thermostat-display">
+                <div class="current-temp" id="current-temp-display">72°F</div>
+                <div class="status" id="system-status">System: Idle</div>
+            </div>
+
+            <div class="controls-panel">
+                <h2>Settings</h2>
+                <div class="control-group">
+                    <label>Target Temperature:</label>
+                    <div class="temp-adjust">
+                        <button id="btn-temp-down" class="btn btn-icon"><i class="fa-solid fa-minus"></i></button>
+                        <span id="target-temp-display" class="target-temp">70°F</span>
+                        <button id="btn-temp-up" class="btn btn-icon"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Home Status:</label>
+                    <button id="btn-toggle-home" class="btn btn-toggle is-home">User is Home</button>
+                </div>
+
+                <div class="control-group">
+                    <button id="btn-apply" class="btn btn-primary">Apply Settings</button>
+                </div>
+            </div>
+
+            <div class="log-panel">
+                <h3>System Log</h3>
+                <ul id="system-log" class="log-list"></ul>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
