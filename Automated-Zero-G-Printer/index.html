@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Zero-G Printer</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Zero-G Printer</h1>
+        <p>Deterministic Manufacturing System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Printer Controls</h2>
+            <div class="input-group">
+                <label for="material">Material:</label>
+                <select id="material">
+                    <option value="titanium">Titanium</option>
+                    <option value="aluminum">Aluminum</option>
+                    <option value="carbon_fiber">Carbon Fiber</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="design">Design:</label>
+                <select id="design">
+                    <option value="strut">Structural Strut</option>
+                    <option value="panel">Hull Panel</option>
+                    <option value="bracket">Mounting Bracket</option>
+                </select>
+            </div>
+            <button id="print-btn" class="primary-btn">Initialize Print</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Print Log</h2>
+            <div class="log-container">
+                <table id="print-log">
+                    <thead>
+                        <tr>
+                            <th>Job ID</th>
+                            <th>Material</th>
+                            <th>Design</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

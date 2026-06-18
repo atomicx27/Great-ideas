@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Microgravity Material Scientist</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Microgravity Material Scientist</h1>
+        <p>AI-driven Alloy Optimization</p>
+    </header>
+
+    <main class="container">
+        <section class="agent-card">
+            <h2>Alloy Synthesizer</h2>
+            <div class="input-group">
+                <label for="base-metal">Base Metal:</label>
+                <select id="base-metal">
+                    <option value="Titanium">Titanium</option>
+                    <option value="Tungsten">Tungsten</option>
+                    <option value="Aluminum">Aluminum</option>
+                </select>
+            </div>
+            <button id="synthesize-btn" class="primary-btn">Synthesize Alloy</button>
+        </section>
+
+        <section id="results-panel" class="hidden agent-card">
+            <h2>Synthesis Log</h2>
+            <div id="agent-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Orbital Manufacturing Orchestrator</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Orbital Manufacturing Orchestrator</h1>
+        <p>Multi-Agent Space Industry Coordination</p>
+    </header>
+
+    <main class="container">
+        <section class="orchestrator-card">
+            <h2>Factory Overseer</h2>
+            <div class="input-group">
+                <label for="project-spec">Manufacturing Project Specification:</label>
+                <textarea id="project-spec" rows="3">Build a 50MW solar array support structure using asteroid-mined materials.</textarea>
+            </div>
+            <button id="orchestrate-btn" class="primary-btn">Initialize Multi-Agent Workflow</button>
+        </section>
+
+        <section id="results-panel" class="hidden orchestrator-card">
+            <h2>Swarm Log</h2>
+            <div id="swarm-log" class="log-box"></div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

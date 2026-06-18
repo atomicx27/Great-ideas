@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Neural Memory Indexer</title>
+    <link rel="stylesheet" href="../new_modern_ux.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Neural Memory Indexer</h1>
+        <p>Deterministic Engram Categorization</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel">
+            <h2>Engram Scanner</h2>
+            <button id="scan-btn" class="primary-btn">Index Memory Engrams</button>
+            <p id="status-text" class="status-indicator">Status: Standby</p>
+        </section>
+
+        <section id="results-panel" class="hidden">
+            <h2>Indexed Memories</h2>
+            <div class="log-container">
+                <table id="engram-log">
+                    <thead>
+                        <tr>
+                            <th>Engram ID</th>
+                            <th>Intensity (Hz)</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

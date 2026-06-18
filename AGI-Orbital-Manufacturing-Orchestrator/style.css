@@ -1,0 +1,92 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #050505;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #facc15;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.3);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.orchestrator-card {
+    background-color: #1c1917;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #854d0e;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #a8a29e;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #050505;
+    color: #e2e8f0;
+    border: 1px solid #854d0e;
+    border-radius: 6px;
+    resize: vertical;
+}
+
+.primary-btn {
+    background-color: #ca8a04;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.log-box {
+    background-color: #000;
+    border: 1px solid #ca8a04;
+    border-radius: 6px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+    color: #fef08a;
+}
+
+.log-box div {
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 4px;
+}
+
+.agent-material { color: #8b5cf6; }
+.agent-printer { color: #38bdf8; }
+.orchestrator-node { color: #facc15; font-weight: bold; }
