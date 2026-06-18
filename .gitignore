@@ -7,3 +7,4 @@ package-lock.json
 screenshot.js
 *_screenshot.png
 server_output.log
+server.log
