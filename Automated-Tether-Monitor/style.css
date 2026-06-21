@@ -1,0 +1,138 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #161b22;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    color: #58a6ff;
+}
+
+header p {
+    margin: 0;
+    color: #8b949e;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Control Panel */
+.control-panel {
+    background-color: #161b22;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.primary-btn {
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background-color: #2ea043;
+}
+
+.primary-btn:disabled {
+    background-color: #1e4a28;
+    color: #8b949e;
+    cursor: not-allowed;
+}
+
+.status-indicator {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Results Panel */
+.hidden {
+    display: none !important;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #161b22;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #8b949e;
+    font-size: 1rem;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #c9d1d9;
+}
+
+/* Log Container */
+.log-container {
+    background-color: #161b22;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.log-container h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+
+th {
+    color: #8b949e;
+    font-weight: 600;
+}
+
+.comp-nominal { color: #56d364; }
+.comp-warning { color: #e3b341; }
+.comp-critical { color: #f85149; font-weight: bold; }

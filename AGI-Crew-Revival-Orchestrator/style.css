@@ -1,0 +1,157 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #161b22;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    color: #58a6ff;
+}
+
+header p {
+    margin: 0;
+    color: #8b949e;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Control Panel */
+.control-panel {
+    background-color: #161b22;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.primary-btn {
+    background-color: #8957e5;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background-color: #9e6cfc;
+}
+
+.primary-btn:disabled {
+    background-color: #4a307a;
+    color: #8b949e;
+    cursor: not-allowed;
+}
+
+/* Orchestration Panel */
+.orchestration-panel {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.agent-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.agent-card, .master-card {
+    background-color: #161b22;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.master-card {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+h2, h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 0.5rem;
+    color: #8b949e;
+}
+
+.master-card h2 {
+    color: #58a6ff;
+}
+
+.terminal {
+    background-color: #010409;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    color: #a5d6ff;
+    border: 1px solid #30363d;
+    flex-grow: 1;
+}
+
+.terminal.small {
+    height: 120px;
+}
+
+.terminal.large {
+    height: 100%;
+    min-height: 400px;
+    font-size: 0.95rem;
+}
+
+.terminal div {
+    margin-bottom: 0.5rem;
+}
+
+.agent-sys { color: #8b949e; }
+.agent-err { color: #f85149; }
+.agent-ok { color: #56d364; }
+
+@media (max-width: 900px) {
+    .orchestration-panel {
+        flex-direction: column;
+    }
+}

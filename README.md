@@ -516,3 +516,21 @@ An autonomous single-agent system that decodes complex spacetime ripple signals 
 
 ### AGI Gravity Wave Orchestrator
 A multi-agent AGI system for establishing and maintaining interstellar communications via gravity waves. A Master Orchestrator spawns Detector, Decoder, and Transmitter sub-agents in parallel to align arrays, decrypt handshakes, and fire return pulses.
+
+### Automated Tether Monitor
+A deterministic automation system for monitoring space elevator tether strain, classifying segments as nominal, warning, or critical based on fixed rules without AI overhead.
+
+### Agentic Climber Pilot
+A single-agent autonomous system that safely navigates a space elevator climber to GEO, utilizing an LLM to evaluate weather data and tether strain to optimize velocity and safety.
+
+### AGI Space Elevator Orchestrator
+A multi-agent swarm managing global tether infrastructure. A Master Orchestrator coordinates Weather, Maintenance, and Cargo sub-agents to optimize throughput during severe space weather events.
+
+### Automated Cryo Monitor
+A deterministic automation system for monitoring vital signs in cryosleep pods, initiating emergency wake protocols based on strict rule-based thresholds for heart rate and temperature.
+
+### Agentic Stasis Medic
+A single-agent autonomous system for diagnosing cryosleep anomalies, using an LLM to evaluate metabolic stress and fluid levels to prescribe dynamic treatments like temperature adjustments or sedatives.
+
+### AGI Crew Revival Orchestrator
+A multi-agent AGI system designed to manage the complex logistics of mass colonist revival. A Master Orchestrator balances Power, Medical, and Logistics constraints to synthesize a safe staggering schedule.
