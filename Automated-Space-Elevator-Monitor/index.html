@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Space Elevator Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Space Elevator Monitor</h1>
+            <p>A deterministic rule-based monitoring tool.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Sensor Input</h2>
+                <div class="form-group">
+                    <label for="tension-input">Cable Tension (kN):</label>
+                    <input type="number" id="tension-input" placeholder="e.g. 50000">
+                </div>
+                <div class="form-group">
+                    <label for="wind-input">Wind Speed (km/h):</label>
+                    <input type="number" id="wind-input" placeholder="e.g. 120">
+                </div>
+                <button id="check-status-btn">Check Status</button>
+            </section>
+
+            <section class="output-section">
+                <h2>System Status</h2>
+                <div id="status-output"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
