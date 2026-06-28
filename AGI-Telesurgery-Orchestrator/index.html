@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Telesurgery Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AGI Telesurgery Orchestrator</h1>
+            <p>Multi-agent coordination for remote robotic surgery.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>API Configuration</h2>
+                <div class="form-group">
+                    <label for="llm-provider">Provider:</label>
+                    <select id="llm-provider">
+                        <option value="ollama">Ollama (Local)</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </section>
+
+            <section class="input-section">
+                <h2>Surgical Goal</h2>
+                <div class="form-group">
+                    <label for="goal-input">Procedure Goal:</label>
+                    <textarea id="goal-input" rows="3">Perform remote appendectomy maintaining < 10ms latency.</textarea>
+                </div>
+                <button id="run-swarm-btn">Initialize Surgery Swarm</button>
+            </section>
+
+            <section class="output-section">
+                <h2>Orchestration Log</h2>
+                <div id="swarm-log"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

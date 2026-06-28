@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Sterilizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Automated Surgical Instrument Sterilizer</h1>
+            <p>Deterministic rule-based sterilization controller.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Cycle Configuration</h2>
+                <div class="form-group">
+                    <label for="temp-input">Target Temperature (°C):</label>
+                    <input type="number" id="temp-input" value="134">
+                </div>
+                <div class="form-group">
+                    <label for="time-input">Cycle Time (minutes):</label>
+                    <input type="number" id="time-input" value="18">
+                </div>
+                <button id="start-cycle-btn">Start Cycle</button>
+            </section>
+
+            <section class="output-section">
+                <h2>Status</h2>
+                <div id="cycle-log"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

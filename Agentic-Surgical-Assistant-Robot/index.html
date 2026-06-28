@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Surgical Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Surgical Assistant Robot</h1>
+            <p>AI-driven surgical recommendations based on real-time vitals.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>API Configuration</h2>
+                <div class="form-group">
+                    <label for="llm-provider">Provider:</label>
+                    <select id="llm-provider">
+                        <option value="ollama">Ollama (Local)</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </section>
+
+            <section class="input-section">
+                <h2>Patient Vitals</h2>
+                <div class="form-group">
+                    <label for="hr-input">Heart Rate (bpm):</label>
+                    <input type="number" id="hr-input" value="120">
+                </div>
+                <div class="form-group">
+                    <label for="bp-input">Blood Pressure (mmHg):</label>
+                    <input type="text" id="bp-input" value="90/60">
+                </div>
+                <button id="assist-btn">Request Assistance</button>
+            </section>
+
+            <section class="output-section">
+                <h2>Recommendation</h2>
+                <div id="assist-log"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

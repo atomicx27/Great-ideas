@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Space Elevator Pilot</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/llm-api.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Agentic Space Elevator Pilot</h1>
+            <p>AI-driven autonomous piloting based on sensor data.</p>
+        </header>
+
+        <main>
+            <section class="config-section">
+                <h2>API Configuration</h2>
+                <div class="form-group">
+                    <label for="llm-provider">Provider:</label>
+                    <select id="llm-provider">
+                        <option value="ollama">Ollama (Local)</option>
+                        <option value="openai">OpenAI</option>
+                        <option value="anthropic">Anthropic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="api-key">API Key (if required):</label>
+                    <input type="password" id="api-key" placeholder="Enter API Key">
+                </div>
+            </section>
+
+            <section class="input-section">
+                <h2>Sensor Input</h2>
+                <div class="form-group">
+                    <label for="tension-input">Cable Tension (kN):</label>
+                    <input type="number" id="tension-input" value="75000">
+                </div>
+                <div class="form-group">
+                    <label for="wind-input">Wind Speed (km/h):</label>
+                    <input type="number" id="wind-input" value="110">
+                </div>
+                <button id="run-pilot-btn">Run Agentic Pilot</button>
+            </section>
+
+            <section class="output-section">
+                <h2>Pilot Log</h2>
+                <div id="pilot-log"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
