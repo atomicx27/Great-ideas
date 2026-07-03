@@ -516,3 +516,21 @@ An autonomous single-agent system that decodes complex spacetime ripple signals 
 
 ### AGI Gravity Wave Orchestrator
 A multi-agent AGI system for establishing and maintaining interstellar communications via gravity waves. A Master Orchestrator spawns Detector, Decoder, and Transmitter sub-agents in parallel to align arrays, decrypt handshakes, and fire return pulses.
+
+16. **Automated-Hyperloop-Gate**
+    A deterministic **Automation** tool designed to control hyperloop pod departures based on strict, pre-defined safety conditions and clear tube availability without the need for complex AI overhead.
+
+17. **Agentic-Hyperloop-Router**
+    An **Agentic AI** application that acts as an autonomous router for hyperloop networks. It evaluates real-time simulated pressure anomalies, maintenance schedules, and weather patterns via an LLM, making intelligent rerouting decisions instantly. Supports local execution via Ollama.
+
+18. **AGI-Hyperloop-Orchestrator**
+    An **Artificial General Intelligence (AGI)** system that orchestrates a massive continental hyperloop network. Given a high-level goal like "Optimize all continental routes for peak holiday travel," a Master Orchestrator spawns specialized sub-agents (Weather Forecaster, Traffic Analyzer, Maintenance Scheduler) in parallel to synthesize a comprehensive, dynamic transit schedule.
+
+19. **Automated-Space-Elevator-Loader**
+    A deterministic **Automation** tool ensuring strict payload mass adherence for space elevator climbers. It relies on non-AI programmatic checks to prevent structural overloading prior to ascent.
+
+20. **Agentic-Space-Elevator-Balancer**
+    An **Agentic AI** tool that autonomously monitors real-time atmospheric conditions (like high winds) and dynamically adjusts crawler ascent speeds and counterweight positions by consulting an LLM to maintain optimal tether tension. Supports Bring Your Own Key architecture and Ollama.
+
+21. **AGI-Space-Elevator-Orchestrator**
+    An **Artificial General Intelligence (AGI)** system that takes on complex, ambiguous goals such as "Maximize weekly orbital payload throughput while avoiding debris." The Master Orchestrator spawns parallel sub-agents (Debris Tracker, Atmospheric Analyst, Station Logistics) to continuously adapt operations across the entire elevator ecosystem, maximizing efficiency and safety.

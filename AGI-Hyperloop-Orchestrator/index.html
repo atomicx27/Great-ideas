@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Hyperloop Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AGI Hyperloop Orchestrator</h1>
+        <div class="controls">
+            <label for="provider">Provider:</label>
+            <select id="provider">
+                <option value="ollama">Ollama</option>
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+            </select>
+            <label for="global-goal">High-Level Objective:</label>
+            <input type="text" id="global-goal" value="Optimize all continental routes for peak holiday travel">
+        </div>
+        <button id="orchestrate-btn">Orchestrate Swarm</button>
+        <div class="swarm-container" id="swarm-container">
+            <!-- Sub-agents will appear here -->
+        </div>
+        <div class="master-summary" id="master-summary">Master orchestrator summary will appear here.</div>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
