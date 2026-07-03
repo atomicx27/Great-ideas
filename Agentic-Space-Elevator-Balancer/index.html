@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Space Elevator Balancer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Space Elevator Balancer</h1>
+        <div class="controls">
+            <label for="provider">Provider:</label>
+            <select id="provider">
+                <option value="ollama">Ollama</option>
+                <option value="openai">OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+            </select>
+            <label for="weather-data">Atmospheric Conditions:</label>
+            <input type="text" id="weather-data" value="High winds at 15km, solar flare activity moderate">
+        </div>
+        <button id="balance-btn">Balance Tether</button>
+        <div class="agent-output" id="agent-output">Awaiting telemetry...</div>
+        <div class="log" id="log"></div>
+    </div>
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
