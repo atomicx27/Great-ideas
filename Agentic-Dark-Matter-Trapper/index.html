@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Dark Matter Trapper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agentic Dark Matter Trapper</h1>
+        <p>An autonomous agent that utilizes LLMs to analyze spatial anomalies and adapt trapping fields to capture dynamic dark matter particles.</p>
+
+        <div class="control-panel">
+            <div class="input-group">
+                <label for="anomaly-data">Spatial Anomaly Data (Tensor format):</label>
+                <textarea id="anomaly-data" rows="4" placeholder="e.g., [0.9, 0.4, 0.2, 0.8]"></textarea>
+            </div>
+            <button id="trap-btn">Analyze & Deploy Trap</button>
+        </div>
+
+        <div class="status-panel">
+            <h2>Agent Status</h2>
+            <div id="agent-display" class="status-display">Awaiting anomaly data...</div>
+            <div id="logs" class="logs-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
