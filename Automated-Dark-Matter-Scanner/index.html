@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Dark Matter Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Dark Matter Scanner</h1>
+        <p>A deterministic system that scans space sectors for dark matter concentrations based on fixed gravitational lensing thresholds.</p>
+
+        <div class="control-panel">
+            <div class="input-group">
+                <label for="lensing-index">Gravitational Lensing Index (μ):</label>
+                <input type="number" id="lensing-index" step="0.1" value="2.5">
+            </div>
+            <div class="input-group">
+                <label for="bg-radiation">Background Radiation Noise (eV):</label>
+                <input type="number" id="bg-radiation" step="1" value="15">
+            </div>
+            <button id="scan-btn">Initiate Scan</button>
+        </div>
+
+        <div class="status-panel">
+            <h2>Scanner Status</h2>
+            <div id="results-display" class="status-display">Awaiting scan parameters...</div>
+            <p id="status-text"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

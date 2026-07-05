@@ -516,3 +516,21 @@ An autonomous single-agent system that decodes complex spacetime ripple signals 
 
 ### AGI Gravity Wave Orchestrator
 A multi-agent AGI system for establishing and maintaining interstellar communications via gravity waves. A Master Orchestrator spawns Detector, Decoder, and Transmitter sub-agents in parallel to align arrays, decrypt handshakes, and fire return pulses.
+
+### Automated Dark Matter Scanner
+A deterministic system that scans space sectors for dark matter concentrations based on fixed gravitational lensing thresholds, providing instant navigational hazard alerts.
+
+### Agentic Dark Matter Trapper
+An autonomous agent that utilizes LLMs to analyze spatial anomalies and adapt trapping fields dynamically to capture volatile dark matter particles.
+
+### AGI Dark Matter Orchestrator
+A multi-agent AGI system that manages the entire dark matter harvesting lifecycle. A Master Orchestrator delegates tasks in parallel to Scanner, Trapper, and Extractor sub-agents.
+
+### Automated Wormhole Mapper
+A deterministic system that maps wormhole entry points using fixed exotic matter density thresholds, instantly categorizing space geometry without AI overhead.
+
+### Agentic Wormhole Stabilizer
+An autonomous agent that manages exotic matter injection to dynamically stabilize collapsing wormhole throats based on quantum fluctuation data analysis.
+
+### AGI Wormhole Network Orchestrator
+A multi-agent AGI system for managing a galactic transport network. Specialized Mapper and Stabilizer agents independently prepare routes, while a Master Orchestrator coordinates fleet traffic.

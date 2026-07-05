@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Wormhole Mapper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Automated Wormhole Mapper</h1>
+        <p>A deterministic system that maps wormhole entry points using fixed exotic matter density thresholds.</p>
+
+        <div class="control-panel">
+            <div class="input-group">
+                <label for="exotic-matter">Exotic Matter Density (kg/m³):</label>
+                <input type="number" id="exotic-matter" step="0.01" value="-1.5">
+            </div>
+            <button id="map-btn">Map Point</button>
+        </div>
+
+        <div class="status-panel">
+            <h2>Mapping Status</h2>
+            <div id="results-display" class="status-display">Awaiting sensor data...</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
