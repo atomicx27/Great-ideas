@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Dark Matter Tuner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Dark Matter Tuner</h1>
+        <p>Single-Agent Containment Field Optimization</p>
+    </header>
+
+    <main class="container">
+        <section class="agent-card card">
+            <h2>Containment Tuner AI</h2>
+            <div class="agent-status">
+                <span class="status-dot"></span>
+                <span id="agent-state">Idle</span>
+            </div>
+            <button id="tune-btn" class="primary-btn">Optimize Fields</button>
+
+            <div class="logs">
+                <h3>Agent Logs</h3>
+                <ul id="log-list"></ul>
+            </div>
+        </section>
+
+        <section class="visualization card">
+            <h2>Field Stability Metrics</h2>
+            <div class="metric">
+                <label>Overall Stability:</label>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="stability-fill" style="width: 0%;"></div>
+                </div>
+                <span id="stability-text">0%</span>
+            </div>
+
+            <h3>Target Fields</h3>
+            <ul id="fields-list">
+                <!-- Field metrics injected here -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

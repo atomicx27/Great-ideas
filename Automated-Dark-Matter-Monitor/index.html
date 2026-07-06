@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Dark Matter Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Dark Matter Monitor</h1>
+        <p>Deterministic Density Tracking System</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Sensor Array Controls</h2>
+            <button id="scan-btn" class="primary-btn">Initialize Density Scan</button>
+            <p id="status-text" class="status-indicator">Status: Idle</p>
+        </section>
+
+        <section class="results-panel card">
+            <h2>Detected Density Signatures</h2>
+            <ul id="results-list">
+                <!-- Scan results injected here -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -516,3 +516,14 @@ An autonomous single-agent system that decodes complex spacetime ripple signals 
 
 ### AGI Gravity Wave Orchestrator
 A multi-agent AGI system for establishing and maintaining interstellar communications via gravity waves. A Master Orchestrator spawns Detector, Decoder, and Transmitter sub-agents in parallel to align arrays, decrypt handshakes, and fire return pulses.
+
+### Energy & Communications
+
+- **Automated Dark Matter Monitor**: Deterministic rule-based density tracking system.
+- **Agentic Dark Matter Tuner**: Single-agent containment field optimization.
+- **AGI Dark Matter Orchestrator**: Multi-agent swarm coordinating sector-wide field containment.
+
+
+- **Automated Subspace Relay**: Deterministic protocol for routing subspace signals.
+- **Agentic Subspace Router**: Single-agent node pathfinding optimization.
+- **AGI Subspace Orchestrator**: Multi-agent swarm managing intergalactic grid routing.
