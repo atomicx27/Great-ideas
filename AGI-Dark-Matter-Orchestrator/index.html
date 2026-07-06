@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Dark Matter Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Dark Matter Orchestrator</h1>
+        <p>Multi-Agent Swarm for Sector-Wide Field Containment</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Orchestration Core</h2>
+            <div class="api-config">
+                <label for="provider-select">LLM Provider:</label>
+                <select id="provider-select">
+                    <option value="ollama">Ollama (Local)</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                </select>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+            <button id="orchestrate-btn" class="primary-btn">Initialize Swarm</button>
+            <p id="global-status" class="status-indicator">Global Status: Idle</p>
+
+            <div class="logs">
+                <h3>Orchestrator Logs</h3>
+                <ul id="orchestrator-log"></ul>
+            </div>
+        </section>
+
+        <section class="agents-grid">
+            <div class="agent-card card" id="agent-alpha">
+                <h3>Agent Alpha (Sector 1)</h3>
+                <p>Status: <span class="agent-status">Standby</span></p>
+                <ul class="agent-log"></ul>
+            </div>
+            <div class="agent-card card" id="agent-beta">
+                <h3>Agent Beta (Sector 2)</h3>
+                <p>Status: <span class="agent-status">Standby</span></p>
+                <ul class="agent-log"></ul>
+            </div>
+            <div class="agent-card card" id="agent-gamma">
+                <h3>Agent Gamma (Sector 3)</h3>
+                <p>Status: <span class="agent-status">Standby</span></p>
+                <ul class="agent-log"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

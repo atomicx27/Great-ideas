@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Subspace Orchestrator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>AGI Subspace Orchestrator</h1>
+        <p>Multi-Agent Swarm for Intergalactic Grid Routing</p>
+    </header>
+
+    <main class="container">
+        <section class="control-panel card">
+            <h2>Swarm Command Center</h2>
+            <div class="api-config">
+                <label for="provider-select">LLM Provider:</label>
+                <select id="provider-select">
+                    <option value="ollama">Ollama (Local)</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                </select>
+                <input type="password" id="api-key" placeholder="Enter API Key">
+            </div>
+            <button id="orchestrate-btn" class="primary-btn">Deploy Routing Swarm</button>
+            <p id="global-status" class="status-indicator">Grid Status: Inactive</p>
+
+            <div class="logs">
+                <h3>Central Logic Logs</h3>
+                <ul id="orchestrator-log"></ul>
+            </div>
+        </section>
+
+        <section class="agents-grid">
+            <div class="agent-card card" id="agent-node1">
+                <h3>Agent Node-1 (Alpha Quadrant)</h3>
+                <p>Status: <span class="agent-status">Standby</span></p>
+                <ul class="agent-log"></ul>
+            </div>
+            <div class="agent-card card" id="agent-node2">
+                <h3>Agent Node-2 (Beta Quadrant)</h3>
+                <p>Status: <span class="agent-status">Standby</span></p>
+                <ul class="agent-log"></ul>
+            </div>
+            <div class="agent-card card" id="agent-node3">
+                <h3>Agent Node-3 (Delta Quadrant)</h3>
+                <p>Status: <span class="agent-status">Standby</span></p>
+                <ul class="agent-log"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

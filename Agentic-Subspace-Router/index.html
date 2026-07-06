@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Subspace Router</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../new_modern_ux.css">
+</head>
+<body>
+    <header>
+        <h1>Agentic Subspace Router</h1>
+        <p>Single-Agent Node Pathfinding Optimization</p>
+    </header>
+
+    <main class="container">
+        <section class="agent-card card">
+            <h2>Router AI</h2>
+            <div class="agent-status">
+                <span class="status-dot"></span>
+                <span id="agent-state">Idle</span>
+            </div>
+            <button id="route-btn" class="primary-btn">Calculate Path</button>
+
+            <div class="logs">
+                <h3>Decision Logs</h3>
+                <ul id="log-list"></ul>
+            </div>
+        </section>
+
+        <section class="visualization card">
+            <h2>Network Topology</h2>
+            <div class="metric">
+                <label>Path Efficiency:</label>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="efficiency-fill" style="width: 0%;"></div>
+                </div>
+                <span id="efficiency-text">0%</span>
+            </div>
+
+            <h3>Available Nodes</h3>
+            <ul id="nodes-list"></ul>
+        </section>
+    </main>
+
+    <script src="../shared/llm-api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
